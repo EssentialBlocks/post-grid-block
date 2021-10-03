@@ -9,7 +9,7 @@ import attributes from "./attributes";
 import Example from "./example";
 
 registerBlockType("post-grid-block/post-grid", {
-	title: __("Post Grid", "post-grid-block"),
+	title: __("Post Grid Block", "post-grid-block"),
 	description: __(
 		"Display Posts or Pages by filtering with custom queries",
 		"post-grid-block"

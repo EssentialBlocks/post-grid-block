@@ -41,9 +41,6 @@ import {
 	mimmikCssOnPreviewBtnClickWhileBlockSelected,
 } from "../util/helpers";
 import {BUTTONS_TYPOGRAPHY, BUTTONS_CONNECTOR_TYPOGRAPHY} from "./constants/typographyPrefixConstants";
-import FontIconPicker from "@fonticonpicker/react-fonticonpicker";
-import '@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.base-theme.react.css';
-import '@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.material-theme.react.css';
 import faIcons from "../util/faIcons";
 import ColorControl from "../util/color-control";
 import ResponsiveDimensionsControl from "../util/dimensions-control-v2";
@@ -329,14 +326,7 @@ function Inspector(props) {
 
 												{connectorType === "icon" && (
 													<PanelBody title={__("Icon Settings")} initialOpen={true}>
-														<BaseControl label={__("Icon")}>
-															<FontIconPicker
-																icons={faIcons}
-																value={innerButtonIcon}
-																onChange={(icon) => setAttributes({ innerButtonIcon: icon })}
-																appendTo="body"
-															/>
-														</BaseControl>
+														
 
 														<ResponsiveRangeController
 															baseLabel={__("Icon Size", "button-group")}

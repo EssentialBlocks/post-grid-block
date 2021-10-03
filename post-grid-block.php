@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:     Post Grid
+ * Plugin Name:     Post Grid Block
  * Description:     Display Posts or Pages by filtering with custom queries
  * Version:         1.0.0
  * Author:          WPDeveloper
@@ -66,9 +66,9 @@ function create_block_post_grid_block_init() {
 		register_block_type(
 			'post-grid-block/post-grid',
 			array (
-				'editor_script' => 'button-group-button-group-block-editor',
-				'editor_style'  => 'button-group-button-group-block-editor',
-				'style'  		=> 'button-group-button-group-block',
+				'editor_script' => 'post-grid-block-editor',
+				'editor_style'  => 'post-grid-block-editor-css',
+				'style'  		=> 'post-grid-block-frontend-css',
 			)
 		);
 	}
