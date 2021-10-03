@@ -1,0 +1,11 @@
+{
+	"apiVersion": 2,
+	"name": "post-grid-block/post-grid",
+	"title": "Post Grid",
+	"category": "widgets",
+	"description": "Display Posts or Pages by filtering with custom queries",
+	"textdomain": "post-grid-block",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
