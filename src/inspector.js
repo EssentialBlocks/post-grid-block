@@ -41,12 +41,12 @@ import {
 	mimmikCssOnPreviewBtnClickWhileBlockSelected,
 } from "../util/helpers";
 import {BUTTONS_TYPOGRAPHY, BUTTONS_CONNECTOR_TYPOGRAPHY} from "./constants/typographyPrefixConstants";
-import faIcons from "../util/faIcons";
 import ColorControl from "../util/color-control";
 import ResponsiveDimensionsControl from "../util/dimensions-control-v2";
 import TypographyDropdown from "../util/typography-control-v2";
 import BorderShadowControl from "../util/border-shadow-control";
 import ResponsiveRangeController from "../util/responsive-range-control";
+import CustomQuery from "../util/custom-query";
 
 function Inspector(props) {
 	const { attributes, setAttributes } = props;
@@ -205,6 +205,8 @@ function Inspector(props) {
 						<div className={"eb-tab-controls" + tab.name}>
 							{tab.name === "general" && (
 								<>
+									<CustomQuery />
+									
 									<PanelBody 
 										title={__("General")} 
 										initialOpen={true}
