@@ -58,6 +58,8 @@ export default function Edit(props) {
 		showConnector,
 		connectorType,
 		buttonTextAlign,
+		queryData,
+		queryResults,
 	} = attributes;
 
 	// this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class
@@ -72,7 +74,7 @@ export default function Edit(props) {
 
 	// this useEffect is for creating a unique id for each block's unique className by a random unique number
 	useEffect(() => {
-		const BLOCK_PREFIX = "eb-button-group";
+		const BLOCK_PREFIX = "eb-post-grid";
 		duplicateBlockIdFix({
 			BLOCK_PREFIX,
 			blockId,
@@ -472,57 +474,54 @@ export default function Edit(props) {
 				`}
 			</style>
 
-			<div className={`eb-button-group-wrapper ${blockId} ${preset}`} data-id={blockId}>
-				{/* Button One */}
-				<a
-					className={"eb-button-parent eb-button-one"}
-					// style={buttonStyleOne}
-					onMouseEnter={() => setAttributes({ isHoverOne: true })}
-					onMouseLeave={() => setAttributes({ isHoverOne: false })}
-				>
-					<RichText
-						// style={textStylesOne}
-						className={"eb-button-text eb-button-one-text"}
-						placeholder="Add Text.."
-						value={buttonTextOne}
-						onChange={(newText) => setAttributes({ buttonTextOne: newText })}
-						allowedFormats={["bold", "italic", "strikethrough"]}
-					/>
-				</a>
-
-				{/* Connector */}
-
-				{showConnector && (
-					<div
-						className="eb-button-group__midldeInner"
-						// style={buttonMiddleInnerStyles}
-					>
-						{connectorType === 'icon' && (
-							<span>
-								<i className={`${innerButtonIcon ? innerButtonIcon : "fas fa-arrows-alt-h"}`}></i>
-							</span>
-						)}
-
-						{connectorType === 'text' && <span>{innerButtonText}</span>}
-					</div>
+			<div className={`eb-post-grid-wrapper ${blockId} ${preset}`} data-id={blockId}>
+				{typeof(queryResults) === 'object' && queryResults.length > 0 && queryResults.map((post) => (
+					<article class="ebpg-grid-post ebpg-post-grid-column" data-id={post.id}>
+						<div class="ebpg-grid-post-holder">
+							<div class="ebpg-entry-media">
+								<div class="ebpg-entry-overlay fade-in">
+									<i class="fas fa-long-arrow-alt-right" aria-hidden="true"></i>
+									<a href="http://templately.test/praesentium-asperiores-assumenda-error-dolores-excepturi/"></a>
+								</div>
+								<div class="ebpg-entry-thumbnail">
+									<img width="300" height="200" src="" class="attachment-medium size-medium" alt="" loading="lazy" srcset="http://templately.test/wp-content/uploads/2021/02/d22346cb-ad73-35c5-8857-78c59ec4f245-300x200.jpg 300w, http://templately.test/wp-content/uploads/2021/02/d22346cb-ad73-35c5-8857-78c59ec4f245-600x400.jpg 600w, http://templately.test/wp-content/uploads/2021/02/d22346cb-ad73-35c5-8857-78c59ec4f245-1024x682.jpg 1024w, http://templately.test/wp-content/uploads/2021/02/d22346cb-ad73-35c5-8857-78c59ec4f245-768x512.jpg 768w, http://templately.test/wp-content/uploads/2021/02/d22346cb-ad73-35c5-8857-78c59ec4f245.jpg 1159w" sizes="(max-width: 300px) 100vw, 300px" />
+								</div>
+							</div>
+							
+							<div class="ebpg-entry-wrapper">
+								<header class="ebpg-entry-header">
+									<h2 class="ebpg-entry-title">
+										<a class="ebpg-grid-post-link" href="" title="">{post.title.rendered}</a>
+									</h2>
+								</header>
+								<div class="ebpg-entry-content">
+									<div class="ebpg-grid-post-excerpt">
+										<p dangerouslySetInnerHTML={{__html: post.content.rendered}} />
+										<a href="" class="ebpg-post-elements-readmore-btn">Read More</a>
+									</div>
+								</div>
+								<div class="ebpg-entry-footer">
+									<div class="ebpg-author-avatar">
+										<a href="http://templately.test/author/admin/">
+											<img alt="" src="" srcset="http://0.gravatar.com/avatar/f2043d92f108cc1bb1e9f4f7792675c0?s=192&amp;d=mm&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96" loading="lazy" />
+										</a>
+									</div>
+									<div class="ebpg-entry-meta">
+										<span class="ebpg-posted-by">
+											<a href="http://templately.test/author/admin/" title="Posts by admin" rel="author">admin</a>
+										</span>
+										<span class="ebpg-posted-on">
+											<time datetime="February 1, 2021">February 1, 2021</time>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+				))}
+				{!isSelected && queryResults.length < 1 && (
+					<p>No Posts Found</p>
 				)}
-
-				{/* Button Two */}
-				<a
-					className={"eb-button-parent eb-button-two"}
-					// style={buttonStyleTwo}
-					onMouseEnter={() => setAttributes({ isHoverTwo: true })}
-					onMouseLeave={() => setAttributes({ isHoverTwo: false })}
-				>
-					<RichText
-						// style={textStylesTwo}
-						className={"eb-button-text eb-button-two-text"}
-						placeholder="Add Text.."
-						value={buttonTextTwo}
-						onChange={(newText) => setAttributes({ buttonTextTwo: newText })}
-						allowedFormats={["bold", "italic", "strikethrough"]}
-					/>
-				</a>
 			</div>
 		</div>,
 	];

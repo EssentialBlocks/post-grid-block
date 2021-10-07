@@ -76,7 +76,11 @@ function Inspector(props) {
 		connectorType,
 		buttonsColorType,
 		buttonTextAlign,
+		queryData,
+		queryResults,
 	} = attributes;
+
+	// console.log("Query", queryData, queryResults)
 
 	// this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
 	useEffect(() => {
@@ -205,8 +209,8 @@ function Inspector(props) {
 						<div className={"eb-tab-controls" + tab.name}>
 							{tab.name === "general" && (
 								<>
-									<CustomQuery />
-									
+									<CustomQuery queryData={queryData} queryResults={queryResults} setAttributes={setAttributes} />
+
 									<PanelBody 
 										title={__("General")} 
 										initialOpen={true}

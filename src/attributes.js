@@ -38,6 +38,13 @@ const attributes = {
 		type: "object",
 	},
 
+	queryData: {
+		type: "object"
+	},
+	queryResults: {
+		type: "array"
+	},
+
 	preset: {
 		type: "string",
 		default: "button-1"

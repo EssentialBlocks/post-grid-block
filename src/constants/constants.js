@@ -5,6 +5,8 @@ const {Dashicon} = wp.components;
 export const WRAPPER_MARGIN = "wrpMargin";
 export const BUTTONS_MARGIN = "buttonsMargin";
 export const BUTTONS_PADDING = "buttonsPadding";
+
+
 export const BUTTON_ONE_BORDER_SHADOW = "buttonOneBorderShadow";
 export const BUTTON_TWO_BORDER_SHADOW = "buttonTwoBorderShadow";
 export const BUTTON_ONE_BG = "button1Bg";

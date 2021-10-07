@@ -7870,6 +7870,12 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
   blockMeta: {
     type: "object"
   },
+  queryData: {
+    type: "object"
+  },
+  queryResults: {
+    type: "array"
+  },
   preset: {
     type: "string",
     "default": "button-1"
@@ -8186,6 +8192,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _constants_constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./constants/constants */ "./src/constants/constants.js");
 /* harmony import */ var _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./constants/typographyPrefixConstants */ "./src/constants/typographyPrefixConstants.js");
 /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/helpers */ "./util/helpers/index.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 /**
  * WordPress dependencies 
 */
@@ -8229,7 +8237,9 @@ function Edit(props) {
       innerButtonIcon = attributes.innerButtonIcon,
       showConnector = attributes.showConnector,
       connectorType = attributes.connectorType,
-      buttonTextAlign = attributes.buttonTextAlign; // this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class
+      buttonTextAlign = attributes.buttonTextAlign,
+      queryData = attributes.queryData,
+      queryResults = attributes.queryResults; // this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class
 
   useEffect(function () {
     var bodyClasses = document.body.className;
@@ -8239,7 +8249,7 @@ function Edit(props) {
   }, []); // this useEffect is for creating a unique id for each block's unique className by a random unique number
 
   useEffect(function () {
-    var BLOCK_PREFIX = "eb-button-group";
+    var BLOCK_PREFIX = "eb-post-grid";
     Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["duplicateBlockIdFix"])({
       BLOCK_PREFIX: BLOCK_PREFIX,
       blockId: blockId,
@@ -8419,62 +8429,83 @@ function Edit(props) {
   /*#__PURE__*/
   //Edit view here
   React.createElement("div", blockProps, /*#__PURE__*/React.createElement("style", null, "\n\t\t\t\t".concat(desktopAllStyles, "\n\n\t\t\t\t/* mimmikcssStart */\n\n\t\t\t\t").concat(resOption === "tab" ? tabAllStyles : " ", "\n\t\t\t\t").concat(resOption === "mobile" ? tabAllStyles + mobileAllStyles : " ", "\n\n\t\t\t\t/* mimmikcssEnd */\n\n\t\t\t\t@media all and (max-width: 1024px) {\t\n\n\t\t\t\t\t/* tabcssStart */\t\t\t\n\t\t\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])(tabAllStyles), "\n\t\t\t\t\t/* tabcssEnd */\t\t\t\n\t\t\t\t\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t@media all and (max-width: 767px) {\n\t\t\t\t\t\n\t\t\t\t\t/* mobcssStart */\t\t\t\n\t\t\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])(mobileAllStyles), "\n\t\t\t\t\t/* mobcssEnd */\t\t\t\n\t\t\t\t\n\t\t\t\t}\n\t\t\t\t")), /*#__PURE__*/React.createElement("div", {
-    className: "eb-button-group-wrapper ".concat(blockId, " ").concat(preset),
+    className: "eb-post-grid-wrapper ".concat(blockId, " ").concat(preset),
     "data-id": blockId
-  }, /*#__PURE__*/React.createElement("a", {
-    className: "eb-button-parent eb-button-one" // style={buttonStyleOne}
-    ,
-    onMouseEnter: function onMouseEnter() {
-      return setAttributes({
-        isHoverOne: true
-      });
-    },
-    onMouseLeave: function onMouseLeave() {
-      return setAttributes({
-        isHoverOne: false
-      });
-    }
-  }, /*#__PURE__*/React.createElement(RichText // style={textStylesOne}
-  , {
-    className: "eb-button-text eb-button-one-text",
-    placeholder: "Add Text..",
-    value: buttonTextOne,
-    onChange: function onChange(newText) {
-      return setAttributes({
-        buttonTextOne: newText
-      });
-    },
-    allowedFormats: ["bold", "italic", "strikethrough"]
-  })), showConnector && /*#__PURE__*/React.createElement("div", {
-    className: "eb-button-group__midldeInner" // style={buttonMiddleInnerStyles}
-
-  }, connectorType === 'icon' && /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("i", {
-    className: "".concat(innerButtonIcon ? innerButtonIcon : "fas fa-arrows-alt-h")
-  })), connectorType === 'text' && /*#__PURE__*/React.createElement("span", null, innerButtonText)), /*#__PURE__*/React.createElement("a", {
-    className: "eb-button-parent eb-button-two" // style={buttonStyleTwo}
-    ,
-    onMouseEnter: function onMouseEnter() {
-      return setAttributes({
-        isHoverTwo: true
-      });
-    },
-    onMouseLeave: function onMouseLeave() {
-      return setAttributes({
-        isHoverTwo: false
-      });
-    }
-  }, /*#__PURE__*/React.createElement(RichText // style={textStylesTwo}
-  , {
-    className: "eb-button-text eb-button-two-text",
-    placeholder: "Add Text..",
-    value: buttonTextTwo,
-    onChange: function onChange(newText) {
-      return setAttributes({
-        buttonTextTwo: newText
-      });
-    },
-    allowedFormats: ["bold", "italic", "strikethrough"]
-  }))))];
+  }, _typeof(queryResults) === 'object' && queryResults.length > 0 && queryResults.map(function (post) {
+    return /*#__PURE__*/React.createElement("article", {
+      "class": "ebpg-grid-post ebpg-post-grid-column",
+      "data-id": post.id
+    }, /*#__PURE__*/React.createElement("div", {
+      "class": "ebpg-grid-post-holder"
+    }, /*#__PURE__*/React.createElement("div", {
+      "class": "ebpg-entry-media"
+    }, /*#__PURE__*/React.createElement("div", {
+      "class": "ebpg-entry-overlay fade-in"
+    }, /*#__PURE__*/React.createElement("i", {
+      "class": "fas fa-long-arrow-alt-right",
+      "aria-hidden": "true"
+    }), /*#__PURE__*/React.createElement("a", {
+      href: "http://templately.test/praesentium-asperiores-assumenda-error-dolores-excepturi/"
+    })), /*#__PURE__*/React.createElement("div", {
+      "class": "ebpg-entry-thumbnail"
+    }, /*#__PURE__*/React.createElement("img", {
+      width: "300",
+      height: "200",
+      src: "",
+      "class": "attachment-medium size-medium",
+      alt: "",
+      loading: "lazy",
+      srcset: "http://templately.test/wp-content/uploads/2021/02/d22346cb-ad73-35c5-8857-78c59ec4f245-300x200.jpg 300w, http://templately.test/wp-content/uploads/2021/02/d22346cb-ad73-35c5-8857-78c59ec4f245-600x400.jpg 600w, http://templately.test/wp-content/uploads/2021/02/d22346cb-ad73-35c5-8857-78c59ec4f245-1024x682.jpg 1024w, http://templately.test/wp-content/uploads/2021/02/d22346cb-ad73-35c5-8857-78c59ec4f245-768x512.jpg 768w, http://templately.test/wp-content/uploads/2021/02/d22346cb-ad73-35c5-8857-78c59ec4f245.jpg 1159w",
+      sizes: "(max-width: 300px) 100vw, 300px"
+    }))), /*#__PURE__*/React.createElement("div", {
+      "class": "ebpg-entry-wrapper"
+    }, /*#__PURE__*/React.createElement("header", {
+      "class": "ebpg-entry-header"
+    }, /*#__PURE__*/React.createElement("h2", {
+      "class": "ebpg-entry-title"
+    }, /*#__PURE__*/React.createElement("a", {
+      "class": "ebpg-grid-post-link",
+      href: "",
+      title: ""
+    }, post.title.rendered))), /*#__PURE__*/React.createElement("div", {
+      "class": "ebpg-entry-content"
+    }, /*#__PURE__*/React.createElement("div", {
+      "class": "ebpg-grid-post-excerpt"
+    }, /*#__PURE__*/React.createElement("p", {
+      dangerouslySetInnerHTML: {
+        __html: post.content.rendered
+      }
+    }), /*#__PURE__*/React.createElement("a", {
+      href: "",
+      "class": "ebpg-post-elements-readmore-btn"
+    }, "Read More"))), /*#__PURE__*/React.createElement("div", {
+      "class": "ebpg-entry-footer"
+    }, /*#__PURE__*/React.createElement("div", {
+      "class": "ebpg-author-avatar"
+    }, /*#__PURE__*/React.createElement("a", {
+      href: "http://templately.test/author/admin/"
+    }, /*#__PURE__*/React.createElement("img", {
+      alt: "",
+      src: "",
+      srcset: "http://0.gravatar.com/avatar/f2043d92f108cc1bb1e9f4f7792675c0?s=192&d=mm&r=g 2x",
+      "class": "avatar avatar-96 photo",
+      height: "96",
+      width: "96",
+      loading: "lazy"
+    }))), /*#__PURE__*/React.createElement("div", {
+      "class": "ebpg-entry-meta"
+    }, /*#__PURE__*/React.createElement("span", {
+      "class": "ebpg-posted-by"
+    }, /*#__PURE__*/React.createElement("a", {
+      href: "http://templately.test/author/admin/",
+      title: "Posts by admin",
+      rel: "author"
+    }, "admin")), /*#__PURE__*/React.createElement("span", {
+      "class": "ebpg-posted-on"
+    }, /*#__PURE__*/React.createElement("time", {
+      datetime: "February 1, 2021"
+    }, "February 1, 2021")))))));
+  }), !isSelected && queryResults.length < 1 && /*#__PURE__*/React.createElement("p", null, "No Posts Found")))];
 }
 ;
 
@@ -8717,7 +8748,10 @@ function Inspector(props) {
       showConnector = attributes.showConnector,
       connectorType = attributes.connectorType,
       buttonsColorType = attributes.buttonsColorType,
-      buttonTextAlign = attributes.buttonTextAlign; // this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
+      buttonTextAlign = attributes.buttonTextAlign,
+      queryData = attributes.queryData,
+      queryResults = attributes.queryResults; // console.log("Query", queryData, queryResults)
+  // this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
 
   useEffect(function () {
     setAttributes({
@@ -8843,7 +8877,11 @@ function Inspector(props) {
   }, function (tab) {
     return /*#__PURE__*/React.createElement("div", {
       className: "eb-tab-controls" + tab.name
-    }, tab.name === "general" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_util_custom_query__WEBPACK_IMPORTED_MODULE_8__["default"], null), /*#__PURE__*/React.createElement(PanelBody, {
+    }, tab.name === "general" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_util_custom_query__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      queryData: queryData,
+      queryResults: queryResults,
+      setAttributes: setAttributes
+    }), /*#__PURE__*/React.createElement(PanelBody, {
       title: __("General"),
       initialOpen: true
     }, /*#__PURE__*/React.createElement(SelectControl, {
@@ -9678,31 +9716,166 @@ var ColorControl = function ColorControl(_ref) {
 /*!**************************************!*\
   !*** ./util/custom-query/apiData.js ***!
   \**************************************/
-/*! exports provided: getAuthor */
+/*! exports provided: getPosts, getAuthor, getCategory, getTag */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPosts", function() { return getPosts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAuthor", function() { return getAuthor; });
-//Get Author Data
-var getAuthor = function getAuthor() {
-  var authors = wp.data.select("core").getAuthors();
-  var authorData = [];
-  authors.forEach(function (item) {
-    var filteredAuthorData = {};
-    Object.keys(item).forEach(function (key) {
-      if (key === 'name') {
-        filteredAuthorData.label = item[key];
-      }
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCategory", function() { return getCategory; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTag", function() { return getTag; });
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
-      if (key === 'slug') {
-        filteredAuthorData.value = item[key];
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+var apiFetch = wp.apiFetch; //Get Posts
+
+var getPosts = function getPosts(query) {
+  console.log("Query", query);
+  var queryStringObj = {};
+
+  if (query.source === 'posts') {
+    var includesObjStr = ['author', 'categories', 'tags'];
+    var includesDirectVal = ['per_page', 'offset', 'orderby', 'order'];
+    Object.keys(query).forEach(function (key) {
+      if (includesObjStr.includes(key) && query[key].length > 0) {
+        var data = JSON.parse(query[key]);
+        var arg = [];
+
+        if (data.length > 0) {
+          data.forEach(function (eachData) {
+            if (_typeof(eachData) === 'object') {
+              arg.push(eachData.value);
+            }
+          });
+          queryStringObj[key] = arg.join(',');
+        }
+      } else if (includesDirectVal.includes(key) && query[key].length > 0) {
+        queryStringObj[key] = query[key];
       }
     });
-    authorData.push(filteredAuthorData);
-  }); // console.log("authors", authorData);
+  } else if (query.source === 'pages') {
+    var _includesObjStr = ['author'];
+    var _includesDirectVal = ['per_page', 'offset', 'orderby', 'order'];
+    Object.keys(query).forEach(function (key) {
+      if (_includesObjStr.includes(key) && query[key].length > 0) {
+        var data = JSON.parse(query[key]);
+        var arg = [];
 
-  return authorData;
+        if (data.length > 0) {
+          data.forEach(function (eachData) {
+            if (_typeof(eachData) === 'object') {
+              arg.push(eachData.value);
+            }
+          });
+          queryStringObj[key] = arg.join(',');
+        }
+      } else if (_includesDirectVal.includes(key) && query[key].length > 0) {
+        queryStringObj[key] = query[key];
+      }
+    });
+  }
+
+  var queryString = Object.keys(queryStringObj).map(function (key) {
+    return key + '=' + queryStringObj[key];
+  }).join('&');
+  var postData = [];
+  return apiFetch({
+    path: "/wp/v2/".concat(query.source, "?").concat(queryString, "&_embed")
+  }).then(function (result) {
+    // console.log("Posts", result)
+    result != null && result.length > 0 && result.forEach(function (item) {
+      var filterPostData = {};
+      Object.keys(item).forEach(function (key) {
+        filterPostData[key] = item[key];
+      });
+      postData = [].concat(_toConsumableArray(postData), [filterPostData]);
+    });
+    return postData;
+  }, function (error) {
+    console.log("error", error); // setIsLoaded( true );
+    // setError( error );
+  });
+}; //Get Author Data
+
+var getAuthor = function getAuthor() {
+  var authorData = [];
+  return apiFetch({
+    path: "/wp/v2/users/"
+  }).then(function (result) {
+    // console.log("Authors", result)
+    result != null && result.length > 0 && result.forEach(function (item) {
+      var filterauthorData = {};
+      var includesVal = ['id', 'link', 'name', 'slug'];
+      Object.keys(item).forEach(function (key) {
+        if (includesVal.includes(key)) {
+          filterauthorData[key] = item[key];
+        }
+      });
+      authorData = [].concat(_toConsumableArray(authorData), [filterauthorData]);
+    });
+    return authorData;
+  }, function (error) {
+    console.log("error", error); // setIsLoaded( true );
+    // setError( error );
+  });
+}; //Get Categories
+
+var getCategory = function getCategory() {
+  var categoryData = [];
+  return apiFetch({
+    path: "/wp/v2/categories/"
+  }).then(function (result) {
+    // console.log("Categories", result)
+    result != null && result.length > 0 && result.forEach(function (item) {
+      var filterCategoryData = {};
+      var includesVal = ['id', 'link', 'name', 'slug', 'parent'];
+      Object.keys(item).forEach(function (key) {
+        if (includesVal.includes(key)) {
+          filterCategoryData[key] = item[key];
+        }
+      });
+      categoryData = [].concat(_toConsumableArray(categoryData), [filterCategoryData]);
+    });
+    return categoryData;
+  }, function (error) {
+    console.log("error", error); // setIsLoaded( true );
+    // setError( error );
+  });
+}; //Get Tags
+
+var getTag = function getTag() {
+  var tagsData = [];
+  return apiFetch({
+    path: "/wp/v2/tags/"
+  }).then(function (result) {
+    // console.log("Tags", result)
+    result != null && result.length > 0 && result.forEach(function (item) {
+      var filterTagsData = {};
+      var includesVal = ['id', 'link', 'name', 'slug'];
+      Object.keys(item).forEach(function (key) {
+        if (includesVal.includes(key)) {
+          filterTagsData[key] = item[key];
+        }
+      });
+      tagsData = [].concat(_toConsumableArray(tagsData), [filterTagsData]);
+    });
+    return tagsData;
+  }, function (error) {
+    console.log("error", error); // setIsLoaded( true );
+    // setError( error );
+  });
 };
 
 /***/ }),
@@ -9711,21 +9884,48 @@ var getAuthor = function getAuthor() {
 /*!****************************************!*\
   !*** ./util/custom-query/constants.js ***!
   \****************************************/
-/*! exports provided: ABC, SOURCES */
+/*! exports provided: SOURCES, ORDER_BY, ORDER */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ABC", function() { return ABC; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SOURCES", function() { return SOURCES; });
-var __ = wp.i18n.__;
-var ABC = "buttonsConnectorIconSize";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ORDER_BY", function() { return ORDER_BY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ORDER", function() { return ORDER; });
+var __ = wp.i18n.__; // export const ABC = "buttonsConnectorIconSize"; 
+
 var SOURCES = [{
   label: __("Post"),
-  value: "post"
+  value: "posts"
 }, {
   label: __("Page"),
-  value: "page"
+  value: "pages"
+}];
+var ORDER_BY = [{
+  label: __("Date"),
+  value: "date"
+}, {
+  label: __("modified Date"),
+  value: "modified"
+}, {
+  label: __("Relevance"),
+  value: "relevance"
+}, {
+  label: __("Title"),
+  value: "title"
+}, {
+  label: __("Id"),
+  value: "id"
+}, {
+  label: __("Parent"),
+  value: "parent"
+}];
+var ORDER = [{
+  label: __("Desc"),
+  value: "desc"
+}, {
+  label: __("Asc"),
+  value: "asc"
 }];
 
 /***/ }),
@@ -9743,6 +9943,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.esm.js");
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constants */ "./util/custom-query/constants.js");
 /* harmony import */ var _apiData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./apiData */ "./util/custom-query/apiData.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -9765,7 +9971,8 @@ var _wp$components = wp.components,
     Button = _wp$components.Button,
     ButtonGroup = _wp$components.ButtonGroup,
     BaseControl = _wp$components.BaseControl,
-    TabPanel = _wp$components.TabPanel;
+    TabPanel = _wp$components.TabPanel,
+    __experimentalNumberControl = _wp$components.__experimentalNumberControl;
 var _wp$element = wp.element,
     useEffect = _wp$element.useEffect,
     useState = _wp$element.useState;
@@ -9774,26 +9981,166 @@ var select = wp.data.select;
 
 
 function Inspector(props) {
-  var attributes = props.attributes,
+  var queryData = props.queryData,
+      queryResults = props.queryResults,
       setAttributes = props.setAttributes;
 
-  var _useState = useState("post"),
+  var _useState = useState([]),
       _useState2 = _slicedToArray(_useState, 2),
-      source = _useState2[0],
-      setSource = _useState2[1];
+      authorOptions = _useState2[0],
+      setAuthorOptions = _useState2[1];
 
-  var _useState3 = useState(""),
+  var _useState3 = useState([]),
       _useState4 = _slicedToArray(_useState3, 2),
-      author = _useState4[0],
-      setAuthor = _useState4[1];
+      categoryOptions = _useState4[0],
+      setCategoryOptions = _useState4[1];
 
-  useEffect(function () {// console.log("Authors", getAuthor());
+  var _useState5 = useState([]),
+      _useState6 = _slicedToArray(_useState5, 2),
+      tagOptions = _useState6[0],
+      setTagOptions = _useState6[1];
+
+  var _useState7 = useState({
+    source: 'posts',
+    author: '',
+    categories: '',
+    tags: '',
+    per_page: '6',
+    offset: '0',
+    orderby: 'date',
+    order: 'desc'
+  }),
+      _useState8 = _slicedToArray(_useState7, 2),
+      query = _useState8[0],
+      setQuery = _useState8[1];
+
+  useEffect(function () {
+    if (typeof queryData != 'undefined' && queryData.length > 0) {
+      setQuery(_objectSpread({}, queryData));
+    } //Set Author Options Data
+
+
+    Object(_apiData__WEBPACK_IMPORTED_MODULE_2__["getAuthor"])().then(function (authorData) {
+      console.log("authorData", authorData);
+      var authorDataForOptions = [];
+      authorData.length > 0 && authorData.forEach(function (item) {
+        var filterAuthorData = {};
+        Object.keys(item).forEach(function (key) {
+          if (key === 'name') {
+            filterAuthorData.label = item[key];
+          }
+
+          if (key === 'id') {
+            filterAuthorData.value = item[key];
+          }
+        });
+        authorDataForOptions.push(filterAuthorData);
+      });
+      setAuthorOptions(authorDataForOptions);
+    }); //Set Categories Options Data
+
+    Object(_apiData__WEBPACK_IMPORTED_MODULE_2__["getCategory"])().then(function (categoryData) {
+      var categoryDataForOptions = [];
+      categoryData.length > 0 && categoryData.forEach(function (item) {
+        var filterCategoryData = {};
+        Object.keys(item).forEach(function (key) {
+          if (key === 'name') {
+            filterCategoryData.label = item[key];
+          }
+
+          if (key === 'id') {
+            filterCategoryData.value = item[key];
+          }
+        });
+        categoryDataForOptions.push(filterCategoryData);
+      });
+      setCategoryOptions(categoryDataForOptions);
+    }); //Set Tags Options Data
+
+    Object(_apiData__WEBPACK_IMPORTED_MODULE_2__["getTag"])().then(function (tagData) {
+      var tagDataForOptions = [];
+      tagData.length > 0 && tagData.forEach(function (item) {
+        var filterTagData = {};
+        Object.keys(item).forEach(function (key) {
+          if (key === 'name') {
+            filterTagData.label = item[key];
+          }
+
+          if (key === 'id') {
+            filterTagData.value = item[key];
+          }
+        });
+        tagDataForOptions.push(filterTagData);
+      });
+      setTagOptions(tagDataForOptions);
+    });
   }, []);
-  useEffect(function () {// console.log("Author:", author);
-  }, [author]);
+  useEffect(function () {
+    Object(_apiData__WEBPACK_IMPORTED_MODULE_2__["getPosts"])(query).then(function (posts) {
+      // console.log("Posts", posts)
+      setAttributes({
+        queryData: query
+      });
+      setAttributes({
+        queryResults: posts
+      });
+    });
+  }, [query]);
 
-  var handleSelectAuthor = function handleSelectAuthor(author) {
-    setAuthor(JSON.stringify(author));
+  var setSource = function setSource(value) {
+    var updatedQueryData = _objectSpread({}, query);
+
+    updatedQueryData.source = value;
+    setQuery(updatedQueryData);
+  };
+
+  var setAuthor = function setAuthor(author) {
+    var updatedQueryData = _objectSpread({}, query);
+
+    updatedQueryData.author = JSON.stringify(author);
+    setQuery(updatedQueryData);
+  };
+
+  var setCategories = function setCategories(categories) {
+    var updatedQueryData = _objectSpread({}, query);
+
+    updatedQueryData.categories = JSON.stringify(categories);
+    setQuery(updatedQueryData);
+  };
+
+  var setTags = function setTags(tags) {
+    var updatedQueryData = _objectSpread({}, query);
+
+    updatedQueryData.tags = JSON.stringify(tags);
+    setQuery(updatedQueryData);
+  };
+
+  var setPerPage = function setPerPage(number) {
+    var updatedQueryData = _objectSpread({}, query);
+
+    updatedQueryData.per_page = number;
+    setQuery(updatedQueryData);
+  };
+
+  var setOffset = function setOffset(number) {
+    var updatedQueryData = _objectSpread({}, query);
+
+    updatedQueryData.offset = number;
+    setQuery(updatedQueryData);
+  };
+
+  var setOrderBy = function setOrderBy(value) {
+    var updatedQueryData = _objectSpread({}, query);
+
+    updatedQueryData.orderby = value;
+    setQuery(updatedQueryData);
+  };
+
+  var setOrder = function setOrder(value) {
+    var updatedQueryData = _objectSpread({}, query);
+
+    updatedQueryData.order = value;
+    setQuery(updatedQueryData);
   };
 
   return /*#__PURE__*/React.createElement(PanelBody, {
@@ -9801,19 +10148,63 @@ function Inspector(props) {
     initialOpen: true
   }, /*#__PURE__*/React.createElement(SelectControl, {
     label: __("Source"),
-    value: source,
+    value: query.source,
     options: _constants__WEBPACK_IMPORTED_MODULE_1__["SOURCES"],
     onChange: function onChange(selected) {
       return setSource(selected);
     }
   }), /*#__PURE__*/React.createElement(PanelRow, null, "Author"), /*#__PURE__*/React.createElement(react_select__WEBPACK_IMPORTED_MODULE_0__["default"], {
-    name: "select-author" // value={ JSON.parse( author ) }
-    ,
+    name: "select-author",
+    value: query.author.length > 0 ? JSON.parse(query.author) : '',
     onChange: function onChange(selected) {
-      return handleSelectAuthor(selected);
+      return setAuthor(selected);
     },
-    options: Object(_apiData__WEBPACK_IMPORTED_MODULE_2__["getAuthor"])(),
+    options: authorOptions,
     isMulti: "true"
+  }), query.source === 'posts' && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(PanelRow, null, "Categories"), /*#__PURE__*/React.createElement(react_select__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    name: "select-categories",
+    value: query.categories.length > 0 ? JSON.parse(query.categories) : '',
+    onChange: function onChange(selected) {
+      return setCategories(selected);
+    },
+    options: categoryOptions,
+    isMulti: "true"
+  }), /*#__PURE__*/React.createElement(PanelRow, null, "Tags"), /*#__PURE__*/React.createElement(react_select__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    name: "select-tags",
+    value: query.tags.length > 0 ? JSON.parse(query.tags) : '',
+    onChange: function onChange(selected) {
+      return setTags(selected);
+    },
+    options: tagOptions,
+    isMulti: "true"
+  })), /*#__PURE__*/React.createElement(TextControl, {
+    label: "Posts Per Page",
+    type: "number",
+    value: query.per_page,
+    onChange: function onChange(selected) {
+      return setPerPage(selected);
+    }
+  }), /*#__PURE__*/React.createElement(TextControl, {
+    label: "Offset",
+    type: "number",
+    value: query.offset,
+    onChange: function onChange(selected) {
+      return setOffset(selected);
+    }
+  }), /*#__PURE__*/React.createElement(SelectControl, {
+    label: __("Order By"),
+    value: query.orderby,
+    options: _constants__WEBPACK_IMPORTED_MODULE_1__["ORDER_BY"],
+    onChange: function onChange(selected) {
+      return setOrderBy(selected);
+    }
+  }), /*#__PURE__*/React.createElement(SelectControl, {
+    label: __("Order"),
+    value: query.order,
+    options: _constants__WEBPACK_IMPORTED_MODULE_1__["ORDER"],
+    onChange: function onChange(selected) {
+      return setOrder(selected);
+    }
   }));
 }
 
@@ -10378,9 +10769,7 @@ var generateBackgroundAttributes = function generateBackgroundAttributes(control
       _defaults$noOverlayBg = defaults.noOverlayBgi,
       noOverlayBgi = _defaults$noOverlayBg === void 0 ? false : _defaults$noOverlayBg,
       _defaults$noTransitio = defaults.noTransition,
-      noTransition = _defaults$noTransitio === void 0 ? false : _defaults$noTransitio,
-      _defaults$forButton = defaults.forButton,
-      forButton = _defaults$forButton === void 0 ? false : _defaults$forButton;
+      noTransition = _defaults$noTransitio === void 0 ? false : _defaults$noTransitio;
   var bgColorAttr = defaultFillColor ? _defineProperty({}, "".concat(controlName, "backgroundColor"), {
     type: "string",
     "default": defaultFillColor
@@ -10786,14 +11175,7 @@ var generateBackgroundAttributes = function generateBackgroundAttributes(control
   }), _defineProperty(_ovlBgiAttrs, "hov_MOB".concat(controlName, "ovl_bgImgRepeat"), {
     type: "string"
   }), _ovlBgiAttrs);
-  var result = {};
-
-  if (forButton === true) {
-    result = _objectSpread({}, mainWithoutBgiAttrs);
-  } else {
-    result = noOverlay === true ? noMainBgi === true ? _objectSpread({}, mainWithoutBgiAttrs) : _objectSpread(_objectSpread({}, mainWithoutBgiAttrs), mainBgiAttrs) : noOverlayBgi === true && noMainBgi === true ? _objectSpread(_objectSpread({}, mainWithoutBgiAttrs), ovlWithoutBgiAttrs) : noOverlayBgi === true && noMainBgi === false ? _objectSpread(_objectSpread(_objectSpread({}, mainWithoutBgiAttrs), mainBgiAttrs), ovlWithoutBgiAttrs) : noOverlayBgi === false && noMainBgi === true ? _objectSpread(_objectSpread(_objectSpread({}, mainWithoutBgiAttrs), ovlWithoutBgiAttrs), ovlBgiAttrs) : _objectSpread(_objectSpread(_objectSpread(_objectSpread({}, mainWithoutBgiAttrs), mainBgiAttrs), ovlWithoutBgiAttrs), ovlBgiAttrs);
-  }
-
+  var result = noOverlay === true ? noMainBgi === true ? _objectSpread({}, mainWithoutBgiAttrs) : _objectSpread(_objectSpread({}, mainWithoutBgiAttrs), mainBgiAttrs) : noOverlayBgi === true && noMainBgi === true ? _objectSpread(_objectSpread({}, mainWithoutBgiAttrs), ovlWithoutBgiAttrs) : noOverlayBgi === true && noMainBgi === false ? _objectSpread(_objectSpread(_objectSpread({}, mainWithoutBgiAttrs), mainBgiAttrs), ovlWithoutBgiAttrs) : noOverlayBgi === false && noMainBgi === true ? _objectSpread(_objectSpread(_objectSpread({}, mainWithoutBgiAttrs), ovlWithoutBgiAttrs), ovlBgiAttrs) : _objectSpread(_objectSpread(_objectSpread(_objectSpread({}, mainWithoutBgiAttrs), mainBgiAttrs), ovlWithoutBgiAttrs), ovlBgiAttrs);
   return result;
 }; // function to generate Background control styles based on the unique controlName(prefix)
 
@@ -10807,19 +11189,7 @@ var generateBackgroundControlStyles = function generateBackgroundControlStyles(_
       _ref5$noOverlayBgi = _ref5.noOverlayBgi,
       noOverlayBgi = _ref5$noOverlayBgi === void 0 ? false : _ref5$noOverlayBgi,
       _ref5$noTransition = _ref5.noTransition,
-      noTransition = _ref5$noTransition === void 0 ? false : _ref5$noTransition,
-      _ref5$forButton = _ref5.forButton,
-      forButton = _ref5$forButton === void 0 ? false : _ref5$forButton;
-  var BGnoOverlay = noOverlay;
-  var BGnoMainBgi = noMainBgi;
-  var BGnoOverlayBgi = noOverlayBgi;
-
-  if (forButton === true) {
-    BGnoOverlay = true;
-    BGnoMainBgi = true;
-    BGnoOverlayBgi = true;
-  }
-
+      noTransition = _ref5$noTransition === void 0 ? false : _ref5$noTransition;
   var bg_transition = attributes["".concat(controlName, "bg_transition")],
       backgroundType = attributes["".concat(controlName, "backgroundType")],
       backgroundColor = attributes["".concat(controlName, "backgroundColor")],
@@ -10969,18 +11339,18 @@ var generateBackgroundControlStyles = function generateBackgroundControlStyles(_
       hov_MOBovl_bgImgcustomPosY = attributes["hov_MOB".concat(controlName, "ovl_bgImgcustomPosY")],
       hov_MOBovl_bgImgcustomPosYUnit = attributes["hov_MOB".concat(controlName, "ovl_bgImgcustomPosYUnit")],
       hov_MOBovl_bgImgRepeat = attributes["hov_MOB".concat(controlName, "ovl_bgImgRepeat")];
-  var backgroundStylesDesktop = "\n  ".concat(BGnoMainBgi === false && backgroundType === "classic" && bgImageURL || backgroundType === "gradient" && gradientColor ? "\n    background-image: ".concat(backgroundType === "classic" ? "url(\"".concat(bgImageURL, "\")") : backgroundType === "gradient" ? gradientColor : "none", ";\n    ") : " ", "\n  \n  ").concat(BGnoMainBgi === false && backgroundType === "classic" && bgImageURL ? "\n      ".concat(backgroundSize && backgroundSize !== "custom" ? "background-size: ".concat(backgroundSize, ";") : backgroundSize === "custom" ? "background-size: ".concat(bgImgCustomSize).concat(bgImgCustomSizeUnit, " auto;") : " ", "\n\n      ").concat(bgImgPos && bgImgPos !== "custom" ? "background-position: ".concat(bgImgPos, ";") : bgImgPos === "custom" ? "background-position: ".concat(bgImgcustomPosX).concat(bgImgcustomPosXUnit, " ").concat(bgImgcustomPosY).concat(bgImgcustomPosYUnit, ";") : " ", "\n\n      ").concat(bgImgAttachment ? "background-attachment: ".concat(bgImgAttachment, ";") : " ", "\n\n      ").concat(bgImgRepeat ? "background-repeat: ".concat(bgImgRepeat, ";") : " ", "\n      \n      \n      ") : " ", "\n\n  ").concat(isBgOverlay ? "\n        z-index: 2;\n        position: relative;\n      " : " ", "\t\n\n  ").concat(backgroundColor ? "background-color: ".concat(backgroundColor, ";") : " ", "\n  \n  ").concat(forButton === true ? "\n    position: relative;\n    overflow: hidden;\n    z-index:1;\n    \n    " : "", "\n    ");
-  var hoverBackgroundStylesDesktop = "\n\n    ".concat(forButton === true ? "\n        content: \" \";\n        position: absolute;\n        left: 0;\n        top: 0;\n        right: 0;\n        bottom: 0;\n        z-index: -1;\n        opacity: 0;\n        transition: all ".concat(bg_transition || 0, "s;\n\n        ") : "", "\n\n    ").concat(BGnoMainBgi === false && hov_backgroundType === "classic" && hov_bgImageURL || hov_backgroundType === "gradient" && hov_gradientColor ? "\n        background-image: ".concat(hov_backgroundType === "classic" ? "url(\"".concat(hov_bgImageURL, "\")") : hov_backgroundType === "gradient" ? hov_gradientColor : "none", ";    \n        ") : " ", "\n  \n    ").concat(BGnoMainBgi === false && hov_backgroundType === "classic" && hov_bgImageURL ? "\n        ".concat(hov_backgroundSize && hov_backgroundSize !== "custom" ? "background-size: ".concat(hov_backgroundSize, ";") : hov_backgroundSize === "custom" ? "background-size: ".concat(hov_bgImgCustomSize).concat(hov_bgImgCustomSizeUnit, " auto;") : " ", "\n  \n        ").concat(hov_bgImgPos && hov_bgImgPos !== "custom" ? "background-position: ".concat(hov_bgImgPos, ";") : hov_bgImgPos === "custom" ? "background-position: ".concat(hov_bgImgcustomPosX).concat(hov_bgImgcustomPosXUnit, " ").concat(hov_bgImgcustomPosY).concat(hov_bgImgcustomPosYUnit, ";") : " ", "\n  \n        ").concat(hov_bgImgAttachment ? "background-attachment: ".concat(hov_bgImgAttachment, ";") : " ", "\n  \n        ").concat(hov_bgImgRepeat ? "background-repeat: ".concat(hov_bgImgRepeat, ";") : " ", "\n        \n        ") : " ", "\n  \n    ").concat(hov_backgroundColor ? "background-color: ".concat(hov_backgroundColor, ";") : " ", "\n  \n  ");
-  var backgroundStylesTab = "\n      ".concat(BGnoMainBgi === false && backgroundType === "classic" && bgImageURL ? "\n          ".concat(TABbackgroundSize && TABbackgroundSize !== "custom" ? "background-size: ".concat(TABbackgroundSize, ";") : TABbackgroundSize === "custom" ? "background-size: ".concat(TABbgImgCustomSize).concat(TABbgImgCustomSizeUnit, " auto;") : " ", "\n  \n          ").concat(TABbgImgPos && TABbgImgPos !== "custom" ? "background-position: ".concat(TABbgImgPos, ";") : TABbgImgPos === "custom" ? "background-position: ".concat(TABbgImgcustomPosX).concat(TABbgImgcustomPosXUnit, " ").concat(TABbgImgcustomPosY).concat(TABbgImgcustomPosYUnit, ";") : " ", "\n  \n          ").concat(TABbgImgRepeat ? "background-repeat: ".concat(TABbgImgRepeat, ";") : " ", "\n          background-attachment: scroll;\n          ") : " ", "\n  \n    ");
-  var hoverBackgroundStylesTab = "\n    ".concat(BGnoMainBgi === false && hov_backgroundType === "classic" && hov_bgImageURL ? "\n        ".concat(hov_TABbackgroundSize && hov_TABbackgroundSize !== "custom" ? "background-size: ".concat(hov_TABbackgroundSize, ";") : hov_TABbackgroundSize === "custom" ? "background-size: ".concat(hov_TABbgImgCustomSize).concat(hov_TABbgImgCustomSizeUnit, " auto;") : " ", "\n  \n        ").concat(hov_TABbgImgPos && hov_TABbgImgPos !== "custom" ? "background-position: ".concat(hov_TABbgImgPos, ";") : hov_TABbgImgPos === "custom" ? "background-position: ".concat(hov_TABbgImgcustomPosX).concat(hov_TABbgImgcustomPosXUnit, " ").concat(hov_TABbgImgcustomPosY).concat(hov_TABbgImgcustomPosYUnit, ";") : " ", "\n  \n        ").concat(hov_TABbgImgRepeat ? "background-repeat: ".concat(hov_TABbgImgRepeat, ";") : " ", "\n        background-attachment: scroll;\n        ") : " ", "\n  \n  ");
-  var backgroundStylesMobile = "\n      ".concat(BGnoMainBgi === false && backgroundType === "classic" && bgImageURL ? "\n          ".concat(MOBbackgroundSize && MOBbackgroundSize !== "custom" ? "background-size: ".concat(MOBbackgroundSize, ";") : MOBbackgroundSize === "custom" ? "background-size: ".concat(MOBbgImgCustomSize).concat(MOBbgImgCustomSizeUnit, " auto;") : " ", "\n  \n          ").concat(MOBbgImgPos && MOBbgImgPos !== "custom" ? "background-position: ".concat(MOBbgImgPos, ";") : MOBbgImgPos === "custom" ? "background-position: ".concat(MOBbgImgcustomPosX).concat(MOBbgImgcustomPosXUnit, " ").concat(MOBbgImgcustomPosY).concat(MOBbgImgcustomPosYUnit, ";") : " ", "\n  \n          ").concat(MOBbgImgRepeat ? "background-repeat: ".concat(MOBbgImgRepeat, ";") : " ", "\n  \n          ") : " ", "\n  \n    ");
-  var hoverBackgroundStylesMobile = "\n    ".concat(BGnoMainBgi === false && hov_backgroundType === "classic" && hov_bgImageURL ? "\n        ".concat(hov_MOBbackgroundSize && hov_MOBbackgroundSize !== "custom" ? "background-size: ".concat(hov_MOBbackgroundSize, ";") : hov_MOBbackgroundSize === "custom" ? "background-size: ".concat(hov_MOBbgImgCustomSize).concat(hov_MOBbgImgCustomSizeUnit, " auto;") : " ", "\n    \n        ").concat(hov_MOBbgImgPos && hov_MOBbgImgPos !== "custom" ? "background-position: ".concat(hov_MOBbgImgPos, ";") : hov_MOBbgImgPos === "custom" ? "background-position: ".concat(hov_MOBbgImgcustomPosX).concat(hov_MOBbgImgcustomPosXUnit, " ").concat(hov_MOBbgImgcustomPosY).concat(hov_MOBbgImgcustomPosYUnit, ";") : " ", "\n    \n        ").concat(hov_MOBbgImgRepeat ? "background-repeat: ".concat(hov_MOBbgImgRepeat, ";") : " ", "\n    \n        ") : " ", "\n    \n    ");
-  var overlayStylesDesktop = "\n    \n      ".concat(BGnoOverlay === false && isBgOverlay ? "\n            content: \"\";\n            position: absolute;\n            top: 0;\n            bottom: 0;\n            right: 0;\n            left: 0;\n            z-index: 0;\n            ".concat(BGnoOverlayBgi === false && overlayType === "classic" && ovl_bgImageURL || overlayType === "gradient" && overlayGradient ? "\n                background-image: ".concat(overlayType === "classic" ? "url(\"".concat(ovl_bgImageURL, "\")") : overlayType === "gradient" ? overlayGradient : "none", ";              \n              ") : " ", "\n           \n            ").concat(overlayColor ? "background-color: ".concat(overlayColor, ";") : " ", "\n            ").concat(ovl_opacity || ovl_opacity === 0 ? "opacity: ".concat(ovl_opacity, ";") : " ", "\n            ").concat(ovl_blendMode ? "mix-blend-mode: ".concat(ovl_blendMode, ";") : " ", "\n            ").concat(ovl_allowFilters ? "filter: brightness( ".concat(ovl_fltrBrightness, "% ) contrast( ").concat(ovl_fltrContrast, "% ) saturate( ").concat(ovl_fltrSaturation, "% ) blur( ").concat(ovl_fltrBlur, "px ) hue-rotate( \n              ").concat(ovl_fltrHue, "deg );") : " ", "\n  \n        ").concat(BGnoOverlayBgi === false && overlayType === "classic" && ovl_bgImageURL ? "\n            ".concat(ovl_backgroundSize && ovl_backgroundSize !== "custom" ? "background-size: ".concat(ovl_backgroundSize, ";") : ovl_backgroundSize === "custom" ? "background-size: ".concat(ovl_bgImgCustomSize).concat(ovl_bgImgCustomSizeUnit, " auto;") : " ", "\n  \n            ").concat(ovl_bgImgPos && ovl_bgImgPos !== "custom" ? "background-position: ".concat(ovl_bgImgPos, ";") : ovl_bgImgPos === "custom" ? "background-position: ".concat(ovl_bgImgcustomPosX).concat(ovl_bgImgcustomPosXUnit, " ").concat(ovl_bgImgcustomPosY).concat(ovl_bgImgcustomPosYUnit, ";") : " ", "\n  \n            ").concat(ovl_bgImgAttachment ? "background-attachment: ".concat(ovl_bgImgAttachment, ";") : " ", "\n  \n            ").concat(ovl_bgImgRepeat ? "background-repeat: ".concat(ovl_bgImgRepeat, ";") : " ", "\n            \n            ") : " ", "\n  \n        ") : " ", "\n    \n    \n    ");
-  var hoverOverlayStylesDesktop = "\n    \n    ".concat(BGnoOverlay === false && isBgOverlay ? "\n        ".concat(BGnoOverlayBgi === false && hov_overlayType === "classic" && hov_ovl_bgImageURL || hov_overlayType === "gradient" && hov_overlayGradient ? "\n          background-image: ".concat(hov_overlayType === "classic" ? "url(\"".concat(hov_ovl_bgImageURL, "\")") : hov_overlayType === "gradient" ? hov_overlayGradient : "none", ";\n          ") : " ", "\n  \n        ").concat(hov_overlayColor ? "background-color: ".concat(hov_overlayColor, ";") : " ", "\n        ").concat(hov_ovl_opacity || hov_ovl_opacity === 0 ? "opacity: ".concat(hov_ovl_opacity, ";") : " ", "\n        ").concat(hov_ovl_blendMode ? "mix-blend-mode: ".concat(hov_ovl_blendMode, ";") : " ", "\n        ").concat(hov_ovl_allowFilters ? "filter: brightness( ".concat(hov_ovl_fltrBrightness, "% ) contrast( ").concat(hov_ovl_fltrContrast, "% ) saturate( ").concat(hov_ovl_fltrSaturation, "% ) blur( ").concat(hov_ovl_fltrBlur, "px ) hue-rotate( \n          ").concat(hov_ovl_fltrHue, "deg );") : " ", "\n    \n      ").concat(BGnoOverlayBgi === false && hov_overlayType === "classic" && hov_ovl_bgImageURL ? "\n          ".concat(hov_ovl_backgroundSize && hov_ovl_backgroundSize !== "custom" ? "background-size: ".concat(hov_ovl_backgroundSize, ";") : hov_ovl_backgroundSize === "custom" ? "background-size: ".concat(hov_ovl_bgImgCustomSize).concat(hov_ovl_bgImgCustomSizeUnit, " auto;") : " ", "\n    \n          ").concat(hov_ovl_bgImgPos && hov_ovl_bgImgPos !== "custom" ? "background-position: ".concat(hov_ovl_bgImgPos, ";") : hov_ovl_bgImgPos === "custom" ? "background-position: ".concat(hov_ovl_bgImgcustomPosX).concat(hov_ovl_bgImgcustomPosXUnit, " ").concat(hov_ovl_bgImgcustomPosY).concat(hov_ovl_bgImgcustomPosYUnit, ";") : " ", "\n    \n          ").concat(hov_ovl_bgImgAttachment ? "background-attachment: ".concat(hov_ovl_bgImgAttachment, ";") : " ", "\n    \n          ").concat(hov_ovl_bgImgRepeat ? "background-repeat: ".concat(hov_ovl_bgImgRepeat, ";") : " ", "\n          \n          ") : " ", "\n    \n      ") : " ", "\n    \n    \n    ");
-  var overlayStylesTab = "\n    ".concat(BGnoOverlay === false && BGnoOverlayBgi === false && isBgOverlay && overlayType === "classic" && ovl_bgImageURL ? "\n        ".concat(TABovl_backgroundSize && TABovl_backgroundSize !== "custom" ? "background-size: ".concat(TABovl_backgroundSize, ";") : TABovl_backgroundSize === "custom" ? "background-size: ".concat(TABovl_bgImgCustomSize).concat(TABovl_bgImgCustomSizeUnit, " auto;") : " ", "\n  \n          ").concat(TABovl_bgImgPos && TABovl_bgImgPos !== "custom" ? "background-position: ".concat(TABovl_bgImgPos, ";") : TABovl_bgImgPos === "custom" ? "background-position: ".concat(TABovl_bgImgcustomPosX).concat(TABovl_bgImgcustomPosXUnit, " ").concat(TABovl_bgImgcustomPosY).concat(TABovl_bgImgcustomPosYUnit, ";") : " ", "\n  \n          ").concat(TABovl_bgImgRepeat ? "background-repeat: ".concat(TABovl_bgImgRepeat, ";") : " ", "\n          background-attachment: scroll;\n        ") : " ", "\n    \n    ");
-  var hoverOverlayStylesTab = "\n  ".concat(BGnoOverlay === false && BGnoOverlayBgi === false && isBgOverlay && hov_overlayType === "classic" && hov_ovl_bgImageURL ? "\n      ".concat(hov_TABovl_backgroundSize && hov_TABovl_backgroundSize !== "custom" ? "background-size: ".concat(hov_TABovl_backgroundSize, ";") : hov_TABovl_backgroundSize === "custom" ? "background-size: ".concat(hov_TABovl_bgImgCustomSize).concat(hov_TABovl_bgImgCustomSizeUnit, " auto;") : " ", "\n  \n        ").concat(hov_TABovl_bgImgPos && hov_TABovl_bgImgPos !== "custom" ? "background-position: ".concat(hov_TABovl_bgImgPos, ";") : hov_TABovl_bgImgPos === "custom" ? "background-position: ".concat(hov_TABovl_bgImgcustomPosX).concat(hov_TABovl_bgImgcustomPosXUnit, " ").concat(hov_TABovl_bgImgcustomPosY).concat(hov_TABovl_bgImgcustomPosYUnit, ";") : " ", "\n  \n        ").concat(hov_TABovl_bgImgRepeat ? "background-repeat: ".concat(hov_TABovl_bgImgRepeat, ";") : " ", "\n        background-attachment: scroll;\n      ") : " ", "\n  \n  ");
-  var overlayStylesMobile = "\n    ".concat(BGnoOverlay === false && BGnoOverlayBgi === false && isBgOverlay && overlayType === "classic" && ovl_bgImageURL ? "\n        ".concat(MOBovl_backgroundSize && MOBovl_backgroundSize !== "custom" ? "background-size: ".concat(MOBovl_backgroundSize, ";") : MOBovl_backgroundSize === "custom" ? "background-size: ".concat(MOBovl_bgImgCustomSize).concat(MOBovl_bgImgCustomSizeUnit, " auto;") : " ", "\n  \n        ").concat(MOBovl_bgImgPos && MOBovl_bgImgPos !== "custom" ? "background-position: ".concat(MOBovl_bgImgPos, ";") : MOBovl_bgImgPos === "custom" ? "background-position: ".concat(MOBovl_bgImgcustomPosX).concat(MOBovl_bgImgcustomPosXUnit, " ").concat(MOBovl_bgImgcustomPosY).concat(MOBovl_bgImgcustomPosYUnit, ";") : " ", "\n  \n        ").concat(MOBovl_bgImgRepeat ? "background-repeat: ".concat(MOBovl_bgImgRepeat, ";") : " ", "\n        ") : " ", "\n    \n    ");
-  var hoverOverlayStylesMobile = "\n    ".concat(BGnoOverlay === false && BGnoOverlayBgi === false && isBgOverlay && hov_overlayType === "classic" && hov_ovl_bgImageURL ? "\n        ".concat(hov_MOBovl_backgroundSize && hov_MOBovl_backgroundSize !== "custom" ? "background-size: ".concat(hov_MOBovl_backgroundSize, ";") : hov_MOBovl_backgroundSize === "custom" ? "background-size: ".concat(hov_MOBovl_bgImgCustomSize).concat(hov_MOBovl_bgImgCustomSizeUnit, " auto;") : " ", "\n  \n        ").concat(hov_MOBovl_bgImgPos && hov_MOBovl_bgImgPos !== "custom" ? "background-position: ".concat(hov_MOBovl_bgImgPos, ";") : hov_MOBovl_bgImgPos === "custom" ? "background-position: ".concat(hov_MOBovl_bgImgcustomPosX).concat(hov_MOBovl_bgImgcustomPosXUnit, " ").concat(hov_MOBovl_bgImgcustomPosY).concat(hov_MOBovl_bgImgcustomPosYUnit, ";") : " ", "\n  \n        ").concat(hov_MOBovl_bgImgRepeat ? "background-repeat: ".concat(hov_MOBovl_bgImgRepeat, ";") : " ", "\n        ") : " ", "\n    \n    ");
+  var backgroundStylesDesktop = "\n  ".concat(noMainBgi === false && backgroundType === "classic" && bgImageURL || backgroundType === "gradient" && gradientColor ? "\n    background-image: ".concat(backgroundType === "classic" ? "url(\"".concat(bgImageURL, "\")") : backgroundType === "gradient" ? gradientColor : "none", ";\n    ") : " ", "\n      \n  \n      ").concat(noMainBgi === false && backgroundType === "classic" && bgImageURL ? "\n          ".concat(backgroundSize && backgroundSize !== "custom" ? "background-size: ".concat(backgroundSize, ";") : backgroundSize === "custom" ? "background-size: ".concat(bgImgCustomSize).concat(bgImgCustomSizeUnit, " auto;") : " ", "\n  \n          ").concat(bgImgPos && bgImgPos !== "custom" ? "background-position: ".concat(bgImgPos, ";") : bgImgPos === "custom" ? "background-position: ".concat(bgImgcustomPosX).concat(bgImgcustomPosXUnit, " ").concat(bgImgcustomPosY).concat(bgImgcustomPosYUnit, ";") : " ", "\n  \n          ").concat(bgImgAttachment ? "background-attachment: ".concat(bgImgAttachment, ";") : " ", "\n  \n          ").concat(bgImgRepeat ? "background-repeat: ".concat(bgImgRepeat, ";") : " ", "\n          \n         \n          ") : " ", "\n\n      ").concat(isBgOverlay ? "\n            z-index: 2;\n            position: relative;\n          " : " ", "\t\n    \n      ").concat(backgroundColor ? "background-color: ".concat(backgroundColor, ";") : " ", "\n  \n    ");
+  var hoverBackgroundStylesDesktop = "\n  \n    ".concat(noMainBgi === false && hov_backgroundType === "classic" && hov_bgImageURL || hov_backgroundType === "gradient" && hov_gradientColor ? "\n        background-image: ".concat(hov_backgroundType === "classic" ? "url(\"".concat(hov_bgImageURL, "\")") : hov_backgroundType === "gradient" ? hov_gradientColor : "none", ";    \n        ") : " ", "\n  \n   \n  \n    ").concat(noMainBgi === false && hov_backgroundType === "classic" && hov_bgImageURL ? "\n        ".concat(hov_backgroundSize && hov_backgroundSize !== "custom" ? "background-size: ".concat(hov_backgroundSize, ";") : hov_backgroundSize === "custom" ? "background-size: ".concat(hov_bgImgCustomSize).concat(hov_bgImgCustomSizeUnit, " auto;") : " ", "\n  \n        ").concat(hov_bgImgPos && hov_bgImgPos !== "custom" ? "background-position: ".concat(hov_bgImgPos, ";") : hov_bgImgPos === "custom" ? "background-position: ".concat(hov_bgImgcustomPosX).concat(hov_bgImgcustomPosXUnit, " ").concat(hov_bgImgcustomPosY).concat(hov_bgImgcustomPosYUnit, ";") : " ", "\n  \n        ").concat(hov_bgImgAttachment ? "background-attachment: ".concat(hov_bgImgAttachment, ";") : " ", "\n  \n        ").concat(hov_bgImgRepeat ? "background-repeat: ".concat(hov_bgImgRepeat, ";") : " ", "\n        \n        ") : " ", "\n  \n        ").concat(hov_backgroundColor ? "background-color: ".concat(hov_backgroundColor, ";") : " ", "\n  \n  ");
+  var backgroundStylesTab = "\n      ".concat(noMainBgi === false && backgroundType === "classic" && bgImageURL ? "\n          ".concat(TABbackgroundSize && TABbackgroundSize !== "custom" ? "background-size: ".concat(TABbackgroundSize, ";") : TABbackgroundSize === "custom" ? "background-size: ".concat(TABbgImgCustomSize).concat(TABbgImgCustomSizeUnit, " auto;") : " ", "\n  \n          ").concat(TABbgImgPos && TABbgImgPos !== "custom" ? "background-position: ".concat(TABbgImgPos, ";") : TABbgImgPos === "custom" ? "background-position: ".concat(TABbgImgcustomPosX).concat(TABbgImgcustomPosXUnit, " ").concat(TABbgImgcustomPosY).concat(TABbgImgcustomPosYUnit, ";") : " ", "\n  \n          ").concat(TABbgImgRepeat ? "background-repeat: ".concat(TABbgImgRepeat, ";") : " ", "\n          background-attachment: scroll;\n          ") : " ", "\n  \n    ");
+  var hoverBackgroundStylesTab = "\n    ".concat(noMainBgi === false && hov_backgroundType === "classic" && hov_bgImageURL ? "\n        ".concat(hov_TABbackgroundSize && hov_TABbackgroundSize !== "custom" ? "background-size: ".concat(hov_TABbackgroundSize, ";") : hov_TABbackgroundSize === "custom" ? "background-size: ".concat(hov_TABbgImgCustomSize).concat(hov_TABbgImgCustomSizeUnit, " auto;") : " ", "\n  \n        ").concat(hov_TABbgImgPos && hov_TABbgImgPos !== "custom" ? "background-position: ".concat(hov_TABbgImgPos, ";") : hov_TABbgImgPos === "custom" ? "background-position: ".concat(hov_TABbgImgcustomPosX).concat(hov_TABbgImgcustomPosXUnit, " ").concat(hov_TABbgImgcustomPosY).concat(hov_TABbgImgcustomPosYUnit, ";") : " ", "\n  \n        ").concat(hov_TABbgImgRepeat ? "background-repeat: ".concat(hov_TABbgImgRepeat, ";") : " ", "\n        background-attachment: scroll;\n        ") : " ", "\n  \n  ");
+  var backgroundStylesMobile = "\n      ".concat(noMainBgi === false && backgroundType === "classic" && bgImageURL ? "\n          ".concat(MOBbackgroundSize && MOBbackgroundSize !== "custom" ? "background-size: ".concat(MOBbackgroundSize, ";") : MOBbackgroundSize === "custom" ? "background-size: ".concat(MOBbgImgCustomSize).concat(MOBbgImgCustomSizeUnit, " auto;") : " ", "\n  \n          ").concat(MOBbgImgPos && MOBbgImgPos !== "custom" ? "background-position: ".concat(MOBbgImgPos, ";") : MOBbgImgPos === "custom" ? "background-position: ".concat(MOBbgImgcustomPosX).concat(MOBbgImgcustomPosXUnit, " ").concat(MOBbgImgcustomPosY).concat(MOBbgImgcustomPosYUnit, ";") : " ", "\n  \n          ").concat(MOBbgImgRepeat ? "background-repeat: ".concat(MOBbgImgRepeat, ";") : " ", "\n  \n          ") : " ", "\n  \n    ");
+  var hoverBackgroundStylesMobile = "\n    ".concat(noMainBgi === false && hov_backgroundType === "classic" && hov_bgImageURL ? "\n        ".concat(hov_MOBbackgroundSize && hov_MOBbackgroundSize !== "custom" ? "background-size: ".concat(hov_MOBbackgroundSize, ";") : hov_MOBbackgroundSize === "custom" ? "background-size: ".concat(hov_MOBbgImgCustomSize).concat(hov_MOBbgImgCustomSizeUnit, " auto;") : " ", "\n    \n        ").concat(hov_MOBbgImgPos && hov_MOBbgImgPos !== "custom" ? "background-position: ".concat(hov_MOBbgImgPos, ";") : hov_MOBbgImgPos === "custom" ? "background-position: ".concat(hov_MOBbgImgcustomPosX).concat(hov_MOBbgImgcustomPosXUnit, " ").concat(hov_MOBbgImgcustomPosY).concat(hov_MOBbgImgcustomPosYUnit, ";") : " ", "\n    \n        ").concat(hov_MOBbgImgRepeat ? "background-repeat: ".concat(hov_MOBbgImgRepeat, ";") : " ", "\n    \n        ") : " ", "\n    \n    ");
+  var overlayStylesDesktop = "\n    \n      ".concat(noOverlay === false && isBgOverlay ? "\n            content: \"\";\n            position: absolute;\n            top: 0;\n            bottom: 0;\n            right: 0;\n            left: 0;\n            z-index: 0;\n            ".concat(noOverlayBgi === false && overlayType === "classic" && ovl_bgImageURL || overlayType === "gradient" && overlayGradient ? "\n                background-image: ".concat(overlayType === "classic" ? "url(\"".concat(ovl_bgImageURL, "\")") : overlayType === "gradient" ? overlayGradient : "none", ";              \n              ") : " ", "\n           \n            ").concat(overlayColor ? "background-color: ".concat(overlayColor, ";") : " ", "\n            ").concat(ovl_opacity || ovl_opacity === 0 ? "opacity: ".concat(ovl_opacity, ";") : " ", "\n            ").concat(ovl_blendMode ? "mix-blend-mode: ".concat(ovl_blendMode, ";") : " ", "\n            ").concat(ovl_allowFilters ? "filter: brightness( ".concat(ovl_fltrBrightness, "% ) contrast( ").concat(ovl_fltrContrast, "% ) saturate( ").concat(ovl_fltrSaturation, "% ) blur( ").concat(ovl_fltrBlur, "px ) hue-rotate( \n              ").concat(ovl_fltrHue, "deg );") : " ", "\n  \n        ").concat(noOverlayBgi === false && overlayType === "classic" && ovl_bgImageURL ? "\n            ".concat(ovl_backgroundSize && ovl_backgroundSize !== "custom" ? "background-size: ".concat(ovl_backgroundSize, ";") : ovl_backgroundSize === "custom" ? "background-size: ".concat(ovl_bgImgCustomSize).concat(ovl_bgImgCustomSizeUnit, " auto;") : " ", "\n  \n            ").concat(ovl_bgImgPos && ovl_bgImgPos !== "custom" ? "background-position: ".concat(ovl_bgImgPos, ";") : ovl_bgImgPos === "custom" ? "background-position: ".concat(ovl_bgImgcustomPosX).concat(ovl_bgImgcustomPosXUnit, " ").concat(ovl_bgImgcustomPosY).concat(ovl_bgImgcustomPosYUnit, ";") : " ", "\n  \n            ").concat(ovl_bgImgAttachment ? "background-attachment: ".concat(ovl_bgImgAttachment, ";") : " ", "\n  \n            ").concat(ovl_bgImgRepeat ? "background-repeat: ".concat(ovl_bgImgRepeat, ";") : " ", "\n            \n            ") : " ", "\n  \n        ") : " ", "\n    \n    \n    ");
+  var hoverOverlayStylesDesktop = "\n    \n    ".concat(noOverlay === false && isBgOverlay ? "\n        ".concat(noOverlayBgi === false && hov_overlayType === "classic" && hov_ovl_bgImageURL || hov_overlayType === "gradient" && hov_overlayGradient ? "\n          background-image: ".concat(hov_overlayType === "classic" ? "url(\"".concat(hov_ovl_bgImageURL, "\")") : hov_overlayType === "gradient" ? hov_overlayGradient : "none", ";\n          ") : " ", "\n  \n        ").concat(hov_overlayColor ? "background-color: ".concat(hov_overlayColor, ";") : " ", "\n        ").concat(hov_ovl_opacity || hov_ovl_opacity === 0 ? "opacity: ".concat(hov_ovl_opacity, ";") : " ", "\n        ").concat(hov_ovl_blendMode ? "mix-blend-mode: ".concat(hov_ovl_blendMode, ";") : " ", "\n        ").concat(hov_ovl_allowFilters ? "filter: brightness( ".concat(hov_ovl_fltrBrightness, "% ) contrast( ").concat(hov_ovl_fltrContrast, "% ) saturate( ").concat(hov_ovl_fltrSaturation, "% ) blur( ").concat(hov_ovl_fltrBlur, "px ) hue-rotate( \n          ").concat(hov_ovl_fltrHue, "deg );") : " ", "\n    \n      ").concat(noOverlayBgi === false && hov_overlayType === "classic" && hov_ovl_bgImageURL ? "\n          ".concat(hov_ovl_backgroundSize && hov_ovl_backgroundSize !== "custom" ? "background-size: ".concat(hov_ovl_backgroundSize, ";") : hov_ovl_backgroundSize === "custom" ? "background-size: ".concat(hov_ovl_bgImgCustomSize).concat(hov_ovl_bgImgCustomSizeUnit, " auto;") : " ", "\n    \n          ").concat(hov_ovl_bgImgPos && hov_ovl_bgImgPos !== "custom" ? "background-position: ".concat(hov_ovl_bgImgPos, ";") : hov_ovl_bgImgPos === "custom" ? "background-position: ".concat(hov_ovl_bgImgcustomPosX).concat(hov_ovl_bgImgcustomPosXUnit, " ").concat(hov_ovl_bgImgcustomPosY).concat(hov_ovl_bgImgcustomPosYUnit, ";") : " ", "\n    \n          ").concat(hov_ovl_bgImgAttachment ? "background-attachment: ".concat(hov_ovl_bgImgAttachment, ";") : " ", "\n    \n          ").concat(hov_ovl_bgImgRepeat ? "background-repeat: ".concat(hov_ovl_bgImgRepeat, ";") : " ", "\n          \n          ") : " ", "\n    \n      ") : " ", "\n    \n    \n    ");
+  var overlayStylesTab = "\n    ".concat(noOverlay === false && noOverlayBgi === false && isBgOverlay && overlayType === "classic" && ovl_bgImageURL ? "\n        ".concat(TABovl_backgroundSize && TABovl_backgroundSize !== "custom" ? "background-size: ".concat(TABovl_backgroundSize, ";") : TABovl_backgroundSize === "custom" ? "background-size: ".concat(TABovl_bgImgCustomSize).concat(TABovl_bgImgCustomSizeUnit, " auto;") : " ", "\n  \n          ").concat(TABovl_bgImgPos && TABovl_bgImgPos !== "custom" ? "background-position: ".concat(TABovl_bgImgPos, ";") : TABovl_bgImgPos === "custom" ? "background-position: ".concat(TABovl_bgImgcustomPosX).concat(TABovl_bgImgcustomPosXUnit, " ").concat(TABovl_bgImgcustomPosY).concat(TABovl_bgImgcustomPosYUnit, ";") : " ", "\n  \n          ").concat(TABovl_bgImgRepeat ? "background-repeat: ".concat(TABovl_bgImgRepeat, ";") : " ", "\n          background-attachment: scroll;\n        ") : " ", "\n    \n    ");
+  var hoverOverlayStylesTab = "\n  ".concat(noOverlay === false && noOverlayBgi === false && isBgOverlay && hov_overlayType === "classic" && hov_ovl_bgImageURL ? "\n      ".concat(hov_TABovl_backgroundSize && hov_TABovl_backgroundSize !== "custom" ? "background-size: ".concat(hov_TABovl_backgroundSize, ";") : hov_TABovl_backgroundSize === "custom" ? "background-size: ".concat(hov_TABovl_bgImgCustomSize).concat(hov_TABovl_bgImgCustomSizeUnit, " auto;") : " ", "\n  \n        ").concat(hov_TABovl_bgImgPos && hov_TABovl_bgImgPos !== "custom" ? "background-position: ".concat(hov_TABovl_bgImgPos, ";") : hov_TABovl_bgImgPos === "custom" ? "background-position: ".concat(hov_TABovl_bgImgcustomPosX).concat(hov_TABovl_bgImgcustomPosXUnit, " ").concat(hov_TABovl_bgImgcustomPosY).concat(hov_TABovl_bgImgcustomPosYUnit, ";") : " ", "\n  \n        ").concat(hov_TABovl_bgImgRepeat ? "background-repeat: ".concat(hov_TABovl_bgImgRepeat, ";") : " ", "\n        background-attachment: scroll;\n      ") : " ", "\n  \n  ");
+  var overlayStylesMobile = "\n    ".concat(noOverlay === false && noOverlayBgi === false && isBgOverlay && overlayType === "classic" && ovl_bgImageURL ? "\n        ".concat(MOBovl_backgroundSize && MOBovl_backgroundSize !== "custom" ? "background-size: ".concat(MOBovl_backgroundSize, ";") : MOBovl_backgroundSize === "custom" ? "background-size: ".concat(MOBovl_bgImgCustomSize).concat(MOBovl_bgImgCustomSizeUnit, " auto;") : " ", "\n  \n        ").concat(MOBovl_bgImgPos && MOBovl_bgImgPos !== "custom" ? "background-position: ".concat(MOBovl_bgImgPos, ";") : MOBovl_bgImgPos === "custom" ? "background-position: ".concat(MOBovl_bgImgcustomPosX).concat(MOBovl_bgImgcustomPosXUnit, " ").concat(MOBovl_bgImgcustomPosY).concat(MOBovl_bgImgcustomPosYUnit, ";") : " ", "\n  \n        ").concat(MOBovl_bgImgRepeat ? "background-repeat: ".concat(MOBovl_bgImgRepeat, ";") : " ", "\n        ") : " ", "\n    \n    ");
+  var hoverOverlayStylesMobile = "\n    ".concat(noOverlay === false && noOverlayBgi === false && isBgOverlay && hov_overlayType === "classic" && hov_ovl_bgImageURL ? "\n        ".concat(hov_MOBovl_backgroundSize && hov_MOBovl_backgroundSize !== "custom" ? "background-size: ".concat(hov_MOBovl_backgroundSize, ";") : hov_MOBovl_backgroundSize === "custom" ? "background-size: ".concat(hov_MOBovl_bgImgCustomSize).concat(hov_MOBovl_bgImgCustomSizeUnit, " auto;") : " ", "\n  \n        ").concat(hov_MOBovl_bgImgPos && hov_MOBovl_bgImgPos !== "custom" ? "background-position: ".concat(hov_MOBovl_bgImgPos, ";") : hov_MOBovl_bgImgPos === "custom" ? "background-position: ".concat(hov_MOBovl_bgImgcustomPosX).concat(hov_MOBovl_bgImgcustomPosXUnit, " ").concat(hov_MOBovl_bgImgcustomPosY).concat(hov_MOBovl_bgImgcustomPosYUnit, ";") : " ", "\n  \n        ").concat(hov_MOBovl_bgImgRepeat ? "background-repeat: ".concat(hov_MOBovl_bgImgRepeat, ";") : " ", "\n        ") : " ", "\n    \n    ");
   var bgTransitionStyle = noTransition ? " " : "background ".concat(bg_transition || 0, "s");
   var ovlTransitionStyle = noTransition ? " " : "background ".concat(ovl_bg_transition || 0, "s, opacity ").concat(ovl_opacityTransition || 0, "s, filter ").concat(ovl_filtersTransition || 0, "s");
   return {
@@ -11215,7 +11585,7 @@ var generateBorderShadowStyles = function generateBorderShadowStyles(_ref) {
 
   var borderStyle = attributes["".concat(controlName, "borderStyle")],
       _attributes$ = attributes["".concat(controlName, "borderColor")],
-      borderColor = _attributes$ === void 0 ? "#aaa" : _attributes$,
+      borderColor = _attributes$ === void 0 ? "#333333" : _attributes$,
       HborderStyle = attributes["".concat(controlName, "HborderStyle")],
       _attributes$2 = attributes["".concat(controlName, "HborderColor")],
       HborderColor = _attributes$2 === void 0 ? borderColor : _attributes$2,
@@ -11819,9 +12189,8 @@ var hardMinifyCssStrings = function hardMinifyCssStrings(cssString) {
   .replace(/\s+(?![\w\d\.\-\#]+\{)/g, "").replace(/\s+/g, " ").replace(/__s_p_a_c_e__/g, " ");
 }; // softMinifyCssStrings is for minifying the css which is in the style tag as a string  for view.js
 
-var softMinifyCssStrings = function softMinifyCssStrings() {
-  var cssString = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : " ";
-  return cssString.replace(/\s+/g, " ").replace(/\.eb\-[\w\-\s\.\,\:\>\(\)\d\+\[\]\#\>]+\{[\s]+\}/g, "");
+var softMinifyCssStrings = function softMinifyCssStrings(cssString) {
+  return cssString.replace(/\s+/g, " ");
 }; // check if css string is empty or not.
 
 var isCssExists = function isCssExists(cssString) {
@@ -11899,9 +12268,9 @@ var generateResponsiveRangeStyles = function generateResponsiveRangeStyles(_ref4
   var desktopRange = attributes["".concat(controlName, "Range")],
       TABrange = attributes["TAB".concat(controlName, "Range")],
       MOBrange = attributes["MOB".concat(controlName, "Range")];
-  var rangeStylesDesktop = desktopRange || desktopRange === 0 ? property + ":" + (desktopSizeUnit !== "px" && desktopRange > 100 ? 100 : desktopRange) + (customUnit || desktopSizeUnit) + ";" : "";
-  var rangeStylesTab = TABrange || TABrange === 0 ? property + ":" + (TABsizeUnit !== "px" && TABrange > 100 ? 100 : TABrange) + (customUnit || TABsizeUnit) + ";" : "";
-  var rangeStylesMobile = MOBrange || MOBrange === 0 ? property + ":" + (MOBsizeUnit !== "px" && MOBrange > 100 ? 100 : MOBrange) + (customUnit || MOBsizeUnit) + ";" : "";
+  var rangeStylesDesktop = desktopRange || desktopRange === 0 ? property + ":" + desktopRange + (customUnit || desktopSizeUnit) + ";" : "";
+  var rangeStylesTab = TABrange || TABrange === 0 ? property + ":" + TABrange + (customUnit || TABsizeUnit) + ";" : "";
+  var rangeStylesMobile = MOBrange || MOBrange === 0 ? property + ":" + MOBrange + (customUnit || MOBsizeUnit) + ";" : "";
   return {
     rangeStylesDesktop: rangeStylesDesktop,
     rangeStylesTab: rangeStylesTab,

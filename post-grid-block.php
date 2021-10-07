@@ -42,6 +42,7 @@ function create_block_post_grid_block_init() {
 			'wp-i18n',
 			'wp-element',
 			'wp-block-editor',
+			'wp-api-fetch',
 		),
 		$script_asset['version']
 	);
