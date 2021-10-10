@@ -6,22 +6,37 @@ const { RichText, useBlockProps } = wp.blockEditor;
 const { useEffect } = wp.element;
 const { select } = wp.data;
 
+import {escapeAmpersand, escapeAttribute, escapeEditableHTML, escapeHTML} from "@wordpress/escape-html"
+
 /**
   * Internal depencencies
 */
 import Inspector from "./inspector";
 import "./editor.scss";
 import {
-	BUTTON_ONE_BORDER_SHADOW,
-	BUTTON_TWO_BORDER_SHADOW,
 	WRAPPER_MARGIN,
-	BUTTONS_PADDING,
-	BUTTONS_WIDTH,
-	BUTTONS_GAP,
-	BUTTONS_CONNECTOR_SIZE,
-	BUTTONS_CONNECTOR_ICON_SIZE,
+	WRAPPER_PADDING,
+	WRAPPER_BORDER_SHADOW,
+	WRAPPER_BG,
+	COLUMN_GAP,
+	COLUMN_PADDING,
+	COLUMN_BG,
+	COLUMN_BORDER_SHADOW,
+	THUMBNAIL_IMAGE_SIZE,
+	THUMBNAIL_BORDER_RADIUS,
+	TITLE_MARGIN,
+	CONTENT_MARGIN,
+	READMORE_MARGIN,
+	READMORE_PADDING,
+	META_MARGIN,
+	AVATAR_BORDER_RADIUS
 } from "./constants/constants";
-import { BUTTONS_TYPOGRAPHY, BUTTONS_CONNECTOR_TYPOGRAPHY } from "./constants/typographyPrefixConstants";
+import { 
+	EBPG_TITLE_TYPOGRAPHY, 
+	EBPG_CONTENT_TYPOGRAPHY,
+	EBPG_READMORE_TYPOGRAPHY,
+	EBPG_META_TYPOGRAPHY,
+ } from "./constants/typographyPrefixConstants";
 import {
 	softMinifyCssStrings,
 	isCssExists,
@@ -29,6 +44,7 @@ import {
 	generateDimensionsControlStyles,
 	generateBorderShadowStyles,
 	generateResponsiveRangeStyles,
+	generateBackgroundControlStyles,
 	mimmikCssForPreviewBtnClick,
 	duplicateBlockIdFix,
 } from "../util/helpers";
@@ -41,25 +57,37 @@ export default function Edit(props) {
 		// responsive control attribute ⬇
 		resOption,
 		preset,
-		contentPosition,
-		buttonTextOne,
-		buttonTextTwo,
-		hoverButtonOneColor,
-		textOneColor,
-		hoverTextOneColor,
-		buttonTwoColor,
-		hoverButtonTwoColor,
-		textTwoColor,
-		hoverTextTwoColor,
-		innerButtonText,
-		innerButtonColor,
-		innerButtonTextColor,
-		innerButtonIcon,
-		showConnector,
-		connectorType,
-		buttonTextAlign,
-		queryData,
 		queryResults,
+		columns,
+		showThumbnail,
+		showTitle,
+		titleColor,
+		titleHoverColor,
+		titleColorStyle,
+		titleLength,
+		titleTextAlign,
+		titleTag,
+		showContent,
+		contentColor,
+		contentTextAlign,
+		contentLength,
+		expansionIndicator,
+		showReadMore,
+		readmoreText,
+		readmoreColor,
+		readmoreTextAlign,
+		readmoreHoverColor,
+		readmoreColorType,
+		showMeta,
+		metaPosition,
+		metaColor,
+		metaTextAlign,
+		metaHoverColor,
+		metaColorType,
+		showAvatar,
+		showAuthor,
+		showDate,
+		showCategories,
 	} = attributes;
 
 	// this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class
@@ -100,22 +128,42 @@ export default function Edit(props) {
 	// CSS/styling Codes Starts from Here
 
 	const {
-		typoStylesDesktop: buttonsTypoStylesDesktop,
-		typoStylesTab: buttonsTypoStylesTab,
-		typoStylesMobile: buttonsTypoStylesMobile,
+		typoStylesDesktop: titleTypoStylesDesktop,
+		typoStylesTab: titleTypoStylesTab,
+		typoStylesMobile: titleTypoStylesMobile,
 	} = generateTypographyStyles({
 		attributes,
-		prefixConstant: BUTTONS_TYPOGRAPHY,
+		prefixConstant: EBPG_TITLE_TYPOGRAPHY,
+		defaultFontSize: 20,
+	});
+
+	const {
+		typoStylesDesktop: contentTypoStylesDesktop,
+		typoStylesTab: contentTypoStylesTab,
+		typoStylesMobile: contentTypoStylesMobile,
+	} = generateTypographyStyles({
+		attributes,
+		prefixConstant: EBPG_CONTENT_TYPOGRAPHY,
 		defaultFontSize: 16,
 	});
 
 	const {
-		typoStylesDesktop: connectorTypoStylesDesktop,
-		typoStylesTab: connectorTypoStylesTab,
-		typoStylesMobile: connectorTypoStylesMobile,
+		typoStylesDesktop: readmoreTypoStylesDesktop,
+		typoStylesTab: readmoreTypoStylesTab,
+		typoStylesMobile: readmoreTypoStylesMobile,
 	} = generateTypographyStyles({
 		attributes,
-		prefixConstant: BUTTONS_CONNECTOR_TYPOGRAPHY,
+		prefixConstant: EBPG_READMORE_TYPOGRAPHY,
+		defaultFontSize: 16,
+	});
+
+	const {
+		typoStylesDesktop: metaTypoStylesDesktop,
+		typoStylesTab: metaTypoStylesTab,
+		typoStylesMobile: metaTypoStylesMobile,
+	} = generateTypographyStyles({
+		attributes,
+		prefixConstant: EBPG_META_TYPOGRAPHY,
 		defaultFontSize: 14,
 	});
 
@@ -130,100 +178,169 @@ export default function Edit(props) {
 	});
 
 	const {
-		dimensionStylesDesktop: buttonsPaddingStylesDesktop,
-		dimensionStylesTab: buttonsPaddingStylesTab,
-		dimensionStylesMobile: buttonsPaddingStylesMobile,
+		dimensionStylesDesktop: wrapperPaddingStylesDesktop,
+		dimensionStylesTab: wrapperPaddingStylesTab,
+		dimensionStylesMobile: wrapperPaddingStylesMobile,
 	} = generateDimensionsControlStyles({
-		controlName: BUTTONS_PADDING,
+		controlName: WRAPPER_PADDING,
 		styleFor: "padding",
 		attributes,
 	});
 
 	const {
-		styesDesktop: buttonOneBDShadowDesktop,
-		styesTab: buttonOneBDShadowTab,
-		styesMobile: buttonOneBDShadowMobile,
-		stylesHoverDesktop: buttonOneBDShadowHoverDesktop,
-		stylesHoverTab: buttonOneBDShadowHoverTab,
-		stylesHoverMobile: buttonOneBDShadowHoverMobile,
+		dimensionStylesDesktop: columnPaddingStylesDesktop,
+		dimensionStylesTab: columnPaddingStylesTab,
+		dimensionStylesMobile: columnPaddingStylesMobile,
+	} = generateDimensionsControlStyles({
+		controlName: COLUMN_PADDING,
+		styleFor: "padding",
+		attributes,
+	});
+
+	const {
+		dimensionStylesDesktop: titleMarginStylesDesktop,
+		dimensionStylesTab: titleMarginStylesTab,
+		dimensionStylesMobile: titleMarginStylesMobile,
+	} = generateDimensionsControlStyles({
+		controlName: TITLE_MARGIN,
+		styleFor: "margin",
+		attributes,
+	});
+
+	const {
+		dimensionStylesDesktop: contentMarginStylesDesktop,
+		dimensionStylesTab: contentMarginStylesTab,
+		dimensionStylesMobile: contentMarginStylesMobile,
+	} = generateDimensionsControlStyles({
+		controlName: CONTENT_MARGIN,
+		styleFor: "margin",
+		attributes,
+	});
+
+	const {
+		dimensionStylesDesktop: readmoreMarginStylesDesktop,
+		dimensionStylesTab: readmoreMarginStylesTab,
+		dimensionStylesMobile: readmoreMarginStylesMobile,
+	} = generateDimensionsControlStyles({
+		controlName: READMORE_MARGIN,
+		styleFor: "margin",
+		attributes,
+	});
+
+	const {
+		dimensionStylesDesktop: readmorePaddingStylesDesktop,
+		dimensionStylesTab: readmorePaddingStylesTab,
+		dimensionStylesMobile: readmorePaddingStylesMobile,
+	} = generateDimensionsControlStyles({
+		controlName: READMORE_PADDING,
+		styleFor: "padding",
+		attributes,
+	});
+
+	const {
+		dimensionStylesDesktop: metaMarginStylesDesktop,
+		dimensionStylesTab: metaMarginStylesTab,
+		dimensionStylesMobile: metaMarginStylesMobile,
+	} = generateDimensionsControlStyles({
+		controlName: META_MARGIN,
+		styleFor: "margin",
+		attributes,
+	});
+
+	const {
+		dimensionStylesDesktop: thumbnailBdrSdwStylesDesktop,
+		dimensionStylesTab: thumbnailBdrSdwStylesTab,
+		dimensionStylesMobile: thumbnailBdrSdwStylesMobile,
+	} = generateDimensionsControlStyles({
+		controlName: THUMBNAIL_BORDER_RADIUS,
+		styleFor: "border-radius",
+		attributes,
+	});
+
+	const {
+		dimensionStylesDesktop: avatarBdrSdwStylesDesktop,
+		dimensionStylesTab: avatarBdrSdwStylesTab,
+		dimensionStylesMobile: avatarBdrSdwStylesMobile,
+	} = generateDimensionsControlStyles({
+		controlName: AVATAR_BORDER_RADIUS,
+		styleFor: "border-radius",
+		attributes,
+	});
+
+	const {
+		styesDesktop: wrapperBDShadowDesktop,
+		styesTab: wrapperBDShadowTab,
+		styesMobile: wrapperBDShadowMobile,
+		stylesHoverDesktop: wrapperBDShadowHoverDesktop,
+		stylesHoverTab: wrapperBDShadowHoverTab,
+		stylesHoverMobile: wrapperBDShadowHoverMobile,
 	} = generateBorderShadowStyles({
-		controlName: BUTTON_ONE_BORDER_SHADOW,
+		controlName: WRAPPER_BORDER_SHADOW,
 		attributes,
 		noShadow: true,
 	});
 
 	const {
-		styesDesktop: buttonTwoBDShadowDesktop,
-		styesTab: buttonTwoBDShadowTab,
-		styesMobile: buttonTwoBDShadowMobile,
-		stylesHoverDesktop: buttonTwoBDShadowHoverDesktop,
-		stylesHoverTab: buttonTwoBDShadowHoverTab,
-		stylesHoverMobile: buttonTwoBDShadowHoverMobile,
+		styesDesktop: columnBDShadowDesktop,
+		styesTab: columnBDShadowTab,
+		styesMobile: columnBDShadowMobile,
+		stylesHoverDesktop: columnBDShadowHoverDesktop,
+		stylesHoverTab: columnBDShadowHoverTab,
+		stylesHoverMobile: columnBDShadowHoverMobile,
 	} = generateBorderShadowStyles({
-		controlName: BUTTON_TWO_BORDER_SHADOW,
+		controlName: COLUMN_BORDER_SHADOW,
 		attributes,
 		noShadow: true,
 	});
 
-	// responsive range controller
 	const {
-		rangeStylesDesktop: buttonWidthStyleDesktop,
-		rangeStylesTab: buttonWidthStyleTab,
-		rangeStylesMobile: buttonWidthStyleMobile,
+		rangeStylesDesktop: columnGapDesktop,
+		rangeStylesTab: columnGapTab,
+		rangeStylesMobile: columnGapMobile,
 	} = generateResponsiveRangeStyles({
-		controlName: BUTTONS_WIDTH,
-		property: "width",
-		attributes,
-	});
-
-	const {
-		rangeStylesDesktop: buttonGapDesktop,
-		rangeStylesTab: buttonGapTab,
-		rangeStylesMobile: buttonGapMobile,
-	} = generateResponsiveRangeStyles({
-		controlName: BUTTONS_GAP,
+		controlName: COLUMN_GAP,
 		property: "margin",
 		attributes,
 	});
 
 	const {
-		rangeStylesDesktop: buttonConnectorHeightDesktop,
-		rangeStylesTab: buttonConnectorHeightTab,
-		rangeStylesMobile: buttonConnectorHeightMobile,
+		rangeStylesDesktop: thumbnailImageHeightDesktop,
+		rangeStylesTab: thumbnailImageHeightTab,
+		rangeStylesMobile: thumbnailImageHeightMobile,
 	} = generateResponsiveRangeStyles({
-		controlName: BUTTONS_CONNECTOR_SIZE,
+		controlName: THUMBNAIL_IMAGE_SIZE,
 		property: "height",
 		attributes,
 	});
 
+	//Generate Background
 	const {
-		rangeStylesDesktop: buttonConnectorWidthDesktop,
-		rangeStylesTab: buttonConnectorWidthTab,
-		rangeStylesMobile: buttonConnectorWidthMobile,
-	} = generateResponsiveRangeStyles({
-		controlName: BUTTONS_CONNECTOR_SIZE,
-		property: "width",
+		backgroundStylesDesktop: wrapperBackgroundStylesDesktop,
+		hoverBackgroundStylesDesktop: wrapperHoverBackgroundStylesDesktop,
+		backgroundStylesTab: wrapperBackgroundStylesTab,
+		hoverBackgroundStylesTab: wrapperHoverBackgroundStylesTab,
+		backgroundStylesMobile: wrapperBackgroundStylesMobile,
+		hoverBackgroundStylesMobile: wrapperHoverBackgroundStylesMobile,
+		bgTransitionStyle: wrapperBgTransitionStyle,
+	} = generateBackgroundControlStyles({
 		attributes,
+		controlName: WRAPPER_BG,
+		noOverlay: true,
 	});
 
+	//Generate Background
 	const {
-		rangeStylesDesktop: buttonConnectorLineHeightDesktop,
-		rangeStylesTab: buttonConnectorLineHeightTab,
-		rangeStylesMobile: buttonConnectorLineHeightMobile,
-	} = generateResponsiveRangeStyles({
-		controlName: BUTTONS_CONNECTOR_SIZE,
-		property: "line-height",
+		backgroundStylesDesktop: columnBackgroundStylesDesktop,
+		hoverBackgroundStylesDesktop: columnHoverBackgroundStylesDesktop,
+		backgroundStylesTab: columnBackgroundStylesTab,
+		hoverBackgroundStylesTab: columnHoverBackgroundStylesTab,
+		backgroundStylesMobile: columnBackgroundStylesMobile,
+		hoverBackgroundStylesMobile: columnHoverBackgroundStylesMobile,
+		bgTransitionStyle: columnBgTransitionStyle,
+	} = generateBackgroundControlStyles({
 		attributes,
-	});
-
-	const {
-		rangeStylesDesktop: buttonConnectorIconSizeDesktop,
-		rangeStylesTab: buttonConnectorIconSizeTab,
-		rangeStylesMobile: buttonConnectorIconSizeMobile,
-	} = generateResponsiveRangeStyles({
-		controlName: BUTTONS_CONNECTOR_ICON_SIZE,
-		property: "font-size",
-		attributes,
+		controlName: COLUMN_BG,
+		noOverlay: true,
 	});
 
 	// wrapper styles css in strings ⬇
@@ -231,10 +348,9 @@ export default function Edit(props) {
 		.eb-button-group-wrapper.${blockId}{
 			display: flex;
 			flex-direction: row;
-			align-items: ${contentPosition};
-			justify-content: ${contentPosition};
 			position: relative;
 			${wrapperMarginStylesDesktop}
+			${wrapperPaddingStylesDesktop}
 		}
 	`;
 	const wrapperStylesTab = `
@@ -250,183 +366,19 @@ export default function Edit(props) {
 		}
 	`;
 
-	// Buttons Common styles css in strings ⬇
-	const buttonsCommonStyleDesktop = `
-		.eb-button-group-wrapper.${blockId} .eb-button-parent {
-			${buttonsPaddingStylesDesktop}
-			${buttonWidthStyleDesktop}
-			${buttonGapDesktop}
-			text-align: ${buttonTextAlign};
-			cursor: pointer;
-		}
-		.eb-button-group-wrapper.${blockId} .eb-button-parent .eb-button-text {
-			${buttonsTypoStylesDesktop}
-		}
-	`;
-
-	const buttonsCommonStyleTab = `
-		.eb-button-group-wrapper.${blockId} .eb-button-parent {
-			${buttonsPaddingStylesTab}
-			${buttonWidthStyleTab}
-			${buttonGapTab}
-		}
-		.eb-button-group-wrapper.${blockId} .eb-button-parent .eb-button-text {
-			${buttonsTypoStylesTab}
-		}
-	`;
-
-	const buttonsCommonStyleMobile = `
-		.eb-button-group-wrapper.${blockId} .eb-button-parent {
-			${buttonsPaddingStylesMobile}
-			${buttonWidthStyleMobile}
-			${buttonGapMobile}
-		}
-		.eb-button-group-wrapper.${blockId} .eb-button-parent .eb-button-text {
-			${buttonsTypoStylesMobile}
-		}
-	`;
-
-	// Buttons One styles css in strings ⬇
-	const buttonOneStyleDesktop = `
-		.eb-button-group-wrapper.${blockId} .eb-button-parent.eb-button-one {
-			${buttonOneBDShadowDesktop}
-			background-color: ${attributes.buttonOneColor};
-		}
-		.eb-button-group-wrapper.${blockId} .eb-button-parent.eb-button-one:hover,
-		.eb-button-group-wrapper.${blockId} .eb-button-parent.eb-button-one:focus {
-			${buttonOneBDShadowHoverDesktop}
-			background-color: ${hoverButtonOneColor};
-		}
-		.eb-button-group-wrapper.${blockId} .eb-button-parent.eb-button-one .eb-button-one-text {
-			color: ${textOneColor};
-		}
-		.eb-button-group-wrapper.${blockId} .eb-button-parent.eb-button-one:hover .eb-button-one-text {
-			color: ${hoverTextOneColor};
-		}
-	`;
-	const buttonOneStyleTab = `
-		.eb-button-group-wrapper.${blockId} .eb-button-parent.eb-button-one {
-			${buttonOneBDShadowTab}
-		}
-		.eb-button-group-wrapper.${blockId} .eb-button-parent.eb-button-one:hover {
-			${buttonOneBDShadowHoverTab}
-		}
-		.eb-button-group-wrapper.${blockId} .eb-button-parent.eb-button-one .eb-button-one-text {
-
-		}
-	`;
-	const buttonOneStyleMobile = `
-		.eb-button-group-wrapper.${blockId} .eb-button-parent.eb-button-one {
-			${buttonOneBDShadowMobile}
-		}
-		.eb-button-group-wrapper.${blockId} .eb-button-parent.eb-button-one:hover {
-			${buttonOneBDShadowHoverMobile}
-		}
-		.eb-button-group-wrapper.${blockId} .eb-button-parent.eb-button-one .eb-button-one-text {
-
-		}
-	`;
-
-	// Buttons Two styles css in strings ⬇
-	const buttonTwoStyleDesktop = `
-		.eb-button-group-wrapper.${blockId} .eb-button-parent.eb-button-two {
-			${buttonTwoBDShadowDesktop}
-			${buttonGapDesktop}
-			background-color: ${buttonTwoColor};
-		}
-		.eb-button-group-wrapper.${blockId} .eb-button-parent.eb-button-two:hover,
-		.eb-button-group-wrapper.${blockId} .eb-button-parent.eb-button-two:focus {
-			${buttonTwoBDShadowHoverDesktop}
-			background-color: ${hoverButtonTwoColor};
-		}
-		.eb-button-group-wrapper.${blockId} .eb-button-parent.eb-button-two .eb-button-two-text {
-			color: ${textTwoColor};
-		}
-		.eb-button-group-wrapper.${blockId} .eb-button-parent.eb-button-two:hover .eb-button-two-text {
-			color: ${hoverTextTwoColor};
-		}
-	`;
-	const buttonTwoStyleTab = `
-		.eb-button-group-wrapper.${blockId} .eb-button-parent.eb-button-two {
-			${buttonTwoBDShadowTab}
-			${buttonGapTab}
-		}
-		.eb-button-group-wrapper.${blockId} .eb-button-parent.eb-button-two:hover {
-			${buttonTwoBDShadowHoverTab}
-		}
-		.eb-button-group-wrapper.${blockId} .eb-button-parent.eb-button-two .eb-button-two-text {
-
-		}
-	`;
-	const buttonTwoStyleMobile = `
-		.eb-button-group-wrapper.${blockId} .eb-button-parent.eb-button-two {
-			${buttonTwoBDShadowMobile}
-			${buttonGapMobile}
-		}
-		.eb-button-group-wrapper.${blockId} .eb-button-parent.eb-button-two:hover {
-			${buttonTwoBDShadowHoverMobile}
-		}
-		.eb-button-group-wrapper.${blockId} .eb-button-parent.eb-button-two .eb-button-two-text {
-
-		}
-	`;
-
-	// Connector styles css in strings ⬇
-	const connectorStylesDesktop = `
-		.eb-button-group-wrapper.${blockId} .eb-button-group__midldeInner span {
-			${connectorType === "text"? connectorTypoStylesDesktop : buttonConnectorIconSizeDesktop}
-			${buttonConnectorHeightDesktop}
-			${buttonConnectorWidthDesktop}
-			${buttonConnectorLineHeightDesktop}
-			${connectorType === "icon" ? 'font-family: "Font Awesome 5 Brands" !important' : null};
-			background: ${innerButtonColor};
-			color: ${innerButtonTextColor};
-		}
-	`;
-
-	const connectorStylesTab = `
-		.eb-button-group-wrapper.${blockId} .eb-button-group__midldeInner span {
-			${connectorType === "text"? connectorTypoStylesTab : buttonConnectorIconSizeTab}
-			${buttonConnectorHeightTab}
-			${buttonConnectorWidthTab}
-			${buttonConnectorLineHeightTab}
-		}
-	`;
-
-	const connectorStylesMobile = `
-		.eb-button-group-wrapper.${blockId} .eb-button-group__midldeInner span {
-			${connectorType === "text"? connectorTypoStylesMobile : buttonConnectorIconSizeMobile}
-			${buttonConnectorHeightMobile}
-			${buttonConnectorWidthMobile}
-			${buttonConnectorLineHeightMobile}
-		}
-	`;
-
 	// all css styles for large screen width (desktop/laptop) in strings ⬇
 	const desktopAllStyles = softMinifyCssStrings(`
 			${isCssExists(wrapperStylesDesktop) ? wrapperStylesDesktop : " "}
-			${isCssExists(buttonsCommonStyleDesktop) ? buttonsCommonStyleDesktop : " "}
-			${isCssExists(buttonOneStyleDesktop) ? buttonOneStyleDesktop : " "}
-			${isCssExists(buttonTwoStyleDesktop) ? buttonTwoStyleDesktop : " "}
-			${isCssExists(connectorStylesDesktop) ? connectorStylesDesktop : " "}
 		`);
 
 	// all css styles for Tab in strings ⬇
 	const tabAllStyles = softMinifyCssStrings(`
 			${isCssExists(wrapperStylesTab) ? wrapperStylesTab : " "}
-			${isCssExists(buttonsCommonStyleTab) ? buttonsCommonStyleTab : " "}
-			${isCssExists(buttonOneStyleTab) ? buttonOneStyleTab : " "}
-			${isCssExists(buttonTwoStyleTab) ? buttonTwoStyleTab : " "}
-			${isCssExists(connectorStylesTab) ? connectorStylesTab : " "}
 		`);
 
 	// all css styles for Mobile in strings ⬇
 	const mobileAllStyles = softMinifyCssStrings(`
 			${isCssExists(wrapperStylesMobile) ? wrapperStylesMobile : " "}
-			${isCssExists(buttonsCommonStyleMobile) ? buttonsCommonStyleMobile : " "}
-			${isCssExists(buttonOneStyleMobile) ? buttonOneStyleMobile : " "}
-			${isCssExists(buttonTwoStyleMobile) ? buttonTwoStyleMobile : " "}
-			${isCssExists(connectorStylesMobile) ? connectorStylesMobile : " "}
 		`);
 
 	// Set All Style in "blockMeta" Attribute
@@ -479,24 +431,34 @@ export default function Edit(props) {
 					<article class="ebpg-grid-post ebpg-post-grid-column" data-id={post.id}>
 						<div class="ebpg-grid-post-holder">
 							<div class="ebpg-entry-media">
-								<div class="ebpg-entry-overlay fade-in">
-									<i class="fas fa-long-arrow-alt-right" aria-hidden="true"></i>
-									<a href="http://templately.test/praesentium-asperiores-assumenda-error-dolores-excepturi/"></a>
-								</div>
-								<div class="ebpg-entry-thumbnail">
-									<img width="300" height="200" src="" class="attachment-medium size-medium" alt="" loading="lazy" srcset="http://templately.test/wp-content/uploads/2021/02/d22346cb-ad73-35c5-8857-78c59ec4f245-300x200.jpg 300w, http://templately.test/wp-content/uploads/2021/02/d22346cb-ad73-35c5-8857-78c59ec4f245-600x400.jpg 600w, http://templately.test/wp-content/uploads/2021/02/d22346cb-ad73-35c5-8857-78c59ec4f245-1024x682.jpg 1024w, http://templately.test/wp-content/uploads/2021/02/d22346cb-ad73-35c5-8857-78c59ec4f245-768x512.jpg 768w, http://templately.test/wp-content/uploads/2021/02/d22346cb-ad73-35c5-8857-78c59ec4f245.jpg 1159w" sizes="(max-width: 300px) 100vw, 300px" />
-								</div>
+								{showThumbnail && (
+									<div class="ebpg-entry-thumbnail">
+										{post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'].length > 0 && (
+											<img 
+												width={post._embedded['wp:featuredmedia'][0].media_details.width} 
+												height={post._embedded['wp:featuredmedia'][0].media_details.height} 
+												src={post._embedded['wp:featuredmedia'][0].source_url} 
+												class="attachment-medium size-medium" 
+												alt={post.title.rendered}
+											/>
+										)}
+									</div>
+								)}
+								
 							</div>
 							
 							<div class="ebpg-entry-wrapper">
 								<header class="ebpg-entry-header">
 									<h2 class="ebpg-entry-title">
-										<a class="ebpg-grid-post-link" href="" title="">{post.title.rendered}</a>
+										<a class="ebpg-grid-post-link" href="" title={post.title.rendered}>
+											{post.title.rendered}
+										</a>
 									</h2>
 								</header>
 								<div class="ebpg-entry-content">
 									<div class="ebpg-grid-post-excerpt">
-										<p dangerouslySetInnerHTML={{__html: post.content.rendered}} />
+										<p>{}</p>
+										<p>{post.content.rendered.replace(/<[^>]*>?/gm, '').substr(0, contentLength)}</p>
 										<a href="" class="ebpg-post-elements-readmore-btn">Read More</a>
 									</div>
 								</div>

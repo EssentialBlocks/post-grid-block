@@ -1,15 +1,20 @@
 import {
-	BUTTON_ONE_BORDER_SHADOW,
-	BUTTON_TWO_BORDER_SHADOW,
-	BUTTON_ONE_BG,
-	BUTTON_TWO_BG,
 	WRAPPER_MARGIN,
-	BUTTONS_MARGIN,
-	BUTTONS_PADDING,
-	BUTTONS_WIDTH,
-	BUTTONS_GAP,
-	BUTTONS_CONNECTOR_SIZE,
-	BUTTONS_CONNECTOR_ICON_SIZE,
+	WRAPPER_PADDING,
+	WRAPPER_BORDER_SHADOW,
+	WRAPPER_BG,
+	COLUMN_GAP,
+	COLUMN_PADDING,
+	COLUMN_BG,
+	COLUMN_BORDER_SHADOW,
+	THUMBNAIL_IMAGE_SIZE,
+	THUMBNAIL_BORDER_RADIUS,
+	TITLE_MARGIN,
+	CONTENT_MARGIN,
+	READMORE_MARGIN,
+	READMORE_PADDING,
+	META_MARGIN,
+	AVATAR_BORDER_RADIUS
 } from "./constants/constants";
 import {
 	generateDimensionsAttributes,
@@ -49,108 +54,124 @@ const attributes = {
 		type: "string",
 		default: "button-1"
 	},
-	contentPosition: {
-		type: "string",
-		default: "center"
-	},
-	buttonWidth: {
+	columns: {
 		type: "number",
-		default: "auto",
+		default: 3
 	},
-	buttonTextOne: {
-		type: "string",
-		default: "Button One",
-	},
-	buttonTextTwo: {
-		type: "string",
-		default: "Button Two",
-	},
-	buttonOneColor: {
-		type: "string",
-		default: "#7967ff"
-	},
-	hoverButtonOneColor: {
-		type: "string",
-		default: "#513fd4",
-	},
-	textOneColor: {
-		type: "string",
-		default: "#fff"
-	},
-	hoverTextOneColor: {
-		type: "string",
-	},
-	buttonTwoColor: {
-		type: "string",
-		default: "#309bff"
-	},
-	hoverButtonTwoColor: {
-		type: "string",
-		default: "#2587e2",
-	},
-	textTwoColor: {
-		type: "string",
-		default: "#fff"
-	},
-	hoverTextTwoColor: {
-		type: "string",
-	},
-	buttonURLOne: {
-		type: "string",
-		selector: ".eb-button-group-link",
-		source: "attribute",
-		attribute: "href",
-		default: "#",
-	},
-	buttonURLTwo: {
-		type: "string",
-		selector: ".eb-button-group-link-two",
-		source: "attribute",
-		attribute: "href",
-		default: "#",
-	},
-	buttonTextAlign: {
-		type: "string",
-		default: "center",
-	},
-	isHoverOne: {
-		type: "boolean",
-		default: false,
-	},
-	isHoverTwo: {
-		type: "boolean",
-		default: false,
-	},
-	innerButtonText: {
-		type: "string",
-		default: "OR",
-	},
-	innerButtonColor: {
-		type: "string",
-		default: "#fff"
-	},
-	innerButtonTextColor: {
-		type: "string",
-		default: "#000"
-	},
-	innerButtonIcon: {
-		type: "string",
-	},
-	showConnector: {
+	showThumbnail: {
 		type: "boolean",
 		default: true
 	},
-	connectorType: {
-		type: "string",
-		default: "text"
+	showTitle: {
+		type: "boolean",
+		default: true
 	},
-	borderType: {
+	titleColor: {
 		type: "string",
-		default: "normal",
+		default: "#333333"
 	},
-	buttonsColorType: {
+	titleHoverColor: {
 		type: "string",
-		default: "normal",
+		default: "#333333"
+	},
+	titleColorStyle: {
+		type: "string",
+		default: "normal"
+	},
+	titleLength: {
+		type: "number",
+	},
+	titleTextAlign: {
+		type: "string",
+		default: "left"
+	},
+	titleTag: {
+		type: "string",
+		default: "h2"
+	},
+	showContent: {
+		type: "boolean",
+		default: true
+	},
+	contentColor: {
+		type: "string",
+		default: "#333333"
+	},
+	contentTextAlign: {
+		type: "string",
+		default: "left"
+	},
+	contentLength: {
+		type: "number",
+		default: 20
+	},
+	expansionIndicator: {
+		type: "string",
+		default: "..."
+	},
+	showReadMore: {
+		type: "boolean",
+		default: true
+	},
+	readmoreText: {
+		type: "string",
+		default: "Read More"
+	},
+	readmoreColor: {
+		type: "string",
+		default: "#333333"
+	},
+	readmoreTextAlign: {
+		type: "string",
+		default: "left"
+	},
+	readmoreHoverColor: {
+		type: "string",
+		default: "#333333"
+	},
+	readmoreColorType: {
+		type: "string",
+		default: "normal"
+	},
+	showMeta: {
+		type: "boolean",
+		default: true
+	},
+	metaPosition: {
+		type: "string",
+		default: "footer"
+	},
+	metaColor: {
+		type: "string",
+		default: "#333333"
+	},
+	metaTextAlign: {
+		type: "string",
+		default: "left"
+	},
+	metaHoverColor: {
+		type: "string",
+		default: "#333333"
+	},
+	metaColorType: {
+		type: "string",
+		default: "normal"
+	},
+	showAvatar: {
+		type: "boolean",
+		default: true
+	},
+	showAuthor: {
+		type: "boolean",
+		default: true
+	},
+	showDate: {
+		type: "boolean",
+		default: true
+	},
+	showCategories: {
+		type: "boolean",
+		default: true
 	},
 
 	// typography attributes ⬇
@@ -158,72 +179,72 @@ const attributes = {
 
 	// margin padding attributes ⬇
 	...generateDimensionsAttributes(WRAPPER_MARGIN),
-	...generateDimensionsAttributes(BUTTONS_MARGIN),
-	...generateDimensionsAttributes(BUTTONS_PADDING, {
+	...generateDimensionsAttributes(WRAPPER_PADDING),
+	...generateDimensionsAttributes(COLUMN_PADDING),
+	...generateDimensionsAttributes(TITLE_MARGIN, {
+		top: 0,
+		bottom: 15,
+		right: 0,
+		left: 0,
+		isLinked: false,
+	}),
+	...generateDimensionsAttributes(CONTENT_MARGIN, {
+		top: 0,
+		bottom: 15,
+		right: 0,
+		left: 0,
+		isLinked: false,
+	}),
+	...generateDimensionsAttributes(READMORE_MARGIN, {
+		top: 0,
+		bottom: 15,
+		right: 0,
+		left: 0,
+		isLinked: false,
+	}),
+	...generateDimensionsAttributes(READMORE_PADDING, {
 		top: 10,
 		bottom: 10,
-		right: 25,
-		left: 25,
+		right: 15,
+		left: 15,
 		isLinked: false,
+	}),
+	...generateDimensionsAttributes(META_MARGIN, {
+		top: 0,
+		bottom: 15,
+		right: 0,
+		left: 0,
+		isLinked: false,
+	}),
+	...generateDimensionsAttributes(THUMBNAIL_BORDER_RADIUS),
+	...generateDimensionsAttributes(AVATAR_BORDER_RADIUS, {
+		top: 50,
+		bottom: 50,
+		right: 50,
+		left: 50,
+		isLinked: true,
 	}),
 
 	// border shadow attributes ⬇
-	...generateBorderShadowAttributes(BUTTON_ONE_BORDER_SHADOW, {
-		bdrDefaults: {
-			top: 2,
-			bottom: 2,
-			right: 2,
-			left: 2,
-		},
-		rdsDefaults: {
-			top: 20,
-			bottom: 0,
-			right: 0,
-			left: 20,
-			isLinked: false,
-		},
+	...generateBorderShadowAttributes(WRAPPER_BORDER_SHADOW,{
 		noShadow: true,
 		// noBorder: true,
 	}),
-	...generateBorderShadowAttributes(BUTTON_TWO_BORDER_SHADOW, {
-		bdrDefaults: {
-			top: 2,
-			bottom: 2,
-			right: 2,
-			left: 2,
-		},
-		rdsDefaults: {
-			top: 0,
-			bottom: 20,
-			right: 20,
-			left: 0,
-			isLinked: false,
-		},
+	// border shadow attributes ⬇
+	...generateBorderShadowAttributes(COLUMN_BORDER_SHADOW,{
 		noShadow: true,
 		// noBorder: true,
 	}),
 
 	// background attributes ⬇
-	...generateBackgroundAttributes(BUTTON_ONE_BG, {
-		defaultFillColor: "#3074ff",
-	}),
-	...generateBackgroundAttributes(BUTTON_TWO_BG, {
-		defaultFillColor: "#3074ff",
-	}),
+	...generateBackgroundAttributes(WRAPPER_BG),
+	...generateBackgroundAttributes(COLUMN_BG),
 
 	// range controller
-	...generateResponsiveRangeAttributes(BUTTONS_WIDTH, {
-		defaultRange: 200,
+	...generateResponsiveRangeAttributes(COLUMN_GAP, {
+		defaultRange: 20,
 	}),
-	...generateResponsiveRangeAttributes(BUTTONS_GAP, {
-		defaultRange: 0,
-	}),
-	...generateResponsiveRangeAttributes(BUTTONS_CONNECTOR_SIZE, {
-		defaultRange: 30,
-	}),
-	...generateResponsiveRangeAttributes(BUTTONS_CONNECTOR_ICON_SIZE, {
-		defaultRange: 16,
-	}),
+	...generateResponsiveRangeAttributes(THUMBNAIL_IMAGE_SIZE),
 };
 
 export default attributes;

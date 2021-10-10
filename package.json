@@ -18,6 +18,7 @@
 		"@wordpress/scripts": "^14.1.0"
 	},
 	"dependencies": {
+		"@wordpress/escape-html": "^2.2.1",
 		"classnames": "^2.2.6",
 		"react-select": "^5.0.0"
 	}

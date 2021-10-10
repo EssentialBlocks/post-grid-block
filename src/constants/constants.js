@@ -3,28 +3,34 @@ const {Dashicon} = wp.components;
 
 // the consts defined here should be unique from one another
 export const WRAPPER_MARGIN = "wrpMargin";
-export const BUTTONS_MARGIN = "buttonsMargin";
-export const BUTTONS_PADDING = "buttonsPadding";
+export const WRAPPER_PADDING = "wrpPadding";
+export const WRAPPER_BORDER_SHADOW = "wrpBorderShadow";
+export const WRAPPER_BG = "wrpBG";
 
+export const COLUMN_GAP = "columnGap";
+export const COLUMN_PADDING = "columnPadding";
+export const COLUMN_BG = "columnBG";
+export const COLUMN_BORDER_SHADOW = "columnBorderShadow";
 
-export const BUTTON_ONE_BORDER_SHADOW = "buttonOneBorderShadow";
-export const BUTTON_TWO_BORDER_SHADOW = "buttonTwoBorderShadow";
-export const BUTTON_ONE_BG = "button1Bg";
-export const BUTTON_TWO_BG = "button2Bg";
-export const BUTTONS_WIDTH = "buttonsWidth";
-export const BUTTONS_GAP = "buttonsGap";
-export const BUTTONS_CONNECTOR_SIZE = "buttonsConnectorSize";
-export const BUTTONS_CONNECTOR_ICON_SIZE = "buttonsConnectorIconSize";
-
-export const BUTTON_STYLES = [
-	{ label: __("Fill"), value: "fill" },
-	{ label: __("Outline"), value: "outline" },
-	{ label: __("Text"), value: "text" },
-];
+export const THUMBNAIL_IMAGE_SIZE = "thumbnailImageSize";
+export const THUMBNAIL_BORDER_RADIUS = "thumbnailBDR";
+export const TITLE_MARGIN = "titleMargin";
+export const CONTENT_MARGIN = "contentMargin";
+export const READMORE_MARGIN = "readmoreMargin";
+export const READMORE_PADDING = "readmorePadding";
+export const META_MARGIN = "metaMargin";
+export const AVATAR_BORDER_RADIUS = "avatarBDR";
 
 export const UNIT_TYPES = [
 	{ label: "px", value: "px" },
 	{ label: "em", value: "em" },
+	{ label: "%", value: "%" },
+];
+
+export const HEIGHT_UNIT_TYPES = [
+	{ label: "px", value: "px" },
+	{ label: "em", value: "em" },
+	{ label: "vh", value: "vh" },
 ];
 
 export const NORMAL_HOVER = [
@@ -32,9 +38,20 @@ export const NORMAL_HOVER = [
 	{ label: "Hover", value: "hover" },
 ];
 
-export const CONNECTOR_TYPE = [
-	{ label: __("Text"), value: "text" },
-	{ label: __("Icon"), value: "icon" },
+export const META_POSITION = [
+	{ label: "Header", value: "header" },
+	{ label: "Footer", value: "hover" },
+	{ label: "Under Thumbnail", value: "thumbnail" },
+];
+
+export const TITLE_TAGS = [
+	{ label: "H1", value: "h1" },
+	{ label: "H2", value: "h2" },
+	{ label: "H3", value: "h3" },
+	{ label: "H4", value: "h4" },
+	{ label: "H5", value: "h5" },
+	{ label: "H6", value: "h6" },
+	{ label: "P", value: "p" },
 ];
 
 export const PRESETS = [

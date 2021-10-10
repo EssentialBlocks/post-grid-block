@@ -7854,7 +7854,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({
+var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({
   resOption: {
     type: "string",
     "default": "desktop"
@@ -7880,160 +7880,170 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
     type: "string",
     "default": "button-1"
   },
-  contentPosition: {
-    type: "string",
-    "default": "center"
-  },
-  buttonWidth: {
+  columns: {
     type: "number",
-    "default": "auto"
+    "default": 3
   },
-  buttonTextOne: {
-    type: "string",
-    "default": "Button One"
-  },
-  buttonTextTwo: {
-    type: "string",
-    "default": "Button Two"
-  },
-  buttonOneColor: {
-    type: "string",
-    "default": "#7967ff"
-  },
-  hoverButtonOneColor: {
-    type: "string",
-    "default": "#513fd4"
-  },
-  textOneColor: {
-    type: "string",
-    "default": "#fff"
-  },
-  hoverTextOneColor: {
-    type: "string"
-  },
-  buttonTwoColor: {
-    type: "string",
-    "default": "#309bff"
-  },
-  hoverButtonTwoColor: {
-    type: "string",
-    "default": "#2587e2"
-  },
-  textTwoColor: {
-    type: "string",
-    "default": "#fff"
-  },
-  hoverTextTwoColor: {
-    type: "string"
-  },
-  buttonURLOne: {
-    type: "string",
-    selector: ".eb-button-group-link",
-    source: "attribute",
-    attribute: "href",
-    "default": "#"
-  },
-  buttonURLTwo: {
-    type: "string",
-    selector: ".eb-button-group-link-two",
-    source: "attribute",
-    attribute: "href",
-    "default": "#"
-  },
-  buttonTextAlign: {
-    type: "string",
-    "default": "center"
-  },
-  isHoverOne: {
-    type: "boolean",
-    "default": false
-  },
-  isHoverTwo: {
-    type: "boolean",
-    "default": false
-  },
-  innerButtonText: {
-    type: "string",
-    "default": "OR"
-  },
-  innerButtonColor: {
-    type: "string",
-    "default": "#fff"
-  },
-  innerButtonTextColor: {
-    type: "string",
-    "default": "#000"
-  },
-  innerButtonIcon: {
-    type: "string"
-  },
-  showConnector: {
+  showThumbnail: {
     type: "boolean",
     "default": true
   },
-  connectorType: {
-    type: "string",
-    "default": "text"
+  showTitle: {
+    type: "boolean",
+    "default": true
   },
-  borderType: {
+  titleColor: {
+    type: "string",
+    "default": "#333333"
+  },
+  titleHoverColor: {
+    type: "string",
+    "default": "#333333"
+  },
+  titleColorStyle: {
     type: "string",
     "default": "normal"
   },
-  buttonsColorType: {
+  titleLength: {
+    type: "number"
+  },
+  titleTextAlign: {
+    type: "string",
+    "default": "left"
+  },
+  titleTag: {
+    type: "string",
+    "default": "h2"
+  },
+  showContent: {
+    type: "boolean",
+    "default": true
+  },
+  contentColor: {
+    type: "string",
+    "default": "#333333"
+  },
+  contentTextAlign: {
+    type: "string",
+    "default": "left"
+  },
+  contentLength: {
+    type: "number",
+    "default": 20
+  },
+  expansionIndicator: {
+    type: "string",
+    "default": "..."
+  },
+  showReadMore: {
+    type: "boolean",
+    "default": true
+  },
+  readmoreText: {
+    type: "string",
+    "default": "Read More"
+  },
+  readmoreColor: {
+    type: "string",
+    "default": "#333333"
+  },
+  readmoreTextAlign: {
+    type: "string",
+    "default": "left"
+  },
+  readmoreHoverColor: {
+    type: "string",
+    "default": "#333333"
+  },
+  readmoreColorType: {
     type: "string",
     "default": "normal"
+  },
+  showMeta: {
+    type: "boolean",
+    "default": true
+  },
+  metaPosition: {
+    type: "string",
+    "default": "footer"
+  },
+  metaColor: {
+    type: "string",
+    "default": "#333333"
+  },
+  metaTextAlign: {
+    type: "string",
+    "default": "left"
+  },
+  metaHoverColor: {
+    type: "string",
+    "default": "#333333"
+  },
+  metaColorType: {
+    type: "string",
+    "default": "normal"
+  },
+  showAvatar: {
+    type: "boolean",
+    "default": true
+  },
+  showAuthor: {
+    type: "boolean",
+    "default": true
+  },
+  showDate: {
+    type: "boolean",
+    "default": true
+  },
+  showCategories: {
+    type: "boolean",
+    "default": true
   }
-}, Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateTypographyAttributes"])(Object.values(_constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_2__))), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["WRAPPER_MARGIN"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["BUTTONS_MARGIN"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["BUTTONS_PADDING"], {
+}, Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateTypographyAttributes"])(Object.values(_constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_2__))), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["WRAPPER_MARGIN"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["WRAPPER_PADDING"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["COLUMN_PADDING"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["TITLE_MARGIN"], {
+  top: 0,
+  bottom: 15,
+  right: 0,
+  left: 0,
+  isLinked: false
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["CONTENT_MARGIN"], {
+  top: 0,
+  bottom: 15,
+  right: 0,
+  left: 0,
+  isLinked: false
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["READMORE_MARGIN"], {
+  top: 0,
+  bottom: 15,
+  right: 0,
+  left: 0,
+  isLinked: false
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["READMORE_PADDING"], {
   top: 10,
   bottom: 10,
-  right: 25,
-  left: 25,
+  right: 15,
+  left: 15,
   isLinked: false
-})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBorderShadowAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["BUTTON_ONE_BORDER_SHADOW"], {
-  bdrDefaults: {
-    top: 2,
-    bottom: 2,
-    right: 2,
-    left: 2
-  },
-  rdsDefaults: {
-    top: 20,
-    bottom: 0,
-    right: 0,
-    left: 20,
-    isLinked: false
-  },
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["META_MARGIN"], {
+  top: 0,
+  bottom: 15,
+  right: 0,
+  left: 0,
+  isLinked: false
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["THUMBNAIL_BORDER_RADIUS"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["AVATAR_BORDER_RADIUS"], {
+  top: 50,
+  bottom: 50,
+  right: 50,
+  left: 50,
+  isLinked: true
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBorderShadowAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["WRAPPER_BORDER_SHADOW"], {
   noShadow: true // noBorder: true,
 
-})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBorderShadowAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["BUTTON_TWO_BORDER_SHADOW"], {
-  bdrDefaults: {
-    top: 2,
-    bottom: 2,
-    right: 2,
-    left: 2
-  },
-  rdsDefaults: {
-    top: 0,
-    bottom: 20,
-    right: 20,
-    left: 0,
-    isLinked: false
-  },
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBorderShadowAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["COLUMN_BORDER_SHADOW"], {
   noShadow: true // noBorder: true,
 
-})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBackgroundAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["BUTTON_ONE_BG"], {
-  defaultFillColor: "#3074ff"
-})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBackgroundAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["BUTTON_TWO_BG"], {
-  defaultFillColor: "#3074ff"
-})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["BUTTONS_WIDTH"], {
-  defaultRange: 200
-})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["BUTTONS_GAP"], {
-  defaultRange: 0
-})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["BUTTONS_CONNECTOR_SIZE"], {
-  defaultRange: 30
-})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["BUTTONS_CONNECTOR_ICON_SIZE"], {
-  defaultRange: 16
-}));
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBackgroundAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["WRAPPER_BG"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBackgroundAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["COLUMN_BG"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["COLUMN_GAP"], {
+  defaultRange: 20
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["THUMBNAIL_IMAGE_SIZE"]));
 
 /* harmony default export */ __webpack_exports__["default"] = (attributes);
 
@@ -8043,26 +8053,32 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
 /*!************************************!*\
   !*** ./src/constants/constants.js ***!
   \************************************/
-/*! exports provided: WRAPPER_MARGIN, BUTTONS_MARGIN, BUTTONS_PADDING, BUTTON_ONE_BORDER_SHADOW, BUTTON_TWO_BORDER_SHADOW, BUTTON_ONE_BG, BUTTON_TWO_BG, BUTTONS_WIDTH, BUTTONS_GAP, BUTTONS_CONNECTOR_SIZE, BUTTONS_CONNECTOR_ICON_SIZE, BUTTON_STYLES, UNIT_TYPES, NORMAL_HOVER, CONNECTOR_TYPE, PRESETS, TEXT_ALIGN, CONTENT_POSITION */
+/*! exports provided: WRAPPER_MARGIN, WRAPPER_PADDING, WRAPPER_BORDER_SHADOW, WRAPPER_BG, COLUMN_GAP, COLUMN_PADDING, COLUMN_BG, COLUMN_BORDER_SHADOW, THUMBNAIL_IMAGE_SIZE, THUMBNAIL_BORDER_RADIUS, TITLE_MARGIN, CONTENT_MARGIN, READMORE_MARGIN, READMORE_PADDING, META_MARGIN, AVATAR_BORDER_RADIUS, UNIT_TYPES, HEIGHT_UNIT_TYPES, NORMAL_HOVER, META_POSITION, TITLE_TAGS, PRESETS, TEXT_ALIGN, CONTENT_POSITION */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WRAPPER_MARGIN", function() { return WRAPPER_MARGIN; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BUTTONS_MARGIN", function() { return BUTTONS_MARGIN; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BUTTONS_PADDING", function() { return BUTTONS_PADDING; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BUTTON_ONE_BORDER_SHADOW", function() { return BUTTON_ONE_BORDER_SHADOW; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BUTTON_TWO_BORDER_SHADOW", function() { return BUTTON_TWO_BORDER_SHADOW; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BUTTON_ONE_BG", function() { return BUTTON_ONE_BG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BUTTON_TWO_BG", function() { return BUTTON_TWO_BG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BUTTONS_WIDTH", function() { return BUTTONS_WIDTH; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BUTTONS_GAP", function() { return BUTTONS_GAP; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BUTTONS_CONNECTOR_SIZE", function() { return BUTTONS_CONNECTOR_SIZE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BUTTONS_CONNECTOR_ICON_SIZE", function() { return BUTTONS_CONNECTOR_ICON_SIZE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BUTTON_STYLES", function() { return BUTTON_STYLES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WRAPPER_PADDING", function() { return WRAPPER_PADDING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WRAPPER_BORDER_SHADOW", function() { return WRAPPER_BORDER_SHADOW; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WRAPPER_BG", function() { return WRAPPER_BG; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "COLUMN_GAP", function() { return COLUMN_GAP; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "COLUMN_PADDING", function() { return COLUMN_PADDING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "COLUMN_BG", function() { return COLUMN_BG; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "COLUMN_BORDER_SHADOW", function() { return COLUMN_BORDER_SHADOW; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "THUMBNAIL_IMAGE_SIZE", function() { return THUMBNAIL_IMAGE_SIZE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "THUMBNAIL_BORDER_RADIUS", function() { return THUMBNAIL_BORDER_RADIUS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TITLE_MARGIN", function() { return TITLE_MARGIN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CONTENT_MARGIN", function() { return CONTENT_MARGIN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "READMORE_MARGIN", function() { return READMORE_MARGIN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "READMORE_PADDING", function() { return READMORE_PADDING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "META_MARGIN", function() { return META_MARGIN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AVATAR_BORDER_RADIUS", function() { return AVATAR_BORDER_RADIUS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UNIT_TYPES", function() { return UNIT_TYPES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HEIGHT_UNIT_TYPES", function() { return HEIGHT_UNIT_TYPES; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NORMAL_HOVER", function() { return NORMAL_HOVER; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CONNECTOR_TYPE", function() { return CONNECTOR_TYPE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "META_POSITION", function() { return META_POSITION; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TITLE_TAGS", function() { return TITLE_TAGS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PRESETS", function() { return PRESETS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TEXT_ALIGN", function() { return TEXT_ALIGN; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CONTENT_POSITION", function() { return CONTENT_POSITION; });
@@ -8070,32 +8086,40 @@ var __ = wp.i18n.__;
 var Dashicon = wp.components.Dashicon; // the consts defined here should be unique from one another
 
 var WRAPPER_MARGIN = "wrpMargin";
-var BUTTONS_MARGIN = "buttonsMargin";
-var BUTTONS_PADDING = "buttonsPadding";
-var BUTTON_ONE_BORDER_SHADOW = "buttonOneBorderShadow";
-var BUTTON_TWO_BORDER_SHADOW = "buttonTwoBorderShadow";
-var BUTTON_ONE_BG = "button1Bg";
-var BUTTON_TWO_BG = "button2Bg";
-var BUTTONS_WIDTH = "buttonsWidth";
-var BUTTONS_GAP = "buttonsGap";
-var BUTTONS_CONNECTOR_SIZE = "buttonsConnectorSize";
-var BUTTONS_CONNECTOR_ICON_SIZE = "buttonsConnectorIconSize";
-var BUTTON_STYLES = [{
-  label: __("Fill"),
-  value: "fill"
-}, {
-  label: __("Outline"),
-  value: "outline"
-}, {
-  label: __("Text"),
-  value: "text"
-}];
+var WRAPPER_PADDING = "wrpPadding";
+var WRAPPER_BORDER_SHADOW = "wrpBorderShadow";
+var WRAPPER_BG = "wrpBG";
+var COLUMN_GAP = "columnGap";
+var COLUMN_PADDING = "columnPadding";
+var COLUMN_BG = "columnBG";
+var COLUMN_BORDER_SHADOW = "columnBorderShadow";
+var THUMBNAIL_IMAGE_SIZE = "thumbnailImageSize";
+var THUMBNAIL_BORDER_RADIUS = "thumbnailBDR";
+var TITLE_MARGIN = "titleMargin";
+var CONTENT_MARGIN = "contentMargin";
+var READMORE_MARGIN = "readmoreMargin";
+var READMORE_PADDING = "readmorePadding";
+var META_MARGIN = "metaMargin";
+var AVATAR_BORDER_RADIUS = "avatarBDR";
 var UNIT_TYPES = [{
   label: "px",
   value: "px"
 }, {
   label: "em",
   value: "em"
+}, {
+  label: "%",
+  value: "%"
+}];
+var HEIGHT_UNIT_TYPES = [{
+  label: "px",
+  value: "px"
+}, {
+  label: "em",
+  value: "em"
+}, {
+  label: "vh",
+  value: "vh"
 }];
 var NORMAL_HOVER = [{
   label: "Normal",
@@ -8104,12 +8128,37 @@ var NORMAL_HOVER = [{
   label: "Hover",
   value: "hover"
 }];
-var CONNECTOR_TYPE = [{
-  label: __("Text"),
-  value: "text"
+var META_POSITION = [{
+  label: "Header",
+  value: "header"
 }, {
-  label: __("Icon"),
-  value: "icon"
+  label: "Footer",
+  value: "hover"
+}, {
+  label: "Under Thumbnail",
+  value: "thumbnail"
+}];
+var TITLE_TAGS = [{
+  label: "H1",
+  value: "h1"
+}, {
+  label: "H2",
+  value: "h2"
+}, {
+  label: "H3",
+  value: "h3"
+}, {
+  label: "H4",
+  value: "h4"
+}, {
+  label: "H5",
+  value: "h5"
+}, {
+  label: "H6",
+  value: "h6"
+}, {
+  label: "P",
+  value: "p"
 }];
 var PRESETS = [{
   label: __("Preset 1"),
@@ -8163,16 +8212,20 @@ var CONTENT_POSITION = [{
 /*!****************************************************!*\
   !*** ./src/constants/typographyPrefixConstants.js ***!
   \****************************************************/
-/*! exports provided: BUTTONS_TYPOGRAPHY, BUTTONS_CONNECTOR_TYPOGRAPHY */
+/*! exports provided: EBPG_TITLE_TYPOGRAPHY, EBPG_CONTENT_TYPOGRAPHY, EBPG_READMORE_TYPOGRAPHY, EBPG_META_TYPOGRAPHY */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BUTTONS_TYPOGRAPHY", function() { return BUTTONS_TYPOGRAPHY; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BUTTONS_CONNECTOR_TYPOGRAPHY", function() { return BUTTONS_CONNECTOR_TYPOGRAPHY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EBPG_TITLE_TYPOGRAPHY", function() { return EBPG_TITLE_TYPOGRAPHY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EBPG_CONTENT_TYPOGRAPHY", function() { return EBPG_CONTENT_TYPOGRAPHY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EBPG_READMORE_TYPOGRAPHY", function() { return EBPG_READMORE_TYPOGRAPHY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EBPG_META_TYPOGRAPHY", function() { return EBPG_META_TYPOGRAPHY; });
 // the consts defined here should be unique from one another
-var BUTTONS_TYPOGRAPHY = "button";
-var BUTTONS_CONNECTOR_TYPOGRAPHY = "button_connector";
+var EBPG_TITLE_TYPOGRAPHY = "ebpg_title";
+var EBPG_CONTENT_TYPOGRAPHY = "ebpg_content";
+var EBPG_READMORE_TYPOGRAPHY = "ebpg_readmore";
+var EBPG_META_TYPOGRAPHY = "ebpg_meta";
 
 /***/ }),
 
@@ -8186,12 +8239,14 @@ var BUTTONS_CONNECTOR_TYPOGRAPHY = "button_connector";
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Edit; });
-/* harmony import */ var _inspector__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./inspector */ "./src/inspector.js");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _constants_constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./constants/constants */ "./src/constants/constants.js");
-/* harmony import */ var _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./constants/typographyPrefixConstants */ "./src/constants/typographyPrefixConstants.js");
-/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/helpers */ "./util/helpers/index.js");
+/* harmony import */ var _wordpress_escape_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/escape-html */ "@wordpress/escape-html");
+/* harmony import */ var _wordpress_escape_html__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_escape_html__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inspector__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./inspector */ "./src/inspector.js");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _constants_constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./constants/constants */ "./src/constants/constants.js");
+/* harmony import */ var _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./constants/typographyPrefixConstants */ "./src/constants/typographyPrefixConstants.js");
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../util/helpers */ "./util/helpers/index.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 /**
@@ -8203,6 +8258,7 @@ var _wp$blockEditor = wp.blockEditor,
     useBlockProps = _wp$blockEditor.useBlockProps;
 var useEffect = wp.element.useEffect;
 var select = wp.data.select;
+
 /**
   * Internal depencencies
 */
@@ -8221,25 +8277,37 @@ function Edit(props) {
       blockMeta = attributes.blockMeta,
       resOption = attributes.resOption,
       preset = attributes.preset,
-      contentPosition = attributes.contentPosition,
-      buttonTextOne = attributes.buttonTextOne,
-      buttonTextTwo = attributes.buttonTextTwo,
-      hoverButtonOneColor = attributes.hoverButtonOneColor,
-      textOneColor = attributes.textOneColor,
-      hoverTextOneColor = attributes.hoverTextOneColor,
-      buttonTwoColor = attributes.buttonTwoColor,
-      hoverButtonTwoColor = attributes.hoverButtonTwoColor,
-      textTwoColor = attributes.textTwoColor,
-      hoverTextTwoColor = attributes.hoverTextTwoColor,
-      innerButtonText = attributes.innerButtonText,
-      innerButtonColor = attributes.innerButtonColor,
-      innerButtonTextColor = attributes.innerButtonTextColor,
-      innerButtonIcon = attributes.innerButtonIcon,
-      showConnector = attributes.showConnector,
-      connectorType = attributes.connectorType,
-      buttonTextAlign = attributes.buttonTextAlign,
-      queryData = attributes.queryData,
-      queryResults = attributes.queryResults; // this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class
+      queryResults = attributes.queryResults,
+      columns = attributes.columns,
+      showThumbnail = attributes.showThumbnail,
+      showTitle = attributes.showTitle,
+      titleColor = attributes.titleColor,
+      titleHoverColor = attributes.titleHoverColor,
+      titleColorStyle = attributes.titleColorStyle,
+      titleLength = attributes.titleLength,
+      titleTextAlign = attributes.titleTextAlign,
+      titleTag = attributes.titleTag,
+      showContent = attributes.showContent,
+      contentColor = attributes.contentColor,
+      contentTextAlign = attributes.contentTextAlign,
+      contentLength = attributes.contentLength,
+      expansionIndicator = attributes.expansionIndicator,
+      showReadMore = attributes.showReadMore,
+      readmoreText = attributes.readmoreText,
+      readmoreColor = attributes.readmoreColor,
+      readmoreTextAlign = attributes.readmoreTextAlign,
+      readmoreHoverColor = attributes.readmoreHoverColor,
+      readmoreColorType = attributes.readmoreColorType,
+      showMeta = attributes.showMeta,
+      metaPosition = attributes.metaPosition,
+      metaColor = attributes.metaColor,
+      metaTextAlign = attributes.metaTextAlign,
+      metaHoverColor = attributes.metaHoverColor,
+      metaColorType = attributes.metaColorType,
+      showAvatar = attributes.showAvatar,
+      showAuthor = attributes.showAuthor,
+      showDate = attributes.showDate,
+      showCategories = attributes.showCategories; // this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class
 
   useEffect(function () {
     var bodyClasses = document.body.className;
@@ -8250,7 +8318,7 @@ function Edit(props) {
 
   useEffect(function () {
     var BLOCK_PREFIX = "eb-post-grid";
-    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["duplicateBlockIdFix"])({
+    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["duplicateBlockIdFix"])({
       BLOCK_PREFIX: BLOCK_PREFIX,
       blockId: blockId,
       setAttributes: setAttributes,
@@ -8260,7 +8328,7 @@ function Edit(props) {
   }, []); // this useEffect is for mimmiking css when responsive options clicked from wordpress's 'preview' button
 
   useEffect(function () {
-    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["mimmikCssForPreviewBtnClick"])({
+    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["mimmikCssForPreviewBtnClick"])({
       domObj: document,
       select: select
     });
@@ -8270,26 +8338,44 @@ function Edit(props) {
   }); //
   // CSS/styling Codes Starts from Here
 
-  var _generateTypographySt = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateTypographyStyles"])({
+  var _generateTypographySt = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateTypographyStyles"])({
     attributes: attributes,
-    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_3__["BUTTONS_TYPOGRAPHY"],
+    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_4__["EBPG_TITLE_TYPOGRAPHY"],
+    defaultFontSize: 20
+  }),
+      titleTypoStylesDesktop = _generateTypographySt.typoStylesDesktop,
+      titleTypoStylesTab = _generateTypographySt.typoStylesTab,
+      titleTypoStylesMobile = _generateTypographySt.typoStylesMobile;
+
+  var _generateTypographySt2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateTypographyStyles"])({
+    attributes: attributes,
+    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_4__["EBPG_CONTENT_TYPOGRAPHY"],
     defaultFontSize: 16
   }),
-      buttonsTypoStylesDesktop = _generateTypographySt.typoStylesDesktop,
-      buttonsTypoStylesTab = _generateTypographySt.typoStylesTab,
-      buttonsTypoStylesMobile = _generateTypographySt.typoStylesMobile;
+      contentTypoStylesDesktop = _generateTypographySt2.typoStylesDesktop,
+      contentTypoStylesTab = _generateTypographySt2.typoStylesTab,
+      contentTypoStylesMobile = _generateTypographySt2.typoStylesMobile;
 
-  var _generateTypographySt2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateTypographyStyles"])({
+  var _generateTypographySt3 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateTypographyStyles"])({
     attributes: attributes,
-    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_3__["BUTTONS_CONNECTOR_TYPOGRAPHY"],
+    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_4__["EBPG_READMORE_TYPOGRAPHY"],
+    defaultFontSize: 16
+  }),
+      readmoreTypoStylesDesktop = _generateTypographySt3.typoStylesDesktop,
+      readmoreTypoStylesTab = _generateTypographySt3.typoStylesTab,
+      readmoreTypoStylesMobile = _generateTypographySt3.typoStylesMobile;
+
+  var _generateTypographySt4 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateTypographyStyles"])({
+    attributes: attributes,
+    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_4__["EBPG_META_TYPOGRAPHY"],
     defaultFontSize: 14
   }),
-      connectorTypoStylesDesktop = _generateTypographySt2.typoStylesDesktop,
-      connectorTypoStylesTab = _generateTypographySt2.typoStylesTab,
-      connectorTypoStylesMobile = _generateTypographySt2.typoStylesMobile;
+      metaTypoStylesDesktop = _generateTypographySt4.typoStylesDesktop,
+      metaTypoStylesTab = _generateTypographySt4.typoStylesTab,
+      metaTypoStylesMobile = _generateTypographySt4.typoStylesMobile;
 
-  var _generateDimensionsCo = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["WRAPPER_MARGIN"],
+  var _generateDimensionsCo = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["WRAPPER_MARGIN"],
     styleFor: "margin",
     attributes: attributes
   }),
@@ -8297,120 +8383,167 @@ function Edit(props) {
       wrapperMarginStylesTab = _generateDimensionsCo.dimensionStylesTab,
       wrapperMarginStylesMobile = _generateDimensionsCo.dimensionStylesMobile;
 
-  var _generateDimensionsCo2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["BUTTONS_PADDING"],
+  var _generateDimensionsCo2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["WRAPPER_PADDING"],
     styleFor: "padding",
     attributes: attributes
   }),
-      buttonsPaddingStylesDesktop = _generateDimensionsCo2.dimensionStylesDesktop,
-      buttonsPaddingStylesTab = _generateDimensionsCo2.dimensionStylesTab,
-      buttonsPaddingStylesMobile = _generateDimensionsCo2.dimensionStylesMobile;
+      wrapperPaddingStylesDesktop = _generateDimensionsCo2.dimensionStylesDesktop,
+      wrapperPaddingStylesTab = _generateDimensionsCo2.dimensionStylesTab,
+      wrapperPaddingStylesMobile = _generateDimensionsCo2.dimensionStylesMobile;
 
-  var _generateBorderShadow = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateBorderShadowStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["BUTTON_ONE_BORDER_SHADOW"],
-    attributes: attributes,
-    noShadow: true
-  }),
-      buttonOneBDShadowDesktop = _generateBorderShadow.styesDesktop,
-      buttonOneBDShadowTab = _generateBorderShadow.styesTab,
-      buttonOneBDShadowMobile = _generateBorderShadow.styesMobile,
-      buttonOneBDShadowHoverDesktop = _generateBorderShadow.stylesHoverDesktop,
-      buttonOneBDShadowHoverTab = _generateBorderShadow.stylesHoverTab,
-      buttonOneBDShadowHoverMobile = _generateBorderShadow.stylesHoverMobile;
-
-  var _generateBorderShadow2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateBorderShadowStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["BUTTON_TWO_BORDER_SHADOW"],
-    attributes: attributes,
-    noShadow: true
-  }),
-      buttonTwoBDShadowDesktop = _generateBorderShadow2.styesDesktop,
-      buttonTwoBDShadowTab = _generateBorderShadow2.styesTab,
-      buttonTwoBDShadowMobile = _generateBorderShadow2.styesMobile,
-      buttonTwoBDShadowHoverDesktop = _generateBorderShadow2.stylesHoverDesktop,
-      buttonTwoBDShadowHoverTab = _generateBorderShadow2.stylesHoverTab,
-      buttonTwoBDShadowHoverMobile = _generateBorderShadow2.stylesHoverMobile; // responsive range controller
-
-
-  var _generateResponsiveRa = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateResponsiveRangeStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["BUTTONS_WIDTH"],
-    property: "width",
+  var _generateDimensionsCo3 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["COLUMN_PADDING"],
+    styleFor: "padding",
     attributes: attributes
   }),
-      buttonWidthStyleDesktop = _generateResponsiveRa.rangeStylesDesktop,
-      buttonWidthStyleTab = _generateResponsiveRa.rangeStylesTab,
-      buttonWidthStyleMobile = _generateResponsiveRa.rangeStylesMobile;
+      columnPaddingStylesDesktop = _generateDimensionsCo3.dimensionStylesDesktop,
+      columnPaddingStylesTab = _generateDimensionsCo3.dimensionStylesTab,
+      columnPaddingStylesMobile = _generateDimensionsCo3.dimensionStylesMobile;
 
-  var _generateResponsiveRa2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateResponsiveRangeStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["BUTTONS_GAP"],
+  var _generateDimensionsCo4 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["TITLE_MARGIN"],
+    styleFor: "margin",
+    attributes: attributes
+  }),
+      titleMarginStylesDesktop = _generateDimensionsCo4.dimensionStylesDesktop,
+      titleMarginStylesTab = _generateDimensionsCo4.dimensionStylesTab,
+      titleMarginStylesMobile = _generateDimensionsCo4.dimensionStylesMobile;
+
+  var _generateDimensionsCo5 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["CONTENT_MARGIN"],
+    styleFor: "margin",
+    attributes: attributes
+  }),
+      contentMarginStylesDesktop = _generateDimensionsCo5.dimensionStylesDesktop,
+      contentMarginStylesTab = _generateDimensionsCo5.dimensionStylesTab,
+      contentMarginStylesMobile = _generateDimensionsCo5.dimensionStylesMobile;
+
+  var _generateDimensionsCo6 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["READMORE_MARGIN"],
+    styleFor: "margin",
+    attributes: attributes
+  }),
+      readmoreMarginStylesDesktop = _generateDimensionsCo6.dimensionStylesDesktop,
+      readmoreMarginStylesTab = _generateDimensionsCo6.dimensionStylesTab,
+      readmoreMarginStylesMobile = _generateDimensionsCo6.dimensionStylesMobile;
+
+  var _generateDimensionsCo7 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["READMORE_PADDING"],
+    styleFor: "padding",
+    attributes: attributes
+  }),
+      readmorePaddingStylesDesktop = _generateDimensionsCo7.dimensionStylesDesktop,
+      readmorePaddingStylesTab = _generateDimensionsCo7.dimensionStylesTab,
+      readmorePaddingStylesMobile = _generateDimensionsCo7.dimensionStylesMobile;
+
+  var _generateDimensionsCo8 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["META_MARGIN"],
+    styleFor: "margin",
+    attributes: attributes
+  }),
+      metaMarginStylesDesktop = _generateDimensionsCo8.dimensionStylesDesktop,
+      metaMarginStylesTab = _generateDimensionsCo8.dimensionStylesTab,
+      metaMarginStylesMobile = _generateDimensionsCo8.dimensionStylesMobile;
+
+  var _generateDimensionsCo9 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["THUMBNAIL_BORDER_RADIUS"],
+    styleFor: "border-radius",
+    attributes: attributes
+  }),
+      thumbnailBdrSdwStylesDesktop = _generateDimensionsCo9.dimensionStylesDesktop,
+      thumbnailBdrSdwStylesTab = _generateDimensionsCo9.dimensionStylesTab,
+      thumbnailBdrSdwStylesMobile = _generateDimensionsCo9.dimensionStylesMobile;
+
+  var _generateDimensionsCo10 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["AVATAR_BORDER_RADIUS"],
+    styleFor: "border-radius",
+    attributes: attributes
+  }),
+      avatarBdrSdwStylesDesktop = _generateDimensionsCo10.dimensionStylesDesktop,
+      avatarBdrSdwStylesTab = _generateDimensionsCo10.dimensionStylesTab,
+      avatarBdrSdwStylesMobile = _generateDimensionsCo10.dimensionStylesMobile;
+
+  var _generateBorderShadow = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateBorderShadowStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["WRAPPER_BORDER_SHADOW"],
+    attributes: attributes,
+    noShadow: true
+  }),
+      wrapperBDShadowDesktop = _generateBorderShadow.styesDesktop,
+      wrapperBDShadowTab = _generateBorderShadow.styesTab,
+      wrapperBDShadowMobile = _generateBorderShadow.styesMobile,
+      wrapperBDShadowHoverDesktop = _generateBorderShadow.stylesHoverDesktop,
+      wrapperBDShadowHoverTab = _generateBorderShadow.stylesHoverTab,
+      wrapperBDShadowHoverMobile = _generateBorderShadow.stylesHoverMobile;
+
+  var _generateBorderShadow2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateBorderShadowStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["COLUMN_BORDER_SHADOW"],
+    attributes: attributes,
+    noShadow: true
+  }),
+      columnBDShadowDesktop = _generateBorderShadow2.styesDesktop,
+      columnBDShadowTab = _generateBorderShadow2.styesTab,
+      columnBDShadowMobile = _generateBorderShadow2.styesMobile,
+      columnBDShadowHoverDesktop = _generateBorderShadow2.stylesHoverDesktop,
+      columnBDShadowHoverTab = _generateBorderShadow2.stylesHoverTab,
+      columnBDShadowHoverMobile = _generateBorderShadow2.stylesHoverMobile;
+
+  var _generateResponsiveRa = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateResponsiveRangeStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["COLUMN_GAP"],
     property: "margin",
     attributes: attributes
   }),
-      buttonGapDesktop = _generateResponsiveRa2.rangeStylesDesktop,
-      buttonGapTab = _generateResponsiveRa2.rangeStylesTab,
-      buttonGapMobile = _generateResponsiveRa2.rangeStylesMobile;
+      columnGapDesktop = _generateResponsiveRa.rangeStylesDesktop,
+      columnGapTab = _generateResponsiveRa.rangeStylesTab,
+      columnGapMobile = _generateResponsiveRa.rangeStylesMobile;
 
-  var _generateResponsiveRa3 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateResponsiveRangeStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["BUTTONS_CONNECTOR_SIZE"],
+  var _generateResponsiveRa2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateResponsiveRangeStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["THUMBNAIL_IMAGE_SIZE"],
     property: "height",
     attributes: attributes
   }),
-      buttonConnectorHeightDesktop = _generateResponsiveRa3.rangeStylesDesktop,
-      buttonConnectorHeightTab = _generateResponsiveRa3.rangeStylesTab,
-      buttonConnectorHeightMobile = _generateResponsiveRa3.rangeStylesMobile;
+      thumbnailImageHeightDesktop = _generateResponsiveRa2.rangeStylesDesktop,
+      thumbnailImageHeightTab = _generateResponsiveRa2.rangeStylesTab,
+      thumbnailImageHeightMobile = _generateResponsiveRa2.rangeStylesMobile; //Generate Background
 
-  var _generateResponsiveRa4 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateResponsiveRangeStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["BUTTONS_CONNECTOR_SIZE"],
-    property: "width",
-    attributes: attributes
+
+  var _generateBackgroundCo = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateBackgroundControlStyles"])({
+    attributes: attributes,
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["WRAPPER_BG"],
+    noOverlay: true
   }),
-      buttonConnectorWidthDesktop = _generateResponsiveRa4.rangeStylesDesktop,
-      buttonConnectorWidthTab = _generateResponsiveRa4.rangeStylesTab,
-      buttonConnectorWidthMobile = _generateResponsiveRa4.rangeStylesMobile;
+      wrapperBackgroundStylesDesktop = _generateBackgroundCo.backgroundStylesDesktop,
+      wrapperHoverBackgroundStylesDesktop = _generateBackgroundCo.hoverBackgroundStylesDesktop,
+      wrapperBackgroundStylesTab = _generateBackgroundCo.backgroundStylesTab,
+      wrapperHoverBackgroundStylesTab = _generateBackgroundCo.hoverBackgroundStylesTab,
+      wrapperBackgroundStylesMobile = _generateBackgroundCo.backgroundStylesMobile,
+      wrapperHoverBackgroundStylesMobile = _generateBackgroundCo.hoverBackgroundStylesMobile,
+      wrapperBgTransitionStyle = _generateBackgroundCo.bgTransitionStyle; //Generate Background
 
-  var _generateResponsiveRa5 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateResponsiveRangeStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["BUTTONS_CONNECTOR_SIZE"],
-    property: "line-height",
-    attributes: attributes
+
+  var _generateBackgroundCo2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateBackgroundControlStyles"])({
+    attributes: attributes,
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["COLUMN_BG"],
+    noOverlay: true
   }),
-      buttonConnectorLineHeightDesktop = _generateResponsiveRa5.rangeStylesDesktop,
-      buttonConnectorLineHeightTab = _generateResponsiveRa5.rangeStylesTab,
-      buttonConnectorLineHeightMobile = _generateResponsiveRa5.rangeStylesMobile;
-
-  var _generateResponsiveRa6 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateResponsiveRangeStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["BUTTONS_CONNECTOR_ICON_SIZE"],
-    property: "font-size",
-    attributes: attributes
-  }),
-      buttonConnectorIconSizeDesktop = _generateResponsiveRa6.rangeStylesDesktop,
-      buttonConnectorIconSizeTab = _generateResponsiveRa6.rangeStylesTab,
-      buttonConnectorIconSizeMobile = _generateResponsiveRa6.rangeStylesMobile; // wrapper styles css in strings ⬇
+      columnBackgroundStylesDesktop = _generateBackgroundCo2.backgroundStylesDesktop,
+      columnHoverBackgroundStylesDesktop = _generateBackgroundCo2.hoverBackgroundStylesDesktop,
+      columnBackgroundStylesTab = _generateBackgroundCo2.backgroundStylesTab,
+      columnHoverBackgroundStylesTab = _generateBackgroundCo2.hoverBackgroundStylesTab,
+      columnBackgroundStylesMobile = _generateBackgroundCo2.backgroundStylesMobile,
+      columnHoverBackgroundStylesMobile = _generateBackgroundCo2.hoverBackgroundStylesMobile,
+      columnBgTransitionStyle = _generateBackgroundCo2.bgTransitionStyle; // wrapper styles css in strings ⬇
 
 
-  var wrapperStylesDesktop = "\n\t\t.eb-button-group-wrapper.".concat(blockId, "{\n\t\t\tdisplay: flex;\n\t\t\tflex-direction: row;\n\t\t\talign-items: ").concat(contentPosition, ";\n\t\t\tjustify-content: ").concat(contentPosition, ";\n\t\t\tposition: relative;\n\t\t\t").concat(wrapperMarginStylesDesktop, "\n\t\t}\n\t");
+  var wrapperStylesDesktop = "\n\t\t.eb-button-group-wrapper.".concat(blockId, "{\n\t\t\tdisplay: flex;\n\t\t\tflex-direction: row;\n\t\t\tposition: relative;\n\t\t\t").concat(wrapperMarginStylesDesktop, "\n\t\t\t").concat(wrapperPaddingStylesDesktop, "\n\t\t}\n\t");
   var wrapperStylesTab = "\n\t\t.eb-button-group-wrapper.".concat(blockId, "{\n\t\t\t").concat(wrapperMarginStylesTab, "\n\n\t\t}\n\t");
-  var wrapperStylesMobile = "\n\t\t.eb-button-group-wrapper.".concat(blockId, "{\n\t\t\t").concat(wrapperMarginStylesMobile, "\n\n\t\t}\n\t"); // Buttons Common styles css in strings ⬇
+  var wrapperStylesMobile = "\n\t\t.eb-button-group-wrapper.".concat(blockId, "{\n\t\t\t").concat(wrapperMarginStylesMobile, "\n\n\t\t}\n\t"); // all css styles for large screen width (desktop/laptop) in strings ⬇
 
-  var buttonsCommonStyleDesktop = "\n\t\t.eb-button-group-wrapper.".concat(blockId, " .eb-button-parent {\n\t\t\t").concat(buttonsPaddingStylesDesktop, "\n\t\t\t").concat(buttonWidthStyleDesktop, "\n\t\t\t").concat(buttonGapDesktop, "\n\t\t\ttext-align: ").concat(buttonTextAlign, ";\n\t\t\tcursor: pointer;\n\t\t}\n\t\t.eb-button-group-wrapper.").concat(blockId, " .eb-button-parent .eb-button-text {\n\t\t\t").concat(buttonsTypoStylesDesktop, "\n\t\t}\n\t");
-  var buttonsCommonStyleTab = "\n\t\t.eb-button-group-wrapper.".concat(blockId, " .eb-button-parent {\n\t\t\t").concat(buttonsPaddingStylesTab, "\n\t\t\t").concat(buttonWidthStyleTab, "\n\t\t\t").concat(buttonGapTab, "\n\t\t}\n\t\t.eb-button-group-wrapper.").concat(blockId, " .eb-button-parent .eb-button-text {\n\t\t\t").concat(buttonsTypoStylesTab, "\n\t\t}\n\t");
-  var buttonsCommonStyleMobile = "\n\t\t.eb-button-group-wrapper.".concat(blockId, " .eb-button-parent {\n\t\t\t").concat(buttonsPaddingStylesMobile, "\n\t\t\t").concat(buttonWidthStyleMobile, "\n\t\t\t").concat(buttonGapMobile, "\n\t\t}\n\t\t.eb-button-group-wrapper.").concat(blockId, " .eb-button-parent .eb-button-text {\n\t\t\t").concat(buttonsTypoStylesMobile, "\n\t\t}\n\t"); // Buttons One styles css in strings ⬇
+  var desktopAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["softMinifyCssStrings"])("\n\t\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["isCssExists"])(wrapperStylesDesktop) ? wrapperStylesDesktop : " ", "\n\t\t")); // all css styles for Tab in strings ⬇
 
-  var buttonOneStyleDesktop = "\n\t\t.eb-button-group-wrapper.".concat(blockId, " .eb-button-parent.eb-button-one {\n\t\t\t").concat(buttonOneBDShadowDesktop, "\n\t\t\tbackground-color: ").concat(attributes.buttonOneColor, ";\n\t\t}\n\t\t.eb-button-group-wrapper.").concat(blockId, " .eb-button-parent.eb-button-one:hover,\n\t\t.eb-button-group-wrapper.").concat(blockId, " .eb-button-parent.eb-button-one:focus {\n\t\t\t").concat(buttonOneBDShadowHoverDesktop, "\n\t\t\tbackground-color: ").concat(hoverButtonOneColor, ";\n\t\t}\n\t\t.eb-button-group-wrapper.").concat(blockId, " .eb-button-parent.eb-button-one .eb-button-one-text {\n\t\t\tcolor: ").concat(textOneColor, ";\n\t\t}\n\t\t.eb-button-group-wrapper.").concat(blockId, " .eb-button-parent.eb-button-one:hover .eb-button-one-text {\n\t\t\tcolor: ").concat(hoverTextOneColor, ";\n\t\t}\n\t");
-  var buttonOneStyleTab = "\n\t\t.eb-button-group-wrapper.".concat(blockId, " .eb-button-parent.eb-button-one {\n\t\t\t").concat(buttonOneBDShadowTab, "\n\t\t}\n\t\t.eb-button-group-wrapper.").concat(blockId, " .eb-button-parent.eb-button-one:hover {\n\t\t\t").concat(buttonOneBDShadowHoverTab, "\n\t\t}\n\t\t.eb-button-group-wrapper.").concat(blockId, " .eb-button-parent.eb-button-one .eb-button-one-text {\n\n\t\t}\n\t");
-  var buttonOneStyleMobile = "\n\t\t.eb-button-group-wrapper.".concat(blockId, " .eb-button-parent.eb-button-one {\n\t\t\t").concat(buttonOneBDShadowMobile, "\n\t\t}\n\t\t.eb-button-group-wrapper.").concat(blockId, " .eb-button-parent.eb-button-one:hover {\n\t\t\t").concat(buttonOneBDShadowHoverMobile, "\n\t\t}\n\t\t.eb-button-group-wrapper.").concat(blockId, " .eb-button-parent.eb-button-one .eb-button-one-text {\n\n\t\t}\n\t"); // Buttons Two styles css in strings ⬇
+  var tabAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["softMinifyCssStrings"])("\n\t\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["isCssExists"])(wrapperStylesTab) ? wrapperStylesTab : " ", "\n\t\t")); // all css styles for Mobile in strings ⬇
 
-  var buttonTwoStyleDesktop = "\n\t\t.eb-button-group-wrapper.".concat(blockId, " .eb-button-parent.eb-button-two {\n\t\t\t").concat(buttonTwoBDShadowDesktop, "\n\t\t\t").concat(buttonGapDesktop, "\n\t\t\tbackground-color: ").concat(buttonTwoColor, ";\n\t\t}\n\t\t.eb-button-group-wrapper.").concat(blockId, " .eb-button-parent.eb-button-two:hover,\n\t\t.eb-button-group-wrapper.").concat(blockId, " .eb-button-parent.eb-button-two:focus {\n\t\t\t").concat(buttonTwoBDShadowHoverDesktop, "\n\t\t\tbackground-color: ").concat(hoverButtonTwoColor, ";\n\t\t}\n\t\t.eb-button-group-wrapper.").concat(blockId, " .eb-button-parent.eb-button-two .eb-button-two-text {\n\t\t\tcolor: ").concat(textTwoColor, ";\n\t\t}\n\t\t.eb-button-group-wrapper.").concat(blockId, " .eb-button-parent.eb-button-two:hover .eb-button-two-text {\n\t\t\tcolor: ").concat(hoverTextTwoColor, ";\n\t\t}\n\t");
-  var buttonTwoStyleTab = "\n\t\t.eb-button-group-wrapper.".concat(blockId, " .eb-button-parent.eb-button-two {\n\t\t\t").concat(buttonTwoBDShadowTab, "\n\t\t\t").concat(buttonGapTab, "\n\t\t}\n\t\t.eb-button-group-wrapper.").concat(blockId, " .eb-button-parent.eb-button-two:hover {\n\t\t\t").concat(buttonTwoBDShadowHoverTab, "\n\t\t}\n\t\t.eb-button-group-wrapper.").concat(blockId, " .eb-button-parent.eb-button-two .eb-button-two-text {\n\n\t\t}\n\t");
-  var buttonTwoStyleMobile = "\n\t\t.eb-button-group-wrapper.".concat(blockId, " .eb-button-parent.eb-button-two {\n\t\t\t").concat(buttonTwoBDShadowMobile, "\n\t\t\t").concat(buttonGapMobile, "\n\t\t}\n\t\t.eb-button-group-wrapper.").concat(blockId, " .eb-button-parent.eb-button-two:hover {\n\t\t\t").concat(buttonTwoBDShadowHoverMobile, "\n\t\t}\n\t\t.eb-button-group-wrapper.").concat(blockId, " .eb-button-parent.eb-button-two .eb-button-two-text {\n\n\t\t}\n\t"); // Connector styles css in strings ⬇
-
-  var connectorStylesDesktop = "\n\t\t.eb-button-group-wrapper.".concat(blockId, " .eb-button-group__midldeInner span {\n\t\t\t").concat(connectorType === "text" ? connectorTypoStylesDesktop : buttonConnectorIconSizeDesktop, "\n\t\t\t").concat(buttonConnectorHeightDesktop, "\n\t\t\t").concat(buttonConnectorWidthDesktop, "\n\t\t\t").concat(buttonConnectorLineHeightDesktop, "\n\t\t\t").concat(connectorType === "icon" ? 'font-family: "Font Awesome 5 Brands" !important' : null, ";\n\t\t\tbackground: ").concat(innerButtonColor, ";\n\t\t\tcolor: ").concat(innerButtonTextColor, ";\n\t\t}\n\t");
-  var connectorStylesTab = "\n\t\t.eb-button-group-wrapper.".concat(blockId, " .eb-button-group__midldeInner span {\n\t\t\t").concat(connectorType === "text" ? connectorTypoStylesTab : buttonConnectorIconSizeTab, "\n\t\t\t").concat(buttonConnectorHeightTab, "\n\t\t\t").concat(buttonConnectorWidthTab, "\n\t\t\t").concat(buttonConnectorLineHeightTab, "\n\t\t}\n\t");
-  var connectorStylesMobile = "\n\t\t.eb-button-group-wrapper.".concat(blockId, " .eb-button-group__midldeInner span {\n\t\t\t").concat(connectorType === "text" ? connectorTypoStylesMobile : buttonConnectorIconSizeMobile, "\n\t\t\t").concat(buttonConnectorHeightMobile, "\n\t\t\t").concat(buttonConnectorWidthMobile, "\n\t\t\t").concat(buttonConnectorLineHeightMobile, "\n\t\t}\n\t"); // all css styles for large screen width (desktop/laptop) in strings ⬇
-
-  var desktopAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])("\n\t\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(wrapperStylesDesktop) ? wrapperStylesDesktop : " ", "\n\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(buttonsCommonStyleDesktop) ? buttonsCommonStyleDesktop : " ", "\n\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(buttonOneStyleDesktop) ? buttonOneStyleDesktop : " ", "\n\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(buttonTwoStyleDesktop) ? buttonTwoStyleDesktop : " ", "\n\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(connectorStylesDesktop) ? connectorStylesDesktop : " ", "\n\t\t")); // all css styles for Tab in strings ⬇
-
-  var tabAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])("\n\t\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(wrapperStylesTab) ? wrapperStylesTab : " ", "\n\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(buttonsCommonStyleTab) ? buttonsCommonStyleTab : " ", "\n\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(buttonOneStyleTab) ? buttonOneStyleTab : " ", "\n\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(buttonTwoStyleTab) ? buttonTwoStyleTab : " ", "\n\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(connectorStylesTab) ? connectorStylesTab : " ", "\n\t\t")); // all css styles for Mobile in strings ⬇
-
-  var mobileAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])("\n\t\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(wrapperStylesMobile) ? wrapperStylesMobile : " ", "\n\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(buttonsCommonStyleMobile) ? buttonsCommonStyleMobile : " ", "\n\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(buttonOneStyleMobile) ? buttonOneStyleMobile : " ", "\n\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(buttonTwoStyleMobile) ? buttonTwoStyleMobile : " ", "\n\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(connectorStylesMobile) ? connectorStylesMobile : " ", "\n\t\t")); // Set All Style in "blockMeta" Attribute
+  var mobileAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["softMinifyCssStrings"])("\n\t\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["isCssExists"])(wrapperStylesMobile) ? wrapperStylesMobile : " ", "\n\t\t")); // Set All Style in "blockMeta" Attribute
 
   useEffect(function () {
     var styleObject = {
@@ -8425,10 +8558,10 @@ function Edit(props) {
       });
     }
   }, [attributes]);
-  return [isSelected && /*#__PURE__*/React.createElement(_inspector__WEBPACK_IMPORTED_MODULE_0__["default"], props),
+  return [isSelected && /*#__PURE__*/React.createElement(_inspector__WEBPACK_IMPORTED_MODULE_1__["default"], props),
   /*#__PURE__*/
   //Edit view here
-  React.createElement("div", blockProps, /*#__PURE__*/React.createElement("style", null, "\n\t\t\t\t".concat(desktopAllStyles, "\n\n\t\t\t\t/* mimmikcssStart */\n\n\t\t\t\t").concat(resOption === "tab" ? tabAllStyles : " ", "\n\t\t\t\t").concat(resOption === "mobile" ? tabAllStyles + mobileAllStyles : " ", "\n\n\t\t\t\t/* mimmikcssEnd */\n\n\t\t\t\t@media all and (max-width: 1024px) {\t\n\n\t\t\t\t\t/* tabcssStart */\t\t\t\n\t\t\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])(tabAllStyles), "\n\t\t\t\t\t/* tabcssEnd */\t\t\t\n\t\t\t\t\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t@media all and (max-width: 767px) {\n\t\t\t\t\t\n\t\t\t\t\t/* mobcssStart */\t\t\t\n\t\t\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])(mobileAllStyles), "\n\t\t\t\t\t/* mobcssEnd */\t\t\t\n\t\t\t\t\n\t\t\t\t}\n\t\t\t\t")), /*#__PURE__*/React.createElement("div", {
+  React.createElement("div", blockProps, /*#__PURE__*/React.createElement("style", null, "\n\t\t\t\t".concat(desktopAllStyles, "\n\n\t\t\t\t/* mimmikcssStart */\n\n\t\t\t\t").concat(resOption === "tab" ? tabAllStyles : " ", "\n\t\t\t\t").concat(resOption === "mobile" ? tabAllStyles + mobileAllStyles : " ", "\n\n\t\t\t\t/* mimmikcssEnd */\n\n\t\t\t\t@media all and (max-width: 1024px) {\t\n\n\t\t\t\t\t/* tabcssStart */\t\t\t\n\t\t\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["softMinifyCssStrings"])(tabAllStyles), "\n\t\t\t\t\t/* tabcssEnd */\t\t\t\n\t\t\t\t\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t@media all and (max-width: 767px) {\n\t\t\t\t\t\n\t\t\t\t\t/* mobcssStart */\t\t\t\n\t\t\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["softMinifyCssStrings"])(mobileAllStyles), "\n\t\t\t\t\t/* mobcssEnd */\t\t\t\n\t\t\t\t\n\t\t\t\t}\n\t\t\t\t")), /*#__PURE__*/React.createElement("div", {
     className: "eb-post-grid-wrapper ".concat(blockId, " ").concat(preset),
     "data-id": blockId
   }, _typeof(queryResults) === 'object' && queryResults.length > 0 && queryResults.map(function (post) {
@@ -8439,24 +8572,14 @@ function Edit(props) {
       "class": "ebpg-grid-post-holder"
     }, /*#__PURE__*/React.createElement("div", {
       "class": "ebpg-entry-media"
-    }, /*#__PURE__*/React.createElement("div", {
-      "class": "ebpg-entry-overlay fade-in"
-    }, /*#__PURE__*/React.createElement("i", {
-      "class": "fas fa-long-arrow-alt-right",
-      "aria-hidden": "true"
-    }), /*#__PURE__*/React.createElement("a", {
-      href: "http://templately.test/praesentium-asperiores-assumenda-error-dolores-excepturi/"
-    })), /*#__PURE__*/React.createElement("div", {
+    }, showThumbnail && /*#__PURE__*/React.createElement("div", {
       "class": "ebpg-entry-thumbnail"
-    }, /*#__PURE__*/React.createElement("img", {
-      width: "300",
-      height: "200",
-      src: "",
+    }, post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'].length > 0 && /*#__PURE__*/React.createElement("img", {
+      width: post._embedded['wp:featuredmedia'][0].media_details.width,
+      height: post._embedded['wp:featuredmedia'][0].media_details.height,
+      src: post._embedded['wp:featuredmedia'][0].source_url,
       "class": "attachment-medium size-medium",
-      alt: "",
-      loading: "lazy",
-      srcset: "http://templately.test/wp-content/uploads/2021/02/d22346cb-ad73-35c5-8857-78c59ec4f245-300x200.jpg 300w, http://templately.test/wp-content/uploads/2021/02/d22346cb-ad73-35c5-8857-78c59ec4f245-600x400.jpg 600w, http://templately.test/wp-content/uploads/2021/02/d22346cb-ad73-35c5-8857-78c59ec4f245-1024x682.jpg 1024w, http://templately.test/wp-content/uploads/2021/02/d22346cb-ad73-35c5-8857-78c59ec4f245-768x512.jpg 768w, http://templately.test/wp-content/uploads/2021/02/d22346cb-ad73-35c5-8857-78c59ec4f245.jpg 1159w",
-      sizes: "(max-width: 300px) 100vw, 300px"
+      alt: post.title.rendered
     }))), /*#__PURE__*/React.createElement("div", {
       "class": "ebpg-entry-wrapper"
     }, /*#__PURE__*/React.createElement("header", {
@@ -8466,16 +8589,12 @@ function Edit(props) {
     }, /*#__PURE__*/React.createElement("a", {
       "class": "ebpg-grid-post-link",
       href: "",
-      title: ""
+      title: post.title.rendered
     }, post.title.rendered))), /*#__PURE__*/React.createElement("div", {
       "class": "ebpg-entry-content"
     }, /*#__PURE__*/React.createElement("div", {
       "class": "ebpg-grid-post-excerpt"
-    }, /*#__PURE__*/React.createElement("p", {
-      dangerouslySetInnerHTML: {
-        __html: post.content.rendered
-      }
-    }), /*#__PURE__*/React.createElement("a", {
+    }, /*#__PURE__*/React.createElement("p", null), /*#__PURE__*/React.createElement("p", null, post.content.rendered.replace(/<[^>]*>?/gm, '').substr(0, contentLength)), /*#__PURE__*/React.createElement("a", {
       href: "",
       "class": "ebpg-post-elements-readmore-btn"
     }, "Read More"))), /*#__PURE__*/React.createElement("div", {
@@ -8679,14 +8798,15 @@ registerBlockType("post-grid-block/post-grid", {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _constants_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./constants/constants */ "./src/constants/constants.js");
-/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util/helpers */ "./util/helpers/index.js");
-/* harmony import */ var _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./constants/typographyPrefixConstants */ "./src/constants/typographyPrefixConstants.js");
+/* harmony import */ var _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constants/typographyPrefixConstants */ "./src/constants/typographyPrefixConstants.js");
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../util/helpers */ "./util/helpers/index.js");
 /* harmony import */ var _util_color_control__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../util/color-control */ "./util/color-control/index.js");
 /* harmony import */ var _util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/dimensions-control-v2 */ "./util/dimensions-control-v2/index.js");
 /* harmony import */ var _util_typography_control_v2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../util/typography-control-v2 */ "./util/typography-control-v2/index.js");
 /* harmony import */ var _util_border_shadow_control__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../util/border-shadow-control */ "./util/border-shadow-control/index.js");
 /* harmony import */ var _util_responsive_range_control__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../util/responsive-range-control */ "./util/responsive-range-control/index.js");
-/* harmony import */ var _util_custom_query__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../util/custom-query */ "./util/custom-query/index.js");
+/* harmony import */ var _util_background_control__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../util/background-control */ "./util/background-control/index.js");
+/* harmony import */ var _util_custom_query__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../util/custom-query */ "./util/custom-query/index.js");
 /**
  * WordPress dependencies
  */
@@ -8702,7 +8822,8 @@ var _wp$components = wp.components,
     Button = _wp$components.Button,
     ButtonGroup = _wp$components.ButtonGroup,
     BaseControl = _wp$components.BaseControl,
-    TabPanel = _wp$components.TabPanel;
+    TabPanel = _wp$components.TabPanel,
+    RangeControl = _wp$components.RangeControl;
 var _wp$element = wp.element,
     useEffect = _wp$element.useEffect,
     useState = _wp$element.useState;
@@ -8721,37 +8842,45 @@ var select = wp.data.select;
 
 
 
+
 function Inspector(props) {
   var attributes = props.attributes,
       setAttributes = props.setAttributes;
   var resOption = attributes.resOption,
       preset = attributes.preset,
-      contentPosition = attributes.contentPosition,
-      buttonOneColor = attributes.buttonOneColor,
-      textOneColor = attributes.textOneColor,
-      hoverButtonOneColor = attributes.hoverButtonOneColor,
-      hoverTextOneColor = attributes.hoverTextOneColor,
-      buttonTwoColor = attributes.buttonTwoColor,
-      textTwoColor = attributes.textTwoColor,
-      hoverButtonTwoColor = attributes.hoverButtonTwoColor,
-      hoverTextTwoColor = attributes.hoverTextTwoColor,
-      selectButtonStyleOne = attributes.selectButtonStyleOne,
-      selectButtonStyleTwo = attributes.selectButtonStyleTwo,
-      buttonTextOne = attributes.buttonTextOne,
-      buttonURLOne = attributes.buttonURLOne,
-      buttonTextTwo = attributes.buttonTextTwo,
-      buttonURLTwo = attributes.buttonURLTwo,
-      innerButtonText = attributes.innerButtonText,
-      innerButtonColor = attributes.innerButtonColor,
-      innerButtonTextColor = attributes.innerButtonTextColor,
-      innerButtonIcon = attributes.innerButtonIcon,
-      showConnector = attributes.showConnector,
-      connectorType = attributes.connectorType,
-      buttonsColorType = attributes.buttonsColorType,
-      buttonTextAlign = attributes.buttonTextAlign,
       queryData = attributes.queryData,
-      queryResults = attributes.queryResults; // console.log("Query", queryData, queryResults)
-  // this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
+      queryResults = attributes.queryResults,
+      columns = attributes.columns,
+      showThumbnail = attributes.showThumbnail,
+      showTitle = attributes.showTitle,
+      titleColor = attributes.titleColor,
+      titleHoverColor = attributes.titleHoverColor,
+      titleColorStyle = attributes.titleColorStyle,
+      titleLength = attributes.titleLength,
+      titleTextAlign = attributes.titleTextAlign,
+      titleTag = attributes.titleTag,
+      showContent = attributes.showContent,
+      contentColor = attributes.contentColor,
+      contentTextAlign = attributes.contentTextAlign,
+      contentLength = attributes.contentLength,
+      expansionIndicator = attributes.expansionIndicator,
+      showReadMore = attributes.showReadMore,
+      readmoreText = attributes.readmoreText,
+      readmoreColor = attributes.readmoreColor,
+      readmoreTextAlign = attributes.readmoreTextAlign,
+      readmoreHoverColor = attributes.readmoreHoverColor,
+      readmoreColorType = attributes.readmoreColorType,
+      showMeta = attributes.showMeta,
+      metaPosition = attributes.metaPosition,
+      metaColor = attributes.metaColor,
+      metaTextAlign = attributes.metaTextAlign,
+      metaHoverColor = attributes.metaHoverColor,
+      metaColorType = attributes.metaColorType,
+      showAvatar = attributes.showAvatar,
+      showAuthor = attributes.showAuthor,
+      showDate = attributes.showDate,
+      showCategories = attributes.showCategories;
+  console.log("Inspector", queryData, queryResults); // this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
 
   useEffect(function () {
     setAttributes({
@@ -8760,14 +8889,14 @@ function Inspector(props) {
   }, []); // this useEffect is for mimmiking css for all the eb blocks on resOption changing
 
   useEffect(function () {
-    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["mimmikCssForResBtns"])({
+    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_2__["mimmikCssForResBtns"])({
       domObj: document,
       resOption: resOption
     });
   }, [resOption]); // this useEffect is to mimmik css for responsive preview in the editor page when clicking the buttons in the 'Preview button of wordpress' located beside the 'update' button while any block is selected and it's inspector panel is mounted in the DOM
 
   useEffect(function () {
-    var cleanUp = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["mimmikCssOnPreviewBtnClickWhileBlockSelected"])({
+    var cleanUp = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_2__["mimmikCssOnPreviewBtnClickWhileBlockSelected"])({
       domObj: document,
       select: select,
       setAttributes: setAttributes
@@ -8789,63 +8918,19 @@ function Inspector(props) {
 
     switch (selected) {
       case 'preset-1':
-        setAttributes({
-          showConnector: "true",
-          buttonOneBorderShadowRds_Top: 20,
-          buttonOneBorderShadowRds_Bottom: 0,
-          buttonOneBorderShadowRds_Left: 20,
-          buttonOneBorderShadowRds_Right: 0,
-          buttonTwoBorderShadowRds_Top: 0,
-          buttonTwoBorderShadowRds_Bottom: 20,
-          buttonTwoBorderShadowRds_Left: 0,
-          buttonTwoBorderShadowRds_Right: 20,
-          buttonsGapRange: 0
-        });
+        setAttributes({});
         break;
 
       case 'preset-2':
-        setAttributes({
-          showConnector: false,
-          buttonOneBorderShadowRds_Top: "30",
-          buttonOneBorderShadowRds_Bottom: "30",
-          buttonOneBorderShadowRds_Left: "30",
-          buttonOneBorderShadowRds_Right: "30",
-          buttonTwoBorderShadowRds_Top: "30",
-          buttonTwoBorderShadowRds_Bottom: "30",
-          buttonTwoBorderShadowRds_Left: "30",
-          buttonTwoBorderShadowRds_Right: "30",
-          buttonsGapRange: 20
-        });
+        setAttributes({});
         break;
 
       case 'preset-3':
-        setAttributes({
-          showConnector: false,
-          buttonOneBorderShadowRds_Top: "0",
-          buttonOneBorderShadowRds_Bottom: "0",
-          buttonOneBorderShadowRds_Left: "15",
-          buttonOneBorderShadowRds_Right: "15",
-          buttonTwoBorderShadowRds_Top: "15",
-          buttonTwoBorderShadowRds_Bottom: "15",
-          buttonTwoBorderShadowRds_Left: "0",
-          buttonTwoBorderShadowRds_Right: "0",
-          buttonsGapRange: 20
-        });
+        setAttributes({});
         break;
 
       case 'preset-4':
-        setAttributes({
-          showConnector: false,
-          buttonOneBorderShadowRds_Top: "30",
-          buttonOneBorderShadowRds_Bottom: "30",
-          buttonOneBorderShadowRds_Left: "30",
-          buttonOneBorderShadowRds_Right: "30",
-          buttonTwoBorderShadowRds_Top: "30",
-          buttonTwoBorderShadowRds_Bottom: "30",
-          buttonTwoBorderShadowRds_Left: "30",
-          buttonTwoBorderShadowRds_Right: "30",
-          buttonsGapRange: 10
-        });
+        setAttributes({});
         break;
 
       default:
@@ -8877,297 +8962,212 @@ function Inspector(props) {
   }, function (tab) {
     return /*#__PURE__*/React.createElement("div", {
       className: "eb-tab-controls" + tab.name
-    }, tab.name === "general" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_util_custom_query__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    }, tab.name === "general" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_util_custom_query__WEBPACK_IMPORTED_MODULE_9__["default"], {
       queryData: queryData,
       queryResults: queryResults,
       setAttributes: setAttributes
     }), /*#__PURE__*/React.createElement(PanelBody, {
-      title: __("General"),
+      title: __("Layout Style"),
       initialOpen: true
     }, /*#__PURE__*/React.createElement(SelectControl, {
-      label: __("Preset Designs"),
+      label: __("Template"),
       value: preset,
       options: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["PRESETS"],
       onChange: function onChange(selected) {
         return changePreset(selected);
       }
-    }), /*#__PURE__*/React.createElement(BaseControl, {
-      label: __("Alignment"),
-      id: "eb-button-group-alignment"
-    }, /*#__PURE__*/React.createElement(ButtonGroup, {
-      id: "eb-button-group-alignment"
-    }, _constants_constants__WEBPACK_IMPORTED_MODULE_0__["CONTENT_POSITION"].map(function (item) {
-      return /*#__PURE__*/React.createElement(Button, {
-        isLarge: true,
-        isPrimary: contentPosition === item.value,
-        isSecondary: contentPosition !== item.value,
-        onClick: function onClick() {
-          return setAttributes({
-            contentPosition: item.value
-          });
-        }
-      }, item.label);
-    }))), /*#__PURE__*/React.createElement(TextControl, {
-      label: __("Button One Text"),
-      value: buttonTextOne,
-      onChange: function onChange(text) {
+    }), /*#__PURE__*/React.createElement(RangeControl, {
+      label: "Columns",
+      value: columns,
+      onChange: function onChange(value) {
         return setAttributes({
-          buttonTextOne: text
+          columns: value
         });
-      }
-    }), /*#__PURE__*/React.createElement(TextControl, {
-      label: __("Button One Link"),
-      value: buttonURLOne,
-      onChange: function onChange(link) {
-        return setAttributes({
-          buttonURLOne: link
-        });
-      }
-    }), /*#__PURE__*/React.createElement(TextControl, {
-      label: __("Button Two Text"),
-      value: buttonTextTwo,
-      onChange: function onChange(text) {
-        return setAttributes({
-          buttonTextTwo: text
-        });
-      }
-    }), /*#__PURE__*/React.createElement(TextControl, {
-      label: __("Button Two Link"),
-      value: buttonURLTwo,
-      onChange: function onChange(link) {
-        return setAttributes({
-          buttonURLTwo: link
-        });
-      }
-    })), /*#__PURE__*/React.createElement(PanelBody, {
-      title: __("Buttons"),
-      initialOpen: true
-    }, /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      baseLabel: __("Buttons Width", "button-group"),
-      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["BUTTONS_WIDTH"],
-      resRequiredProps: resRequiredProps,
-      units: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["UNIT_TYPES"],
-      min: 0,
-      max: 500,
-      step: 1
+      },
+      min: 1,
+      max: 6
     }), /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      baseLabel: __("Buttons Gap", "button-group"),
-      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["BUTTONS_GAP"],
+      baseLabel: __("Column Gap", "eb-post-grid"),
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["COLUMN_GAP"],
       resRequiredProps: resRequiredProps,
       units: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["UNIT_TYPES"],
-      min: 0,
+      min: 1,
       max: 100,
       step: 1
-    }), /*#__PURE__*/React.createElement(BaseControl, {
-      label: __("Text Align"),
-      id: "eb-button-group-text-align"
-    }, /*#__PURE__*/React.createElement(ButtonGroup, {
-      id: "eb-button-group-text-align"
-    }, _constants_constants__WEBPACK_IMPORTED_MODULE_0__["TEXT_ALIGN"].map(function (item) {
-      return /*#__PURE__*/React.createElement(Button, {
-        isLarge: true,
-        isPrimary: buttonTextAlign === item.value,
-        isSecondary: buttonTextAlign !== item.value,
-        onClick: function onClick() {
-          return setAttributes({
-            buttonTextAlign: item.value
-          });
-        }
-      }, item.label);
-    })))), /*#__PURE__*/React.createElement(PanelBody, {
-      title: __("Connector"),
-      initialOpen: true
-    }, /*#__PURE__*/React.createElement(ToggleControl, {
-      label: __("Show Connector?"),
-      checked: showConnector,
+    }), /*#__PURE__*/React.createElement(ToggleControl, {
+      label: __("Show Thumbnail?"),
+      checked: showThumbnail,
       onChange: function onChange() {
         setAttributes({
-          showConnector: !showConnector
+          showThumbnail: !showThumbnail
         });
       }
-    }), showConnector && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, {
-      label: __("Connector Type")
-    }, /*#__PURE__*/React.createElement(ButtonGroup, {
-      id: "eb-button-group-connector-type"
-    }, _constants_constants__WEBPACK_IMPORTED_MODULE_0__["CONNECTOR_TYPE"].map(function (item) {
-      return /*#__PURE__*/React.createElement(Button, {
-        isLarge: true,
-        isPrimary: connectorType === item.value,
-        isSecondary: connectorType !== item.value,
-        onClick: function onClick() {
-          return setAttributes({
-            connectorType: item.value
-          });
-        }
-      }, item.label);
-    }))), connectorType === "icon" && /*#__PURE__*/React.createElement(PanelBody, {
-      title: __("Icon Settings"),
-      initialOpen: true
-    }, /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      baseLabel: __("Icon Size", "button-group"),
-      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["BUTTONS_CONNECTOR_ICON_SIZE"],
+    }), showThumbnail && /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      baseLabel: __("Thumbnail Height", "eb-post-grid"),
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["THUMBNAIL_IMAGE_SIZE"],
       resRequiredProps: resRequiredProps,
-      units: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["UNIT_TYPES"],
-      min: 0,
-      max: 100,
+      units: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["HEIGHT_UNIT_TYPES"],
+      min: 1,
+      max: 500,
       step: 1
-    })), connectorType === "text" && /*#__PURE__*/React.createElement(TextControl, {
-      label: __("Text"),
-      value: innerButtonText,
+    }), /*#__PURE__*/React.createElement(ToggleControl, {
+      label: __("Show Title?"),
+      checked: showTitle,
+      onChange: function onChange() {
+        setAttributes({
+          showTitle: !showTitle
+        });
+      }
+    }), showTitle && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SelectControl, {
+      label: __("Title Tag"),
+      value: titleTag,
+      options: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["TITLE_TAGS"],
+      onChange: function onChange(value) {
+        setAttributes({
+          titleTag: value
+        });
+      }
+    }), /*#__PURE__*/React.createElement(RangeControl, {
+      label: "Title Words",
+      value: titleLength,
+      onChange: function onChange(value) {
+        return setAttributes({
+          titleLength: value
+        });
+      },
+      min: 1,
+      max: 100
+    })), /*#__PURE__*/React.createElement(ToggleControl, {
+      label: __("Show Excerpt?"),
+      checked: showContent,
+      onChange: function onChange() {
+        setAttributes({
+          showContent: !showContent
+        });
+      }
+    }), showContent && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(RangeControl, {
+      label: "Excerpt Words",
+      value: contentLength,
+      onChange: function onChange(value) {
+        return setAttributes({
+          contentLength: value
+        });
+      },
+      min: 1,
+      max: 100
+    }), /*#__PURE__*/React.createElement(TextControl, {
+      label: "Expansion Indicator",
+      type: "text",
+      value: expansionIndicator,
       onChange: function onChange(text) {
         return setAttributes({
-          innerButtonText: text
+          expansionIndicator: text
         });
       }
-    }), /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      baseLabel: __("Connector Size", "button-group"),
-      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["BUTTONS_CONNECTOR_SIZE"],
-      resRequiredProps: resRequiredProps,
-      units: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["UNIT_TYPES"],
-      min: 0,
-      max: 100,
-      step: 1
+    })), /*#__PURE__*/React.createElement(ToggleControl, {
+      label: __("Show Read More Button?"),
+      checked: showReadMore,
+      onChange: function onChange() {
+        setAttributes({
+          showReadMore: !showReadMore
+        });
+      }
+    }), showReadMore && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(TextControl, {
+      label: "Button Text",
+      type: "text",
+      value: readmoreText,
+      onChange: function onChange(text) {
+        return setAttributes({
+          readmoreText: text
+        });
+      }
+    })), /*#__PURE__*/React.createElement(ToggleControl, {
+      label: __("Show Meta?"),
+      checked: showMeta,
+      onChange: function onChange() {
+        setAttributes({
+          showMeta: !showMeta
+        });
+      }
+    }), showMeta && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SelectControl, {
+      label: __("Meta Position"),
+      value: metaPosition,
+      options: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["META_POSITION"],
+      onChange: function onChange(value) {
+        setAttributes({
+          metaPosition: value
+        });
+      }
+    }), /*#__PURE__*/React.createElement(ToggleControl, {
+      label: __("Show Avatar?"),
+      checked: showAvatar,
+      onChange: function onChange() {
+        setAttributes({
+          showAvatar: !showAvatar
+        });
+      }
+    }), /*#__PURE__*/React.createElement(ToggleControl, {
+      label: __("Show Author?"),
+      checked: showAuthor,
+      onChange: function onChange() {
+        setAttributes({
+          showAuthor: !showAuthor
+        });
+      }
+    }), /*#__PURE__*/React.createElement(ToggleControl, {
+      label: __("Show Date?"),
+      checked: showDate,
+      onChange: function onChange() {
+        setAttributes({
+          showDate: !showDate
+        });
+      }
+    }), /*#__PURE__*/React.createElement(ToggleControl, {
+      label: __("Show Categories?"),
+      checked: showCategories,
+      onChange: function onChange() {
+        setAttributes({
+          showCategories: !showCategories
+        });
+      }
     })))), tab.name === "styles" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(PanelBody, {
-      title: __("Buttons"),
-      initialOpen: true
-    }, /*#__PURE__*/React.createElement(_util_typography_control_v2__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      baseLabel: __("Typography", "button-group"),
-      typographyPrefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_2__["BUTTONS_TYPOGRAPHY"],
-      resRequiredProps: resRequiredProps
-    }), /*#__PURE__*/React.createElement(ButtonGroup, {
-      className: "eb-inspector-btn-group"
-    }, _constants_constants__WEBPACK_IMPORTED_MODULE_0__["NORMAL_HOVER"].map(function (item) {
-      return /*#__PURE__*/React.createElement(Button, {
-        isLarge: true,
-        isPrimary: buttonsColorType === item.value,
-        isSecondary: buttonsColorType !== item.value,
-        onClick: function onClick() {
-          return setAttributes({
-            buttonsColorType: item.value
-          });
-        }
-      }, item.label);
-    })), buttonsColorType === "normal" && /*#__PURE__*/React.createElement(PanelColorSettings, {
-      className: "eb-subpanel",
-      title: __("Normal Colors"),
-      initialOpen: true,
-      colorSettings: [{
-        value: buttonOneColor,
-        onChange: function onChange(newColor) {
-          return setAttributes({
-            buttonOneColor: newColor
-          });
-        },
-        label: __("Button One Color")
-      }, {
-        value: textOneColor,
-        onChange: function onChange(newColor) {
-          return setAttributes({
-            textOneColor: newColor
-          });
-        },
-        label: __("Button One Text Color")
-      }, {
-        value: buttonTwoColor,
-        onChange: function onChange(newColor) {
-          return setAttributes({
-            buttonTwoColor: newColor
-          });
-        },
-        label: __("Button Two Color")
-      }, {
-        value: textTwoColor,
-        onChange: function onChange(newColor) {
-          return setAttributes({
-            textTwoColor: newColor
-          });
-        },
-        label: __("Button Two Text Color")
-      }]
-    }), buttonsColorType === "hover" && /*#__PURE__*/React.createElement(PanelColorSettings, {
-      className: "eb-subpanel",
-      title: __("Hover Colors"),
-      initialOpen: true,
-      colorSettings: [{
-        value: hoverButtonOneColor,
-        onChange: function onChange(newColor) {
-          return setAttributes({
-            hoverButtonOneColor: newColor
-          });
-        },
-        label: __("Button One Color")
-      }, {
-        value: hoverTextOneColor,
-        onChange: function onChange(newColor) {
-          return setAttributes({
-            hoverTextOneColor: newColor
-          });
-        },
-        label: __("Button One Text Color")
-      }, {
-        value: hoverButtonTwoColor,
-        onChange: function onChange(newColor) {
-          return setAttributes({
-            hoverButtonTwoColor: newColor
-          });
-        },
-        label: __("Button Two Color")
-      }, {
-        value: hoverTextTwoColor,
-        onChange: function onChange(newColor) {
-          return setAttributes({
-            hoverTextTwoColor: newColor
-          });
-        },
-        label: __("Button Two Text Color")
-      }]
-    }), /*#__PURE__*/React.createElement(PanelBody, {
-      className: "eb-subpanel",
-      title: __("Button One Border"),
-      initialOpen: true
-    }, /*#__PURE__*/React.createElement(_util_border_shadow_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["BUTTON_ONE_BORDER_SHADOW"],
-      resRequiredProps: resRequiredProps,
-      noShadow: true
-    })), /*#__PURE__*/React.createElement(PanelBody, {
-      className: "eb-subpanel",
-      title: __("Button Two Border"),
-      initialOpen: true
-    }, /*#__PURE__*/React.createElement(_util_border_shadow_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["BUTTON_TWO_BORDER_SHADOW"],
-      resRequiredProps: resRequiredProps,
-      noShadow: true
-    })), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      resRequiredProps: resRequiredProps,
-      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["BUTTONS_PADDING"],
-      baseLabel: "Padding"
-    })), /*#__PURE__*/React.createElement(PanelBody, {
-      title: __("Connector"),
+      title: __("Title"),
       initialOpen: false
-    }, /*#__PURE__*/React.createElement(_util_typography_control_v2__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      baseLabel: __("Typography", "button-group"),
-      typographyPrefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_2__["BUTTONS_CONNECTOR_TYPOGRAPHY"],
+    }, /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      label: __("Color"),
+      color: titleColor,
+      onChange: function onChange(color) {
+        return setAttributes({
+          titleColor: color
+        });
+      }
+    }), /*#__PURE__*/React.createElement(_util_typography_control_v2__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      baseLabel: __("Typography", "eb-post-grid"),
+      typographyPrefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_1__["EBPG_TITLE_TYPOGRAPHY"],
       resRequiredProps: resRequiredProps
-    }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      label: __("Background Color"),
-      color: innerButtonColor,
-      onChange: function onChange(innerButtonColor) {
-        return setAttributes({
-          innerButtonColor: innerButtonColor
-        });
-      }
-    }), /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      label: __("Text/ Icon Color"),
-      color: innerButtonTextColor,
-      onChange: function onChange(innerButtonTextColor) {
-        return setAttributes({
-          innerButtonTextColor: innerButtonTextColor
-        });
-      }
     }))), tab.name === "advance" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(PanelBody, null, /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_4__["default"], {
       resRequiredProps: resRequiredProps,
       controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["WRAPPER_MARGIN"],
       baseLabel: "Margin"
+    }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      resRequiredProps: resRequiredProps,
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["WRAPPER_PADDING"],
+      baseLabel: "Padding"
+    })), /*#__PURE__*/React.createElement(PanelBody, {
+      title: __("Background"),
+      initialOpen: false
+    }, /*#__PURE__*/React.createElement(_util_background_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["WRAPPER_BG"],
+      resRequiredProps: resRequiredProps,
+      noOverlay: true
+    })), /*#__PURE__*/React.createElement(PanelBody, {
+      title: __("Border & Shadow"),
+      initialOpen: false
+    }, /*#__PURE__*/React.createElement(_util_border_shadow_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["WRAPPER_BORDER_SHADOW"],
+      resRequiredProps: resRequiredProps // noShadow
+      // noBorder
+
     }))));
   })));
 }
@@ -9222,6 +9222,3095 @@ var Save = function Save(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Save);
+
+/***/ }),
+
+/***/ "./util/background-control/bgControl.js":
+/*!**********************************************!*\
+  !*** ./util/background-control/bgControl.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return bgControl; });
+/* harmony import */ var _gradient_color_controller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../gradient-color-controller */ "./util/gradient-color-controller/index.js");
+/* harmony import */ var _unit_control__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../unit-control */ "./util/unit-control/index.js");
+/* harmony import */ var _color_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../color-control */ "./util/color-control/index.js");
+/* harmony import */ var _image_avatar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../image-avatar */ "./util/image-avatar/index.js");
+/* harmony import */ var _withResButtons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../withResButtons */ "./util/withResButtons/index.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var __ = wp.i18n.__;
+var MediaUpload = wp.blockEditor.MediaUpload;
+var _wp$components = wp.components,
+    SelectControl = _wp$components.SelectControl,
+    Button = _wp$components.Button,
+    RangeControl = _wp$components.RangeControl,
+    BaseControl = _wp$components.BaseControl,
+    ButtonGroup = _wp$components.ButtonGroup;
+/**
+ * Internal dependencies
+ */
+
+
+
+
+
+
+function bgControl(_ref) {
+  var resRequiredProps = _ref.resRequiredProps,
+      controlName = _ref.controlName,
+      noMainBgi = _ref.noMainBgi,
+      noTransition = _ref.noTransition;
+  var setAttributes = resRequiredProps.setAttributes,
+      attributes = resRequiredProps.attributes,
+      resOption = resRequiredProps.resOption;
+  var bg_hoverType = attributes["".concat(controlName, "bg_hoverType")],
+      bg_transition = attributes["".concat(controlName, "bg_transition")],
+      backgroundType = attributes["".concat(controlName, "backgroundType")],
+      backgroundColor = attributes["".concat(controlName, "backgroundColor")],
+      gradientColor = attributes["".concat(controlName, "gradientColor")],
+      bgImageURL = attributes["".concat(controlName, "bgImageURL")],
+      bgImageID = attributes["".concat(controlName, "bgImageID")],
+      bgImgAttachment = attributes["".concat(controlName, "bgImgAttachment")],
+      backgroundSize = attributes["".concat(controlName, "backgroundSize")],
+      bgImgCustomSize = attributes["".concat(controlName, "bgImgCustomSize")],
+      bgImgCustomSizeUnit = attributes["".concat(controlName, "bgImgCustomSizeUnit")],
+      bgImgPos = attributes["".concat(controlName, "bgImgPos")],
+      bgImgcustomPosX = attributes["".concat(controlName, "bgImgcustomPosX")],
+      bgImgcustomPosXUnit = attributes["".concat(controlName, "bgImgcustomPosXUnit")],
+      bgImgcustomPosY = attributes["".concat(controlName, "bgImgcustomPosY")],
+      bgImgcustomPosYUnit = attributes["".concat(controlName, "bgImgcustomPosYUnit")],
+      bgImgRepeat = attributes["".concat(controlName, "bgImgRepeat")],
+      TABbackgroundSize = attributes["TAB".concat(controlName, "backgroundSize")],
+      TABbgImgCustomSize = attributes["TAB".concat(controlName, "bgImgCustomSize")],
+      TABbgImgCustomSizeUnit = attributes["TAB".concat(controlName, "bgImgCustomSizeUnit")],
+      TABbgImgPos = attributes["TAB".concat(controlName, "bgImgPos")],
+      TABbgImgcustomPosX = attributes["TAB".concat(controlName, "bgImgcustomPosX")],
+      TABbgImgcustomPosXUnit = attributes["TAB".concat(controlName, "bgImgcustomPosXUnit")],
+      TABbgImgcustomPosY = attributes["TAB".concat(controlName, "bgImgcustomPosY")],
+      TABbgImgcustomPosYUnit = attributes["TAB".concat(controlName, "bgImgcustomPosYUnit")],
+      TABbgImgRepeat = attributes["TAB".concat(controlName, "bgImgRepeat")],
+      MOBbackgroundSize = attributes["MOB".concat(controlName, "backgroundSize")],
+      MOBbgImgCustomSize = attributes["MOB".concat(controlName, "bgImgCustomSize")],
+      MOBbgImgCustomSizeUnit = attributes["MOB".concat(controlName, "bgImgCustomSizeUnit")],
+      MOBbgImgPos = attributes["MOB".concat(controlName, "bgImgPos")],
+      MOBbgImgcustomPosX = attributes["MOB".concat(controlName, "bgImgcustomPosX")],
+      MOBbgImgcustomPosXUnit = attributes["MOB".concat(controlName, "bgImgcustomPosXUnit")],
+      MOBbgImgcustomPosY = attributes["MOB".concat(controlName, "bgImgcustomPosY")],
+      MOBbgImgcustomPosYUnit = attributes["MOB".concat(controlName, "bgImgcustomPosYUnit")],
+      MOBbgImgRepeat = attributes["MOB".concat(controlName, "bgImgRepeat")],
+      hov_backgroundType = attributes["hov_".concat(controlName, "backgroundType")],
+      hov_backgroundColor = attributes["hov_".concat(controlName, "backgroundColor")],
+      hov_gradientColor = attributes["hov_".concat(controlName, "gradientColor")],
+      hov_bgImageURL = attributes["hov_".concat(controlName, "bgImageURL")],
+      hov_bgImageID = attributes["hov_".concat(controlName, "bgImageID")],
+      hov_bgImgAttachment = attributes["hov_".concat(controlName, "bgImgAttachment")],
+      hov_backgroundSize = attributes["hov_".concat(controlName, "backgroundSize")],
+      hov_bgImgCustomSize = attributes["hov_".concat(controlName, "bgImgCustomSize")],
+      hov_bgImgCustomSizeUnit = attributes["hov_".concat(controlName, "bgImgCustomSizeUnit")],
+      hov_bgImgPos = attributes["hov_".concat(controlName, "bgImgPos")],
+      hov_bgImgcustomPosX = attributes["hov_".concat(controlName, "bgImgcustomPosX")],
+      hov_bgImgcustomPosXUnit = attributes["hov_".concat(controlName, "bgImgcustomPosXUnit")],
+      hov_bgImgcustomPosY = attributes["hov_".concat(controlName, "bgImgcustomPosY")],
+      hov_bgImgcustomPosYUnit = attributes["hov_".concat(controlName, "bgImgcustomPosYUnit")],
+      hov_bgImgRepeat = attributes["hov_".concat(controlName, "bgImgRepeat")],
+      hov_TABbackgroundSize = attributes["hov_TAB".concat(controlName, "backgroundSize")],
+      hov_TABbgImgCustomSize = attributes["hov_TAB".concat(controlName, "bgImgCustomSize")],
+      hov_TABbgImgCustomSizeUnit = attributes["hov_TAB".concat(controlName, "bgImgCustomSizeUnit")],
+      hov_TABbgImgPos = attributes["hov_TAB".concat(controlName, "bgImgPos")],
+      hov_TABbgImgcustomPosX = attributes["hov_TAB".concat(controlName, "bgImgcustomPosX")],
+      hov_TABbgImgcustomPosXUnit = attributes["hov_TAB".concat(controlName, "bgImgcustomPosXUnit")],
+      hov_TABbgImgcustomPosY = attributes["hov_TAB".concat(controlName, "bgImgcustomPosY")],
+      hov_TABbgImgcustomPosYUnit = attributes["hov_TAB".concat(controlName, "bgImgcustomPosYUnit")],
+      hov_TABbgImgRepeat = attributes["hov_TAB".concat(controlName, "bgImgRepeat")],
+      hov_MOBbackgroundSize = attributes["hov_MOB".concat(controlName, "backgroundSize")],
+      hov_MOBbgImgCustomSize = attributes["hov_MOB".concat(controlName, "bgImgCustomSize")],
+      hov_MOBbgImgCustomSizeUnit = attributes["hov_MOB".concat(controlName, "bgImgCustomSizeUnit")],
+      hov_MOBbgImgPos = attributes["hov_MOB".concat(controlName, "bgImgPos")],
+      hov_MOBbgImgcustomPosX = attributes["hov_MOB".concat(controlName, "bgImgcustomPosX")],
+      hov_MOBbgImgcustomPosXUnit = attributes["hov_MOB".concat(controlName, "bgImgcustomPosXUnit")],
+      hov_MOBbgImgcustomPosY = attributes["hov_MOB".concat(controlName, "bgImgcustomPosY")],
+      hov_MOBbgImgcustomPosYUnit = attributes["hov_MOB".concat(controlName, "bgImgcustomPosYUnit")],
+      hov_MOBbgImgRepeat = attributes["hov_MOB".concat(controlName, "bgImgRepeat")];
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, null, /*#__PURE__*/React.createElement(ButtonGroup, null, [{
+    label: __("Normal"),
+    value: "normal"
+  }, {
+    label: __("Hover"),
+    value: "hover"
+  }].map(function (_ref2) {
+    var value = _ref2.value,
+        label = _ref2.label;
+    return /*#__PURE__*/React.createElement(Button // isSmall
+    // isLarge
+    , {
+      isPrimary: bg_hoverType === value,
+      isSecondary: bg_hoverType !== value,
+      onClick: function onClick() {
+        return setAttributes(_defineProperty({}, "".concat(controlName, "bg_hoverType"), value));
+      }
+    }, label);
+  }))), bg_hoverType === "normal" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Background Type")
+  }, /*#__PURE__*/React.createElement(ButtonGroup, null, [{
+    label: __("Classic"),
+    value: "classic"
+  }, {
+    label: __("Gradient"),
+    value: "gradient"
+  }].map(function (_ref3) {
+    var value = _ref3.value,
+        label = _ref3.label;
+    return /*#__PURE__*/React.createElement(Button // isSmall
+    // isLarge
+    , {
+      isPrimary: backgroundType === value,
+      isSecondary: backgroundType !== value,
+      onClick: function onClick() {
+        return setAttributes(_defineProperty({}, "".concat(controlName, "backgroundType"), value));
+      }
+    }, label);
+  }))), backgroundType === "classic" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_color_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    label: __("Background Color"),
+    color: backgroundColor,
+    onChange: function onChange(backgroundColor) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "backgroundColor"), backgroundColor));
+    }
+  }), noMainBgi === false && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Background Image")
+  }), /*#__PURE__*/React.createElement(MediaUpload, {
+    onSelect: function onSelect(_ref4) {
+      var _setAttributes4;
+
+      var url = _ref4.url,
+          id = _ref4.id;
+      return setAttributes((_setAttributes4 = {}, _defineProperty(_setAttributes4, "".concat(controlName, "bgImageURL"), url), _defineProperty(_setAttributes4, "".concat(controlName, "bgImageID"), id), _setAttributes4));
+    },
+    type: "image",
+    value: bgImageID,
+    render: function render(_ref5) {
+      var open = _ref5.open;
+      return !bgImageURL && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
+        className: "eb-background-control-inspector-panel-img-btn components-button",
+        label: __("Upload Image"),
+        icon: "format-image",
+        onClick: open
+      }), /*#__PURE__*/React.createElement("span", {
+        style: {
+          padding: "10px 0",
+          display: "block"
+        }
+      }));
+    }
+  }), bgImageURL && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_image_avatar__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    imageUrl: bgImageURL,
+    onDeleteImage: function onDeleteImage() {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImageURL"), null));
+    }
+  }), resOption === "Desktop" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: bgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(bgImgPos) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImgPos"), bgImgPos));
+    }
+  })), bgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: bgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(bgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImgcustomPosXUnit"), bgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: bgImgcustomPosX,
+    min: 0,
+    max: bgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(bgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImgcustomPosX"), bgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: bgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(bgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImgcustomPosYUnit"), bgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: bgImgcustomPosY,
+    min: 0,
+    max: bgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: bgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(bgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImgcustomPosY"), bgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImgAttachment"), bgImgAttachment));
+    }
+  }), bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: bgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(bgImgRepeat) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImgRepeat"), bgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: backgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(backgroundSize) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "backgroundSize"), backgroundSize));
+    }
+  })), backgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: bgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(bgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImgCustomSizeUnit"), bgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: bgImgCustomSize,
+    min: 0,
+    max: bgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: bgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(bgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImgCustomSize"), bgImgCustomSize));
+    }
+  })))), resOption === "Tablet" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: TABbgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(TABbgImgPos) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "bgImgPos"), TABbgImgPos));
+    }
+  })), TABbgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: TABbgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(TABbgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "bgImgcustomPosXUnit"), TABbgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: TABbgImgcustomPosX,
+    min: 0,
+    max: TABbgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(TABbgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "bgImgcustomPosX"), TABbgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: TABbgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(TABbgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "bgImgcustomPosYUnit"), TABbgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: TABbgImgcustomPosY,
+    min: 0,
+    max: TABbgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: TABbgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(TABbgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "bgImgcustomPosY"), TABbgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImgAttachment"), bgImgAttachment));
+    }
+  }), bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: TABbgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(TABbgImgRepeat) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "bgImgRepeat"), TABbgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: TABbackgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(TABbackgroundSize) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "backgroundSize"), TABbackgroundSize));
+    }
+  })), TABbackgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: TABbgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(TABbgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "bgImgCustomSizeUnit"), TABbgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: TABbgImgCustomSize,
+    min: 0,
+    max: TABbgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: TABbgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(TABbgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "bgImgCustomSize"), TABbgImgCustomSize));
+    }
+  })))), resOption === "Mobile" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: MOBbgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(MOBbgImgPos) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "bgImgPos"), MOBbgImgPos));
+    }
+  })), MOBbgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: MOBbgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(MOBbgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "bgImgcustomPosXUnit"), MOBbgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: MOBbgImgcustomPosX,
+    min: 0,
+    max: MOBbgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(MOBbgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "bgImgcustomPosX"), MOBbgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: MOBbgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(MOBbgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "bgImgcustomPosYUnit"), MOBbgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: MOBbgImgcustomPosY,
+    min: 0,
+    max: MOBbgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: MOBbgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(MOBbgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "bgImgcustomPosY"), MOBbgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bgImgAttachment"), bgImgAttachment));
+    }
+  }), bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: MOBbgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(MOBbgImgRepeat) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "bgImgRepeat"), MOBbgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: MOBbackgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(MOBbackgroundSize) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "backgroundSize"), MOBbackgroundSize));
+    }
+  })), MOBbackgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: MOBbgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(MOBbgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "bgImgCustomSizeUnit"), MOBbgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: MOBbgImgCustomSize,
+    min: 0,
+    max: MOBbgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: MOBbgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(MOBbgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "bgImgCustomSize"), MOBbgImgCustomSize));
+    }
+  }))))))), backgroundType === "gradient" && /*#__PURE__*/React.createElement(_gradient_color_controller__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    gradientColor: gradientColor,
+    onChange: function onChange(gradientColor) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "gradientColor"), gradientColor));
+    }
+  })), bg_hoverType === "hover" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Background Type")
+  }, /*#__PURE__*/React.createElement(ButtonGroup, null, [{
+    label: __("Classic"),
+    value: "classic"
+  }, {
+    label: __("Gradient"),
+    value: "gradient"
+  }].map(function (_ref6) {
+    var value = _ref6.value,
+        label = _ref6.label;
+    return /*#__PURE__*/React.createElement(Button // isSmall
+    // isLarge
+    , {
+      isPrimary: hov_backgroundType === value,
+      isSecondary: hov_backgroundType !== value,
+      onClick: function onClick() {
+        return setAttributes(_defineProperty({}, "hov_".concat(controlName, "backgroundType"), value));
+      }
+    }, label);
+  }))), hov_backgroundType === "classic" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_color_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    label: __("Background Color"),
+    color: hov_backgroundColor,
+    onChange: function onChange(hov_backgroundColor) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "backgroundColor"), hov_backgroundColor));
+    }
+  }), noMainBgi === false && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Background Image")
+  }), /*#__PURE__*/React.createElement(MediaUpload, {
+    onSelect: function onSelect(_ref7) {
+      var _setAttributes39;
+
+      var url = _ref7.url,
+          id = _ref7.id;
+      return setAttributes((_setAttributes39 = {}, _defineProperty(_setAttributes39, "hov_".concat(controlName, "bgImageURL"), url), _defineProperty(_setAttributes39, "hov_".concat(controlName, "bgImageID"), id), _setAttributes39));
+    },
+    type: "image",
+    value: hov_bgImageID,
+    render: function render(_ref8) {
+      var open = _ref8.open;
+      return !hov_bgImageURL && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
+        className: "eb-background-control-inspector-panel-img-btn components-button",
+        label: __("Upload Image"),
+        icon: "format-image",
+        onClick: open
+      }), /*#__PURE__*/React.createElement("span", {
+        style: {
+          padding: "10px 0",
+          display: "block"
+        }
+      }));
+    }
+  }), hov_bgImageURL && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_image_avatar__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    imageUrl: hov_bgImageURL,
+    onDeleteImage: function onDeleteImage() {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImageURL"), null));
+    }
+  }), resOption === "Desktop" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_bgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_bgImgPos) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImgPos"), hov_bgImgPos));
+    }
+  })), hov_bgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_bgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_bgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImgcustomPosXUnit"), hov_bgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_bgImgcustomPosX,
+    min: 0,
+    max: hov_bgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(hov_bgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImgcustomPosX"), hov_bgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_bgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_bgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImgcustomPosYUnit"), hov_bgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_bgImgcustomPosY,
+    min: 0,
+    max: hov_bgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: hov_bgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_bgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImgcustomPosY"), hov_bgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: hov_bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(hov_bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImgAttachment"), hov_bgImgAttachment));
+    }
+  }), hov_bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_bgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(hov_bgImgRepeat) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImgRepeat"), hov_bgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_backgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_backgroundSize) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "backgroundSize"), hov_backgroundSize));
+    }
+  })), hov_backgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_bgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_bgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImgCustomSizeUnit"), hov_bgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_bgImgCustomSize,
+    min: 0,
+    max: hov_bgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: hov_bgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_bgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImgCustomSize"), hov_bgImgCustomSize));
+    }
+  })))), resOption === "Tablet" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_TABbgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_TABbgImgPos) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "bgImgPos"), hov_TABbgImgPos));
+    }
+  })), hov_TABbgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_TABbgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_TABbgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "bgImgcustomPosXUnit"), hov_TABbgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_TABbgImgcustomPosX,
+    min: 0,
+    max: hov_TABbgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(hov_TABbgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "bgImgcustomPosX"), hov_TABbgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_TABbgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_TABbgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "bgImgcustomPosYUnit"), hov_TABbgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_TABbgImgcustomPosY,
+    min: 0,
+    max: hov_TABbgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: hov_TABbgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_TABbgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "bgImgcustomPosY"), hov_TABbgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: hov_bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(hov_bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImgAttachment"), hov_bgImgAttachment));
+    }
+  }), hov_bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_TABbgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(hov_TABbgImgRepeat) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "bgImgRepeat"), hov_TABbgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_TABbackgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_TABbackgroundSize) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "backgroundSize"), hov_TABbackgroundSize));
+    }
+  })), hov_TABbackgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_TABbgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_TABbgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "bgImgCustomSizeUnit"), hov_TABbgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_TABbgImgCustomSize,
+    min: 0,
+    max: hov_TABbgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: hov_TABbgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_TABbgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "bgImgCustomSize"), hov_TABbgImgCustomSize));
+    }
+  })))), resOption === "Mobile" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_MOBbgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_MOBbgImgPos) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "bgImgPos"), hov_MOBbgImgPos));
+    }
+  })), hov_MOBbgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_MOBbgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_MOBbgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "bgImgcustomPosXUnit"), hov_MOBbgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_MOBbgImgcustomPosX,
+    min: 0,
+    max: hov_MOBbgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(hov_MOBbgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "bgImgcustomPosX"), hov_MOBbgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_MOBbgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_MOBbgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "bgImgcustomPosYUnit"), hov_MOBbgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_MOBbgImgcustomPosY,
+    min: 0,
+    max: hov_MOBbgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: hov_MOBbgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_MOBbgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "bgImgcustomPosY"), hov_MOBbgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: hov_bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(hov_bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "bgImgAttachment"), hov_bgImgAttachment));
+    }
+  }), hov_bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_MOBbgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(hov_MOBbgImgRepeat) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "bgImgRepeat"), hov_MOBbgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_MOBbackgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_MOBbackgroundSize) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "backgroundSize"), hov_MOBbackgroundSize));
+    }
+  })), hov_MOBbackgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_MOBbgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_MOBbgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "bgImgCustomSizeUnit"), hov_MOBbgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_MOBbgImgCustomSize,
+    min: 0,
+    max: hov_MOBbgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: hov_MOBbgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_MOBbgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "bgImgCustomSize"), hov_MOBbgImgCustomSize));
+    }
+  }))))))), hov_backgroundType === "gradient" && /*#__PURE__*/React.createElement(_gradient_color_controller__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    gradientColor: hov_gradientColor,
+    onChange: function onChange(hov_gradientColor) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "gradientColor"), hov_gradientColor));
+    }
+  }), !noTransition && /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Background Transition"),
+    value: bg_transition,
+    min: 0,
+    max: 5,
+    step: 0.1,
+    onChange: function onChange(bg_transition) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "bg_transition"), bg_transition));
+    }
+  })));
+}
+
+/***/ }),
+
+/***/ "./util/background-control/index.js":
+/*!******************************************!*\
+  !*** ./util/background-control/index.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BackgroundControl; });
+/* harmony import */ var _overlayControl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./overlayControl */ "./util/background-control/overlayControl.js");
+/* harmony import */ var _bgControl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bgControl */ "./util/background-control/bgControl.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+/**
+ * WordPress dependencies
+ */
+var __ = wp.i18n.__;
+var ToggleControl = wp.components.ToggleControl;
+/**
+ * Internal dependencies
+ */
+
+
+
+function BackgroundControl(_ref) {
+  var resRequiredProps = _ref.resRequiredProps,
+      controlName = _ref.controlName,
+      _ref$noOverlay = _ref.noOverlay,
+      noOverlay = _ref$noOverlay === void 0 ? false : _ref$noOverlay,
+      _ref$noMainBgi = _ref.noMainBgi,
+      noMainBgi = _ref$noMainBgi === void 0 ? false : _ref$noMainBgi,
+      _ref$noOverlayBgi = _ref.noOverlayBgi,
+      noOverlayBgi = _ref$noOverlayBgi === void 0 ? false : _ref$noOverlayBgi,
+      _ref$noTransition = _ref.noTransition,
+      noTransition = _ref$noTransition === void 0 ? false : _ref$noTransition;
+  var setAttributes = resRequiredProps.setAttributes,
+      attributes = resRequiredProps.attributes;
+  var isBgOverlay = attributes["".concat(controlName, "isBgOverlay")];
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_bgControl__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    resRequiredProps: resRequiredProps,
+    controlName: controlName,
+    noMainBgi: noMainBgi,
+    noTransition: noTransition
+  }), noOverlay === false && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement(ToggleControl, {
+    label: __("Enable Overlay"),
+    checked: isBgOverlay,
+    onChange: function onChange() {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "isBgOverlay"), !isBgOverlay));
+    }
+  }), isBgOverlay && /*#__PURE__*/React.createElement(_overlayControl__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    resRequiredProps: resRequiredProps,
+    controlName: controlName,
+    noOverlayBgi: noOverlayBgi,
+    noTransition: noTransition
+  })));
+}
+
+/***/ }),
+
+/***/ "./util/background-control/overlayControl.js":
+/*!***************************************************!*\
+  !*** ./util/background-control/overlayControl.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return overlayControl; });
+/* harmony import */ var _gradient_color_controller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../gradient-color-controller */ "./util/gradient-color-controller/index.js");
+/* harmony import */ var _unit_control__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../unit-control */ "./util/unit-control/index.js");
+/* harmony import */ var _color_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../color-control */ "./util/color-control/index.js");
+/* harmony import */ var _image_avatar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../image-avatar */ "./util/image-avatar/index.js");
+/* harmony import */ var _withResButtons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../withResButtons */ "./util/withResButtons/index.js");
+/* harmony import */ var _reset_control__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../reset-control */ "./util/reset-control/index.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var __ = wp.i18n.__;
+var MediaUpload = wp.blockEditor.MediaUpload;
+var _wp$components = wp.components,
+    SelectControl = _wp$components.SelectControl,
+    Button = _wp$components.Button,
+    RangeControl = _wp$components.RangeControl,
+    BaseControl = _wp$components.BaseControl,
+    ButtonGroup = _wp$components.ButtonGroup,
+    ToggleControl = _wp$components.ToggleControl;
+/**
+ * Internal dependencies
+ */
+
+
+
+
+
+
+
+function overlayControl(_ref) {
+  var resRequiredProps = _ref.resRequiredProps,
+      controlName = _ref.controlName,
+      noOverlayBgi = _ref.noOverlayBgi,
+      noTransition = _ref.noTransition;
+  var setAttributes = resRequiredProps.setAttributes,
+      attributes = resRequiredProps.attributes,
+      resOption = resRequiredProps.resOption;
+  var ovl_hoverType = attributes["".concat(controlName, "ovl_hoverType")],
+      ovl_bg_transition = attributes["".concat(controlName, "ovl_bg_transition")],
+      ovl_filtersTransition = attributes["".concat(controlName, "ovl_filtersTransition")],
+      ovl_opacityTransition = attributes["".concat(controlName, "ovl_opacityTransition")],
+      overlayType = attributes["".concat(controlName, "overlayType")],
+      overlayColor = attributes["".concat(controlName, "overlayColor")],
+      overlayGradient = attributes["".concat(controlName, "overlayGradient")],
+      ovl_bgImageURL = attributes["".concat(controlName, "ovl_bgImageURL")],
+      ovl_bgImageID = attributes["".concat(controlName, "ovl_bgImageID")],
+      ovl_bgImgAttachment = attributes["".concat(controlName, "ovl_bgImgAttachment")],
+      ovl_opacity = attributes["".concat(controlName, "ovl_opacity")],
+      ovl_blendMode = attributes["".concat(controlName, "ovl_blendMode")],
+      ovl_allowFilters = attributes["".concat(controlName, "ovl_allowFilters")],
+      ovl_fltrBrightness = attributes["".concat(controlName, "ovl_fltrBrightness")],
+      ovl_fltrContrast = attributes["".concat(controlName, "ovl_fltrContrast")],
+      ovl_fltrSaturation = attributes["".concat(controlName, "ovl_fltrSaturation")],
+      ovl_fltrBlur = attributes["".concat(controlName, "ovl_fltrBlur")],
+      ovl_fltrHue = attributes["".concat(controlName, "ovl_fltrHue")],
+      ovl_backgroundSize = attributes["".concat(controlName, "ovl_backgroundSize")],
+      ovl_bgImgCustomSize = attributes["".concat(controlName, "ovl_bgImgCustomSize")],
+      ovl_bgImgCustomSizeUnit = attributes["".concat(controlName, "ovl_bgImgCustomSizeUnit")],
+      ovl_bgImgPos = attributes["".concat(controlName, "ovl_bgImgPos")],
+      ovl_bgImgcustomPosX = attributes["".concat(controlName, "ovl_bgImgcustomPosX")],
+      ovl_bgImgcustomPosXUnit = attributes["".concat(controlName, "ovl_bgImgcustomPosXUnit")],
+      ovl_bgImgcustomPosY = attributes["".concat(controlName, "ovl_bgImgcustomPosY")],
+      ovl_bgImgcustomPosYUnit = attributes["".concat(controlName, "ovl_bgImgcustomPosYUnit")],
+      ovl_bgImgRepeat = attributes["".concat(controlName, "ovl_bgImgRepeat")],
+      TABovl_backgroundSize = attributes["TAB".concat(controlName, "ovl_backgroundSize")],
+      TABovl_bgImgCustomSize = attributes["TAB".concat(controlName, "ovl_bgImgCustomSize")],
+      TABovl_bgImgCustomSizeUnit = attributes["TAB".concat(controlName, "ovl_bgImgCustomSizeUnit")],
+      TABovl_bgImgPos = attributes["TAB".concat(controlName, "ovl_bgImgPos")],
+      TABovl_bgImgcustomPosX = attributes["TAB".concat(controlName, "ovl_bgImgcustomPosX")],
+      TABovl_bgImgcustomPosXUnit = attributes["TAB".concat(controlName, "ovl_bgImgcustomPosXUnit")],
+      TABovl_bgImgcustomPosY = attributes["TAB".concat(controlName, "ovl_bgImgcustomPosY")],
+      TABovl_bgImgcustomPosYUnit = attributes["TAB".concat(controlName, "ovl_bgImgcustomPosYUnit")],
+      TABovl_bgImgRepeat = attributes["TAB".concat(controlName, "ovl_bgImgRepeat")],
+      MOBovl_backgroundSize = attributes["MOB".concat(controlName, "ovl_backgroundSize")],
+      MOBovl_bgImgCustomSize = attributes["MOB".concat(controlName, "ovl_bgImgCustomSize")],
+      MOBovl_bgImgCustomSizeUnit = attributes["MOB".concat(controlName, "ovl_bgImgCustomSizeUnit")],
+      MOBovl_bgImgPos = attributes["MOB".concat(controlName, "ovl_bgImgPos")],
+      MOBovl_bgImgcustomPosX = attributes["MOB".concat(controlName, "ovl_bgImgcustomPosX")],
+      MOBovl_bgImgcustomPosXUnit = attributes["MOB".concat(controlName, "ovl_bgImgcustomPosXUnit")],
+      MOBovl_bgImgcustomPosY = attributes["MOB".concat(controlName, "ovl_bgImgcustomPosY")],
+      MOBovl_bgImgcustomPosYUnit = attributes["MOB".concat(controlName, "ovl_bgImgcustomPosYUnit")],
+      MOBovl_bgImgRepeat = attributes["MOB".concat(controlName, "ovl_bgImgRepeat")],
+      hov_overlayType = attributes["hov_".concat(controlName, "overlayType")],
+      hov_overlayColor = attributes["hov_".concat(controlName, "overlayColor")],
+      hov_overlayGradient = attributes["hov_".concat(controlName, "overlayGradient")],
+      hov_ovl_bgImageURL = attributes["hov_".concat(controlName, "ovl_bgImageURL")],
+      hov_ovl_bgImageID = attributes["hov_".concat(controlName, "ovl_bgImageID")],
+      hov_ovl_bgImgAttachment = attributes["hov_".concat(controlName, "ovl_bgImgAttachment")],
+      hov_ovl_opacity = attributes["hov_".concat(controlName, "ovl_opacity")],
+      hov_ovl_blendMode = attributes["hov_".concat(controlName, "ovl_blendMode")],
+      hov_ovl_allowFilters = attributes["hov_".concat(controlName, "ovl_allowFilters")],
+      hov_ovl_fltrBrightness = attributes["hov_".concat(controlName, "ovl_fltrBrightness")],
+      hov_ovl_fltrContrast = attributes["hov_".concat(controlName, "ovl_fltrContrast")],
+      hov_ovl_fltrSaturation = attributes["hov_".concat(controlName, "ovl_fltrSaturation")],
+      hov_ovl_fltrBlur = attributes["hov_".concat(controlName, "ovl_fltrBlur")],
+      hov_ovl_fltrHue = attributes["hov_".concat(controlName, "ovl_fltrHue")],
+      hov_ovl_backgroundSize = attributes["hov_".concat(controlName, "ovl_backgroundSize")],
+      hov_ovl_bgImgCustomSize = attributes["hov_".concat(controlName, "ovl_bgImgCustomSize")],
+      hov_ovl_bgImgCustomSizeUnit = attributes["hov_".concat(controlName, "ovl_bgImgCustomSizeUnit")],
+      hov_ovl_bgImgPos = attributes["hov_".concat(controlName, "ovl_bgImgPos")],
+      hov_ovl_bgImgcustomPosX = attributes["hov_".concat(controlName, "ovl_bgImgcustomPosX")],
+      hov_ovl_bgImgcustomPosXUnit = attributes["hov_".concat(controlName, "ovl_bgImgcustomPosXUnit")],
+      hov_ovl_bgImgcustomPosY = attributes["hov_".concat(controlName, "ovl_bgImgcustomPosY")],
+      hov_ovl_bgImgcustomPosYUnit = attributes["hov_".concat(controlName, "ovl_bgImgcustomPosYUnit")],
+      hov_ovl_bgImgRepeat = attributes["hov_".concat(controlName, "ovl_bgImgRepeat")],
+      hov_TABovl_backgroundSize = attributes["hov_TAB".concat(controlName, "ovl_backgroundSize")],
+      hov_TABovl_bgImgCustomSize = attributes["hov_TAB".concat(controlName, "ovl_bgImgCustomSize")],
+      hov_TABovl_bgImgCustomSizeUnit = attributes["hov_TAB".concat(controlName, "ovl_bgImgCustomSizeUnit")],
+      hov_TABovl_bgImgPos = attributes["hov_TAB".concat(controlName, "ovl_bgImgPos")],
+      hov_TABovl_bgImgcustomPosX = attributes["hov_TAB".concat(controlName, "ovl_bgImgcustomPosX")],
+      hov_TABovl_bgImgcustomPosXUnit = attributes["hov_TAB".concat(controlName, "ovl_bgImgcustomPosXUnit")],
+      hov_TABovl_bgImgcustomPosY = attributes["hov_TAB".concat(controlName, "ovl_bgImgcustomPosY")],
+      hov_TABovl_bgImgcustomPosYUnit = attributes["hov_TAB".concat(controlName, "ovl_bgImgcustomPosYUnit")],
+      hov_TABovl_bgImgRepeat = attributes["hov_TAB".concat(controlName, "ovl_bgImgRepeat")],
+      hov_MOBovl_backgroundSize = attributes["hov_MOB".concat(controlName, "ovl_backgroundSize")],
+      hov_MOBovl_bgImgCustomSize = attributes["hov_MOB".concat(controlName, "ovl_bgImgCustomSize")],
+      hov_MOBovl_bgImgCustomSizeUnit = attributes["hov_MOB".concat(controlName, "ovl_bgImgCustomSizeUnit")],
+      hov_MOBovl_bgImgPos = attributes["hov_MOB".concat(controlName, "ovl_bgImgPos")],
+      hov_MOBovl_bgImgcustomPosX = attributes["hov_MOB".concat(controlName, "ovl_bgImgcustomPosX")],
+      hov_MOBovl_bgImgcustomPosXUnit = attributes["hov_MOB".concat(controlName, "ovl_bgImgcustomPosXUnit")],
+      hov_MOBovl_bgImgcustomPosY = attributes["hov_MOB".concat(controlName, "ovl_bgImgcustomPosY")],
+      hov_MOBovl_bgImgcustomPosYUnit = attributes["hov_MOB".concat(controlName, "ovl_bgImgcustomPosYUnit")],
+      hov_MOBovl_bgImgRepeat = attributes["hov_MOB".concat(controlName, "ovl_bgImgRepeat")];
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Background Overlay")
+  }), /*#__PURE__*/React.createElement(BaseControl, null, /*#__PURE__*/React.createElement(ButtonGroup, null, [{
+    label: __("Normal"),
+    value: "normal"
+  }, {
+    label: __("Hover"),
+    value: "hover"
+  }].map(function (_ref2) {
+    var value = _ref2.value,
+        label = _ref2.label;
+    return /*#__PURE__*/React.createElement(Button // isSmall
+    // isLarge
+    , {
+      isPrimary: ovl_hoverType === value,
+      isSecondary: ovl_hoverType !== value,
+      onClick: function onClick() {
+        return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_hoverType"), value));
+      }
+    }, label);
+  }))), ovl_hoverType === "normal" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Overlay Type")
+  }, /*#__PURE__*/React.createElement(ButtonGroup, {
+    id: "eb-background-control-new"
+  }, [{
+    label: "Classic",
+    value: "classic"
+  }, {
+    label: "Gradient",
+    value: "gradient"
+  }].map(function (_ref3) {
+    var value = _ref3.value,
+        label = _ref3.label;
+    return /*#__PURE__*/React.createElement(Button, {
+      isLarge: true,
+      isPrimary: overlayType === value,
+      isSecondary: overlayType !== value,
+      onClick: function onClick() {
+        return setAttributes(_defineProperty({}, "".concat(controlName, "overlayType"), value));
+      }
+    }, label);
+  }))), overlayType === "classic" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_color_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    label: __("Overlay Color"),
+    color: overlayColor,
+    onChange: function onChange(overlayColor) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "overlayColor"), overlayColor));
+    }
+  }), noOverlayBgi === false && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Overlay Image")
+  }), /*#__PURE__*/React.createElement(MediaUpload, {
+    onSelect: function onSelect(_ref4) {
+      var _setAttributes4;
+
+      var url = _ref4.url,
+          id = _ref4.id;
+      return setAttributes((_setAttributes4 = {}, _defineProperty(_setAttributes4, "".concat(controlName, "ovl_bgImageURL"), url), _defineProperty(_setAttributes4, "".concat(controlName, "ovl_bgImageID"), id), _setAttributes4));
+    },
+    type: "image",
+    value: ovl_bgImageID,
+    render: function render(_ref5) {
+      var open = _ref5.open;
+      return !ovl_bgImageURL && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
+        className: "eb-background-control-inspector-panel-img-btn components-button",
+        label: __("Upload Image"),
+        icon: "format-image",
+        onClick: open
+      }), /*#__PURE__*/React.createElement("span", {
+        style: {
+          padding: "10px 0",
+          display: "block"
+        }
+      }));
+    }
+  }), ovl_bgImageURL && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_image_avatar__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    imageUrl: ovl_bgImageURL,
+    onDeleteImage: function onDeleteImage() {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImageURL"), null));
+    }
+  }), resOption === "Desktop" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: ovl_bgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(ovl_bgImgPos) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImgPos"), ovl_bgImgPos));
+    }
+  })), ovl_bgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: ovl_bgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(ovl_bgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImgcustomPosXUnit"), ovl_bgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: ovl_bgImgcustomPosX,
+    min: 0,
+    max: ovl_bgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(ovl_bgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImgcustomPosX"), ovl_bgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: ovl_bgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(ovl_bgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImgcustomPosYUnit"), ovl_bgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: ovl_bgImgcustomPosY,
+    min: 0,
+    max: ovl_bgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: ovl_bgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(ovl_bgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImgcustomPosY"), ovl_bgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: ovl_bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(ovl_bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImgAttachment"), ovl_bgImgAttachment));
+    }
+  }), ovl_bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: ovl_bgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(ovl_bgImgRepeat) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImgRepeat"), ovl_bgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: ovl_backgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(ovl_backgroundSize) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_backgroundSize"), ovl_backgroundSize));
+    }
+  })), ovl_backgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: ovl_bgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(ovl_bgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImgCustomSizeUnit"), ovl_bgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: ovl_bgImgCustomSize,
+    min: 0,
+    max: ovl_bgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: ovl_bgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(ovl_bgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImgCustomSize"), ovl_bgImgCustomSize));
+    }
+  })))), resOption === "Tablet" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: TABovl_bgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(TABovl_bgImgPos) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "ovl_bgImgPos"), TABovl_bgImgPos));
+    }
+  })), TABovl_bgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: TABovl_bgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(TABovl_bgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "ovl_bgImgcustomPosXUnit"), TABovl_bgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: TABovl_bgImgcustomPosX,
+    min: 0,
+    max: TABovl_bgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(TABovl_bgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "ovl_bgImgcustomPosX"), TABovl_bgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: TABovl_bgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(TABovl_bgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "ovl_bgImgcustomPosYUnit"), TABovl_bgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: TABovl_bgImgcustomPosY,
+    min: 0,
+    max: TABovl_bgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: TABovl_bgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(TABovl_bgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "ovl_bgImgcustomPosY"), TABovl_bgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: ovl_bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(ovl_bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImgAttachment"), ovl_bgImgAttachment));
+    }
+  }), ovl_bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: TABovl_bgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(TABovl_bgImgRepeat) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "ovl_bgImgRepeat"), TABovl_bgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: TABovl_backgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(TABovl_backgroundSize) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "ovl_backgroundSize"), TABovl_backgroundSize));
+    }
+  })), TABovl_backgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: TABovl_bgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(TABovl_bgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "ovl_bgImgCustomSizeUnit"), TABovl_bgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: TABovl_bgImgCustomSize,
+    min: 0,
+    max: TABovl_bgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: TABovl_bgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(TABovl_bgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "TAB".concat(controlName, "ovl_bgImgCustomSize"), TABovl_bgImgCustomSize));
+    }
+  })))), resOption === "Mobile" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: MOBovl_bgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(MOBovl_bgImgPos) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "ovl_bgImgPos"), MOBovl_bgImgPos));
+    }
+  })), MOBovl_bgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: MOBovl_bgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(MOBovl_bgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "ovl_bgImgcustomPosXUnit"), MOBovl_bgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: MOBovl_bgImgcustomPosX,
+    min: 0,
+    max: MOBovl_bgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(MOBovl_bgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "ovl_bgImgcustomPosX"), MOBovl_bgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: MOBovl_bgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(MOBovl_bgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "ovl_bgImgcustomPosYUnit"), MOBovl_bgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: MOBovl_bgImgcustomPosY,
+    min: 0,
+    max: MOBovl_bgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: MOBovl_bgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(MOBovl_bgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "ovl_bgImgcustomPosY"), MOBovl_bgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: ovl_bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(ovl_bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bgImgAttachment"), ovl_bgImgAttachment));
+    }
+  }), ovl_bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: MOBovl_bgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(MOBovl_bgImgRepeat) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "ovl_bgImgRepeat"), MOBovl_bgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: MOBovl_backgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(MOBovl_backgroundSize) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "ovl_backgroundSize"), MOBovl_backgroundSize));
+    }
+  })), MOBovl_backgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: MOBovl_bgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(MOBovl_bgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "ovl_bgImgCustomSizeUnit"), MOBovl_bgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: MOBovl_bgImgCustomSize,
+    min: 0,
+    max: MOBovl_bgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: MOBovl_bgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(MOBovl_bgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "MOB".concat(controlName, "ovl_bgImgCustomSize"), MOBovl_bgImgCustomSize));
+    }
+  }))))))), overlayType === "gradient" && /*#__PURE__*/React.createElement(_gradient_color_controller__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    gradientColor: overlayGradient,
+    onChange: function onChange(overlayGradient) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "overlayGradient"), overlayGradient));
+    }
+  }), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Opacity"),
+    value: ovl_opacity,
+    onChange: function onChange(ovl_opacity) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_opacity"), ovl_opacity));
+    },
+    step: 0.01,
+    min: 0,
+    max: 1
+  }), /*#__PURE__*/React.createElement(SelectControl, {
+    label: __("Blend Mode"),
+    value: ovl_blendMode,
+    options: [{
+      label: __("Normal"),
+      value: ""
+    }, {
+      label: __("Multiply"),
+      value: "multiply"
+    }, {
+      label: __("Screen"),
+      value: "screen"
+    }, {
+      label: __("Overlay"),
+      value: "overlay"
+    }, {
+      label: __("Darken"),
+      value: "darken"
+    }, {
+      label: __("Lighten"),
+      value: "lighten"
+    }, {
+      label: __("Color Dodge"),
+      value: "color-dodge"
+    }, {
+      label: __("Saturation"),
+      value: "saturation"
+    }, {
+      label: __("Color"),
+      value: "color"
+    }, {
+      label: __("Luminosity"),
+      value: "luminosity"
+    }],
+    onChange: function onChange(ovl_blendMode) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_blendMode"), ovl_blendMode));
+    }
+  }), /*#__PURE__*/React.createElement(ToggleControl, {
+    label: __("CSS Filters"),
+    checked: ovl_allowFilters,
+    onChange: function onChange() {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_allowFilters"), !ovl_allowFilters));
+    }
+  }), ovl_allowFilters && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Blur"),
+    value: ovl_fltrBlur,
+    onChange: function onChange(ovl_fltrBlur) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_fltrBlur"), ovl_fltrBlur));
+    },
+    step: 0.1,
+    min: 0,
+    max: 10
+  }), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Brightness"),
+    value: ovl_fltrBrightness,
+    onChange: function onChange(ovl_fltrBrightness) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_fltrBrightness"), ovl_fltrBrightness));
+    },
+    step: 1,
+    min: 0,
+    max: 200
+  }), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Contrast"),
+    value: ovl_fltrContrast,
+    onChange: function onChange(ovl_fltrContrast) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_fltrContrast"), ovl_fltrContrast));
+    },
+    step: 1,
+    min: 0,
+    max: 200
+  }), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Saturation"),
+    value: ovl_fltrSaturation,
+    onChange: function onChange(ovl_fltrSaturation) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_fltrSaturation"), ovl_fltrSaturation));
+    },
+    step: 1,
+    min: 0,
+    max: 200
+  }), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Hue"),
+    value: ovl_fltrHue,
+    onChange: function onChange(ovl_fltrHue) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_fltrHue"), ovl_fltrHue));
+    },
+    step: 1,
+    min: 0,
+    max: 360
+  }))), ovl_hoverType === "hover" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Overlay Type")
+  }, /*#__PURE__*/React.createElement(ButtonGroup, {
+    id: "eb-background-control-new"
+  }, [{
+    label: "Classic",
+    value: "classic"
+  }, {
+    label: "Gradient",
+    value: "gradient"
+  }].map(function (_ref6) {
+    var value = _ref6.value,
+        label = _ref6.label;
+    return /*#__PURE__*/React.createElement(Button, {
+      isLarge: true,
+      isPrimary: hov_overlayType === value,
+      isSecondary: hov_overlayType !== value,
+      onClick: function onClick() {
+        return setAttributes(_defineProperty({}, "hov_".concat(controlName, "overlayType"), value));
+      }
+    }, label);
+  }))), hov_overlayType === "classic" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_color_control__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    label: __("Overlay Color"),
+    color: hov_overlayColor,
+    onChange: function onChange(hov_overlayColor) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "overlayColor"), hov_overlayColor));
+    }
+  }), noOverlayBgi === false && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Overlay Image")
+  }), /*#__PURE__*/React.createElement(MediaUpload, {
+    onSelect: function onSelect(_ref7) {
+      var _setAttributes47;
+
+      var url = _ref7.url,
+          id = _ref7.id;
+      return setAttributes((_setAttributes47 = {}, _defineProperty(_setAttributes47, "hov_".concat(controlName, "ovl_bgImageURL"), url), _defineProperty(_setAttributes47, "hov_".concat(controlName, "ovl_bgImageID"), id), _setAttributes47));
+    },
+    type: "image",
+    value: hov_ovl_bgImageID,
+    render: function render(_ref8) {
+      var open = _ref8.open;
+      return !hov_ovl_bgImageURL && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
+        className: "eb-background-control-inspector-panel-img-btn components-button",
+        label: __("Upload Image"),
+        icon: "format-image",
+        onClick: open
+      }), /*#__PURE__*/React.createElement("span", {
+        style: {
+          padding: "10px 0",
+          display: "block"
+        }
+      }));
+    }
+  }), hov_ovl_bgImageURL && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_image_avatar__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    imageUrl: hov_ovl_bgImageURL,
+    onDeleteImage: function onDeleteImage() {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImageURL"), null));
+    }
+  }), resOption === "Desktop" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_ovl_bgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_ovl_bgImgPos) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImgPos"), hov_ovl_bgImgPos));
+    }
+  })), hov_ovl_bgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_ovl_bgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_ovl_bgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImgcustomPosXUnit"), hov_ovl_bgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_ovl_bgImgcustomPosX,
+    min: 0,
+    max: hov_ovl_bgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(hov_ovl_bgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImgcustomPosX"), hov_ovl_bgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_ovl_bgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_ovl_bgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImgcustomPosYUnit"), hov_ovl_bgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_ovl_bgImgcustomPosY,
+    min: 0,
+    max: hov_ovl_bgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: hov_ovl_bgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_ovl_bgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImgcustomPosY"), hov_ovl_bgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: hov_ovl_bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(hov_ovl_bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImgAttachment"), hov_ovl_bgImgAttachment));
+    }
+  }), hov_ovl_bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_ovl_bgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(hov_ovl_bgImgRepeat) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImgRepeat"), hov_ovl_bgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_ovl_backgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_ovl_backgroundSize) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_backgroundSize"), hov_ovl_backgroundSize));
+    }
+  })), hov_ovl_backgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_ovl_bgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_ovl_bgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImgCustomSizeUnit"), hov_ovl_bgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_ovl_bgImgCustomSize,
+    min: 0,
+    max: hov_ovl_bgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: hov_ovl_bgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_ovl_bgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImgCustomSize"), hov_ovl_bgImgCustomSize));
+    }
+  })))), resOption === "Tablet" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_TABovl_bgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_TABovl_bgImgPos) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "ovl_bgImgPos"), hov_TABovl_bgImgPos));
+    }
+  })), hov_TABovl_bgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_TABovl_bgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_TABovl_bgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "ovl_bgImgcustomPosXUnit"), hov_TABovl_bgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_TABovl_bgImgcustomPosX,
+    min: 0,
+    max: hov_TABovl_bgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(hov_TABovl_bgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "ovl_bgImgcustomPosX"), hov_TABovl_bgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_TABovl_bgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_TABovl_bgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "ovl_bgImgcustomPosYUnit"), hov_TABovl_bgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_TABovl_bgImgcustomPosY,
+    min: 0,
+    max: hov_TABovl_bgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: hov_TABovl_bgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_TABovl_bgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "ovl_bgImgcustomPosY"), hov_TABovl_bgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: hov_ovl_bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(hov_ovl_bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImgAttachment"), hov_ovl_bgImgAttachment));
+    }
+  }), hov_ovl_bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_TABovl_bgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(hov_TABovl_bgImgRepeat) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "ovl_bgImgRepeat"), hov_TABovl_bgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_TABovl_backgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_TABovl_backgroundSize) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "ovl_backgroundSize"), hov_TABovl_backgroundSize));
+    }
+  })), hov_TABovl_backgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_TABovl_bgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_TABovl_bgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "ovl_bgImgCustomSizeUnit"), hov_TABovl_bgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_TABovl_bgImgCustomSize,
+    min: 0,
+    max: hov_TABovl_bgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: hov_TABovl_bgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_TABovl_bgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "hov_TAB".concat(controlName, "ovl_bgImgCustomSize"), hov_TABovl_bgImgCustomSize));
+    }
+  })))), resOption === "Mobile" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Position"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_MOBovl_bgImgPos,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Center Center"),
+      value: "center center"
+    }, {
+      label: __("Center Left"),
+      value: "center left"
+    }, {
+      label: __("Center Right"),
+      value: "center right"
+    }, {
+      label: __("Top Center"),
+      value: "top center"
+    }, {
+      label: __("Top Left"),
+      value: "top left"
+    }, {
+      label: __("Top Right"),
+      value: "top right"
+    }, {
+      label: __("Bottom Center"),
+      value: "bottom center"
+    }, {
+      label: __("Bottom Left"),
+      value: "bottom left"
+    }, {
+      label: __("Bottom Right"),
+      value: "bottom right"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_MOBovl_bgImgPos) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "ovl_bgImgPos"), hov_MOBovl_bgImgPos));
+    }
+  })), hov_MOBovl_bgImgPos === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_MOBovl_bgImgcustomPosXUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_MOBovl_bgImgcustomPosXUnit) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "ovl_bgImgcustomPosXUnit"), hov_MOBovl_bgImgcustomPosXUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "X Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_MOBovl_bgImgcustomPosX,
+    min: 0,
+    max: hov_MOBovl_bgImgcustomPosXUnit === "px" ? 2000 : 100,
+    onChange: function onChange(hov_MOBovl_bgImgcustomPosX) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "ovl_bgImgcustomPosX"), hov_MOBovl_bgImgcustomPosX));
+    }
+  })), /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_MOBovl_bgImgcustomPosYUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_MOBovl_bgImgcustomPosYUnit) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "ovl_bgImgcustomPosYUnit"), hov_MOBovl_bgImgcustomPosYUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Y Position"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_MOBovl_bgImgcustomPosY,
+    min: 0,
+    max: hov_MOBovl_bgImgcustomPosYUnit === "px" ? 2000 : 100,
+    step: hov_MOBovl_bgImgcustomPosYUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_MOBovl_bgImgcustomPosY) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "ovl_bgImgcustomPosY"), hov_MOBovl_bgImgcustomPosY));
+    }
+  }))), /*#__PURE__*/React.createElement(SelectControl, {
+    label: "Attachment",
+    value: hov_ovl_bgImgAttachment,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Scroll"),
+      value: "scroll"
+    }, {
+      label: __("Fixed"),
+      value: "fixed"
+    }],
+    onChange: function onChange(hov_ovl_bgImgAttachment) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_bgImgAttachment"), hov_ovl_bgImgAttachment));
+    }
+  }), hov_ovl_bgImgAttachment === "fixed" && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: "-10px",
+      paddingBottom: "10px"
+    }
+  }, /*#__PURE__*/React.createElement("i", null, "Note: Attachment Fixed works only on desktop.")), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Repeat"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_MOBovl_bgImgRepeat,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("No-repeat"),
+      value: "no-repeat"
+    }, {
+      label: __("Repeat"),
+      value: "repeat"
+    }, {
+      label: __("Repeat-x"),
+      value: "repeat-x"
+    }, {
+      label: __("Repeat-y"),
+      value: "repeat-y"
+    }],
+    onChange: function onChange(hov_MOBovl_bgImgRepeat) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "ovl_bgImgRepeat"), hov_MOBovl_bgImgRepeat));
+    }
+  })), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Size"
+  }, /*#__PURE__*/React.createElement(SelectControl, {
+    value: hov_MOBovl_backgroundSize,
+    options: [{
+      label: __("Default"),
+      value: ""
+    }, {
+      label: __("Auto"),
+      value: "auto"
+    }, {
+      label: __("Cover"),
+      value: "cover"
+    }, {
+      label: __("Contain"),
+      value: "contain"
+    }, {
+      label: __("Custom"),
+      value: "custom"
+    }],
+    onChange: function onChange(hov_MOBovl_backgroundSize) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "ovl_backgroundSize"), hov_MOBovl_backgroundSize));
+    }
+  })), hov_MOBovl_backgroundSize === "custom" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_unit_control__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    selectedUnit: hov_MOBovl_bgImgCustomSizeUnit,
+    unitTypes: [{
+      label: "px",
+      value: "px"
+    }, {
+      label: "em",
+      value: "em"
+    }, {
+      label: "%",
+      value: "%"
+    }],
+    onClick: function onClick(hov_MOBovl_bgImgCustomSizeUnit) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "ovl_bgImgCustomSizeUnit"), hov_MOBovl_bgImgCustomSizeUnit));
+    }
+  }), /*#__PURE__*/React.createElement(_withResButtons__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    resRequiredProps: resRequiredProps,
+    label: "Width"
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    value: hov_MOBovl_bgImgCustomSize,
+    min: 0,
+    max: hov_MOBovl_bgImgCustomSizeUnit === "px" ? 2000 : 100,
+    step: hov_MOBovl_bgImgCustomSizeUnit === "px" ? 1 : 0.1,
+    onChange: function onChange(hov_MOBovl_bgImgCustomSize) {
+      return setAttributes(_defineProperty({}, "hov_MOB".concat(controlName, "ovl_bgImgCustomSize"), hov_MOBovl_bgImgCustomSize));
+    }
+  }))))))), hov_overlayType === "gradient" && /*#__PURE__*/React.createElement(_gradient_color_controller__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    gradientColor: hov_overlayGradient,
+    onChange: function onChange(hov_overlayGradient) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "overlayGradient"), hov_overlayGradient));
+    }
+  }), /*#__PURE__*/React.createElement("hr", null), !noTransition && /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Overlay Transition"),
+    value: ovl_bg_transition,
+    min: 0,
+    max: 5,
+    step: 0.1,
+    onChange: function onChange(ovl_bg_transition) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_bg_transition"), ovl_bg_transition));
+    }
+  }), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement(_reset_control__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    onReset: function onReset() {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_opacity"), undefined));
+    }
+  }, /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Opacity"),
+    value: hov_ovl_opacity,
+    onChange: function onChange(hov_ovl_opacity) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_opacity"), hov_ovl_opacity));
+    },
+    step: 0.01,
+    min: 0,
+    max: 1
+  })), !noTransition && hov_ovl_opacity && /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Opacity Transition"),
+    value: ovl_opacityTransition,
+    onChange: function onChange(ovl_opacityTransition) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_opacityTransition"), ovl_opacityTransition));
+    },
+    step: 0.01,
+    min: 0,
+    max: 5
+  }), /*#__PURE__*/React.createElement("hr", null), /*#__PURE__*/React.createElement(SelectControl, {
+    label: __("Blend Mode"),
+    value: hov_ovl_blendMode,
+    options: [{
+      label: __("Normal"),
+      value: ""
+    }, {
+      label: __("multiply"),
+      value: "multiply"
+    }, {
+      label: __("screen"),
+      value: "screen"
+    }, {
+      label: __("overlay"),
+      value: "overlay"
+    }, {
+      label: __("darken"),
+      value: "darken"
+    }, {
+      label: __("lighten"),
+      value: "lighten"
+    }, {
+      label: __("color-dodge"),
+      value: "Color Dodge"
+    }, {
+      label: __("saturation"),
+      value: "saturation"
+    }, {
+      label: __("color"),
+      value: "color"
+    }, {
+      label: __("luminosity"),
+      value: "luminosity"
+    }],
+    onChange: function onChange(hov_ovl_blendMode) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_blendMode"), hov_ovl_blendMode));
+    }
+  }), /*#__PURE__*/React.createElement(ToggleControl, {
+    label: __("CSS Filters"),
+    checked: hov_ovl_allowFilters,
+    onChange: function onChange() {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_allowFilters"), !hov_ovl_allowFilters));
+    }
+  }), hov_ovl_allowFilters && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Blur"),
+    value: hov_ovl_fltrBlur,
+    onChange: function onChange(hov_ovl_fltrBlur) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_fltrBlur"), hov_ovl_fltrBlur));
+    },
+    step: 0.1,
+    min: 0,
+    max: 10
+  }), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Brightness"),
+    value: hov_ovl_fltrBrightness,
+    onChange: function onChange(hov_ovl_fltrBrightness) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_fltrBrightness"), hov_ovl_fltrBrightness));
+    },
+    step: 1,
+    min: 0,
+    max: 200
+  }), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Contrast"),
+    value: hov_ovl_fltrContrast,
+    onChange: function onChange(hov_ovl_fltrContrast) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_fltrContrast"), hov_ovl_fltrContrast));
+    },
+    step: 1,
+    min: 0,
+    max: 200
+  }), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Saturation"),
+    value: hov_ovl_fltrSaturation,
+    onChange: function onChange(hov_ovl_fltrSaturation) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_fltrSaturation"), hov_ovl_fltrSaturation));
+    },
+    step: 1,
+    min: 0,
+    max: 200
+  }), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Hue"),
+    value: hov_ovl_fltrHue,
+    onChange: function onChange(hov_ovl_fltrHue) {
+      return setAttributes(_defineProperty({}, "hov_".concat(controlName, "ovl_fltrHue"), hov_ovl_fltrHue));
+    },
+    step: 1,
+    min: 0,
+    max: 360
+  }), /*#__PURE__*/React.createElement("hr", null), !noTransition && /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Css Filters Transition"),
+    value: ovl_filtersTransition,
+    onChange: function onChange(ovl_filtersTransition) {
+      return setAttributes(_defineProperty({}, "".concat(controlName, "ovl_filtersTransition"), ovl_filtersTransition));
+    },
+    step: 0.01,
+    min: 0,
+    max: 5
+  }))));
+}
 
 /***/ }),
 
@@ -9892,8 +12981,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SOURCES", function() { return SOURCES; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ORDER_BY", function() { return ORDER_BY; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ORDER", function() { return ORDER; });
-var __ = wp.i18n.__; // export const ABC = "buttonsConnectorIconSize"; 
-
+var __ = wp.i18n.__;
 var SOURCES = [{
   label: __("Post"),
   value: "posts"
@@ -9961,22 +13049,26 @@ function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "und
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+/**
+ * WordPress Core Dependencies
+*/
 var __ = wp.i18n.__;
 var _wp$components = wp.components,
     PanelBody = _wp$components.PanelBody,
     PanelRow = _wp$components.PanelRow,
     SelectControl = _wp$components.SelectControl,
-    ToggleControl = _wp$components.ToggleControl,
-    TextControl = _wp$components.TextControl,
-    Button = _wp$components.Button,
-    ButtonGroup = _wp$components.ButtonGroup,
-    BaseControl = _wp$components.BaseControl,
-    TabPanel = _wp$components.TabPanel,
-    __experimentalNumberControl = _wp$components.__experimentalNumberControl;
+    TextControl = _wp$components.TextControl;
 var _wp$element = wp.element,
     useEffect = _wp$element.useEffect,
     useState = _wp$element.useState;
-var select = wp.data.select;
+/**
+ * React Library Dependencies
+*/
+
+
+/**
+ * Internal Dependencies
+*/
 
 
 
@@ -9988,17 +13080,20 @@ function Inspector(props) {
   var _useState = useState([]),
       _useState2 = _slicedToArray(_useState, 2),
       authorOptions = _useState2[0],
-      setAuthorOptions = _useState2[1];
+      setAuthorOptions = _useState2[1]; //Author Data for Select2 Format
+
 
   var _useState3 = useState([]),
       _useState4 = _slicedToArray(_useState3, 2),
       categoryOptions = _useState4[0],
-      setCategoryOptions = _useState4[1];
+      setCategoryOptions = _useState4[1]; //Categories Data for Select2 Format
+
 
   var _useState5 = useState([]),
       _useState6 = _slicedToArray(_useState5, 2),
       tagOptions = _useState6[0],
-      setTagOptions = _useState6[1];
+      setTagOptions = _useState6[1]; //Tags Data for Select2 Format
+
 
   var _useState7 = useState({
     source: 'posts',
@@ -10015,13 +13110,13 @@ function Inspector(props) {
       setQuery = _useState8[1];
 
   useEffect(function () {
+    //If Exixsting query data exists in Attributes, set existing data to current query data
     if (typeof queryData != 'undefined' && queryData.length > 0) {
       setQuery(_objectSpread({}, queryData));
-    } //Set Author Options Data
+    } //Get Author data and Set Author Options Data
 
 
     Object(_apiData__WEBPACK_IMPORTED_MODULE_2__["getAuthor"])().then(function (authorData) {
-      console.log("authorData", authorData);
       var authorDataForOptions = [];
       authorData.length > 0 && authorData.forEach(function (item) {
         var filterAuthorData = {};
@@ -10037,7 +13132,7 @@ function Inspector(props) {
         authorDataForOptions.push(filterAuthorData);
       });
       setAuthorOptions(authorDataForOptions);
-    }); //Set Categories Options Data
+    }); //Get Categories data and Set Categories Options Data
 
     Object(_apiData__WEBPACK_IMPORTED_MODULE_2__["getCategory"])().then(function (categoryData) {
       var categoryDataForOptions = [];
@@ -10055,7 +13150,7 @@ function Inspector(props) {
         categoryDataForOptions.push(filterCategoryData);
       });
       setCategoryOptions(categoryDataForOptions);
-    }); //Set Tags Options Data
+    }); //Get Tags data and Set Tags Options Data
 
     Object(_apiData__WEBPACK_IMPORTED_MODULE_2__["getTag"])().then(function (tagData) {
       var tagDataForOptions = [];
@@ -10076,8 +13171,8 @@ function Inspector(props) {
     });
   }, []);
   useEffect(function () {
+    //Get Post data on query change and set to Attributes
     Object(_apiData__WEBPACK_IMPORTED_MODULE_2__["getPosts"])(query).then(function (posts) {
-      // console.log("Posts", posts)
       setAttributes({
         queryData: query
       });
@@ -10085,56 +13180,63 @@ function Inspector(props) {
         queryResults: posts
       });
     });
-  }, [query]);
+  }, [query]); //Function for update query data on Source Select
 
   var setSource = function setSource(value) {
     var updatedQueryData = _objectSpread({}, query);
 
     updatedQueryData.source = value;
     setQuery(updatedQueryData);
-  };
+  }; //Function for update query data on Author Select
+
 
   var setAuthor = function setAuthor(author) {
     var updatedQueryData = _objectSpread({}, query);
 
     updatedQueryData.author = JSON.stringify(author);
     setQuery(updatedQueryData);
-  };
+  }; //Function for update query data on Category Select
+
 
   var setCategories = function setCategories(categories) {
     var updatedQueryData = _objectSpread({}, query);
 
     updatedQueryData.categories = JSON.stringify(categories);
     setQuery(updatedQueryData);
-  };
+  }; //Function for update query data on Tag Select
+
 
   var setTags = function setTags(tags) {
     var updatedQueryData = _objectSpread({}, query);
 
     updatedQueryData.tags = JSON.stringify(tags);
     setQuery(updatedQueryData);
-  };
+  }; //Function for update query data on Post Per Page Select
+
 
   var setPerPage = function setPerPage(number) {
     var updatedQueryData = _objectSpread({}, query);
 
     updatedQueryData.per_page = number;
     setQuery(updatedQueryData);
-  };
+  }; //Function for update query data on Offset Select
+
 
   var setOffset = function setOffset(number) {
     var updatedQueryData = _objectSpread({}, query);
 
     updatedQueryData.offset = number;
     setQuery(updatedQueryData);
-  };
+  }; //Function for update query data on Order By Select
+
 
   var setOrderBy = function setOrderBy(value) {
     var updatedQueryData = _objectSpread({}, query);
 
     updatedQueryData.orderby = value;
     setQuery(updatedQueryData);
-  };
+  }; //Function for update query data on Order Select
+
 
   var setOrder = function setOrder(value) {
     var updatedQueryData = _objectSpread({}, query);
@@ -10145,7 +13247,7 @@ function Inspector(props) {
 
   return /*#__PURE__*/React.createElement(PanelBody, {
     title: __("Query"),
-    initialOpen: true
+    initialOpen: false
   }, /*#__PURE__*/React.createElement(SelectControl, {
     label: __("Source"),
     value: query.source,
@@ -10733,6 +13835,392 @@ function FontFamilyPicker(_ref) {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (withInstanceId(FontFamilyPicker));
+
+/***/ }),
+
+/***/ "./util/gradient-color-controller/constants.js":
+/*!*****************************************************!*\
+  !*** ./util/gradient-color-controller/constants.js ***!
+  \*****************************************************/
+/*! exports provided: GRADIENT_TYPE, RADIAL_TYPES */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GRADIENT_TYPE", function() { return GRADIENT_TYPE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RADIAL_TYPES", function() { return RADIAL_TYPES; });
+var GRADIENT_TYPE = [{
+  label: "Linear",
+  value: "linear"
+}, {
+  label: "Radial",
+  value: "radial"
+}];
+var RADIAL_TYPES = [{
+  label: "Ellipse",
+  value: "ellipse"
+}, {
+  label: "Circle",
+  value: "circle"
+}];
+
+/***/ }),
+
+/***/ "./util/gradient-color-controller/helper.js":
+/*!**************************************************!*\
+  !*** ./util/gradient-color-controller/helper.js ***!
+  \**************************************************/
+/*! exports provided: parseGradientColor */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "parseGradientColor", function() { return parseGradientColor; });
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+// Parses the gradient color string
+var parseGradientColor = function parseGradientColor() {
+  var gradientColor = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "linear-gradient(45deg,#7967ff,#c277f2)";
+  var angle = 45,
+      colorOnePosition = 0,
+      colorTwoPosition = 100,
+      radialShape = "ellipse",
+      radialX = 50,
+      radialY = 50;
+
+  var _ref = gradientColor.match(/\#[a-f\d]{3,8}|rgba?\([\d\,\.]{3,16}\)/gi) || ["rgba(0,0,0,0)", "rgba(0,0,0,0)"],
+      _ref2 = _slicedToArray(_ref, 2),
+      colorOne = _ref2[0],
+      colorTwo = _ref2[1];
+
+  var _ref3 = gradientColor.match(/\w{6}(?=-)/i) || ["linear"],
+      _ref4 = _slicedToArray(_ref3, 1),
+      gradientType = _ref4[0];
+
+  if (gradientType == "linear") {
+    angle = gradientColor.match(/\d{1,3}(?=deg)/i)[0];
+
+    var _ref5 = gradientColor.match(/\d{1,3}(?=\%)/gi) || ["0", "100"];
+
+    var _ref6 = _slicedToArray(_ref5, 2);
+
+    colorOnePosition = _ref6[0];
+    colorTwoPosition = _ref6[1];
+  } else {
+    radialShape = (gradientColor.match(/\w+(?= at)/i) || ["circle"])[0];
+    var pcents = gradientColor.match(/\d{1,3}(?=\%)/gi) || ["50", "50", "18", "82"];
+    radialX = pcents[0];
+    radialY = pcents[1];
+    colorOnePosition = pcents[2];
+    colorTwoPosition = pcents[3];
+  }
+
+  return {
+    gradientType: gradientType,
+    angle: angle,
+    colorOne: colorOne,
+    colorTwo: colorTwo,
+    colorOnePosition: colorOnePosition,
+    colorTwoPosition: colorTwoPosition,
+    radialShape: radialShape,
+    radialX: radialX,
+    radialY: radialY
+  };
+};
+
+/***/ }),
+
+/***/ "./util/gradient-color-controller/index.js":
+/*!*************************************************!*\
+  !*** ./util/gradient-color-controller/index.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _toggle_button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../toggle-button */ "./util/toggle-button/index.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constants */ "./util/gradient-color-controller/constants.js");
+/* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helper */ "./util/gradient-color-controller/helper.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+/**
+ * WordPress dependencies
+ */
+var __ = wp.i18n.__;
+var _wp$components = wp.components,
+    RangeControl = _wp$components.RangeControl,
+    BaseControl = _wp$components.BaseControl,
+    Dropdown = _wp$components.Dropdown,
+    Tooltip = _wp$components.Tooltip,
+    ColorPicker = _wp$components.ColorPicker;
+var _wp$element = wp.element,
+    useState = _wp$element.useState,
+    useEffect = _wp$element.useEffect;
+/**
+ * Internal dependencies
+ */
+// import React, { useState, useEffect } from "react";
+// import PropTypes from "prop-types";
+
+
+
+
+var colorBallStyles = {
+  padding: 2,
+  borderRadius: 0,
+  background: "white",
+  border: "1px solid #ebebeb"
+};
+var colorStyles = {
+  height: 16,
+  width: 16,
+  borderRadius: "0%",
+  boxShadow: "inset 0 0 0 1px rgba(0,0,0,.1)"
+};
+
+var GradientColorControl = function GradientColorControl(_ref) {
+  var _ref$gradientColor = _ref.gradientColor,
+      gradientColor = _ref$gradientColor === void 0 ? "linear-gradient(45deg,rgba(0,0,0,0.8),rgba(0,0,0,0.4))" : _ref$gradientColor,
+      onChange = _ref.onChange;
+
+  var _useState = useState("linear"),
+      _useState2 = _slicedToArray(_useState, 2),
+      gradientType = _useState2[0],
+      setGradientType = _useState2[1];
+
+  var _useState3 = useState("transparent"),
+      _useState4 = _slicedToArray(_useState3, 2),
+      colorOne = _useState4[0],
+      setColorOne = _useState4[1];
+
+  var _useState5 = useState(0),
+      _useState6 = _slicedToArray(_useState5, 2),
+      colorOnePosition = _useState6[0],
+      setColorOnePosition = _useState6[1];
+
+  var _useState7 = useState("transparent"),
+      _useState8 = _slicedToArray(_useState7, 2),
+      colorTwo = _useState8[0],
+      setColorTwo = _useState8[1];
+
+  var _useState9 = useState(100),
+      _useState10 = _slicedToArray(_useState9, 2),
+      colorTwoPosition = _useState10[0],
+      setColorTwoPosition = _useState10[1];
+
+  var _useState11 = useState(0),
+      _useState12 = _slicedToArray(_useState11, 2),
+      angle = _useState12[0],
+      setAngle = _useState12[1];
+
+  var _useState13 = useState("ellipse"),
+      _useState14 = _slicedToArray(_useState13, 2),
+      radialShape = _useState14[0],
+      setRadialShape = _useState14[1];
+
+  var _useState15 = useState(50),
+      _useState16 = _slicedToArray(_useState15, 2),
+      radialX = _useState16[0],
+      setRadialX = _useState16[1];
+
+  var _useState17 = useState(50),
+      _useState18 = _slicedToArray(_useState17, 2),
+      radialY = _useState18[0],
+      setRadialY = _useState18[1];
+
+  useEffect(function () {
+    var _parseGradientColor = Object(_helper__WEBPACK_IMPORTED_MODULE_2__["parseGradientColor"])(gradientColor),
+        gradientType = _parseGradientColor.gradientType,
+        angle = _parseGradientColor.angle,
+        colorOne = _parseGradientColor.colorOne,
+        colorTwo = _parseGradientColor.colorTwo,
+        colorOnePosition = _parseGradientColor.colorOnePosition,
+        colorTwoPosition = _parseGradientColor.colorTwoPosition,
+        radialShape = _parseGradientColor.radialShape,
+        radialX = _parseGradientColor.radialX,
+        radialY = _parseGradientColor.radialY;
+
+    setGradientType(gradientType);
+    setAngle(angle);
+    setColorOne(colorOne);
+    setColorTwo(colorTwo);
+    setColorOnePosition(colorOnePosition);
+    setColorTwoPosition(colorTwoPosition);
+    setRadialShape(radialShape);
+    setRadialX(radialX);
+    setRadialY(radialY);
+  }, []);
+  useEffect(function () {
+    onChange(gradientType === "linear" ? getLinearGradient() : getRadialGradient());
+  }, [gradientType, colorOne, colorOnePosition, colorTwo, colorTwoPosition, angle, radialShape, radialX, radialY]);
+
+  var getColorString = function getColorString() {
+    return "".concat(colorOne, " ").concat(colorOnePosition, "% , ").concat(colorTwo, " ").concat(colorTwoPosition, "%");
+  };
+
+  var getRadialGradient = function getRadialGradient() {
+    return "radial-gradient(".concat(radialShape, " at ").concat(radialX, "% ").concat(radialY, "%, ").concat(getColorString(), ")");
+  };
+
+  var getLinearGradient = function getLinearGradient() {
+    return "linear-gradient(".concat(angle, "deg, ").concat(getColorString(), ")");
+  };
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: "eb-gradient-control"
+  }, /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Gradient Type"),
+    className: "eb-gradient-toggle-label"
+  }, /*#__PURE__*/React.createElement(_toggle_button__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    defaultSelected: gradientType === "linear" ? _constants__WEBPACK_IMPORTED_MODULE_1__["GRADIENT_TYPE"][0] : _constants__WEBPACK_IMPORTED_MODULE_1__["GRADIENT_TYPE"][1],
+    options: _constants__WEBPACK_IMPORTED_MODULE_1__["GRADIENT_TYPE"],
+    onChange: function onChange(gradientType) {
+      return setGradientType(gradientType);
+    }
+  })), gradientType === "radial" && /*#__PURE__*/React.createElement(BaseControl, {
+    label: __("Radial Type"),
+    className: "eb-gradient-toggle-label"
+  }, /*#__PURE__*/React.createElement(_toggle_button__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    defaultSelected: radialShape === "ellipse" ? _constants__WEBPACK_IMPORTED_MODULE_1__["RADIAL_TYPES"][0] : _constants__WEBPACK_IMPORTED_MODULE_1__["RADIAL_TYPES"][1],
+    options: _constants__WEBPACK_IMPORTED_MODULE_1__["RADIAL_TYPES"],
+    onChange: function onChange(radialShape) {
+      return setRadialShape(radialShape);
+    }
+  })), /*#__PURE__*/React.createElement(BaseControl, {
+    label: "First Color",
+    className: "eb-color-base"
+  }, /*#__PURE__*/React.createElement(Dropdown, {
+    renderToggle: function renderToggle(_ref2) {
+      var isOpen = _ref2.isOpen,
+          onToggle = _ref2.onToggle;
+      return /*#__PURE__*/React.createElement(Tooltip, {
+        text: colorOne || "default"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "eb-color-ball",
+        style: colorOne && colorBallStyles
+      }, /*#__PURE__*/React.createElement("div", {
+        style: _objectSpread(_objectSpread({}, colorStyles), {}, {
+          backgroundColor: colorOne
+        }),
+        "aria-expanded": isOpen,
+        onClick: onToggle,
+        "aria-label": colorOne || "default"
+      })));
+    },
+    renderContent: function renderContent() {
+      return /*#__PURE__*/React.createElement(ColorPicker, {
+        color: colorOne,
+        onChangeComplete: function onChangeComplete(_ref3) {
+          var rgb = _ref3.rgb;
+          setColorOne("rgba(".concat(rgb.r, ",").concat(rgb.g, ",").concat(rgb.b, ",").concat(rgb.a, ")"));
+        }
+      });
+    }
+  })), /*#__PURE__*/React.createElement(BaseControl, {
+    label: "Second Color",
+    className: "eb-color-base"
+  }, /*#__PURE__*/React.createElement(Dropdown, {
+    renderToggle: function renderToggle(_ref4) {
+      var isOpen = _ref4.isOpen,
+          onToggle = _ref4.onToggle;
+      return /*#__PURE__*/React.createElement(Tooltip, {
+        text: colorTwo || "default"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "eb-color-ball",
+        style: colorTwo && colorBallStyles
+      }, /*#__PURE__*/React.createElement("div", {
+        style: _objectSpread(_objectSpread({}, colorStyles), {}, {
+          backgroundColor: colorTwo
+        }),
+        "aria-expanded": isOpen,
+        onClick: onToggle,
+        "aria-label": colorTwo || "default"
+      })));
+    },
+    renderContent: function renderContent() {
+      return /*#__PURE__*/React.createElement(ColorPicker, {
+        color: colorTwo,
+        onChangeComplete: function onChangeComplete(_ref5) {
+          var rgb = _ref5.rgb;
+          setColorTwo("rgba(".concat(rgb.r, ",").concat(rgb.g, ",").concat(rgb.b, ",").concat(rgb.a, ")"));
+        }
+      });
+    }
+  })), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("First Color Position"),
+    value: colorOnePosition,
+    onChange: function onChange(colorOnePosition) {
+      return setColorOnePosition(colorOnePosition);
+    },
+    min: 0,
+    max: 100
+  }), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Second Color Position"),
+    value: colorTwoPosition,
+    onChange: function onChange(colorTwoPosition) {
+      return setColorTwoPosition(colorTwoPosition);
+    },
+    min: 0,
+    max: 100
+  }), gradientType === "linear" && /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Angle"),
+    value: angle,
+    onChange: function onChange(angle) {
+      return setAngle(angle);
+    },
+    min: 0,
+    max: 360
+  }), gradientType === "radial" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Center X Position"),
+    value: radialX,
+    onChange: function onChange(radialX) {
+      return setRadialX(radialX);
+    },
+    min: 0,
+    max: 100
+  }), /*#__PURE__*/React.createElement(RangeControl, {
+    label: __("Center Y Position"),
+    value: radialY,
+    onChange: function onChange(radialY) {
+      return setRadialY(radialY);
+    },
+    min: 0,
+    max: 100
+  })));
+}; // GradientColorControl.propTypes = {
+//   gradientColor: PropTypes.string.isRequired,
+//   onChange: PropTypes.func.isRequired,
+// };
+
+
+/* harmony default export */ __webpack_exports__["default"] = (GradientColorControl);
 
 /***/ }),
 
@@ -15107,6 +18595,87 @@ var JustifyAlignIcon = function JustifyAlignIcon(_ref5) {
 
 /***/ }),
 
+/***/ "./util/image-avatar/index.js":
+/*!************************************!*\
+  !*** ./util/image-avatar/index.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var useState = wp.element.useState;
+
+var ImageAvatar = function ImageAvatar(_ref) {
+  var imageUrl = _ref.imageUrl,
+      onDeleteImage = _ref.onDeleteImage;
+
+  var _useState = useState(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      hover = _useState2[0],
+      setHover = _useState2[1];
+
+  var _useState3 = useState(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      deleteHover = _useState4[0],
+      setDeleteHover = _useState4[1];
+
+  var deleteButtonStyle = {
+    visibility: hover ? "visible" : "hidden",
+    backgroundColor: deleteHover ? "white" : "#64666a",
+    color: "#b4b5b7",
+    position: "absolute",
+    right: 34,
+    fontSize: 16,
+    alignSelf: "center",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 3,
+    cursor: "pointer"
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: "image-avatar",
+    style: {
+      backgroundImage: "url(".concat(imageUrl, ")")
+    },
+    onMouseEnter: function onMouseEnter() {
+      return setHover(true);
+    },
+    onMouseLeave: function onMouseLeave() {
+      return setHover(false);
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "image-avatar-delete dashicons dashicons-trash",
+    onMouseEnter: function onMouseEnter() {
+      return setDeleteHover(true);
+    },
+    onMouseLeave: function onMouseLeave() {
+      return setDeleteHover(false);
+    },
+    style: deleteButtonStyle,
+    onClick: function onClick() {
+      return onDeleteImage();
+    }
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ImageAvatar);
+
+/***/ }),
+
 /***/ "./util/reset-control/index.js":
 /*!*************************************!*\
   !*** ./util/reset-control/index.js ***!
@@ -15372,6 +18941,78 @@ function WithResBtns(_ref) {
     className: "dashicon dashicons dashicons-image-rotate"
   }))));
 }
+
+/***/ }),
+
+/***/ "./util/toggle-button/index.js":
+/*!*************************************!*\
+  !*** ./util/toggle-button/index.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var _wp$element = wp.element,
+    useEffect = _wp$element.useEffect,
+    useState = _wp$element.useState;
+
+var ToggleButton = function ToggleButton(_ref) {
+  var options = _ref.options,
+      onChange = _ref.onChange,
+      defaultSelected = _ref.defaultSelected;
+
+  var _useState = useState(defaultSelected || options[0]),
+      _useState2 = _slicedToArray(_useState, 2),
+      selected = _useState2[0],
+      setSelected = _useState2[1];
+
+  useEffect(function () {
+    onChange(selected.value);
+  }, [selected]);
+  useEffect(function () {
+    if (defaultSelected) {
+      setSelected(defaultSelected);
+    }
+  }, [defaultSelected]);
+  return /*#__PURE__*/React.createElement("div", {
+    id: "switch",
+    className: "eb-switch-control"
+  }, options.map(function (option) {
+    return /*#__PURE__*/React.createElement("label", null, /*#__PURE__*/React.createElement("input", {
+      type: "radio",
+      name: "gh",
+      placeholder: "name",
+      onChange: function onChange() {
+        return setSelected(option);
+      }
+    }), /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: selected.value === option.value ? "white" : "black"
+      }
+    }, option.label));
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "slideBg",
+    style: {
+      backgroundColor: "#551ef7",
+      transform: selected == options[0] ? "translateX(0)" : "translateX(100%)"
+    }
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ToggleButton);
 
 /***/ }),
 
@@ -15851,6 +19492,17 @@ function WithResButtons(_ref) {
     "class": "typoResButton dashicons dashicons-smartphone ".concat(resOption === "Mobile" ? "active" : " ")
   })), children);
 }
+
+/***/ }),
+
+/***/ "@wordpress/escape-html":
+/*!************************************!*\
+  !*** external ["wp","escapeHtml"] ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = window["wp"]["escapeHtml"]; }());
 
 /***/ }),
 

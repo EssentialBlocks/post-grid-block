@@ -12,6 +12,7 @@ const {
 	ButtonGroup,
 	BaseControl,
 	TabPanel,
+	RangeControl,
 } = wp.components;
 const { useEffect, useState } = wp.element;
 const { select } = wp.data;
@@ -20,32 +21,48 @@ const { select } = wp.data;
  * Internal depencencies
  */
 import {
-	BUTTON_STYLES,
-	NORMAL_HOVER,
-	UNIT_TYPES,
-	BUTTON_ONE_BORDER_SHADOW,
-	BUTTON_TWO_BORDER_SHADOW,
 	WRAPPER_MARGIN,
-	BUTTONS_PADDING,
-	BUTTONS_WIDTH,
-	BUTTONS_GAP,
-	CONNECTOR_TYPE,
+	WRAPPER_PADDING,
+	WRAPPER_BORDER_SHADOW,
+	WRAPPER_BG,
+	COLUMN_GAP,
+	COLUMN_PADDING,
+	COLUMN_BG,
+	COLUMN_BORDER_SHADOW,
+	THUMBNAIL_IMAGE_SIZE,
+	THUMBNAIL_BORDER_RADIUS,
+	TITLE_MARGIN,
+	CONTENT_MARGIN,
+	READMORE_MARGIN,
+	READMORE_PADDING,
+	META_MARGIN,
+	AVATAR_BORDER_RADIUS,
+
+	UNIT_TYPES,
+	HEIGHT_UNIT_TYPES,
+	NORMAL_HOVER,
 	PRESETS,
-	BUTTONS_CONNECTOR_SIZE,
 	TEXT_ALIGN,
+	TITLE_TAGS,
 	CONTENT_POSITION,
-	BUTTONS_CONNECTOR_ICON_SIZE,
+	META_POSITION,
 } from "./constants/constants";
+import { 
+	EBPG_TITLE_TYPOGRAPHY, 
+	EBPG_CONTENT_TYPOGRAPHY,
+	EBPG_READMORE_TYPOGRAPHY,
+	EBPG_META_TYPOGRAPHY,
+ } from "./constants/typographyPrefixConstants";
 import {
 	mimmikCssForResBtns,
 	mimmikCssOnPreviewBtnClickWhileBlockSelected,
 } from "../util/helpers";
-import {BUTTONS_TYPOGRAPHY, BUTTONS_CONNECTOR_TYPOGRAPHY} from "./constants/typographyPrefixConstants";
 import ColorControl from "../util/color-control";
 import ResponsiveDimensionsControl from "../util/dimensions-control-v2";
 import TypographyDropdown from "../util/typography-control-v2";
 import BorderShadowControl from "../util/border-shadow-control";
 import ResponsiveRangeController from "../util/responsive-range-control";
+import BackgroundControl from "../util/background-control";
 import CustomQuery from "../util/custom-query";
 
 function Inspector(props) {
@@ -53,34 +70,41 @@ function Inspector(props) {
 	const {
 		resOption,
 		preset,
-		contentPosition,
-		buttonOneColor,
-		textOneColor,
-		hoverButtonOneColor,
-		hoverTextOneColor,
-		buttonTwoColor,
-		textTwoColor,
-		hoverButtonTwoColor,
-		hoverTextTwoColor,
-		selectButtonStyleOne,
-		selectButtonStyleTwo,
-		buttonTextOne,
-		buttonURLOne,
-		buttonTextTwo,
-		buttonURLTwo,
-		innerButtonText,
-		innerButtonColor,
-		innerButtonTextColor,
-		innerButtonIcon,
-		showConnector,
-		connectorType,
-		buttonsColorType,
-		buttonTextAlign,
 		queryData,
 		queryResults,
+		columns,
+		showThumbnail,
+		showTitle,
+		titleColor,
+		titleHoverColor,
+		titleColorStyle,
+		titleLength,
+		titleTextAlign,
+		titleTag,
+		showContent,
+		contentColor,
+		contentTextAlign,
+		contentLength,
+		expansionIndicator,
+		showReadMore,
+		readmoreText,
+		readmoreColor,
+		readmoreTextAlign,
+		readmoreHoverColor,
+		readmoreColorType,
+		showMeta,
+		metaPosition,
+		metaColor,
+		metaTextAlign,
+		metaHoverColor,
+		metaColorType,
+		showAvatar,
+		showAuthor,
+		showDate,
+		showCategories,
 	} = attributes;
 
-	// console.log("Query", queryData, queryResults)
+	console.log("Inspector", queryData, queryResults)
 
 	// this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
 	useEffect(() => {
@@ -120,58 +144,22 @@ function Inspector(props) {
 		switch(selected) {
 			case 'preset-1':
 				setAttributes({
-					showConnector: "true",
-					buttonOneBorderShadowRds_Top: 20,
-					buttonOneBorderShadowRds_Bottom: 0,
-					buttonOneBorderShadowRds_Left: 20,
-					buttonOneBorderShadowRds_Right: 0,
-					buttonTwoBorderShadowRds_Top: 0,
-					buttonTwoBorderShadowRds_Bottom: 20,
-					buttonTwoBorderShadowRds_Left: 0,
-					buttonTwoBorderShadowRds_Right: 20,
-					buttonsGapRange: 0,
+					
 				});
 				break;
 			case 'preset-2':
 				setAttributes({
-					showConnector: false,
-					buttonOneBorderShadowRds_Top: "30",
-					buttonOneBorderShadowRds_Bottom: "30",
-					buttonOneBorderShadowRds_Left: "30",
-					buttonOneBorderShadowRds_Right: "30",
-					buttonTwoBorderShadowRds_Top: "30",
-					buttonTwoBorderShadowRds_Bottom: "30",
-					buttonTwoBorderShadowRds_Left: "30",
-					buttonTwoBorderShadowRds_Right: "30",
-					buttonsGapRange: 20,
+					
 				});
 				break;
 			case 'preset-3':
 				setAttributes({
-					showConnector: false,
-					buttonOneBorderShadowRds_Top: "0",
-					buttonOneBorderShadowRds_Bottom: "0",
-					buttonOneBorderShadowRds_Left: "15",
-					buttonOneBorderShadowRds_Right: "15",
-					buttonTwoBorderShadowRds_Top: "15",
-					buttonTwoBorderShadowRds_Bottom: "15",
-					buttonTwoBorderShadowRds_Left: "0",
-					buttonTwoBorderShadowRds_Right: "0",
-					buttonsGapRange: 20,
+					
 				});
 				break;
 			case 'preset-4':
 				setAttributes({
-					showConnector: false,
-					buttonOneBorderShadowRds_Top: "30",
-					buttonOneBorderShadowRds_Bottom: "30",
-					buttonOneBorderShadowRds_Left: "30",
-					buttonOneBorderShadowRds_Right: "30",
-					buttonTwoBorderShadowRds_Top: "30",
-					buttonTwoBorderShadowRds_Bottom: "30",
-					buttonTwoBorderShadowRds_Left: "30",
-					buttonTwoBorderShadowRds_Right: "30",
-					buttonsGapRange: 10,
+					
 				});
 				break;
 			default:
@@ -209,19 +197,191 @@ function Inspector(props) {
 						<div className={"eb-tab-controls" + tab.name}>
 							{tab.name === "general" && (
 								<>
-									<CustomQuery queryData={queryData} queryResults={queryResults} setAttributes={setAttributes} />
+									<CustomQuery 
+										queryData={queryData} 
+										queryResults={queryResults} 
+										setAttributes={setAttributes} 
+									/>
 
 									<PanelBody 
-										title={__("General")} 
+										title={__("Layout Style")} 
 										initialOpen={true}
 									>
 										<SelectControl
-											label={__("Preset Designs")}
+											label={__("Template")}
 											value={preset}
 											options={PRESETS}
 											onChange={(selected) => changePreset(selected)}
 										/>
-										<BaseControl label={__("Alignment")} id="eb-button-group-alignment">
+
+										<RangeControl
+											label="Columns"
+											value={ columns }
+											onChange={ ( value ) => setAttributes({ columns: value }) }
+											min={ 1 }
+											max={ 6 }
+										/>
+
+										<ResponsiveRangeController
+											baseLabel={__("Column Gap", "eb-post-grid")}
+											controlName={COLUMN_GAP}
+											resRequiredProps={resRequiredProps}
+											units={UNIT_TYPES}
+											min={1}
+											max={100}
+											step={1}
+										/>
+
+										<ToggleControl
+											label={__("Show Thumbnail?")}
+											checked={showThumbnail}
+											onChange={() => {
+												setAttributes({ showThumbnail: !showThumbnail });
+											}}
+										/>
+
+										{showThumbnail && (
+											<ResponsiveRangeController
+												baseLabel={__("Thumbnail Height", "eb-post-grid")}
+												controlName={THUMBNAIL_IMAGE_SIZE}
+												resRequiredProps={resRequiredProps}
+												units={HEIGHT_UNIT_TYPES}
+												min={1}
+												max={500}
+												step={1}
+											/>
+										)}
+
+										<ToggleControl
+											label={__("Show Title?")}
+											checked={showTitle}
+											onChange={() => {
+												setAttributes({ showTitle: !showTitle });
+											}}
+										/>
+										
+										{showTitle && (
+											<>
+												<SelectControl
+													label={__("Title Tag")}
+													value={titleTag}
+													options={TITLE_TAGS}
+													onChange={(value) => {
+														setAttributes({ titleTag: value });
+													}}
+												/>
+		
+												<RangeControl
+													label="Title Words"
+													value={ titleLength }
+													onChange={ ( value ) => setAttributes({ titleLength: value }) }
+													min={ 1 }
+													max={ 100 }
+												/>
+											</>
+										)}
+
+										<ToggleControl
+											label={__("Show Excerpt?")}
+											checked={showContent}
+											onChange={() => {
+												setAttributes({ showContent: !showContent });
+											}}
+										/>
+										
+										{showContent && (
+											<>
+												<RangeControl
+													label="Excerpt Words"
+													value={ contentLength }
+													onChange={ ( value ) => setAttributes({ contentLength: value }) }
+													min={ 1 }
+													max={ 100 }
+												/>
+		
+												<TextControl
+													label="Expansion Indicator"
+													type={"text"}
+													value={ expansionIndicator }
+													onChange={ (text) => setAttributes({expansionIndicator: text}) }
+												/>
+											</>
+										)}
+		
+										<ToggleControl
+											label={__("Show Read More Button?")}
+											checked={showReadMore}
+											onChange={() => {
+												setAttributes({ showReadMore: !showReadMore });
+											}}
+										/>
+
+										{showReadMore && (
+											<>
+												<TextControl
+													label="Button Text"
+													type={"text"}
+													value={ readmoreText }
+													onChange={ (text) => setAttributes({readmoreText: text}) }
+												/>
+											</>
+										)}
+		
+										<ToggleControl
+											label={__("Show Meta?")}
+											checked={showMeta}
+											onChange={() => {
+												setAttributes({ showMeta: !showMeta });
+											}}
+										/>
+
+										{showMeta && (
+											<>
+												<SelectControl
+													label={__("Meta Position")}
+													value={metaPosition}
+													options={META_POSITION}
+													onChange={(value) => {
+														setAttributes({ metaPosition: value });
+													}}
+												/>
+		
+												<ToggleControl
+													label={__("Show Avatar?")}
+													checked={showAvatar}
+													onChange={() => {
+														setAttributes({ showAvatar: !showAvatar });
+													}}
+												/>
+		
+												<ToggleControl
+													label={__("Show Author?")}
+													checked={showAuthor}
+													onChange={() => {
+														setAttributes({ showAuthor: !showAuthor });
+													}}
+												/>
+		
+												<ToggleControl
+													label={__("Show Date?")}
+													checked={showDate}
+													onChange={() => {
+														setAttributes({ showDate: !showDate });
+													}}
+												/>
+		
+												<ToggleControl
+													label={__("Show Categories?")}
+													checked={showCategories}
+													onChange={() => {
+														setAttributes({ showCategories: !showCategories });
+													}}
+												/>
+											</>
+										)}
+										
+										
+										{/* <BaseControl label={__("Alignment")} id="eb-button-group-alignment">
 											<ButtonGroup id="eb-button-group-alignment">
 												{CONTENT_POSITION.map((item) => (
 													<Button
@@ -238,279 +398,29 @@ function Inspector(props) {
 													</Button>
 												))}
 											</ButtonGroup>
-										</BaseControl>
-										<TextControl
-											label={__("Button One Text")}
-											value={buttonTextOne}
-											onChange={(text) => setAttributes({ buttonTextOne: text })}
-										/>
-										<TextControl
-											label={__("Button One Link")}
-											value={buttonURLOne}
-											onChange={(link) => setAttributes({ buttonURLOne: link })}
-										/>
+										</BaseControl> */}
 
-										<TextControl
-											label={__("Button Two Text")}
-											value={buttonTextTwo}
-											onChange={(text) => setAttributes({ buttonTextTwo: text })}
-										/>
-										<TextControl
-											label={__("Button Two Link")}
-											value={buttonURLTwo}
-											onChange={(link) => setAttributes({ buttonURLTwo: link })}
-										/>
-									</PanelBody>
-									<PanelBody title={__("Buttons")} initialOpen={true}>
-										<ResponsiveRangeController
-											baseLabel={__("Buttons Width", "button-group")}
-											controlName={BUTTONS_WIDTH}
-											resRequiredProps={resRequiredProps}
-											units={UNIT_TYPES}
-											min={0}
-											max={500}
-											step={1}
-										/>
-
-										<ResponsiveRangeController
-											baseLabel={__("Buttons Gap", "button-group")}
-											controlName={BUTTONS_GAP}
-											resRequiredProps={resRequiredProps}
-											units={UNIT_TYPES}
-											min={0}
-											max={100}
-											step={1}
-										/>
-
-										<BaseControl label={__("Text Align")} id="eb-button-group-text-align">
-											<ButtonGroup id="eb-button-group-text-align">
-												{TEXT_ALIGN.map((item) => (
-													<Button
-														isLarge
-														isPrimary={buttonTextAlign === item.value}
-														isSecondary={buttonTextAlign !== item.value}
-														onClick={() =>
-															setAttributes({
-																buttonTextAlign: item.value,
-															})
-														}
-													>
-													{item.label}
-													</Button>
-												))}
-											</ButtonGroup>
-										</BaseControl>
-									</PanelBody>
-									<PanelBody title={__("Connector")} initialOpen={true}>
-										<ToggleControl
-											label={__("Show Connector?")}
-											checked={showConnector}
-											onChange={() => {
-												setAttributes({ showConnector: !showConnector });
-											}}
-										/>
-										{showConnector && (
-											<>
-												<BaseControl label={__("Connector Type")}>
-													<ButtonGroup id="eb-button-group-connector-type">
-														{CONNECTOR_TYPE.map((item) => (
-															<Button
-																isLarge
-																isPrimary={connectorType === item.value}
-																isSecondary={connectorType !== item.value}
-																onClick={() =>
-																	setAttributes({
-																		connectorType: item.value,
-																	})
-																}
-															>
-																{item.label}
-															</Button>
-														))}
-													</ButtonGroup>
-												</BaseControl>
-
-												{connectorType === "icon" && (
-													<PanelBody title={__("Icon Settings")} initialOpen={true}>
-														
-
-														<ResponsiveRangeController
-															baseLabel={__("Icon Size", "button-group")}
-															controlName={BUTTONS_CONNECTOR_ICON_SIZE}
-															resRequiredProps={resRequiredProps}
-															units={UNIT_TYPES}
-															min={0}
-															max={100}
-															step={1}
-														/>
-													</PanelBody>
-												)}
-
-												{connectorType === "text" && (
-													<TextControl
-														label={__("Text")}
-														value={innerButtonText}
-														onChange={(text) => setAttributes({ innerButtonText: text })}
-													/>
-												)}
-
-												<ResponsiveRangeController
-														baseLabel={__("Connector Size", "button-group")}
-														controlName={BUTTONS_CONNECTOR_SIZE}
-														resRequiredProps={resRequiredProps}
-														units={UNIT_TYPES}
-														min={0}
-														max={100}
-														step={1}
-												/>
-											</>
-										)}
 									</PanelBody>
 								</>
 							)}
 
 							{tab.name === "styles" && (
 								<>
-									<PanelBody title={__("Buttons")} initialOpen={true}>
-										<TypographyDropdown
-											baseLabel={__("Typography", "button-group")}
-											typographyPrefixConstant={BUTTONS_TYPOGRAPHY}
-											resRequiredProps={resRequiredProps}
-										/>
-
-										<ButtonGroup className="eb-inspector-btn-group">
-											{NORMAL_HOVER.map((item) => (
-												<Button
-													isLarge
-													isPrimary={buttonsColorType === item.value}
-													isSecondary={buttonsColorType !== item.value}
-													onClick={() => setAttributes({ buttonsColorType: item.value })}
-												>
-													{item.label}
-												</Button>
-											))}
-										</ButtonGroup>
-
-										{buttonsColorType === "normal" && (
-											<PanelColorSettings
-												className={"eb-subpanel"}
-												title={__("Normal Colors")}
-												initialOpen={true}
-												colorSettings={[
-													{
-														value: buttonOneColor,
-														onChange: (newColor) =>
-															setAttributes({ buttonOneColor: newColor }),
-														label: __("Button One Color"),
-													},
-													{
-														value: textOneColor,
-														onChange: (newColor) => setAttributes({ textOneColor: newColor }),
-														label: __("Button One Text Color"),
-													},
-													{
-														value: buttonTwoColor,
-														onChange: (newColor) =>
-															setAttributes({
-																buttonTwoColor: newColor,
-															}),
-														label: __("Button Two Color"),
-													},
-													{
-														value: textTwoColor,
-														onChange: (newColor) =>
-															setAttributes({
-																textTwoColor: newColor,
-															}),
-														label: __("Button Two Text Color"),
-													},
-												]}
-											/>
-										)}
-
-										{buttonsColorType === "hover" && (
-											<PanelColorSettings
-												className={"eb-subpanel"}
-												title={__("Hover Colors")}
-												initialOpen={true}
-												colorSettings={[
-													{
-														value: hoverButtonOneColor,
-														onChange: (newColor) =>
-															setAttributes({ hoverButtonOneColor: newColor }),
-														label: __("Button One Color"),
-													},
-													{
-														value: hoverTextOneColor,
-														onChange: (newColor) => setAttributes({ hoverTextOneColor: newColor }),
-														label: __("Button One Text Color"),
-													},
-													{
-														value: hoverButtonTwoColor,
-														onChange: (newColor) =>
-															setAttributes({
-																hoverButtonTwoColor: newColor,
-															}),
-														label: __("Button Two Color"),
-													},
-													{
-														value: hoverTextTwoColor,
-														onChange: (newColor) =>
-															setAttributes({
-																hoverTextTwoColor: newColor,
-															}),
-														label: __("Button Two Text Color"),
-													},
-												]}
-											/>
-										)}
-
-										<PanelBody className={"eb-subpanel"} title={__("Button One Border")} initialOpen={true}>
-											<BorderShadowControl
-												controlName={BUTTON_ONE_BORDER_SHADOW}
-												resRequiredProps={resRequiredProps}
-												noShadow
-											/>
-										</PanelBody>
-
-										<PanelBody className={"eb-subpanel"} title={__("Button Two Border")} initialOpen={true}>
-											<BorderShadowControl
-												controlName={BUTTON_TWO_BORDER_SHADOW}
-												resRequiredProps={resRequiredProps}
-												noShadow
-											/>
-										</PanelBody>
-
-										<ResponsiveDimensionsControl
-											resRequiredProps={resRequiredProps}
-											controlName={BUTTONS_PADDING}
-											baseLabel="Padding"
-										/>
-										
-									</PanelBody>
-
-									<PanelBody title={__("Connector")} initialOpen={false}>
-										<TypographyDropdown
-												baseLabel={__("Typography", "button-group")}
-												typographyPrefixConstant={BUTTONS_CONNECTOR_TYPOGRAPHY}
-												resRequiredProps={resRequiredProps}
-										/>
-
+									<PanelBody title={__("Title")} initialOpen={false}>
 										<ColorControl
-											label={__("Background Color")}
-											color={innerButtonColor}
-											onChange={(innerButtonColor) =>
-												setAttributes({ innerButtonColor })
+											label={__("Color")}
+											color={titleColor}
+											onChange={(color) =>
+												setAttributes({ titleColor: color })
 											}
 										/>
 
-										<ColorControl
-											label={__("Text/ Icon Color")}
-											color={innerButtonTextColor}
-											onChange={(innerButtonTextColor) =>
-												setAttributes({ innerButtonTextColor })
-											}
+										<TypographyDropdown
+												baseLabel={__("Typography", "eb-post-grid")}
+												typographyPrefixConstant={EBPG_TITLE_TYPOGRAPHY}
+												resRequiredProps={resRequiredProps}
 										/>
+
 									</PanelBody>
 								</>
 							)}
@@ -522,6 +432,26 @@ function Inspector(props) {
 											resRequiredProps={resRequiredProps}
 											controlName={WRAPPER_MARGIN}
 											baseLabel="Margin"
+										/>
+										<ResponsiveDimensionsControl
+											resRequiredProps={resRequiredProps}
+											controlName={WRAPPER_PADDING}
+											baseLabel="Padding"
+										/>
+									</PanelBody>
+									<PanelBody title={__("Background")} initialOpen={false}>
+										<BackgroundControl
+											controlName={WRAPPER_BG}
+											resRequiredProps={resRequiredProps}
+											noOverlay
+										/>
+									</PanelBody>
+									<PanelBody title={__("Border & Shadow")} initialOpen={false}>
+										<BorderShadowControl
+											controlName={WRAPPER_BORDER_SHADOW}
+											resRequiredProps={resRequiredProps}
+											// noShadow
+											// noBorder
 										/>
 									</PanelBody>
 								</>
