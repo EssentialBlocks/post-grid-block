@@ -20,6 +20,7 @@
 	"dependencies": {
 		"@wordpress/escape-html": "^2.2.1",
 		"classnames": "^2.2.6",
+		"lodash": "^4.17.21",
 		"react-select": "^5.0.0"
 	}
 }

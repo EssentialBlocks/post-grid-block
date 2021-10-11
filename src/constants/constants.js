@@ -7,6 +7,7 @@ export const WRAPPER_PADDING = "wrpPadding";
 export const WRAPPER_BORDER_SHADOW = "wrpBorderShadow";
 export const WRAPPER_BG = "wrpBG";
 
+export const COLUMNS = "columns";
 export const COLUMN_GAP = "columnGap";
 export const COLUMN_PADDING = "columnPadding";
 export const COLUMN_BG = "columnBG";

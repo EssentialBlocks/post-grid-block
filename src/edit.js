@@ -3,9 +3,14 @@
 */
 const { __ } = wp.i18n;
 const { RichText, useBlockProps } = wp.blockEditor;
-const { useEffect } = wp.element;
+const { useEffect, renderToString } = wp.element;
 const { select } = wp.data;
+const { dateI18n, format, __experimentalGetSettings } = wp.date;
 
+/**
+ * External dependencies
+ */
+import { get, includes, invoke, isUndefined, pickBy } from 'lodash';
 import {escapeAmpersand, escapeAttribute, escapeEditableHTML, escapeHTML} from "@wordpress/escape-html"
 
 /**
@@ -18,6 +23,7 @@ import {
 	WRAPPER_PADDING,
 	WRAPPER_BORDER_SHADOW,
 	WRAPPER_BG,
+	COLUMNS,
 	COLUMN_GAP,
 	COLUMN_PADDING,
 	COLUMN_BG,
@@ -58,7 +64,6 @@ export default function Edit(props) {
 		resOption,
 		preset,
 		queryResults,
-		columns,
 		showThumbnail,
 		showTitle,
 		titleColor,
@@ -89,6 +94,8 @@ export default function Edit(props) {
 		showDate,
 		showCategories,
 	} = attributes;
+
+	const dateFormat = __experimentalGetSettings().formats.date;
 
 	// this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class
 	useEffect(() => {
@@ -294,12 +301,22 @@ export default function Edit(props) {
 	});
 
 	const {
+		rangeStylesDesktop: columnNumberDesktop,
+		rangeStylesTab: columnNumberTab,
+		rangeStylesMobile: columnNumberMobile,
+	} = generateResponsiveRangeStyles({
+		controlName: COLUMNS,
+		property: "",
+		attributes,
+	});
+
+	const {
 		rangeStylesDesktop: columnGapDesktop,
 		rangeStylesTab: columnGapTab,
 		rangeStylesMobile: columnGapMobile,
 	} = generateResponsiveRangeStyles({
 		controlName: COLUMN_GAP,
-		property: "margin",
+		property: "gap",
 		attributes,
 	});
 
@@ -345,22 +362,23 @@ export default function Edit(props) {
 
 	// wrapper styles css in strings ⬇
 	const wrapperStylesDesktop = `
-		.eb-button-group-wrapper.${blockId}{
-			display: flex;
-			flex-direction: row;
+		.eb-post-grid-wrapper.${blockId}{
+			display: grid;
 			position: relative;
+			grid-template-columns: repeat(${columnNumberDesktop.replace(/\D/g,'')}, minmax(0, 1fr));
+			${columnGapDesktop}
 			${wrapperMarginStylesDesktop}
 			${wrapperPaddingStylesDesktop}
 		}
 	`;
 	const wrapperStylesTab = `
-		.eb-button-group-wrapper.${blockId}{
+		.eb-post-grid-wrapper.${blockId}{
 			${wrapperMarginStylesTab}
 
 		}
 	`;
 	const wrapperStylesMobile = `
-		.eb-button-group-wrapper.${blockId}{
+		.eb-post-grid-wrapper.${blockId}{
 			${wrapperMarginStylesMobile}
 
 		}
@@ -427,60 +445,120 @@ export default function Edit(props) {
 			</style>
 
 			<div className={`eb-post-grid-wrapper ${blockId} ${preset}`} data-id={blockId}>
-				{typeof(queryResults) === 'object' && queryResults.length > 0 && queryResults.map((post) => (
-					<article class="ebpg-grid-post ebpg-post-grid-column" data-id={post.id}>
-						<div class="ebpg-grid-post-holder">
-							<div class="ebpg-entry-media">
-								{showThumbnail && (
-									<div class="ebpg-entry-thumbnail">
-										{post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'].length > 0 && (
-											<img 
-												width={post._embedded['wp:featuredmedia'][0].media_details.width} 
-												height={post._embedded['wp:featuredmedia'][0].media_details.height} 
-												src={post._embedded['wp:featuredmedia'][0].source_url} 
-												class="attachment-medium size-medium" 
-												alt={post.title.rendered}
-											/>
-										)}
-									</div>
-								)}
+				{typeof(queryResults) === 'object' && queryResults.length > 0 && queryResults.map((post) => {
+
+					//Generate Featured Image
+					const {
+						featuredImageInfo: {
+							url: imageSourceUrl,
+							alt: featuredImageAlt,
+						} = {},
+					} = post;
+					const featuredImage = showThumbnail && (
+						<img
+							src={ imageSourceUrl }
+							alt={ featuredImageAlt }
+						/>
+					);
+
+					//Generate Title
+					const title = post.title.rendered;
+					const titleWithLimitWords = titleLength > 0 ? title.trim().split( ' ', titleLength ).join( ' ' ) : title;
+					const titleHTML = `
+						<${titleTag} class="ebpg-entry-title">
+							<a class="ebpg-grid-post-link" href="${post.link}" title="${titleWithLimitWords}">
+								${titleWithLimitWords}
+							</a> 
+						</${titleTag}>
+					`;
+
+					//Generate Excerpt & Read More
+					let excerpt = post.excerpt.rendered;
+					const excerptElement = document.createElement( 'div' );
+					excerptElement.innerHTML = excerpt;
+					excerpt = excerptElement.textContent || excerptElement.innerText || '';
+					const excerptWithLimitWords = contentLength > 0 ? excerpt.trim().split( ' ', contentLength ).join( ' ' ) : excerpt;
+
+					const metaData = showMeta ? (
+						<>
+							{showAvatar ?
+								<div class="ebpg-author-avatar">
+									<a href={post._embedded.author[0].link}>
+										<img 
+											alt={post._embedded.author[0].name ? post._embedded.author[0].name : post._embedded.author[0].slug} 
+											src={post._embedded.author[0].avatar_urls[96] ? post._embedded.author[0].avatar_urls[96] : ''} 
+										/>
+									</a>
+								</div>
+							: ''}
+
+							<div class="ebpg-entry-meta-data">
+								{showAuthor ?
+									<span class="ebpg-posted-by">
+										<a 
+											href={post._embedded.author[0].link}
+											title={post._embedded.author[0].name ? post._embedded.author[0].name : post._embedded.author[0].slug} 
+											rel="author"
+										>
+											{post._embedded.author[0].name ? post._embedded.author[0].name : post._embedded.author[0].slug}
+										</a>
+									</span>
+								: ''}
+
+								{showDate ?
+									<span class="ebpg-posted-on">
+										<time dateTime={ format( 'c', post.date_gmt ) }>{ dateI18n( dateFormat, post.date_gmt ) }</time>
+									</span>
+								: ''}
+							</div>
+						</>
+					) : "";
+					
+					return (
+						<article class="ebpg-grid-post ebpg-post-grid-column" data-id={post.id}>
+							<div class="ebpg-grid-post-holder">
+								<div class="ebpg-entry-media">
+									{showThumbnail && (
+										<div class="ebpg-entry-thumbnail">
+											{post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'].length > 0 && (
+												<img
+													src={post._embedded['wp:featuredmedia'][0].source_url}
+													alt={post.title.alt_text}
+												/>
+											)}
+										</div>
+									)}
+								</div>
 								
-							</div>
-							
-							<div class="ebpg-entry-wrapper">
-								<header class="ebpg-entry-header">
-									<h2 class="ebpg-entry-title">
-										<a class="ebpg-grid-post-link" href="" title={post.title.rendered}>
-											{post.title.rendered}
-										</a>
-									</h2>
-								</header>
-								<div class="ebpg-entry-content">
-									<div class="ebpg-grid-post-excerpt">
-										<p>{}</p>
-										<p>{post.content.rendered.replace(/<[^>]*>?/gm, '').substr(0, contentLength)}</p>
-										<a href="" class="ebpg-post-elements-readmore-btn">Read More</a>
-									</div>
-								</div>
-								<div class="ebpg-entry-footer">
-									<div class="ebpg-author-avatar">
-										<a href="http://templately.test/author/admin/">
-											<img alt="" src="" srcset="http://0.gravatar.com/avatar/f2043d92f108cc1bb1e9f4f7792675c0?s=192&amp;d=mm&amp;r=g 2x" class="avatar avatar-96 photo" height="96" width="96" loading="lazy" />
-										</a>
-									</div>
-									<div class="ebpg-entry-meta">
-										<span class="ebpg-posted-by">
-											<a href="http://templately.test/author/admin/" title="Posts by admin" rel="author">admin</a>
-										</span>
-										<span class="ebpg-posted-on">
-											<time datetime="February 1, 2021">February 1, 2021</time>
-										</span>
-									</div>
+								<div class="ebpg-entry-wrapper">
+									{showTitle && (
+										<header 
+											class="ebpg-entry-header"
+											dangerouslySetInnerHTML={{__html: titleHTML}}
+										>
+										</header>
+									)}
+
+									{showContent && (
+										<div class="ebpg-entry-content">
+											<div class="ebpg-grid-post-excerpt">
+												<p>{ excerptWithLimitWords }{__( expansionIndicator )}</p>
+												<a href={post.link} class="ebpg-readmore-btn">{ __( readmoreText ) }</a>
+											</div>
+										</div>
+									)}
+									
+									{showMeta && (
+										<div class="ebpg-entry-meta">{metaData}</div>
+									)}
+									
+									
+									
 								</div>
 							</div>
-						</div>
-					</article>
-				))}
+						</article>
+					)
+				})}
 				{!isSelected && queryResults.length < 1 && (
 					<p>No Posts Found</p>
 				)}

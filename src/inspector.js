@@ -25,6 +25,7 @@ import {
 	WRAPPER_PADDING,
 	WRAPPER_BORDER_SHADOW,
 	WRAPPER_BG,
+	COLUMNS,
 	COLUMN_GAP,
 	COLUMN_PADDING,
 	COLUMN_BG,
@@ -72,7 +73,6 @@ function Inspector(props) {
 		preset,
 		queryData,
 		queryResults,
-		columns,
 		showThumbnail,
 		showTitle,
 		titleColor,
@@ -214,12 +214,14 @@ function Inspector(props) {
 											onChange={(selected) => changePreset(selected)}
 										/>
 
-										<RangeControl
-											label="Columns"
-											value={ columns }
-											onChange={ ( value ) => setAttributes({ columns: value }) }
-											min={ 1 }
-											max={ 6 }
+										<ResponsiveRangeController
+											baseLabel={__("Columns", "eb-post-grid")}
+											controlName={COLUMNS}
+											resRequiredProps={resRequiredProps}
+											units={[]}
+											min={1}
+											max={6}
+											step={1}
 										/>
 
 										<ResponsiveRangeController
@@ -275,7 +277,7 @@ function Inspector(props) {
 													label="Title Words"
 													value={ titleLength }
 													onChange={ ( value ) => setAttributes({ titleLength: value }) }
-													min={ 1 }
+													min={ 0 }
 													max={ 100 }
 												/>
 											</>
@@ -295,7 +297,7 @@ function Inspector(props) {
 													label="Excerpt Words"
 													value={ contentLength }
 													onChange={ ( value ) => setAttributes({ contentLength: value }) }
-													min={ 1 }
+													min={ 0 }
 													max={ 100 }
 												/>
 		

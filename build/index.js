@@ -7854,7 +7854,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({
+var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({
   resOption: {
     type: "string",
     "default": "desktop"
@@ -7879,10 +7879,6 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
   preset: {
     type: "string",
     "default": "button-1"
-  },
-  columns: {
-    type: "number",
-    "default": 3
   },
   showThumbnail: {
     type: "boolean",
@@ -8041,8 +8037,10 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
 })), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBorderShadowAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["COLUMN_BORDER_SHADOW"], {
   noShadow: true // noBorder: true,
 
-})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBackgroundAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["WRAPPER_BG"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBackgroundAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["COLUMN_BG"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["COLUMN_GAP"], {
-  defaultRange: 20
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBackgroundAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["WRAPPER_BG"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBackgroundAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["COLUMN_BG"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["COLUMNS"], {
+  defaultRange: 3
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["COLUMN_GAP"], {
+  defaultRange: 10
 })), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["THUMBNAIL_IMAGE_SIZE"]));
 
 /* harmony default export */ __webpack_exports__["default"] = (attributes);
@@ -8053,7 +8051,7 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
 /*!************************************!*\
   !*** ./src/constants/constants.js ***!
   \************************************/
-/*! exports provided: WRAPPER_MARGIN, WRAPPER_PADDING, WRAPPER_BORDER_SHADOW, WRAPPER_BG, COLUMN_GAP, COLUMN_PADDING, COLUMN_BG, COLUMN_BORDER_SHADOW, THUMBNAIL_IMAGE_SIZE, THUMBNAIL_BORDER_RADIUS, TITLE_MARGIN, CONTENT_MARGIN, READMORE_MARGIN, READMORE_PADDING, META_MARGIN, AVATAR_BORDER_RADIUS, UNIT_TYPES, HEIGHT_UNIT_TYPES, NORMAL_HOVER, META_POSITION, TITLE_TAGS, PRESETS, TEXT_ALIGN, CONTENT_POSITION */
+/*! exports provided: WRAPPER_MARGIN, WRAPPER_PADDING, WRAPPER_BORDER_SHADOW, WRAPPER_BG, COLUMNS, COLUMN_GAP, COLUMN_PADDING, COLUMN_BG, COLUMN_BORDER_SHADOW, THUMBNAIL_IMAGE_SIZE, THUMBNAIL_BORDER_RADIUS, TITLE_MARGIN, CONTENT_MARGIN, READMORE_MARGIN, READMORE_PADDING, META_MARGIN, AVATAR_BORDER_RADIUS, UNIT_TYPES, HEIGHT_UNIT_TYPES, NORMAL_HOVER, META_POSITION, TITLE_TAGS, PRESETS, TEXT_ALIGN, CONTENT_POSITION */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8062,6 +8060,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WRAPPER_PADDING", function() { return WRAPPER_PADDING; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WRAPPER_BORDER_SHADOW", function() { return WRAPPER_BORDER_SHADOW; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WRAPPER_BG", function() { return WRAPPER_BG; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "COLUMNS", function() { return COLUMNS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "COLUMN_GAP", function() { return COLUMN_GAP; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "COLUMN_PADDING", function() { return COLUMN_PADDING; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "COLUMN_BG", function() { return COLUMN_BG; });
@@ -8089,6 +8088,7 @@ var WRAPPER_MARGIN = "wrpMargin";
 var WRAPPER_PADDING = "wrpPadding";
 var WRAPPER_BORDER_SHADOW = "wrpBorderShadow";
 var WRAPPER_BG = "wrpBG";
+var COLUMNS = "columns";
 var COLUMN_GAP = "columnGap";
 var COLUMN_PADDING = "columnPadding";
 var COLUMN_BG = "columnBG";
@@ -8239,14 +8239,16 @@ var EBPG_META_TYPOGRAPHY = "ebpg_meta";
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Edit; });
-/* harmony import */ var _wordpress_escape_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/escape-html */ "@wordpress/escape-html");
-/* harmony import */ var _wordpress_escape_html__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_escape_html__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _inspector__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./inspector */ "./src/inspector.js");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _constants_constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./constants/constants */ "./src/constants/constants.js");
-/* harmony import */ var _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./constants/typographyPrefixConstants */ "./src/constants/typographyPrefixConstants.js");
-/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../util/helpers */ "./util/helpers/index.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "lodash");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_escape_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/escape-html */ "@wordpress/escape-html");
+/* harmony import */ var _wordpress_escape_html__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_escape_html__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _inspector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./inspector */ "./src/inspector.js");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _constants_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./constants/constants */ "./src/constants/constants.js");
+/* harmony import */ var _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./constants/typographyPrefixConstants */ "./src/constants/typographyPrefixConstants.js");
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../util/helpers */ "./util/helpers/index.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 /**
@@ -8256,8 +8258,19 @@ var __ = wp.i18n.__;
 var _wp$blockEditor = wp.blockEditor,
     RichText = _wp$blockEditor.RichText,
     useBlockProps = _wp$blockEditor.useBlockProps;
-var useEffect = wp.element.useEffect;
+var _wp$element = wp.element,
+    useEffect = _wp$element.useEffect,
+    renderToString = _wp$element.renderToString;
 var select = wp.data.select;
+var _wp$date = wp.date,
+    dateI18n = _wp$date.dateI18n,
+    format = _wp$date.format,
+    __experimentalGetSettings = _wp$date.__experimentalGetSettings;
+/**
+ * External dependencies
+ */
+
+
 
 /**
   * Internal depencencies
@@ -8278,7 +8291,6 @@ function Edit(props) {
       resOption = attributes.resOption,
       preset = attributes.preset,
       queryResults = attributes.queryResults,
-      columns = attributes.columns,
       showThumbnail = attributes.showThumbnail,
       showTitle = attributes.showTitle,
       titleColor = attributes.titleColor,
@@ -8307,7 +8319,10 @@ function Edit(props) {
       showAvatar = attributes.showAvatar,
       showAuthor = attributes.showAuthor,
       showDate = attributes.showDate,
-      showCategories = attributes.showCategories; // this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class
+      showCategories = attributes.showCategories;
+
+  var dateFormat = __experimentalGetSettings().formats.date; // this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class
+
 
   useEffect(function () {
     var bodyClasses = document.body.className;
@@ -8318,7 +8333,7 @@ function Edit(props) {
 
   useEffect(function () {
     var BLOCK_PREFIX = "eb-post-grid";
-    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["duplicateBlockIdFix"])({
+    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["duplicateBlockIdFix"])({
       BLOCK_PREFIX: BLOCK_PREFIX,
       blockId: blockId,
       setAttributes: setAttributes,
@@ -8328,7 +8343,7 @@ function Edit(props) {
   }, []); // this useEffect is for mimmiking css when responsive options clicked from wordpress's 'preview' button
 
   useEffect(function () {
-    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["mimmikCssForPreviewBtnClick"])({
+    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["mimmikCssForPreviewBtnClick"])({
       domObj: document,
       select: select
     });
@@ -8338,44 +8353,44 @@ function Edit(props) {
   }); //
   // CSS/styling Codes Starts from Here
 
-  var _generateTypographySt = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateTypographyStyles"])({
+  var _generateTypographySt = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateTypographyStyles"])({
     attributes: attributes,
-    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_4__["EBPG_TITLE_TYPOGRAPHY"],
+    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_5__["EBPG_TITLE_TYPOGRAPHY"],
     defaultFontSize: 20
   }),
       titleTypoStylesDesktop = _generateTypographySt.typoStylesDesktop,
       titleTypoStylesTab = _generateTypographySt.typoStylesTab,
       titleTypoStylesMobile = _generateTypographySt.typoStylesMobile;
 
-  var _generateTypographySt2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateTypographyStyles"])({
+  var _generateTypographySt2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateTypographyStyles"])({
     attributes: attributes,
-    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_4__["EBPG_CONTENT_TYPOGRAPHY"],
+    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_5__["EBPG_CONTENT_TYPOGRAPHY"],
     defaultFontSize: 16
   }),
       contentTypoStylesDesktop = _generateTypographySt2.typoStylesDesktop,
       contentTypoStylesTab = _generateTypographySt2.typoStylesTab,
       contentTypoStylesMobile = _generateTypographySt2.typoStylesMobile;
 
-  var _generateTypographySt3 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateTypographyStyles"])({
+  var _generateTypographySt3 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateTypographyStyles"])({
     attributes: attributes,
-    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_4__["EBPG_READMORE_TYPOGRAPHY"],
+    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_5__["EBPG_READMORE_TYPOGRAPHY"],
     defaultFontSize: 16
   }),
       readmoreTypoStylesDesktop = _generateTypographySt3.typoStylesDesktop,
       readmoreTypoStylesTab = _generateTypographySt3.typoStylesTab,
       readmoreTypoStylesMobile = _generateTypographySt3.typoStylesMobile;
 
-  var _generateTypographySt4 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateTypographyStyles"])({
+  var _generateTypographySt4 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateTypographyStyles"])({
     attributes: attributes,
-    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_4__["EBPG_META_TYPOGRAPHY"],
+    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_5__["EBPG_META_TYPOGRAPHY"],
     defaultFontSize: 14
   }),
       metaTypoStylesDesktop = _generateTypographySt4.typoStylesDesktop,
       metaTypoStylesTab = _generateTypographySt4.typoStylesTab,
       metaTypoStylesMobile = _generateTypographySt4.typoStylesMobile;
 
-  var _generateDimensionsCo = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateDimensionsControlStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["WRAPPER_MARGIN"],
+  var _generateDimensionsCo = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["WRAPPER_MARGIN"],
     styleFor: "margin",
     attributes: attributes
   }),
@@ -8383,8 +8398,8 @@ function Edit(props) {
       wrapperMarginStylesTab = _generateDimensionsCo.dimensionStylesTab,
       wrapperMarginStylesMobile = _generateDimensionsCo.dimensionStylesMobile;
 
-  var _generateDimensionsCo2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateDimensionsControlStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["WRAPPER_PADDING"],
+  var _generateDimensionsCo2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["WRAPPER_PADDING"],
     styleFor: "padding",
     attributes: attributes
   }),
@@ -8392,8 +8407,8 @@ function Edit(props) {
       wrapperPaddingStylesTab = _generateDimensionsCo2.dimensionStylesTab,
       wrapperPaddingStylesMobile = _generateDimensionsCo2.dimensionStylesMobile;
 
-  var _generateDimensionsCo3 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateDimensionsControlStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["COLUMN_PADDING"],
+  var _generateDimensionsCo3 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["COLUMN_PADDING"],
     styleFor: "padding",
     attributes: attributes
   }),
@@ -8401,8 +8416,8 @@ function Edit(props) {
       columnPaddingStylesTab = _generateDimensionsCo3.dimensionStylesTab,
       columnPaddingStylesMobile = _generateDimensionsCo3.dimensionStylesMobile;
 
-  var _generateDimensionsCo4 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateDimensionsControlStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["TITLE_MARGIN"],
+  var _generateDimensionsCo4 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["TITLE_MARGIN"],
     styleFor: "margin",
     attributes: attributes
   }),
@@ -8410,8 +8425,8 @@ function Edit(props) {
       titleMarginStylesTab = _generateDimensionsCo4.dimensionStylesTab,
       titleMarginStylesMobile = _generateDimensionsCo4.dimensionStylesMobile;
 
-  var _generateDimensionsCo5 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateDimensionsControlStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["CONTENT_MARGIN"],
+  var _generateDimensionsCo5 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["CONTENT_MARGIN"],
     styleFor: "margin",
     attributes: attributes
   }),
@@ -8419,8 +8434,8 @@ function Edit(props) {
       contentMarginStylesTab = _generateDimensionsCo5.dimensionStylesTab,
       contentMarginStylesMobile = _generateDimensionsCo5.dimensionStylesMobile;
 
-  var _generateDimensionsCo6 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateDimensionsControlStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["READMORE_MARGIN"],
+  var _generateDimensionsCo6 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["READMORE_MARGIN"],
     styleFor: "margin",
     attributes: attributes
   }),
@@ -8428,8 +8443,8 @@ function Edit(props) {
       readmoreMarginStylesTab = _generateDimensionsCo6.dimensionStylesTab,
       readmoreMarginStylesMobile = _generateDimensionsCo6.dimensionStylesMobile;
 
-  var _generateDimensionsCo7 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateDimensionsControlStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["READMORE_PADDING"],
+  var _generateDimensionsCo7 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["READMORE_PADDING"],
     styleFor: "padding",
     attributes: attributes
   }),
@@ -8437,8 +8452,8 @@ function Edit(props) {
       readmorePaddingStylesTab = _generateDimensionsCo7.dimensionStylesTab,
       readmorePaddingStylesMobile = _generateDimensionsCo7.dimensionStylesMobile;
 
-  var _generateDimensionsCo8 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateDimensionsControlStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["META_MARGIN"],
+  var _generateDimensionsCo8 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["META_MARGIN"],
     styleFor: "margin",
     attributes: attributes
   }),
@@ -8446,8 +8461,8 @@ function Edit(props) {
       metaMarginStylesTab = _generateDimensionsCo8.dimensionStylesTab,
       metaMarginStylesMobile = _generateDimensionsCo8.dimensionStylesMobile;
 
-  var _generateDimensionsCo9 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateDimensionsControlStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["THUMBNAIL_BORDER_RADIUS"],
+  var _generateDimensionsCo9 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["THUMBNAIL_BORDER_RADIUS"],
     styleFor: "border-radius",
     attributes: attributes
   }),
@@ -8455,8 +8470,8 @@ function Edit(props) {
       thumbnailBdrSdwStylesTab = _generateDimensionsCo9.dimensionStylesTab,
       thumbnailBdrSdwStylesMobile = _generateDimensionsCo9.dimensionStylesMobile;
 
-  var _generateDimensionsCo10 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateDimensionsControlStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["AVATAR_BORDER_RADIUS"],
+  var _generateDimensionsCo10 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["AVATAR_BORDER_RADIUS"],
     styleFor: "border-radius",
     attributes: attributes
   }),
@@ -8464,8 +8479,8 @@ function Edit(props) {
       avatarBdrSdwStylesTab = _generateDimensionsCo10.dimensionStylesTab,
       avatarBdrSdwStylesMobile = _generateDimensionsCo10.dimensionStylesMobile;
 
-  var _generateBorderShadow = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateBorderShadowStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["WRAPPER_BORDER_SHADOW"],
+  var _generateBorderShadow = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateBorderShadowStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["WRAPPER_BORDER_SHADOW"],
     attributes: attributes,
     noShadow: true
   }),
@@ -8476,8 +8491,8 @@ function Edit(props) {
       wrapperBDShadowHoverTab = _generateBorderShadow.stylesHoverTab,
       wrapperBDShadowHoverMobile = _generateBorderShadow.stylesHoverMobile;
 
-  var _generateBorderShadow2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateBorderShadowStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["COLUMN_BORDER_SHADOW"],
+  var _generateBorderShadow2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateBorderShadowStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["COLUMN_BORDER_SHADOW"],
     attributes: attributes,
     noShadow: true
   }),
@@ -8488,28 +8503,37 @@ function Edit(props) {
       columnBDShadowHoverTab = _generateBorderShadow2.stylesHoverTab,
       columnBDShadowHoverMobile = _generateBorderShadow2.stylesHoverMobile;
 
-  var _generateResponsiveRa = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateResponsiveRangeStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["COLUMN_GAP"],
-    property: "margin",
+  var _generateResponsiveRa = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateResponsiveRangeStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["COLUMNS"],
+    property: "",
     attributes: attributes
   }),
-      columnGapDesktop = _generateResponsiveRa.rangeStylesDesktop,
-      columnGapTab = _generateResponsiveRa.rangeStylesTab,
-      columnGapMobile = _generateResponsiveRa.rangeStylesMobile;
+      columnNumberDesktop = _generateResponsiveRa.rangeStylesDesktop,
+      columnNumberTab = _generateResponsiveRa.rangeStylesTab,
+      columnNumberMobile = _generateResponsiveRa.rangeStylesMobile;
 
-  var _generateResponsiveRa2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateResponsiveRangeStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["THUMBNAIL_IMAGE_SIZE"],
+  var _generateResponsiveRa2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateResponsiveRangeStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["COLUMN_GAP"],
+    property: "gap",
+    attributes: attributes
+  }),
+      columnGapDesktop = _generateResponsiveRa2.rangeStylesDesktop,
+      columnGapTab = _generateResponsiveRa2.rangeStylesTab,
+      columnGapMobile = _generateResponsiveRa2.rangeStylesMobile;
+
+  var _generateResponsiveRa3 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateResponsiveRangeStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["THUMBNAIL_IMAGE_SIZE"],
     property: "height",
     attributes: attributes
   }),
-      thumbnailImageHeightDesktop = _generateResponsiveRa2.rangeStylesDesktop,
-      thumbnailImageHeightTab = _generateResponsiveRa2.rangeStylesTab,
-      thumbnailImageHeightMobile = _generateResponsiveRa2.rangeStylesMobile; //Generate Background
+      thumbnailImageHeightDesktop = _generateResponsiveRa3.rangeStylesDesktop,
+      thumbnailImageHeightTab = _generateResponsiveRa3.rangeStylesTab,
+      thumbnailImageHeightMobile = _generateResponsiveRa3.rangeStylesMobile; //Generate Background
 
 
-  var _generateBackgroundCo = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateBackgroundControlStyles"])({
+  var _generateBackgroundCo = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateBackgroundControlStyles"])({
     attributes: attributes,
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["WRAPPER_BG"],
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["WRAPPER_BG"],
     noOverlay: true
   }),
       wrapperBackgroundStylesDesktop = _generateBackgroundCo.backgroundStylesDesktop,
@@ -8521,9 +8545,9 @@ function Edit(props) {
       wrapperBgTransitionStyle = _generateBackgroundCo.bgTransitionStyle; //Generate Background
 
 
-  var _generateBackgroundCo2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["generateBackgroundControlStyles"])({
+  var _generateBackgroundCo2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateBackgroundControlStyles"])({
     attributes: attributes,
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_3__["COLUMN_BG"],
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["COLUMN_BG"],
     noOverlay: true
   }),
       columnBackgroundStylesDesktop = _generateBackgroundCo2.backgroundStylesDesktop,
@@ -8535,15 +8559,15 @@ function Edit(props) {
       columnBgTransitionStyle = _generateBackgroundCo2.bgTransitionStyle; // wrapper styles css in strings ⬇
 
 
-  var wrapperStylesDesktop = "\n\t\t.eb-button-group-wrapper.".concat(blockId, "{\n\t\t\tdisplay: flex;\n\t\t\tflex-direction: row;\n\t\t\tposition: relative;\n\t\t\t").concat(wrapperMarginStylesDesktop, "\n\t\t\t").concat(wrapperPaddingStylesDesktop, "\n\t\t}\n\t");
-  var wrapperStylesTab = "\n\t\t.eb-button-group-wrapper.".concat(blockId, "{\n\t\t\t").concat(wrapperMarginStylesTab, "\n\n\t\t}\n\t");
-  var wrapperStylesMobile = "\n\t\t.eb-button-group-wrapper.".concat(blockId, "{\n\t\t\t").concat(wrapperMarginStylesMobile, "\n\n\t\t}\n\t"); // all css styles for large screen width (desktop/laptop) in strings ⬇
+  var wrapperStylesDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, "{\n\t\t\tdisplay: grid;\n\t\t\tposition: relative;\n\t\t\tgrid-template-columns: repeat(").concat(columnNumberDesktop.replace(/\D/g, ''), ", minmax(0, 1fr));\n\t\t\t").concat(columnGapDesktop, "\n\t\t\t").concat(wrapperMarginStylesDesktop, "\n\t\t\t").concat(wrapperPaddingStylesDesktop, "\n\t\t}\n\t");
+  var wrapperStylesTab = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, "{\n\t\t\t").concat(wrapperMarginStylesTab, "\n\n\t\t}\n\t");
+  var wrapperStylesMobile = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, "{\n\t\t\t").concat(wrapperMarginStylesMobile, "\n\n\t\t}\n\t"); // all css styles for large screen width (desktop/laptop) in strings ⬇
 
-  var desktopAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["softMinifyCssStrings"])("\n\t\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["isCssExists"])(wrapperStylesDesktop) ? wrapperStylesDesktop : " ", "\n\t\t")); // all css styles for Tab in strings ⬇
+  var desktopAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["softMinifyCssStrings"])("\n\t\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["isCssExists"])(wrapperStylesDesktop) ? wrapperStylesDesktop : " ", "\n\t\t")); // all css styles for Tab in strings ⬇
 
-  var tabAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["softMinifyCssStrings"])("\n\t\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["isCssExists"])(wrapperStylesTab) ? wrapperStylesTab : " ", "\n\t\t")); // all css styles for Mobile in strings ⬇
+  var tabAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["softMinifyCssStrings"])("\n\t\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["isCssExists"])(wrapperStylesTab) ? wrapperStylesTab : " ", "\n\t\t")); // all css styles for Mobile in strings ⬇
 
-  var mobileAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["softMinifyCssStrings"])("\n\t\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["isCssExists"])(wrapperStylesMobile) ? wrapperStylesMobile : " ", "\n\t\t")); // Set All Style in "blockMeta" Attribute
+  var mobileAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["softMinifyCssStrings"])("\n\t\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["isCssExists"])(wrapperStylesMobile) ? wrapperStylesMobile : " ", "\n\t\t")); // Set All Style in "blockMeta" Attribute
 
   useEffect(function () {
     var styleObject = {
@@ -8558,13 +8582,52 @@ function Edit(props) {
       });
     }
   }, [attributes]);
-  return [isSelected && /*#__PURE__*/React.createElement(_inspector__WEBPACK_IMPORTED_MODULE_1__["default"], props),
+  return [isSelected && /*#__PURE__*/React.createElement(_inspector__WEBPACK_IMPORTED_MODULE_2__["default"], props),
   /*#__PURE__*/
   //Edit view here
-  React.createElement("div", blockProps, /*#__PURE__*/React.createElement("style", null, "\n\t\t\t\t".concat(desktopAllStyles, "\n\n\t\t\t\t/* mimmikcssStart */\n\n\t\t\t\t").concat(resOption === "tab" ? tabAllStyles : " ", "\n\t\t\t\t").concat(resOption === "mobile" ? tabAllStyles + mobileAllStyles : " ", "\n\n\t\t\t\t/* mimmikcssEnd */\n\n\t\t\t\t@media all and (max-width: 1024px) {\t\n\n\t\t\t\t\t/* tabcssStart */\t\t\t\n\t\t\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["softMinifyCssStrings"])(tabAllStyles), "\n\t\t\t\t\t/* tabcssEnd */\t\t\t\n\t\t\t\t\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t@media all and (max-width: 767px) {\n\t\t\t\t\t\n\t\t\t\t\t/* mobcssStart */\t\t\t\n\t\t\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["softMinifyCssStrings"])(mobileAllStyles), "\n\t\t\t\t\t/* mobcssEnd */\t\t\t\n\t\t\t\t\n\t\t\t\t}\n\t\t\t\t")), /*#__PURE__*/React.createElement("div", {
+  React.createElement("div", blockProps, /*#__PURE__*/React.createElement("style", null, "\n\t\t\t\t".concat(desktopAllStyles, "\n\n\t\t\t\t/* mimmikcssStart */\n\n\t\t\t\t").concat(resOption === "tab" ? tabAllStyles : " ", "\n\t\t\t\t").concat(resOption === "mobile" ? tabAllStyles + mobileAllStyles : " ", "\n\n\t\t\t\t/* mimmikcssEnd */\n\n\t\t\t\t@media all and (max-width: 1024px) {\t\n\n\t\t\t\t\t/* tabcssStart */\t\t\t\n\t\t\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["softMinifyCssStrings"])(tabAllStyles), "\n\t\t\t\t\t/* tabcssEnd */\t\t\t\n\t\t\t\t\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t@media all and (max-width: 767px) {\n\t\t\t\t\t\n\t\t\t\t\t/* mobcssStart */\t\t\t\n\t\t\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["softMinifyCssStrings"])(mobileAllStyles), "\n\t\t\t\t\t/* mobcssEnd */\t\t\t\n\t\t\t\t\n\t\t\t\t}\n\t\t\t\t")), /*#__PURE__*/React.createElement("div", {
     className: "eb-post-grid-wrapper ".concat(blockId, " ").concat(preset),
     "data-id": blockId
   }, _typeof(queryResults) === 'object' && queryResults.length > 0 && queryResults.map(function (post) {
+    //Generate Featured Image
+    var _post$featuredImageIn = post.featuredImageInfo;
+    _post$featuredImageIn = _post$featuredImageIn === void 0 ? {} : _post$featuredImageIn;
+    var imageSourceUrl = _post$featuredImageIn.url,
+        featuredImageAlt = _post$featuredImageIn.alt;
+    var featuredImage = showThumbnail && /*#__PURE__*/React.createElement("img", {
+      src: imageSourceUrl,
+      alt: featuredImageAlt
+    }); //Generate Title
+
+    var title = post.title.rendered;
+    var titleWithLimitWords = titleLength > 0 ? title.trim().split(' ', titleLength).join(' ') : title;
+    var titleHTML = "\n\t\t\t\t\t\t<".concat(titleTag, " class=\"ebpg-entry-title\">\n\t\t\t\t\t\t\t<a class=\"ebpg-grid-post-link\" href=\"").concat(post.link, "\" title=\"").concat(titleWithLimitWords, "\">\n\t\t\t\t\t\t\t\t").concat(titleWithLimitWords, "\n\t\t\t\t\t\t\t</a> \n\t\t\t\t\t\t</").concat(titleTag, ">\n\t\t\t\t\t"); //Generate Excerpt & Read More
+
+    var excerpt = post.excerpt.rendered;
+    var excerptElement = document.createElement('div');
+    excerptElement.innerHTML = excerpt;
+    excerpt = excerptElement.textContent || excerptElement.innerText || '';
+    var excerptWithLimitWords = contentLength > 0 ? excerpt.trim().split(' ', contentLength).join(' ') : excerpt;
+    var metaData = showMeta ? /*#__PURE__*/React.createElement(React.Fragment, null, showAvatar ? /*#__PURE__*/React.createElement("div", {
+      "class": "ebpg-author-avatar"
+    }, /*#__PURE__*/React.createElement("a", {
+      href: post._embedded.author[0].link
+    }, /*#__PURE__*/React.createElement("img", {
+      alt: post._embedded.author[0].name ? post._embedded.author[0].name : post._embedded.author[0].slug,
+      src: post._embedded.author[0].avatar_urls[96] ? post._embedded.author[0].avatar_urls[96] : ''
+    }))) : '', /*#__PURE__*/React.createElement("div", {
+      "class": "ebpg-entry-meta-data"
+    }, showAuthor ? /*#__PURE__*/React.createElement("span", {
+      "class": "ebpg-posted-by"
+    }, /*#__PURE__*/React.createElement("a", {
+      href: post._embedded.author[0].link,
+      title: post._embedded.author[0].name ? post._embedded.author[0].name : post._embedded.author[0].slug,
+      rel: "author"
+    }, post._embedded.author[0].name ? post._embedded.author[0].name : post._embedded.author[0].slug)) : '', showDate ? /*#__PURE__*/React.createElement("span", {
+      "class": "ebpg-posted-on"
+    }, /*#__PURE__*/React.createElement("time", {
+      dateTime: format('c', post.date_gmt)
+    }, dateI18n(dateFormat, post.date_gmt))) : '')) : "";
     return /*#__PURE__*/React.createElement("article", {
       "class": "ebpg-grid-post ebpg-post-grid-column",
       "data-id": post.id
@@ -8575,55 +8638,25 @@ function Edit(props) {
     }, showThumbnail && /*#__PURE__*/React.createElement("div", {
       "class": "ebpg-entry-thumbnail"
     }, post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'].length > 0 && /*#__PURE__*/React.createElement("img", {
-      width: post._embedded['wp:featuredmedia'][0].media_details.width,
-      height: post._embedded['wp:featuredmedia'][0].media_details.height,
       src: post._embedded['wp:featuredmedia'][0].source_url,
-      "class": "attachment-medium size-medium",
-      alt: post.title.rendered
+      alt: post.title.alt_text
     }))), /*#__PURE__*/React.createElement("div", {
       "class": "ebpg-entry-wrapper"
-    }, /*#__PURE__*/React.createElement("header", {
-      "class": "ebpg-entry-header"
-    }, /*#__PURE__*/React.createElement("h2", {
-      "class": "ebpg-entry-title"
-    }, /*#__PURE__*/React.createElement("a", {
-      "class": "ebpg-grid-post-link",
-      href: "",
-      title: post.title.rendered
-    }, post.title.rendered))), /*#__PURE__*/React.createElement("div", {
+    }, showTitle && /*#__PURE__*/React.createElement("header", {
+      "class": "ebpg-entry-header",
+      dangerouslySetInnerHTML: {
+        __html: titleHTML
+      }
+    }), showContent && /*#__PURE__*/React.createElement("div", {
       "class": "ebpg-entry-content"
     }, /*#__PURE__*/React.createElement("div", {
       "class": "ebpg-grid-post-excerpt"
-    }, /*#__PURE__*/React.createElement("p", null), /*#__PURE__*/React.createElement("p", null, post.content.rendered.replace(/<[^>]*>?/gm, '').substr(0, contentLength)), /*#__PURE__*/React.createElement("a", {
-      href: "",
-      "class": "ebpg-post-elements-readmore-btn"
-    }, "Read More"))), /*#__PURE__*/React.createElement("div", {
-      "class": "ebpg-entry-footer"
-    }, /*#__PURE__*/React.createElement("div", {
-      "class": "ebpg-author-avatar"
-    }, /*#__PURE__*/React.createElement("a", {
-      href: "http://templately.test/author/admin/"
-    }, /*#__PURE__*/React.createElement("img", {
-      alt: "",
-      src: "",
-      srcset: "http://0.gravatar.com/avatar/f2043d92f108cc1bb1e9f4f7792675c0?s=192&d=mm&r=g 2x",
-      "class": "avatar avatar-96 photo",
-      height: "96",
-      width: "96",
-      loading: "lazy"
-    }))), /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React.createElement("p", null, excerptWithLimitWords, __(expansionIndicator)), /*#__PURE__*/React.createElement("a", {
+      href: post.link,
+      "class": "ebpg-readmore-btn"
+    }, __(readmoreText)))), showMeta && /*#__PURE__*/React.createElement("div", {
       "class": "ebpg-entry-meta"
-    }, /*#__PURE__*/React.createElement("span", {
-      "class": "ebpg-posted-by"
-    }, /*#__PURE__*/React.createElement("a", {
-      href: "http://templately.test/author/admin/",
-      title: "Posts by admin",
-      rel: "author"
-    }, "admin")), /*#__PURE__*/React.createElement("span", {
-      "class": "ebpg-posted-on"
-    }, /*#__PURE__*/React.createElement("time", {
-      datetime: "February 1, 2021"
-    }, "February 1, 2021")))))));
+    }, metaData))));
   }), !isSelected && queryResults.length < 1 && /*#__PURE__*/React.createElement("p", null, "No Posts Found")))];
 }
 ;
@@ -8850,7 +8883,6 @@ function Inspector(props) {
       preset = attributes.preset,
       queryData = attributes.queryData,
       queryResults = attributes.queryResults,
-      columns = attributes.columns,
       showThumbnail = attributes.showThumbnail,
       showTitle = attributes.showTitle,
       titleColor = attributes.titleColor,
@@ -8976,16 +9008,14 @@ function Inspector(props) {
       onChange: function onChange(selected) {
         return changePreset(selected);
       }
-    }), /*#__PURE__*/React.createElement(RangeControl, {
-      label: "Columns",
-      value: columns,
-      onChange: function onChange(value) {
-        return setAttributes({
-          columns: value
-        });
-      },
+    }), /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      baseLabel: __("Columns", "eb-post-grid"),
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["COLUMNS"],
+      resRequiredProps: resRequiredProps,
+      units: [],
       min: 1,
-      max: 6
+      max: 6,
+      step: 1
     }), /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
       baseLabel: __("Column Gap", "eb-post-grid"),
       controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["COLUMN_GAP"],
@@ -9035,7 +9065,7 @@ function Inspector(props) {
           titleLength: value
         });
       },
-      min: 1,
+      min: 0,
       max: 100
     })), /*#__PURE__*/React.createElement(ToggleControl, {
       label: __("Show Excerpt?"),
@@ -9053,7 +9083,7 @@ function Inspector(props) {
           contentLength: value
         });
       },
-      min: 1,
+      min: 0,
       max: 100
     }), /*#__PURE__*/React.createElement(TextControl, {
       label: "Expansion Indicator",
@@ -19503,6 +19533,17 @@ function WithResButtons(_ref) {
 /***/ (function(module, exports) {
 
 (function() { module.exports = window["wp"]["escapeHtml"]; }());
+
+/***/ }),
+
+/***/ "lodash":
+/*!*************************!*\
+  !*** external "lodash" ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = window["lodash"]; }());
 
 /***/ }),
 

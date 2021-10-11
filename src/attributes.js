@@ -3,6 +3,7 @@ import {
 	WRAPPER_PADDING,
 	WRAPPER_BORDER_SHADOW,
 	WRAPPER_BG,
+	COLUMNS,
 	COLUMN_GAP,
 	COLUMN_PADDING,
 	COLUMN_BG,
@@ -53,10 +54,6 @@ const attributes = {
 	preset: {
 		type: "string",
 		default: "button-1"
-	},
-	columns: {
-		type: "number",
-		default: 3
 	},
 	showThumbnail: {
 		type: "boolean",
@@ -241,8 +238,11 @@ const attributes = {
 	...generateBackgroundAttributes(COLUMN_BG),
 
 	// range controller
+	...generateResponsiveRangeAttributes(COLUMNS, {
+		defaultRange: 3,
+	}),
 	...generateResponsiveRangeAttributes(COLUMN_GAP, {
-		defaultRange: 20,
+		defaultRange: 10,
 	}),
 	...generateResponsiveRangeAttributes(THUMBNAIL_IMAGE_SIZE),
 };
