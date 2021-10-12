@@ -3,15 +3,15 @@
 */
 const { __ } = wp.i18n;
 const { RichText, useBlockProps } = wp.blockEditor;
-const { useEffect, renderToString } = wp.element;
+const { useEffect, renderToString, RawHTML } = wp.element;
 const { select } = wp.data;
 const { dateI18n, format, __experimentalGetSettings } = wp.date;
 
 /**
  * External dependencies
  */
-import { get, includes, invoke, isUndefined, pickBy } from 'lodash';
-import {escapeAmpersand, escapeAttribute, escapeEditableHTML, escapeHTML} from "@wordpress/escape-html"
+// import { get, includes, invoke, isUndefined, pickBy } from 'lodash';
+// import {escapeAmpersand, escapeAttribute, escapeEditableHTML, escapeHTML} from "@wordpress/escape-html"
 
 /**
   * Internal depencencies
@@ -30,6 +30,7 @@ import {
 	COLUMN_BORDER_SHADOW,
 	THUMBNAIL_IMAGE_SIZE,
 	THUMBNAIL_BORDER_RADIUS,
+	THUMBNAIL_MARGIN,
 	TITLE_MARGIN,
 	CONTENT_MARGIN,
 	READMORE_MARGIN,
@@ -80,19 +81,18 @@ export default function Edit(props) {
 		showReadMore,
 		readmoreText,
 		readmoreColor,
+		readmoreBGColor,
 		readmoreTextAlign,
 		readmoreHoverColor,
+		readmoreBGHoverColor,
 		readmoreColorType,
 		showMeta,
-		metaPosition,
+		headerMeta,
+		footerMeta,
 		metaColor,
 		metaTextAlign,
 		metaHoverColor,
 		metaColorType,
-		showAvatar,
-		showAuthor,
-		showDate,
-		showCategories,
 	} = attributes;
 
 	const dateFormat = __experimentalGetSettings().formats.date;
@@ -255,6 +255,16 @@ export default function Edit(props) {
 	});
 
 	const {
+		dimensionStylesDesktop: thumbnailMarginStylesDesktop,
+		dimensionStylesTab: thumbnailMarginStylesTab,
+		dimensionStylesMobile: thumbnailMarginStylesMobile,
+	} = generateDimensionsControlStyles({
+		controlName: THUMBNAIL_MARGIN,
+		styleFor: "margin",
+		attributes,
+	});
+
+	const {
 		dimensionStylesDesktop: thumbnailBdrSdwStylesDesktop,
 		dimensionStylesTab: thumbnailBdrSdwStylesTab,
 		dimensionStylesMobile: thumbnailBdrSdwStylesMobile,
@@ -369,35 +379,182 @@ export default function Edit(props) {
 			${columnGapDesktop}
 			${wrapperMarginStylesDesktop}
 			${wrapperPaddingStylesDesktop}
+			${wrapperBackgroundStylesDesktop}
+			${wrapperBgTransitionStyle}
+			${wrapperBDShadowDesktop}
+		}
+		.eb-post-grid-wrapper.${blockId}:hover {
+			${wrapperHoverBackgroundStylesDesktop}
+			${wrapperBDShadowHoverDesktop}
 		}
 	`;
 	const wrapperStylesTab = `
 		.eb-post-grid-wrapper.${blockId}{
+			grid-template-columns: repeat(${columnNumberTab.replace(/\D/g,'')}, minmax(0, 1fr));
+			${columnGapTab}
 			${wrapperMarginStylesTab}
-
+			${wrapperPaddingStylesTab}
+			${wrapperBackgroundStylesTab}
+			${wrapperBDShadowTab}
+		}
+		.eb-post-grid-wrapper.${blockId}:hover {
+			${wrapperHoverBackgroundStylesTab}
+			${wrapperBDShadowHoverTab}
 		}
 	`;
 	const wrapperStylesMobile = `
 		.eb-post-grid-wrapper.${blockId}{
+			grid-template-columns: repeat(${columnNumberMobile.replace(/\D/g,'')}, minmax(0, 1fr));
+			${columnGapMobile}
 			${wrapperMarginStylesMobile}
+			${wrapperPaddingStylesMobile}
+			${wrapperBackgroundStylesMobile}
+			${wrapperBDShadowMobile}
+		}
+		.eb-post-grid-wrapper.${blockId}:hover {
+			${wrapperHoverBackgroundStylesMobile}
+			${wrapperBDShadowHoverMobile}
+		}
+	`;
+
+	const gridColumnStylesDesktop = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-post-grid-column {
+			${columnPaddingStylesDesktop}
+			${columnBDShadowDesktop}
+			${columnBackgroundStylesDesktop}
+			${columnBgTransitionStyle}
+		}
+		.eb-post-grid-wrapper.${blockId} .ebpg-post-grid-column:hover {
+			${columnHoverBackgroundStylesDesktop}
+		}
+	`;
+
+	const gridColumnStylesTab = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-post-grid-column {
+			${columnPaddingStylesTab}
+			${columnBDShadowTab}
+			${columnBackgroundStylesTab}
+			${columnBgTransitionStyle}
+		}
+		.eb-post-grid-wrapper.${blockId} .ebpg-post-grid-column:hover {
+			${columnHoverBackgroundStylesTab}
+		}
+	`;
+
+	const gridColumnStylesMobile = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-post-grid-column {
+			${columnPaddingStylesMobile}
+			${columnBDShadowMobile}
+			${columnBackgroundStylesMobile}
+			${columnBgTransitionStyle}
+		}
+		.eb-post-grid-wrapper.${blockId} .ebpg-post-grid-column:hover {
+			${columnHoverBackgroundStylesMobile}
+		}
+	`;
+
+	const thumbnailStyleDesktop = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-entry-thumbnail img {
+			${thumbnailImageHeightDesktop};
+			${thumbnailBdrSdwStylesDesktop}
+			${thumbnailMarginStylesDesktop}
+		}
+	`;
+
+	const titleStyleDesktop = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-entry-title {
+			text-align: ${titleTextAlign};
+			${titleTypoStylesDesktop}
+			${titleMarginStylesDesktop}
+		}
+		.eb-post-grid-wrapper.${blockId} .ebpg-entry-title a {
+			color: ${titleColor};
+		}
+		.eb-post-grid-wrapper.${blockId} .ebpg-entry-title a:hover {
+			color: ${titleHoverColor};
+		}
+	`;
+
+	const contentStyleDesktop = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-grid-post-excerpt {
+			color: ${contentColor};
+			text-align: ${contentTextAlign};
+			${contentTypoStylesDesktop}
+			${contentMarginStylesDesktop}
+
+		}
+	`;
+
+	const readmoreStyleDesktop = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-readmore-btn {
+			text-align: ${readmoreTextAlign};
+			${readmoreTypoStylesDesktop}
+			${readmoreMarginStylesDesktop}
+		}
+		.eb-post-grid-wrapper.${blockId} .ebpg-readmore-btn a {
+			color: ${readmoreColor};
+			background-color: ${readmoreBGColor};
+		}
+		.eb-post-grid-wrapper.${blockId} .ebpg-entry-title a:hover {
+			color: ${readmoreHoverColor};
+			color: ${readmoreBGHoverColor};
+		}
+	`;
+
+	const avatarStyleDesktop = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-entry-title {
+
+		}
+	`;
+
+	const dateStyleDesktop = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-entry-title {
+
+		}
+	`;
+
+	const authorStyleDesktop = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-entry-title {
+
+		}
+	`;
+
+	const categoriesStyleDesktop = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-entry-title {
+
+		}
+	`;
+
+	const tagsStyleDesktop = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-entry-title {
 
 		}
 	`;
 
 	// all css styles for large screen width (desktop/laptop) in strings ⬇
 	const desktopAllStyles = softMinifyCssStrings(`
-			${isCssExists(wrapperStylesDesktop) ? wrapperStylesDesktop : " "}
-		`);
+		${isCssExists(wrapperStylesDesktop) ? wrapperStylesDesktop : " "}
+		${isCssExists(gridColumnStylesDesktop) ? gridColumnStylesDesktop : " "}
+		${isCssExists(thumbnailStyleDesktop) ? thumbnailStyleDesktop : " "}
+		${isCssExists(titleStyleDesktop) ? titleStyleDesktop : " "}
+		${isCssExists(contentStyleDesktop) ? contentStyleDesktop : " "}
+		${isCssExists(readmoreStyleDesktop) ? readmoreStyleDesktop : " "}
+		${isCssExists(avatarStyleDesktop) ? avatarStyleDesktop : " "}
+		${isCssExists(dateStyleDesktop) ? dateStyleDesktop : " "}
+		${isCssExists(authorStyleDesktop) ? authorStyleDesktop : " "}
+		${isCssExists(categoriesStyleDesktop) ? categoriesStyleDesktop : " "}
+		${isCssExists(tagsStyleDesktop) ? tagsStyleDesktop : " "}
+	`);
 
 	// all css styles for Tab in strings ⬇
 	const tabAllStyles = softMinifyCssStrings(`
-			${isCssExists(wrapperStylesTab) ? wrapperStylesTab : " "}
-		`);
+		${isCssExists(wrapperStylesTab) ? wrapperStylesTab : " "}
+	`);
 
 	// all css styles for Mobile in strings ⬇
 	const mobileAllStyles = softMinifyCssStrings(`
-			${isCssExists(wrapperStylesMobile) ? wrapperStylesMobile : " "}
-		`);
+		${isCssExists(wrapperStylesMobile) ? wrapperStylesMobile : " "}
+	`);
 
 	// Set All Style in "blockMeta" Attribute
 	useEffect(() => {
@@ -479,37 +636,54 @@ export default function Edit(props) {
 					excerpt = excerptElement.textContent || excerptElement.innerText || '';
 					const excerptWithLimitWords = contentLength > 0 ? excerpt.trim().split( ' ', contentLength ).join( ' ' ) : excerpt;
 
-					const metaData = showMeta ? (
+					const avatar =
+						<div class="ebpg-author-avatar">
+							<a href={post._embedded.author[0].link}>
+								<img 
+									alt={post._embedded.author[0].name ? post._embedded.author[0].name : post._embedded.author[0].slug} 
+									src={post._embedded.author[0].avatar_urls[96] ? post._embedded.author[0].avatar_urls[96] : ''} 
+								/>
+							</a>
+						</div>
+					;
+
+					const date =
+						<span class="ebpg-posted-on">
+							on <time dateTime={ format( 'c', post.date_gmt ) }>{ dateI18n( dateFormat, post.date_gmt ) }</time>
+						</span>
+					;
+
+					const author = 
+						<span class="ebpg-posted-by">
+							by <a 
+								href={post._embedded.author[0].link}
+								title={post._embedded.author[0].name ? post._embedded.author[0].name : post._embedded.author[0].slug} 
+								rel="author"
+							>
+								{post._embedded.author[0].name ? post._embedded.author[0].name : post._embedded.author[0].slug}
+							</a>
+						</span>
+					;
+					const metaObject = {avatar, date, author}
+
+					const headerMetaItems = JSON.parse(headerMeta).map(item => item.value);
+					const headerMetaHtml = showMeta ? (
 						<>
-							{showAvatar ?
-								<div class="ebpg-author-avatar">
-									<a href={post._embedded.author[0].link}>
-										<img 
-											alt={post._embedded.author[0].name ? post._embedded.author[0].name : post._embedded.author[0].slug} 
-											src={post._embedded.author[0].avatar_urls[96] ? post._embedded.author[0].avatar_urls[96] : ''} 
-										/>
-									</a>
-								</div>
-							: ''}
+							<div class="ebpg-entry-meta">
+								{headerMetaItems.map(item=>{
+									return metaObject[item]
+								})}
+							</div>
+						</>
+					) : "";
 
-							<div class="ebpg-entry-meta-data">
-								{showAuthor ?
-									<span class="ebpg-posted-by">
-										<a 
-											href={post._embedded.author[0].link}
-											title={post._embedded.author[0].name ? post._embedded.author[0].name : post._embedded.author[0].slug} 
-											rel="author"
-										>
-											{post._embedded.author[0].name ? post._embedded.author[0].name : post._embedded.author[0].slug}
-										</a>
-									</span>
-								: ''}
-
-								{showDate ?
-									<span class="ebpg-posted-on">
-										<time dateTime={ format( 'c', post.date_gmt ) }>{ dateI18n( dateFormat, post.date_gmt ) }</time>
-									</span>
-								: ''}
+					const footerMetaItems = JSON.parse(footerMeta).map(item => item.value);
+					const footerMetaHtml = showMeta ? (
+						<>
+							<div class="ebpg-entry-meta">
+								{footerMetaItems.map(item=>{
+									return metaObject[item]
+								})}
 							</div>
 						</>
 					) : "";
@@ -538,21 +712,27 @@ export default function Edit(props) {
 										>
 										</header>
 									)}
+									
+									{/* Header Meta */}
+									{showMeta && (
+										headerMetaHtml
+									)}
 
 									{showContent && (
 										<div class="ebpg-entry-content">
 											<div class="ebpg-grid-post-excerpt">
 												<p>{ excerptWithLimitWords }{__( expansionIndicator )}</p>
-												<a href={post.link} class="ebpg-readmore-btn">{ __( readmoreText ) }</a>
+											</div>
+											<div class="ebpg-readmore-btn">
+												<a href={post.link}>{ __( readmoreText ) }</a>
 											</div>
 										</div>
 									)}
 									
+									{/* Footer Meta */}
 									{showMeta && (
-										<div class="ebpg-entry-meta">{metaData}</div>
+										footerMetaHtml
 									)}
-									
-									
 									
 								</div>
 							</div>

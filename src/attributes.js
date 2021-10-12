@@ -10,6 +10,7 @@ import {
 	COLUMN_BORDER_SHADOW,
 	THUMBNAIL_IMAGE_SIZE,
 	THUMBNAIL_BORDER_RADIUS,
+	THUMBNAIL_MARGIN,
 	TITLE_MARGIN,
 	CONTENT_MARGIN,
 	READMORE_MARGIN,
@@ -118,11 +119,19 @@ const attributes = {
 		type: "string",
 		default: "#333333"
 	},
+	readmoreBGColor: {
+		type: "string",
+		default: "#ffffff"
+	},
 	readmoreTextAlign: {
 		type: "string",
 		default: "left"
 	},
 	readmoreHoverColor: {
+		type: "string",
+		default: "#333333"
+	},
+	readmoreBGHoverColor: {
 		type: "string",
 		default: "#333333"
 	},
@@ -134,9 +143,13 @@ const attributes = {
 		type: "boolean",
 		default: true
 	},
-	metaPosition: {
+	headerMeta: {
 		type: "string",
-		default: "footer"
+		default: '[{"value":"date","label":"Published Date"}]'
+	},
+	footerMeta: {
+		type: "string",
+		default: '[{"value":"avatar","label":"Author Avatar"},{"value":"author","label":"Author Name"}]'
 	},
 	metaColor: {
 		type: "string",
@@ -153,22 +166,6 @@ const attributes = {
 	metaColorType: {
 		type: "string",
 		default: "normal"
-	},
-	showAvatar: {
-		type: "boolean",
-		default: true
-	},
-	showAuthor: {
-		type: "boolean",
-		default: true
-	},
-	showDate: {
-		type: "boolean",
-		default: true
-	},
-	showCategories: {
-		type: "boolean",
-		default: true
 	},
 
 	// typography attributes ⬇
@@ -207,6 +204,13 @@ const attributes = {
 		isLinked: false,
 	}),
 	...generateDimensionsAttributes(META_MARGIN, {
+		top: 0,
+		bottom: 15,
+		right: 0,
+		left: 0,
+		isLinked: false,
+	}),
+	...generateDimensionsAttributes(THUMBNAIL_MARGIN, {
 		top: 0,
 		bottom: 15,
 		right: 0,

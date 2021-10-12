@@ -5,6 +5,7 @@ const { __ } = wp.i18n;
 const { InspectorControls, PanelColorSettings } = wp.blockEditor;
 const { 
 	PanelBody,
+	PanelRow,
 	SelectControl,
 	ToggleControl,
 	TextControl,
@@ -16,6 +17,11 @@ const {
 } = wp.components;
 const { useEffect, useState } = wp.element;
 const { select } = wp.data;
+
+/**
+ * External Dependencies
+*/
+import Select2 from 'react-select';
 
 /**
  * Internal depencencies
@@ -32,6 +38,7 @@ import {
 	COLUMN_BORDER_SHADOW,
 	THUMBNAIL_IMAGE_SIZE,
 	THUMBNAIL_BORDER_RADIUS,
+	THUMBNAIL_MARGIN,
 	TITLE_MARGIN,
 	CONTENT_MARGIN,
 	READMORE_MARGIN,
@@ -89,22 +96,29 @@ function Inspector(props) {
 		showReadMore,
 		readmoreText,
 		readmoreColor,
+		readmoreBGColor,
 		readmoreTextAlign,
 		readmoreHoverColor,
+		readmoreBGHoverColor,
 		readmoreColorType,
 		showMeta,
-		metaPosition,
+		headerMeta,
+		footerMeta,
 		metaColor,
 		metaTextAlign,
 		metaHoverColor,
 		metaColorType,
-		showAvatar,
-		showAuthor,
-		showDate,
-		showCategories,
 	} = attributes;
 
-	console.log("Inspector", queryData, queryResults)
+	const metaOptions = [
+		{ value: 'date', label: 'Published Date' },
+		{ value: 'categories', label: 'Categories' },
+		{ value: 'tags', label: 'Tags' },
+		{ value: 'author', label: 'Author Name' },
+		{ value: 'avatar', label: 'Author Avatar' }
+	  ];
+
+	// console.log("Inspector", queryData, queryResults)
 
 	// this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
 	useEffect(() => {
@@ -339,68 +353,25 @@ function Inspector(props) {
 
 										{showMeta && (
 											<>
-												<SelectControl
-													label={__("Meta Position")}
-													value={metaPosition}
-													options={META_POSITION}
-													onChange={(value) => {
-														setAttributes({ metaPosition: value });
-													}}
+												<PanelRow>Header Meta</PanelRow>
+												<Select2
+													name='select-header-meta'
+													value={ headerMeta.length > 0 ? JSON.parse( headerMeta ) : '' }
+													onChange={ (selected) => setAttributes({headerMeta: JSON.stringify(selected)})}
+													options={ metaOptions }
+													isMulti='true'
 												/>
-		
-												<ToggleControl
-													label={__("Show Avatar?")}
-													checked={showAvatar}
-													onChange={() => {
-														setAttributes({ showAvatar: !showAvatar });
-													}}
-												/>
-		
-												<ToggleControl
-													label={__("Show Author?")}
-													checked={showAuthor}
-													onChange={() => {
-														setAttributes({ showAuthor: !showAuthor });
-													}}
-												/>
-		
-												<ToggleControl
-													label={__("Show Date?")}
-													checked={showDate}
-													onChange={() => {
-														setAttributes({ showDate: !showDate });
-													}}
-												/>
-		
-												<ToggleControl
-													label={__("Show Categories?")}
-													checked={showCategories}
-													onChange={() => {
-														setAttributes({ showCategories: !showCategories });
-													}}
+
+												<PanelRow>Footer Meta</PanelRow>
+												<Select2
+													name='select-footer-meta'
+													value={ footerMeta.length > 0 ? JSON.parse( footerMeta ) : '' }
+													onChange={ (selected) => setAttributes({footerMeta: JSON.stringify(selected)})}
+													options={ metaOptions }
+													isMulti='true'
 												/>
 											</>
 										)}
-										
-										
-										{/* <BaseControl label={__("Alignment")} id="eb-button-group-alignment">
-											<ButtonGroup id="eb-button-group-alignment">
-												{CONTENT_POSITION.map((item) => (
-													<Button
-														isLarge
-														isPrimary={contentPosition === item.value}
-														isSecondary={contentPosition !== item.value}
-														onClick={() =>
-															setAttributes({
-																contentPosition: item.value,
-															})
-														}
-													>
-														{item.label}
-													</Button>
-												))}
-											</ButtonGroup>
-										</BaseControl> */}
 
 									</PanelBody>
 								</>
@@ -408,22 +379,231 @@ function Inspector(props) {
 
 							{tab.name === "styles" && (
 								<>
-									<PanelBody title={__("Title")} initialOpen={false}>
-										<ColorControl
-											label={__("Color")}
-											color={titleColor}
-											onChange={(color) =>
-												setAttributes({ titleColor: color })
-											}
-										/>
+									{showThumbnail && (
+										<PanelBody title={__("Thumbnail")} initialOpen={false}>
+											<ResponsiveDimensionsControl
+												resRequiredProps={resRequiredProps}
+												controlName={THUMBNAIL_BORDER_RADIUS}
+												baseLabel="Border Radius"
+											/>
+											<ResponsiveDimensionsControl
+												resRequiredProps={resRequiredProps}
+												controlName={THUMBNAIL_MARGIN}
+												baseLabel="Margin"
+											/>
+										</PanelBody>
+									)}
 
-										<TypographyDropdown
+									{showTitle && (
+										<PanelBody title={__("Title")} initialOpen={false}>
+											<ButtonGroup className="eb-inspector-btn-group">
+												{NORMAL_HOVER.map((item) => (
+													<Button
+														isLarge
+														isPrimary={titleColorStyle === item.value}
+														isSecondary={titleColorStyle !== item.value}
+														onClick={() => setAttributes({ titleColorStyle: item.value })}
+													>
+														{item.label}
+													</Button>
+												))}
+											</ButtonGroup>
+
+											{titleColorStyle === "normal" && (
+												<PanelColorSettings
+													className={"eb-subpanel"}
+													title={__("Normal Color")}
+													initialOpen={true}
+													colorSettings={[
+														{
+															value: titleColor,
+															onChange: (newColor) =>
+																setAttributes({ titleColor: newColor }),
+															label: __("Color"),
+														}
+													]}
+												/>
+											)}
+
+											{titleColorStyle === "hover" && (
+												<PanelColorSettings
+													className={"eb-subpanel"}
+													title={__("Hover Color")}
+													initialOpen={true}
+													colorSettings={[
+														{
+															value: titleHoverColor,
+															onChange: (newColor) =>
+																setAttributes({ titleHoverColor: newColor }),
+															label: __("Hover Color"),
+														}
+													]}
+												/>
+											)}
+											<BaseControl label={__("Alignment")} id="eb-post-grid">
+												<ButtonGroup id="eb-post-grid">
+													{TEXT_ALIGN.map((item) => (
+														<Button
+															isLarge
+															isPrimary={titleTextAlign === item.value}
+															isSecondary={titleTextAlign !== item.value}
+															onClick={() =>
+																setAttributes({
+																	titleTextAlign: item.value,
+																})
+															}
+														>
+															{item.label}
+														</Button>
+													))}
+												</ButtonGroup>
+											</BaseControl>
+											<TypographyDropdown
 												baseLabel={__("Typography", "eb-post-grid")}
 												typographyPrefixConstant={EBPG_TITLE_TYPOGRAPHY}
 												resRequiredProps={resRequiredProps}
-										/>
+											/>
+											<ResponsiveDimensionsControl
+												resRequiredProps={resRequiredProps}
+												controlName={TITLE_MARGIN}
+												baseLabel="Margin"
+											/>
+										</PanelBody>
+									)}
 
-									</PanelBody>
+									{showContent && (
+										<PanelBody title={__("Excerpt")} initialOpen={false}>
+											<ColorControl
+												label={__("Color")}
+												color={contentColor}
+												onChange={(color) =>
+													setAttributes({ contentColor: color })
+												}
+											/>
+											<BaseControl label={__("Alignment")} id="eb-post-grid">
+												<ButtonGroup id="eb-post-grid">
+													{TEXT_ALIGN.map((item) => (
+														<Button
+															isLarge
+															isPrimary={contentTextAlign === item.value}
+															isSecondary={contentTextAlign !== item.value}
+															onClick={() =>
+																setAttributes({
+																	contentTextAlign: item.value,
+																})
+															}
+														>
+															{item.label}
+														</Button>
+													))}
+												</ButtonGroup>
+											</BaseControl>
+											<TypographyDropdown
+												baseLabel={__("Typography", "eb-post-grid")}
+												typographyPrefixConstant={EBPG_CONTENT_TYPOGRAPHY}
+												resRequiredProps={resRequiredProps}
+											/>
+											<ResponsiveDimensionsControl
+												resRequiredProps={resRequiredProps}
+												controlName={CONTENT_MARGIN}
+												baseLabel="Margin"
+											/>
+										</PanelBody>
+									)}
+
+									{showReadMore && (
+										<PanelBody title={__("Read More Button")} initialOpen={false}>
+											<ButtonGroup className="eb-inspector-btn-group">
+												{NORMAL_HOVER.map((item) => (
+													<Button
+														isLarge
+														isPrimary={readmoreColorType === item.value}
+														isSecondary={readmoreColorType !== item.value}
+														onClick={() => setAttributes({ readmoreColorType: item.value })}
+													>
+														{item.label}
+													</Button>
+												))}
+											</ButtonGroup>
+
+											{readmoreColorType === "normal" && (
+												<PanelColorSettings
+													className={"eb-subpanel"}
+													title={__("Normal Color")}
+													initialOpen={true}
+													colorSettings={[
+														{
+															value: readmoreColor,
+															onChange: (newColor) =>
+																setAttributes({ readmoreColor: newColor }),
+															label: __("Color"),
+														},
+														{
+															value: readmoreBGColor,
+															onChange: (newColor) =>
+																setAttributes({ readmoreBGColor: newColor }),
+															label: __("Background Color"),
+														}
+													]}
+												/>
+											)}
+
+											{readmoreColorType === "hover" && (
+												<PanelColorSettings
+													className={"eb-subpanel"}
+													title={__("Hover Color")}
+													initialOpen={true}
+													colorSettings={[
+														{
+															value: readmoreHoverColor,
+															onChange: (newColor) =>
+																setAttributes({ readmoreHoverColor: newColor }),
+															label: __("Hover Color"),
+														},
+														{
+															value: readmoreBGHoverColor,
+															onChange: (newColor) =>
+																setAttributes({ readmoreBGHoverColor: newColor }),
+															label: __("Hover Background Color"),
+														}
+													]}
+												/>
+											)}
+											<BaseControl label={__("Alignment")} id="eb-post-grid">
+												<ButtonGroup id="eb-post-grid">
+													{TEXT_ALIGN.map((item) => (
+														<Button
+															isLarge
+															isPrimary={readmoreTextAlign === item.value}
+															isSecondary={readmoreTextAlign !== item.value}
+															onClick={() =>
+																setAttributes({
+																	readmoreTextAlign: item.value,
+																})
+															}
+														>
+															{item.label}
+														</Button>
+													))}
+												</ButtonGroup>
+											</BaseControl>
+											<TypographyDropdown
+												baseLabel={__("Typography", "eb-post-grid")}
+												typographyPrefixConstant={EBPG_READMORE_TYPOGRAPHY}
+												resRequiredProps={resRequiredProps}
+											/>
+											<ResponsiveDimensionsControl
+												resRequiredProps={resRequiredProps}
+												controlName={READMORE_MARGIN}
+												baseLabel="Margin"
+											/>
+											<ResponsiveDimensionsControl
+												resRequiredProps={resRequiredProps}
+												controlName={READMORE_PADDING}
+												baseLabel="Padding"
+											/>
+										</PanelBody>
+									)}
 								</>
 							)}
 

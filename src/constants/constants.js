@@ -15,6 +15,7 @@ export const COLUMN_BORDER_SHADOW = "columnBorderShadow";
 
 export const THUMBNAIL_IMAGE_SIZE = "thumbnailImageSize";
 export const THUMBNAIL_BORDER_RADIUS = "thumbnailBDR";
+export const THUMBNAIL_MARGIN = "thumbnailMargin";
 export const TITLE_MARGIN = "titleMargin";
 export const CONTENT_MARGIN = "contentMargin";
 export const READMORE_MARGIN = "readmoreMargin";

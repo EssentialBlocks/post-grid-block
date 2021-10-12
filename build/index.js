@@ -7854,7 +7854,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({
+var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({
   resOption: {
     type: "string",
     "default": "desktop"
@@ -7943,11 +7943,19 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
     type: "string",
     "default": "#333333"
   },
+  readmoreBGColor: {
+    type: "string",
+    "default": "#ffffff"
+  },
   readmoreTextAlign: {
     type: "string",
     "default": "left"
   },
   readmoreHoverColor: {
+    type: "string",
+    "default": "#333333"
+  },
+  readmoreBGHoverColor: {
     type: "string",
     "default": "#333333"
   },
@@ -7959,9 +7967,13 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
     type: "boolean",
     "default": true
   },
-  metaPosition: {
+  headerMeta: {
     type: "string",
-    "default": "footer"
+    "default": '[{"value":"date","label":"Published Date"}]'
+  },
+  footerMeta: {
+    type: "string",
+    "default": '[{"value":"avatar","label":"Author Avatar"},{"value":"author","label":"Author Name"}]'
   },
   metaColor: {
     type: "string",
@@ -7978,22 +7990,6 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
   metaColorType: {
     type: "string",
     "default": "normal"
-  },
-  showAvatar: {
-    type: "boolean",
-    "default": true
-  },
-  showAuthor: {
-    type: "boolean",
-    "default": true
-  },
-  showDate: {
-    type: "boolean",
-    "default": true
-  },
-  showCategories: {
-    type: "boolean",
-    "default": true
   }
 }, Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateTypographyAttributes"])(Object.values(_constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_2__))), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["WRAPPER_MARGIN"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["WRAPPER_PADDING"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["COLUMN_PADDING"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["TITLE_MARGIN"], {
   top: 0,
@@ -8025,6 +8021,12 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
   right: 0,
   left: 0,
   isLinked: false
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["THUMBNAIL_MARGIN"], {
+  top: 0,
+  bottom: 15,
+  right: 0,
+  left: 0,
+  isLinked: false
 })), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["THUMBNAIL_BORDER_RADIUS"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["AVATAR_BORDER_RADIUS"], {
   top: 50,
   bottom: 50,
@@ -8051,7 +8053,7 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
 /*!************************************!*\
   !*** ./src/constants/constants.js ***!
   \************************************/
-/*! exports provided: WRAPPER_MARGIN, WRAPPER_PADDING, WRAPPER_BORDER_SHADOW, WRAPPER_BG, COLUMNS, COLUMN_GAP, COLUMN_PADDING, COLUMN_BG, COLUMN_BORDER_SHADOW, THUMBNAIL_IMAGE_SIZE, THUMBNAIL_BORDER_RADIUS, TITLE_MARGIN, CONTENT_MARGIN, READMORE_MARGIN, READMORE_PADDING, META_MARGIN, AVATAR_BORDER_RADIUS, UNIT_TYPES, HEIGHT_UNIT_TYPES, NORMAL_HOVER, META_POSITION, TITLE_TAGS, PRESETS, TEXT_ALIGN, CONTENT_POSITION */
+/*! exports provided: WRAPPER_MARGIN, WRAPPER_PADDING, WRAPPER_BORDER_SHADOW, WRAPPER_BG, COLUMNS, COLUMN_GAP, COLUMN_PADDING, COLUMN_BG, COLUMN_BORDER_SHADOW, THUMBNAIL_IMAGE_SIZE, THUMBNAIL_BORDER_RADIUS, THUMBNAIL_MARGIN, TITLE_MARGIN, CONTENT_MARGIN, READMORE_MARGIN, READMORE_PADDING, META_MARGIN, AVATAR_BORDER_RADIUS, UNIT_TYPES, HEIGHT_UNIT_TYPES, NORMAL_HOVER, META_POSITION, TITLE_TAGS, PRESETS, TEXT_ALIGN, CONTENT_POSITION */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8067,6 +8069,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "COLUMN_BORDER_SHADOW", function() { return COLUMN_BORDER_SHADOW; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "THUMBNAIL_IMAGE_SIZE", function() { return THUMBNAIL_IMAGE_SIZE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "THUMBNAIL_BORDER_RADIUS", function() { return THUMBNAIL_BORDER_RADIUS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "THUMBNAIL_MARGIN", function() { return THUMBNAIL_MARGIN; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TITLE_MARGIN", function() { return TITLE_MARGIN; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CONTENT_MARGIN", function() { return CONTENT_MARGIN; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "READMORE_MARGIN", function() { return READMORE_MARGIN; });
@@ -8095,6 +8098,7 @@ var COLUMN_BG = "columnBG";
 var COLUMN_BORDER_SHADOW = "columnBorderShadow";
 var THUMBNAIL_IMAGE_SIZE = "thumbnailImageSize";
 var THUMBNAIL_BORDER_RADIUS = "thumbnailBDR";
+var THUMBNAIL_MARGIN = "thumbnailMargin";
 var TITLE_MARGIN = "titleMargin";
 var CONTENT_MARGIN = "contentMargin";
 var READMORE_MARGIN = "readmoreMargin";
@@ -8239,16 +8243,12 @@ var EBPG_META_TYPOGRAPHY = "ebpg_meta";
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Edit; });
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "lodash");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_escape_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/escape-html */ "@wordpress/escape-html");
-/* harmony import */ var _wordpress_escape_html__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_escape_html__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _inspector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./inspector */ "./src/inspector.js");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _constants_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./constants/constants */ "./src/constants/constants.js");
-/* harmony import */ var _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./constants/typographyPrefixConstants */ "./src/constants/typographyPrefixConstants.js");
-/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../util/helpers */ "./util/helpers/index.js");
+/* harmony import */ var _inspector__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./inspector */ "./src/inspector.js");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _constants_constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./constants/constants */ "./src/constants/constants.js");
+/* harmony import */ var _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./constants/typographyPrefixConstants */ "./src/constants/typographyPrefixConstants.js");
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/helpers */ "./util/helpers/index.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 /**
@@ -8260,7 +8260,8 @@ var _wp$blockEditor = wp.blockEditor,
     useBlockProps = _wp$blockEditor.useBlockProps;
 var _wp$element = wp.element,
     useEffect = _wp$element.useEffect,
-    renderToString = _wp$element.renderToString;
+    renderToString = _wp$element.renderToString,
+    RawHTML = _wp$element.RawHTML;
 var select = wp.data.select;
 var _wp$date = wp.date,
     dateI18n = _wp$date.dateI18n,
@@ -8269,8 +8270,8 @@ var _wp$date = wp.date,
 /**
  * External dependencies
  */
-
-
+// import { get, includes, invoke, isUndefined, pickBy } from 'lodash';
+// import {escapeAmpersand, escapeAttribute, escapeEditableHTML, escapeHTML} from "@wordpress/escape-html"
 
 /**
   * Internal depencencies
@@ -8307,19 +8308,18 @@ function Edit(props) {
       showReadMore = attributes.showReadMore,
       readmoreText = attributes.readmoreText,
       readmoreColor = attributes.readmoreColor,
+      readmoreBGColor = attributes.readmoreBGColor,
       readmoreTextAlign = attributes.readmoreTextAlign,
       readmoreHoverColor = attributes.readmoreHoverColor,
+      readmoreBGHoverColor = attributes.readmoreBGHoverColor,
       readmoreColorType = attributes.readmoreColorType,
       showMeta = attributes.showMeta,
-      metaPosition = attributes.metaPosition,
+      headerMeta = attributes.headerMeta,
+      footerMeta = attributes.footerMeta,
       metaColor = attributes.metaColor,
       metaTextAlign = attributes.metaTextAlign,
       metaHoverColor = attributes.metaHoverColor,
-      metaColorType = attributes.metaColorType,
-      showAvatar = attributes.showAvatar,
-      showAuthor = attributes.showAuthor,
-      showDate = attributes.showDate,
-      showCategories = attributes.showCategories;
+      metaColorType = attributes.metaColorType;
 
   var dateFormat = __experimentalGetSettings().formats.date; // this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class
 
@@ -8333,7 +8333,7 @@ function Edit(props) {
 
   useEffect(function () {
     var BLOCK_PREFIX = "eb-post-grid";
-    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["duplicateBlockIdFix"])({
+    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["duplicateBlockIdFix"])({
       BLOCK_PREFIX: BLOCK_PREFIX,
       blockId: blockId,
       setAttributes: setAttributes,
@@ -8343,7 +8343,7 @@ function Edit(props) {
   }, []); // this useEffect is for mimmiking css when responsive options clicked from wordpress's 'preview' button
 
   useEffect(function () {
-    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["mimmikCssForPreviewBtnClick"])({
+    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["mimmikCssForPreviewBtnClick"])({
       domObj: document,
       select: select
     });
@@ -8353,44 +8353,44 @@ function Edit(props) {
   }); //
   // CSS/styling Codes Starts from Here
 
-  var _generateTypographySt = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateTypographyStyles"])({
+  var _generateTypographySt = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateTypographyStyles"])({
     attributes: attributes,
-    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_5__["EBPG_TITLE_TYPOGRAPHY"],
+    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_3__["EBPG_TITLE_TYPOGRAPHY"],
     defaultFontSize: 20
   }),
       titleTypoStylesDesktop = _generateTypographySt.typoStylesDesktop,
       titleTypoStylesTab = _generateTypographySt.typoStylesTab,
       titleTypoStylesMobile = _generateTypographySt.typoStylesMobile;
 
-  var _generateTypographySt2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateTypographyStyles"])({
+  var _generateTypographySt2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateTypographyStyles"])({
     attributes: attributes,
-    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_5__["EBPG_CONTENT_TYPOGRAPHY"],
+    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_3__["EBPG_CONTENT_TYPOGRAPHY"],
     defaultFontSize: 16
   }),
       contentTypoStylesDesktop = _generateTypographySt2.typoStylesDesktop,
       contentTypoStylesTab = _generateTypographySt2.typoStylesTab,
       contentTypoStylesMobile = _generateTypographySt2.typoStylesMobile;
 
-  var _generateTypographySt3 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateTypographyStyles"])({
+  var _generateTypographySt3 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateTypographyStyles"])({
     attributes: attributes,
-    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_5__["EBPG_READMORE_TYPOGRAPHY"],
+    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_3__["EBPG_READMORE_TYPOGRAPHY"],
     defaultFontSize: 16
   }),
       readmoreTypoStylesDesktop = _generateTypographySt3.typoStylesDesktop,
       readmoreTypoStylesTab = _generateTypographySt3.typoStylesTab,
       readmoreTypoStylesMobile = _generateTypographySt3.typoStylesMobile;
 
-  var _generateTypographySt4 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateTypographyStyles"])({
+  var _generateTypographySt4 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateTypographyStyles"])({
     attributes: attributes,
-    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_5__["EBPG_META_TYPOGRAPHY"],
+    prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_3__["EBPG_META_TYPOGRAPHY"],
     defaultFontSize: 14
   }),
       metaTypoStylesDesktop = _generateTypographySt4.typoStylesDesktop,
       metaTypoStylesTab = _generateTypographySt4.typoStylesTab,
       metaTypoStylesMobile = _generateTypographySt4.typoStylesMobile;
 
-  var _generateDimensionsCo = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateDimensionsControlStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["WRAPPER_MARGIN"],
+  var _generateDimensionsCo = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["WRAPPER_MARGIN"],
     styleFor: "margin",
     attributes: attributes
   }),
@@ -8398,8 +8398,8 @@ function Edit(props) {
       wrapperMarginStylesTab = _generateDimensionsCo.dimensionStylesTab,
       wrapperMarginStylesMobile = _generateDimensionsCo.dimensionStylesMobile;
 
-  var _generateDimensionsCo2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateDimensionsControlStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["WRAPPER_PADDING"],
+  var _generateDimensionsCo2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["WRAPPER_PADDING"],
     styleFor: "padding",
     attributes: attributes
   }),
@@ -8407,8 +8407,8 @@ function Edit(props) {
       wrapperPaddingStylesTab = _generateDimensionsCo2.dimensionStylesTab,
       wrapperPaddingStylesMobile = _generateDimensionsCo2.dimensionStylesMobile;
 
-  var _generateDimensionsCo3 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateDimensionsControlStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["COLUMN_PADDING"],
+  var _generateDimensionsCo3 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["COLUMN_PADDING"],
     styleFor: "padding",
     attributes: attributes
   }),
@@ -8416,8 +8416,8 @@ function Edit(props) {
       columnPaddingStylesTab = _generateDimensionsCo3.dimensionStylesTab,
       columnPaddingStylesMobile = _generateDimensionsCo3.dimensionStylesMobile;
 
-  var _generateDimensionsCo4 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateDimensionsControlStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["TITLE_MARGIN"],
+  var _generateDimensionsCo4 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["TITLE_MARGIN"],
     styleFor: "margin",
     attributes: attributes
   }),
@@ -8425,8 +8425,8 @@ function Edit(props) {
       titleMarginStylesTab = _generateDimensionsCo4.dimensionStylesTab,
       titleMarginStylesMobile = _generateDimensionsCo4.dimensionStylesMobile;
 
-  var _generateDimensionsCo5 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateDimensionsControlStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["CONTENT_MARGIN"],
+  var _generateDimensionsCo5 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["CONTENT_MARGIN"],
     styleFor: "margin",
     attributes: attributes
   }),
@@ -8434,8 +8434,8 @@ function Edit(props) {
       contentMarginStylesTab = _generateDimensionsCo5.dimensionStylesTab,
       contentMarginStylesMobile = _generateDimensionsCo5.dimensionStylesMobile;
 
-  var _generateDimensionsCo6 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateDimensionsControlStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["READMORE_MARGIN"],
+  var _generateDimensionsCo6 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["READMORE_MARGIN"],
     styleFor: "margin",
     attributes: attributes
   }),
@@ -8443,8 +8443,8 @@ function Edit(props) {
       readmoreMarginStylesTab = _generateDimensionsCo6.dimensionStylesTab,
       readmoreMarginStylesMobile = _generateDimensionsCo6.dimensionStylesMobile;
 
-  var _generateDimensionsCo7 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateDimensionsControlStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["READMORE_PADDING"],
+  var _generateDimensionsCo7 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["READMORE_PADDING"],
     styleFor: "padding",
     attributes: attributes
   }),
@@ -8452,8 +8452,8 @@ function Edit(props) {
       readmorePaddingStylesTab = _generateDimensionsCo7.dimensionStylesTab,
       readmorePaddingStylesMobile = _generateDimensionsCo7.dimensionStylesMobile;
 
-  var _generateDimensionsCo8 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateDimensionsControlStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["META_MARGIN"],
+  var _generateDimensionsCo8 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["META_MARGIN"],
     styleFor: "margin",
     attributes: attributes
   }),
@@ -8461,26 +8461,35 @@ function Edit(props) {
       metaMarginStylesTab = _generateDimensionsCo8.dimensionStylesTab,
       metaMarginStylesMobile = _generateDimensionsCo8.dimensionStylesMobile;
 
-  var _generateDimensionsCo9 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateDimensionsControlStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["THUMBNAIL_BORDER_RADIUS"],
+  var _generateDimensionsCo9 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["THUMBNAIL_MARGIN"],
+    styleFor: "margin",
+    attributes: attributes
+  }),
+      thumbnailMarginStylesDesktop = _generateDimensionsCo9.dimensionStylesDesktop,
+      thumbnailMarginStylesTab = _generateDimensionsCo9.dimensionStylesTab,
+      thumbnailMarginStylesMobile = _generateDimensionsCo9.dimensionStylesMobile;
+
+  var _generateDimensionsCo10 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["THUMBNAIL_BORDER_RADIUS"],
     styleFor: "border-radius",
     attributes: attributes
   }),
-      thumbnailBdrSdwStylesDesktop = _generateDimensionsCo9.dimensionStylesDesktop,
-      thumbnailBdrSdwStylesTab = _generateDimensionsCo9.dimensionStylesTab,
-      thumbnailBdrSdwStylesMobile = _generateDimensionsCo9.dimensionStylesMobile;
+      thumbnailBdrSdwStylesDesktop = _generateDimensionsCo10.dimensionStylesDesktop,
+      thumbnailBdrSdwStylesTab = _generateDimensionsCo10.dimensionStylesTab,
+      thumbnailBdrSdwStylesMobile = _generateDimensionsCo10.dimensionStylesMobile;
 
-  var _generateDimensionsCo10 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateDimensionsControlStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["AVATAR_BORDER_RADIUS"],
+  var _generateDimensionsCo11 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["AVATAR_BORDER_RADIUS"],
     styleFor: "border-radius",
     attributes: attributes
   }),
-      avatarBdrSdwStylesDesktop = _generateDimensionsCo10.dimensionStylesDesktop,
-      avatarBdrSdwStylesTab = _generateDimensionsCo10.dimensionStylesTab,
-      avatarBdrSdwStylesMobile = _generateDimensionsCo10.dimensionStylesMobile;
+      avatarBdrSdwStylesDesktop = _generateDimensionsCo11.dimensionStylesDesktop,
+      avatarBdrSdwStylesTab = _generateDimensionsCo11.dimensionStylesTab,
+      avatarBdrSdwStylesMobile = _generateDimensionsCo11.dimensionStylesMobile;
 
-  var _generateBorderShadow = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateBorderShadowStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["WRAPPER_BORDER_SHADOW"],
+  var _generateBorderShadow = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateBorderShadowStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["WRAPPER_BORDER_SHADOW"],
     attributes: attributes,
     noShadow: true
   }),
@@ -8491,8 +8500,8 @@ function Edit(props) {
       wrapperBDShadowHoverTab = _generateBorderShadow.stylesHoverTab,
       wrapperBDShadowHoverMobile = _generateBorderShadow.stylesHoverMobile;
 
-  var _generateBorderShadow2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateBorderShadowStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["COLUMN_BORDER_SHADOW"],
+  var _generateBorderShadow2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateBorderShadowStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["COLUMN_BORDER_SHADOW"],
     attributes: attributes,
     noShadow: true
   }),
@@ -8503,8 +8512,8 @@ function Edit(props) {
       columnBDShadowHoverTab = _generateBorderShadow2.stylesHoverTab,
       columnBDShadowHoverMobile = _generateBorderShadow2.stylesHoverMobile;
 
-  var _generateResponsiveRa = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateResponsiveRangeStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["COLUMNS"],
+  var _generateResponsiveRa = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateResponsiveRangeStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["COLUMNS"],
     property: "",
     attributes: attributes
   }),
@@ -8512,8 +8521,8 @@ function Edit(props) {
       columnNumberTab = _generateResponsiveRa.rangeStylesTab,
       columnNumberMobile = _generateResponsiveRa.rangeStylesMobile;
 
-  var _generateResponsiveRa2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateResponsiveRangeStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["COLUMN_GAP"],
+  var _generateResponsiveRa2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateResponsiveRangeStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["COLUMN_GAP"],
     property: "gap",
     attributes: attributes
   }),
@@ -8521,8 +8530,8 @@ function Edit(props) {
       columnGapTab = _generateResponsiveRa2.rangeStylesTab,
       columnGapMobile = _generateResponsiveRa2.rangeStylesMobile;
 
-  var _generateResponsiveRa3 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateResponsiveRangeStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["THUMBNAIL_IMAGE_SIZE"],
+  var _generateResponsiveRa3 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateResponsiveRangeStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["THUMBNAIL_IMAGE_SIZE"],
     property: "height",
     attributes: attributes
   }),
@@ -8531,9 +8540,9 @@ function Edit(props) {
       thumbnailImageHeightMobile = _generateResponsiveRa3.rangeStylesMobile; //Generate Background
 
 
-  var _generateBackgroundCo = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateBackgroundControlStyles"])({
+  var _generateBackgroundCo = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateBackgroundControlStyles"])({
     attributes: attributes,
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["WRAPPER_BG"],
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["WRAPPER_BG"],
     noOverlay: true
   }),
       wrapperBackgroundStylesDesktop = _generateBackgroundCo.backgroundStylesDesktop,
@@ -8545,9 +8554,9 @@ function Edit(props) {
       wrapperBgTransitionStyle = _generateBackgroundCo.bgTransitionStyle; //Generate Background
 
 
-  var _generateBackgroundCo2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["generateBackgroundControlStyles"])({
+  var _generateBackgroundCo2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateBackgroundControlStyles"])({
     attributes: attributes,
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_4__["COLUMN_BG"],
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["COLUMN_BG"],
     noOverlay: true
   }),
       columnBackgroundStylesDesktop = _generateBackgroundCo2.backgroundStylesDesktop,
@@ -8559,15 +8568,27 @@ function Edit(props) {
       columnBgTransitionStyle = _generateBackgroundCo2.bgTransitionStyle; // wrapper styles css in strings ⬇
 
 
-  var wrapperStylesDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, "{\n\t\t\tdisplay: grid;\n\t\t\tposition: relative;\n\t\t\tgrid-template-columns: repeat(").concat(columnNumberDesktop.replace(/\D/g, ''), ", minmax(0, 1fr));\n\t\t\t").concat(columnGapDesktop, "\n\t\t\t").concat(wrapperMarginStylesDesktop, "\n\t\t\t").concat(wrapperPaddingStylesDesktop, "\n\t\t}\n\t");
-  var wrapperStylesTab = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, "{\n\t\t\t").concat(wrapperMarginStylesTab, "\n\n\t\t}\n\t");
-  var wrapperStylesMobile = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, "{\n\t\t\t").concat(wrapperMarginStylesMobile, "\n\n\t\t}\n\t"); // all css styles for large screen width (desktop/laptop) in strings ⬇
+  var wrapperStylesDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, "{\n\t\t\tdisplay: grid;\n\t\t\tposition: relative;\n\t\t\tgrid-template-columns: repeat(").concat(columnNumberDesktop.replace(/\D/g, ''), ", minmax(0, 1fr));\n\t\t\t").concat(columnGapDesktop, "\n\t\t\t").concat(wrapperMarginStylesDesktop, "\n\t\t\t").concat(wrapperPaddingStylesDesktop, "\n\t\t\t").concat(wrapperBackgroundStylesDesktop, "\n\t\t\t").concat(wrapperBgTransitionStyle, "\n\t\t\t").concat(wrapperBDShadowDesktop, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, ":hover {\n\t\t\t").concat(wrapperHoverBackgroundStylesDesktop, "\n\t\t\t").concat(wrapperBDShadowHoverDesktop, "\n\t\t}\n\t");
+  var wrapperStylesTab = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, "{\n\t\t\tgrid-template-columns: repeat(").concat(columnNumberTab.replace(/\D/g, ''), ", minmax(0, 1fr));\n\t\t\t").concat(columnGapTab, "\n\t\t\t").concat(wrapperMarginStylesTab, "\n\t\t\t").concat(wrapperPaddingStylesTab, "\n\t\t\t").concat(wrapperBackgroundStylesTab, "\n\t\t\t").concat(wrapperBDShadowTab, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, ":hover {\n\t\t\t").concat(wrapperHoverBackgroundStylesTab, "\n\t\t\t").concat(wrapperBDShadowHoverTab, "\n\t\t}\n\t");
+  var wrapperStylesMobile = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, "{\n\t\t\tgrid-template-columns: repeat(").concat(columnNumberMobile.replace(/\D/g, ''), ", minmax(0, 1fr));\n\t\t\t").concat(columnGapMobile, "\n\t\t\t").concat(wrapperMarginStylesMobile, "\n\t\t\t").concat(wrapperPaddingStylesMobile, "\n\t\t\t").concat(wrapperBackgroundStylesMobile, "\n\t\t\t").concat(wrapperBDShadowMobile, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, ":hover {\n\t\t\t").concat(wrapperHoverBackgroundStylesMobile, "\n\t\t\t").concat(wrapperBDShadowHoverMobile, "\n\t\t}\n\t");
+  var gridColumnStylesDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-post-grid-column {\n\t\t\t").concat(columnPaddingStylesDesktop, "\n\t\t\t").concat(columnBDShadowDesktop, "\n\t\t\t").concat(columnBackgroundStylesDesktop, "\n\t\t\t").concat(columnBgTransitionStyle, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-post-grid-column:hover {\n\t\t\t").concat(columnHoverBackgroundStylesDesktop, "\n\t\t}\n\t");
+  var gridColumnStylesTab = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-post-grid-column {\n\t\t\t").concat(columnPaddingStylesTab, "\n\t\t\t").concat(columnBDShadowTab, "\n\t\t\t").concat(columnBackgroundStylesTab, "\n\t\t\t").concat(columnBgTransitionStyle, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-post-grid-column:hover {\n\t\t\t").concat(columnHoverBackgroundStylesTab, "\n\t\t}\n\t");
+  var gridColumnStylesMobile = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-post-grid-column {\n\t\t\t").concat(columnPaddingStylesMobile, "\n\t\t\t").concat(columnBDShadowMobile, "\n\t\t\t").concat(columnBackgroundStylesMobile, "\n\t\t\t").concat(columnBgTransitionStyle, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-post-grid-column:hover {\n\t\t\t").concat(columnHoverBackgroundStylesMobile, "\n\t\t}\n\t");
+  var thumbnailStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-entry-thumbnail img {\n\t\t\t").concat(thumbnailImageHeightDesktop, ";\n\t\t\t").concat(thumbnailBdrSdwStylesDesktop, "\n\t\t\t").concat(thumbnailMarginStylesDesktop, "\n\t\t}\n\t");
+  var titleStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-entry-title {\n\t\t\ttext-align: ").concat(titleTextAlign, ";\n\t\t\t").concat(titleTypoStylesDesktop, "\n\t\t\t").concat(titleMarginStylesDesktop, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-entry-title a {\n\t\t\tcolor: ").concat(titleColor, ";\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-entry-title a:hover {\n\t\t\tcolor: ").concat(titleHoverColor, ";\n\t\t}\n\t");
+  var contentStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-grid-post-excerpt {\n\t\t\tcolor: ").concat(contentColor, ";\n\t\t\ttext-align: ").concat(contentTextAlign, ";\n\t\t\t").concat(contentTypoStylesDesktop, "\n\t\t\t").concat(contentMarginStylesDesktop, "\n\n\t\t}\n\t");
+  var readmoreStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-readmore-btn {\n\t\t\ttext-align: ").concat(readmoreTextAlign, ";\n\t\t\t").concat(readmoreTypoStylesDesktop, "\n\t\t\t").concat(readmoreMarginStylesDesktop, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-readmore-btn a {\n\t\t\tcolor: ").concat(readmoreColor, ";\n\t\t\tbackground-color: ").concat(readmoreBGColor, ";\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-entry-title a:hover {\n\t\t\tcolor: ").concat(readmoreHoverColor, ";\n\t\t\tcolor: ").concat(readmoreBGHoverColor, ";\n\t\t}\n\t");
+  var avatarStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-entry-title {\n\n\t\t}\n\t");
+  var dateStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-entry-title {\n\n\t\t}\n\t");
+  var authorStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-entry-title {\n\n\t\t}\n\t");
+  var categoriesStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-entry-title {\n\n\t\t}\n\t");
+  var tagsStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-entry-title {\n\n\t\t}\n\t"); // all css styles for large screen width (desktop/laptop) in strings ⬇
 
-  var desktopAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["softMinifyCssStrings"])("\n\t\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["isCssExists"])(wrapperStylesDesktop) ? wrapperStylesDesktop : " ", "\n\t\t")); // all css styles for Tab in strings ⬇
+  var desktopAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])("\n\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(wrapperStylesDesktop) ? wrapperStylesDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(gridColumnStylesDesktop) ? gridColumnStylesDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(thumbnailStyleDesktop) ? thumbnailStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(titleStyleDesktop) ? titleStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(contentStyleDesktop) ? contentStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(readmoreStyleDesktop) ? readmoreStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(avatarStyleDesktop) ? avatarStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(dateStyleDesktop) ? dateStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(authorStyleDesktop) ? authorStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(categoriesStyleDesktop) ? categoriesStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(tagsStyleDesktop) ? tagsStyleDesktop : " ", "\n\t")); // all css styles for Tab in strings ⬇
 
-  var tabAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["softMinifyCssStrings"])("\n\t\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["isCssExists"])(wrapperStylesTab) ? wrapperStylesTab : " ", "\n\t\t")); // all css styles for Mobile in strings ⬇
+  var tabAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])("\n\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(wrapperStylesTab) ? wrapperStylesTab : " ", "\n\t")); // all css styles for Mobile in strings ⬇
 
-  var mobileAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["softMinifyCssStrings"])("\n\t\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["isCssExists"])(wrapperStylesMobile) ? wrapperStylesMobile : " ", "\n\t\t")); // Set All Style in "blockMeta" Attribute
+  var mobileAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])("\n\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(wrapperStylesMobile) ? wrapperStylesMobile : " ", "\n\t")); // Set All Style in "blockMeta" Attribute
 
   useEffect(function () {
     var styleObject = {
@@ -8582,10 +8603,10 @@ function Edit(props) {
       });
     }
   }, [attributes]);
-  return [isSelected && /*#__PURE__*/React.createElement(_inspector__WEBPACK_IMPORTED_MODULE_2__["default"], props),
+  return [isSelected && /*#__PURE__*/React.createElement(_inspector__WEBPACK_IMPORTED_MODULE_0__["default"], props),
   /*#__PURE__*/
   //Edit view here
-  React.createElement("div", blockProps, /*#__PURE__*/React.createElement("style", null, "\n\t\t\t\t".concat(desktopAllStyles, "\n\n\t\t\t\t/* mimmikcssStart */\n\n\t\t\t\t").concat(resOption === "tab" ? tabAllStyles : " ", "\n\t\t\t\t").concat(resOption === "mobile" ? tabAllStyles + mobileAllStyles : " ", "\n\n\t\t\t\t/* mimmikcssEnd */\n\n\t\t\t\t@media all and (max-width: 1024px) {\t\n\n\t\t\t\t\t/* tabcssStart */\t\t\t\n\t\t\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["softMinifyCssStrings"])(tabAllStyles), "\n\t\t\t\t\t/* tabcssEnd */\t\t\t\n\t\t\t\t\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t@media all and (max-width: 767px) {\n\t\t\t\t\t\n\t\t\t\t\t/* mobcssStart */\t\t\t\n\t\t\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__["softMinifyCssStrings"])(mobileAllStyles), "\n\t\t\t\t\t/* mobcssEnd */\t\t\t\n\t\t\t\t\n\t\t\t\t}\n\t\t\t\t")), /*#__PURE__*/React.createElement("div", {
+  React.createElement("div", blockProps, /*#__PURE__*/React.createElement("style", null, "\n\t\t\t\t".concat(desktopAllStyles, "\n\n\t\t\t\t/* mimmikcssStart */\n\n\t\t\t\t").concat(resOption === "tab" ? tabAllStyles : " ", "\n\t\t\t\t").concat(resOption === "mobile" ? tabAllStyles + mobileAllStyles : " ", "\n\n\t\t\t\t/* mimmikcssEnd */\n\n\t\t\t\t@media all and (max-width: 1024px) {\t\n\n\t\t\t\t\t/* tabcssStart */\t\t\t\n\t\t\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])(tabAllStyles), "\n\t\t\t\t\t/* tabcssEnd */\t\t\t\n\t\t\t\t\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t@media all and (max-width: 767px) {\n\t\t\t\t\t\n\t\t\t\t\t/* mobcssStart */\t\t\t\n\t\t\t\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])(mobileAllStyles), "\n\t\t\t\t\t/* mobcssEnd */\t\t\t\n\t\t\t\t\n\t\t\t\t}\n\t\t\t\t")), /*#__PURE__*/React.createElement("div", {
     className: "eb-post-grid-wrapper ".concat(blockId, " ").concat(preset),
     "data-id": blockId
   }, _typeof(queryResults) === 'object' && queryResults.length > 0 && queryResults.map(function (post) {
@@ -8608,26 +8629,47 @@ function Edit(props) {
     excerptElement.innerHTML = excerpt;
     excerpt = excerptElement.textContent || excerptElement.innerText || '';
     var excerptWithLimitWords = contentLength > 0 ? excerpt.trim().split(' ', contentLength).join(' ') : excerpt;
-    var metaData = showMeta ? /*#__PURE__*/React.createElement(React.Fragment, null, showAvatar ? /*#__PURE__*/React.createElement("div", {
+    var avatar = /*#__PURE__*/React.createElement("div", {
       "class": "ebpg-author-avatar"
     }, /*#__PURE__*/React.createElement("a", {
       href: post._embedded.author[0].link
     }, /*#__PURE__*/React.createElement("img", {
       alt: post._embedded.author[0].name ? post._embedded.author[0].name : post._embedded.author[0].slug,
       src: post._embedded.author[0].avatar_urls[96] ? post._embedded.author[0].avatar_urls[96] : ''
-    }))) : '', /*#__PURE__*/React.createElement("div", {
-      "class": "ebpg-entry-meta-data"
-    }, showAuthor ? /*#__PURE__*/React.createElement("span", {
+    })));
+    var date = /*#__PURE__*/React.createElement("span", {
+      "class": "ebpg-posted-on"
+    }, "on ", /*#__PURE__*/React.createElement("time", {
+      dateTime: format('c', post.date_gmt)
+    }, dateI18n(dateFormat, post.date_gmt)));
+    var author = /*#__PURE__*/React.createElement("span", {
       "class": "ebpg-posted-by"
-    }, /*#__PURE__*/React.createElement("a", {
+    }, "by ", /*#__PURE__*/React.createElement("a", {
       href: post._embedded.author[0].link,
       title: post._embedded.author[0].name ? post._embedded.author[0].name : post._embedded.author[0].slug,
       rel: "author"
-    }, post._embedded.author[0].name ? post._embedded.author[0].name : post._embedded.author[0].slug)) : '', showDate ? /*#__PURE__*/React.createElement("span", {
-      "class": "ebpg-posted-on"
-    }, /*#__PURE__*/React.createElement("time", {
-      dateTime: format('c', post.date_gmt)
-    }, dateI18n(dateFormat, post.date_gmt))) : '')) : "";
+    }, post._embedded.author[0].name ? post._embedded.author[0].name : post._embedded.author[0].slug));
+    var metaObject = {
+      avatar: avatar,
+      date: date,
+      author: author
+    };
+    var headerMetaItems = JSON.parse(headerMeta).map(function (item) {
+      return item.value;
+    });
+    var headerMetaHtml = showMeta ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+      "class": "ebpg-entry-meta"
+    }, headerMetaItems.map(function (item) {
+      return metaObject[item];
+    }))) : "";
+    var footerMetaItems = JSON.parse(footerMeta).map(function (item) {
+      return item.value;
+    });
+    var footerMetaHtml = showMeta ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+      "class": "ebpg-entry-meta"
+    }, footerMetaItems.map(function (item) {
+      return metaObject[item];
+    }))) : "";
     return /*#__PURE__*/React.createElement("article", {
       "class": "ebpg-grid-post ebpg-post-grid-column",
       "data-id": post.id
@@ -8647,16 +8689,15 @@ function Edit(props) {
       dangerouslySetInnerHTML: {
         __html: titleHTML
       }
-    }), showContent && /*#__PURE__*/React.createElement("div", {
+    }), showMeta && headerMetaHtml, showContent && /*#__PURE__*/React.createElement("div", {
       "class": "ebpg-entry-content"
     }, /*#__PURE__*/React.createElement("div", {
       "class": "ebpg-grid-post-excerpt"
-    }, /*#__PURE__*/React.createElement("p", null, excerptWithLimitWords, __(expansionIndicator)), /*#__PURE__*/React.createElement("a", {
-      href: post.link,
+    }, /*#__PURE__*/React.createElement("p", null, excerptWithLimitWords, __(expansionIndicator))), /*#__PURE__*/React.createElement("div", {
       "class": "ebpg-readmore-btn"
-    }, __(readmoreText)))), showMeta && /*#__PURE__*/React.createElement("div", {
-      "class": "ebpg-entry-meta"
-    }, metaData))));
+    }, /*#__PURE__*/React.createElement("a", {
+      href: post.link
+    }, __(readmoreText)))), showMeta && footerMetaHtml)));
   }), !isSelected && queryResults.length < 1 && /*#__PURE__*/React.createElement("p", null, "No Posts Found")))];
 }
 ;
@@ -8713,14 +8754,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   return /*#__PURE__*/React.createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 66 70"
+    viewBox: "0 0 90 90"
   }, /*#__PURE__*/React.createElement("linearGradient", {
     id: "prefix__a",
     gradientUnits: "userSpaceOnUse",
-    x1: 0.952,
-    y1: 36.707,
-    x2: 70.364,
-    y2: 26.707
+    x1: 1.489,
+    y1: 45.6,
+    x2: 86.128,
+    y2: 45.6
   }, /*#__PURE__*/React.createElement("stop", {
     offset: 0,
     stopColor: "#1a6dff"
@@ -8728,15 +8769,15 @@ __webpack_require__.r(__webpack_exports__);
     offset: 1,
     stopColor: "#c822ff"
   })), /*#__PURE__*/React.createElement("path", {
-    d: "M33.3 22.4H4.7C2.1 22.4 0 24.6 0 27v14.3c0 2.6 2.2 4.6 4.6 4.6H33c2.6 0 4.6-2.2 4.6-4.6V27c.3-2.6-1.9-4.6-4.3-4.6zm1.8 18.9c0 1.2-1 2-2 2H4.7c-1.2 0-2-1-2-2V27c0-1.2 1-2 2-2h28.4c1.2 0 2 1 2 2v14.3z",
+    d: "M86.8 7.5H3.2C1.4 7.5 0 8.9 0 10.7v69.8c0 1.8 1.4 3.2 3.2 3.2h83.6c1.8 0 3.2-1.4 3.2-3.2V10.9c.2-2-1.5-3.4-3.2-3.4zm.8 73c0 .4-.4.8-.8.8H3.2c-.4 0-.8-.4-.8-.8V10.9c0-.4.4-.8.8-.8h83.6c.4 0 .8.4.8.8v69.6z",
     fill: "url(#prefix__a)"
   }), /*#__PURE__*/React.createElement("linearGradient", {
     id: "prefix__b",
     gradientUnits: "userSpaceOnUse",
-    x1: -3.791,
-    y1: 41.962,
-    x2: 71.357,
-    y2: 31.136
+    x1: 1.489,
+    y1: 34.726,
+    x2: 86.128,
+    y2: 34.726
   }, /*#__PURE__*/React.createElement("stop", {
     offset: 0,
     stopColor: "#1a6dff"
@@ -8744,15 +8785,15 @@ __webpack_require__.r(__webpack_exports__);
     offset: 1,
     stopColor: "#c822ff"
   })), /*#__PURE__*/React.createElement("path", {
-    d: "M61.7 22.4H39.8c-2.6 0-4.7 2.2-4.7 4.6v14.3c0 2.6 2.2 4.6 4.6 4.6h21.7c2.6 0 4.6-2.2 4.6-4.6V27c.3-2.6-1.9-4.6-4.3-4.6zm1.8 18.9c0 1.2-1 2-2 2H39.8c-1.2 0-2-1-2-2V27c0-1.2 1-2 2-2h21.7c1.2 0 2 1 2 2v14.3z",
+    d: "M28.5 45.1h-15c-1.6 0-2.8-1.3-2.8-2.8v-15c0-1.6 1.3-2.8 2.8-2.8h15c1.6 0 2.8 1.3 2.8 2.8v15c0 1.5-1.3 2.8-2.8 2.8zM13.4 26.7c-.3 0-.5.2-.5.5v15c0 .3.2.5.5.5h15c.3 0 .5-.2.5-.5v-15c0-.3-.2-.5-.5-.5h-15z",
     fill: "url(#prefix__b)"
   }), /*#__PURE__*/React.createElement("linearGradient", {
     id: "prefix__c",
     gradientUnits: "userSpaceOnUse",
-    x1: 0.989,
-    y1: 36.964,
-    x2: 70.401,
-    y2: 26.964
+    x1: 1.489,
+    y1: 34.726,
+    x2: 86.128,
+    y2: 34.726
   }, /*#__PURE__*/React.createElement("stop", {
     offset: 0,
     stopColor: "#1a6dff"
@@ -8760,15 +8801,15 @@ __webpack_require__.r(__webpack_exports__);
     offset: 1,
     stopColor: "#c822ff"
   })), /*#__PURE__*/React.createElement("path", {
-    d: "M25.6 35.8H11.8c-.7 0-1.4-.6-1.4-1.4 0-.7.6-1.4 1.4-1.4h13.8c.7 0 1.4.6 1.4 1.4-.1.8-.7 1.4-1.4 1.4z",
+    d: "M52.7 45.1h-15c-1.6 0-2.8-1.3-2.8-2.8v-15c0-1.6 1.3-2.8 2.8-2.8h15c1.6 0 2.8 1.3 2.8 2.8v15c.1 1.5-1.2 2.8-2.8 2.8zm-15-18.4c-.3 0-.5.2-.5.5v15c0 .3.2.5.5.5h15c.3 0 .5-.2.5-.5v-15c0-.3-.2-.5-.5-.5h-15z",
     fill: "url(#prefix__c)"
   }), /*#__PURE__*/React.createElement("linearGradient", {
     id: "prefix__d",
     gradientUnits: "userSpaceOnUse",
-    x1: -0.903,
-    y1: 41.371,
-    x2: 68.508,
-    y2: 31.371
+    x1: 1.489,
+    y1: 34.726,
+    x2: 86.128,
+    y2: 34.726
   }, /*#__PURE__*/React.createElement("stop", {
     offset: 0,
     stopColor: "#1a6dff"
@@ -8776,9 +8817,57 @@ __webpack_require__.r(__webpack_exports__);
     offset: 1,
     stopColor: "#c822ff"
   })), /*#__PURE__*/React.createElement("path", {
-    d: "M54.5 35.5H44.3c-.7 0-1.4-.6-1.4-1.4 0-.7.6-1.4 1.4-1.4h10.2c.7 0 1.4.6 1.4 1.4-.1.8-.7 1.4-1.4 1.4z",
+    d: "M77 45.1H62c-1.6 0-2.8-1.3-2.8-2.8v-15c0-1.6 1.3-2.8 2.8-2.8h15c1.6 0 2.8 1.3 2.8 2.8v15c0 1.5-1.3 2.8-2.8 2.8zM61.9 26.7c-.3 0-.5.2-.5.5v15c0 .3.2.5.5.5h15c.3 0 .5-.2.5-.5v-15c0-.3-.2-.5-.5-.5h-15z",
     fill: "url(#prefix__d)"
-  }));
+  }), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "prefix__e",
+    gradientUnits: "userSpaceOnUse",
+    x1: 1.489,
+    y1: 60.774,
+    x2: 86.128,
+    y2: 60.774
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: 0,
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: 1,
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M28.5 71.1h-15c-1.6 0-2.8-1.3-2.8-2.8v-15c0-1.6 1.3-2.8 2.8-2.8h15c1.6 0 2.8 1.3 2.8 2.8v15c0 1.6-1.3 2.8-2.8 2.8zM13.4 52.7c-.3 0-.5.2-.5.5v15c0 .3.2.5.5.5h15c.3 0 .5-.2.5-.5v-15c0-.3-.2-.5-.5-.5h-15z",
+    fill: "url(#prefix__e)"
+  })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "prefix__f",
+    gradientUnits: "userSpaceOnUse",
+    x1: 1.489,
+    y1: 60.774,
+    x2: 86.128,
+    y2: 60.774
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: 0,
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: 1,
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M52.7 71.1h-15c-1.6 0-2.8-1.3-2.8-2.8v-15c0-1.6 1.3-2.8 2.8-2.8h15c1.6 0 2.8 1.3 2.8 2.8v15c.1 1.6-1.2 2.8-2.8 2.8zm-15-18.4c-.3 0-.5.2-.5.5v15c0 .3.2.5.5.5h15c.3 0 .5-.2.5-.5v-15c0-.3-.2-.5-.5-.5h-15z",
+    fill: "url(#prefix__f)"
+  })), /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "prefix__g",
+    gradientUnits: "userSpaceOnUse",
+    x1: 1.489,
+    y1: 60.774,
+    x2: 86.128,
+    y2: 60.774
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: 0,
+    stopColor: "#1a6dff"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: 1,
+    stopColor: "#c822ff"
+  })), /*#__PURE__*/React.createElement("path", {
+    d: "M77 71.1H62c-1.6 0-2.8-1.3-2.8-2.8v-15c0-1.6 1.3-2.8 2.8-2.8h15c1.6 0 2.8 1.3 2.8 2.8v15c0 1.6-1.3 2.8-2.8 2.8zM61.9 52.7c-.3 0-.5.2-.5.5v15c0 .3.2.5.5.5h15c.3 0 .5-.2.5-.5v-15c0-.3-.2-.5-.5-.5h-15z",
+    fill: "url(#prefix__g)"
+  })));
 });
 
 /***/ }),
@@ -8830,16 +8919,17 @@ registerBlockType("post-grid-block/post-grid", {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _constants_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./constants/constants */ "./src/constants/constants.js");
-/* harmony import */ var _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constants/typographyPrefixConstants */ "./src/constants/typographyPrefixConstants.js");
-/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../util/helpers */ "./util/helpers/index.js");
-/* harmony import */ var _util_color_control__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../util/color-control */ "./util/color-control/index.js");
-/* harmony import */ var _util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/dimensions-control-v2 */ "./util/dimensions-control-v2/index.js");
-/* harmony import */ var _util_typography_control_v2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../util/typography-control-v2 */ "./util/typography-control-v2/index.js");
-/* harmony import */ var _util_border_shadow_control__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../util/border-shadow-control */ "./util/border-shadow-control/index.js");
-/* harmony import */ var _util_responsive_range_control__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../util/responsive-range-control */ "./util/responsive-range-control/index.js");
-/* harmony import */ var _util_background_control__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../util/background-control */ "./util/background-control/index.js");
-/* harmony import */ var _util_custom_query__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../util/custom-query */ "./util/custom-query/index.js");
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.esm.js");
+/* harmony import */ var _constants_constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constants/constants */ "./src/constants/constants.js");
+/* harmony import */ var _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./constants/typographyPrefixConstants */ "./src/constants/typographyPrefixConstants.js");
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../util/helpers */ "./util/helpers/index.js");
+/* harmony import */ var _util_color_control__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/color-control */ "./util/color-control/index.js");
+/* harmony import */ var _util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../util/dimensions-control-v2 */ "./util/dimensions-control-v2/index.js");
+/* harmony import */ var _util_typography_control_v2__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../util/typography-control-v2 */ "./util/typography-control-v2/index.js");
+/* harmony import */ var _util_border_shadow_control__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../util/border-shadow-control */ "./util/border-shadow-control/index.js");
+/* harmony import */ var _util_responsive_range_control__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../util/responsive-range-control */ "./util/responsive-range-control/index.js");
+/* harmony import */ var _util_background_control__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../util/background-control */ "./util/background-control/index.js");
+/* harmony import */ var _util_custom_query__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../util/custom-query */ "./util/custom-query/index.js");
 /**
  * WordPress dependencies
  */
@@ -8849,6 +8939,7 @@ var _wp$blockEditor = wp.blockEditor,
     PanelColorSettings = _wp$blockEditor.PanelColorSettings;
 var _wp$components = wp.components,
     PanelBody = _wp$components.PanelBody,
+    PanelRow = _wp$components.PanelRow,
     SelectControl = _wp$components.SelectControl,
     ToggleControl = _wp$components.ToggleControl,
     TextControl = _wp$components.TextControl,
@@ -8861,6 +8952,11 @@ var _wp$element = wp.element,
     useEffect = _wp$element.useEffect,
     useState = _wp$element.useState;
 var select = wp.data.select;
+/**
+ * External Dependencies
+*/
+
+
 /**
  * Internal depencencies
  */
@@ -8899,20 +8995,35 @@ function Inspector(props) {
       showReadMore = attributes.showReadMore,
       readmoreText = attributes.readmoreText,
       readmoreColor = attributes.readmoreColor,
+      readmoreBGColor = attributes.readmoreBGColor,
       readmoreTextAlign = attributes.readmoreTextAlign,
       readmoreHoverColor = attributes.readmoreHoverColor,
+      readmoreBGHoverColor = attributes.readmoreBGHoverColor,
       readmoreColorType = attributes.readmoreColorType,
       showMeta = attributes.showMeta,
-      metaPosition = attributes.metaPosition,
+      headerMeta = attributes.headerMeta,
+      footerMeta = attributes.footerMeta,
       metaColor = attributes.metaColor,
       metaTextAlign = attributes.metaTextAlign,
       metaHoverColor = attributes.metaHoverColor,
-      metaColorType = attributes.metaColorType,
-      showAvatar = attributes.showAvatar,
-      showAuthor = attributes.showAuthor,
-      showDate = attributes.showDate,
-      showCategories = attributes.showCategories;
-  console.log("Inspector", queryData, queryResults); // this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
+      metaColorType = attributes.metaColorType;
+  var metaOptions = [{
+    value: 'date',
+    label: 'Published Date'
+  }, {
+    value: 'categories',
+    label: 'Categories'
+  }, {
+    value: 'tags',
+    label: 'Tags'
+  }, {
+    value: 'author',
+    label: 'Author Name'
+  }, {
+    value: 'avatar',
+    label: 'Author Avatar'
+  }]; // console.log("Inspector", queryData, queryResults)
+  // this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
 
   useEffect(function () {
     setAttributes({
@@ -8921,14 +9032,14 @@ function Inspector(props) {
   }, []); // this useEffect is for mimmiking css for all the eb blocks on resOption changing
 
   useEffect(function () {
-    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_2__["mimmikCssForResBtns"])({
+    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["mimmikCssForResBtns"])({
       domObj: document,
       resOption: resOption
     });
   }, [resOption]); // this useEffect is to mimmik css for responsive preview in the editor page when clicking the buttons in the 'Preview button of wordpress' located beside the 'update' button while any block is selected and it's inspector panel is mounted in the DOM
 
   useEffect(function () {
-    var cleanUp = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_2__["mimmikCssOnPreviewBtnClickWhileBlockSelected"])({
+    var cleanUp = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["mimmikCssOnPreviewBtnClickWhileBlockSelected"])({
       domObj: document,
       select: select,
       setAttributes: setAttributes
@@ -8994,7 +9105,7 @@ function Inspector(props) {
   }, function (tab) {
     return /*#__PURE__*/React.createElement("div", {
       className: "eb-tab-controls" + tab.name
-    }, tab.name === "general" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_util_custom_query__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    }, tab.name === "general" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_util_custom_query__WEBPACK_IMPORTED_MODULE_10__["default"], {
       queryData: queryData,
       queryResults: queryResults,
       setAttributes: setAttributes
@@ -9004,23 +9115,23 @@ function Inspector(props) {
     }, /*#__PURE__*/React.createElement(SelectControl, {
       label: __("Template"),
       value: preset,
-      options: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["PRESETS"],
+      options: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["PRESETS"],
       onChange: function onChange(selected) {
         return changePreset(selected);
       }
-    }), /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    }), /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
       baseLabel: __("Columns", "eb-post-grid"),
-      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["COLUMNS"],
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["COLUMNS"],
       resRequiredProps: resRequiredProps,
       units: [],
       min: 1,
       max: 6,
       step: 1
-    }), /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    }), /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
       baseLabel: __("Column Gap", "eb-post-grid"),
-      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["COLUMN_GAP"],
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["COLUMN_GAP"],
       resRequiredProps: resRequiredProps,
-      units: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["UNIT_TYPES"],
+      units: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["UNIT_TYPES"],
       min: 1,
       max: 100,
       step: 1
@@ -9032,11 +9143,11 @@ function Inspector(props) {
           showThumbnail: !showThumbnail
         });
       }
-    }), showThumbnail && /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    }), showThumbnail && /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
       baseLabel: __("Thumbnail Height", "eb-post-grid"),
-      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["THUMBNAIL_IMAGE_SIZE"],
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["THUMBNAIL_IMAGE_SIZE"],
       resRequiredProps: resRequiredProps,
-      units: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["HEIGHT_UNIT_TYPES"],
+      units: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["HEIGHT_UNIT_TYPES"],
       min: 1,
       max: 500,
       step: 1
@@ -9051,7 +9162,7 @@ function Inspector(props) {
     }), showTitle && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SelectControl, {
       label: __("Title Tag"),
       value: titleTag,
-      options: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["TITLE_TAGS"],
+      options: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["TITLE_TAGS"],
       onChange: function onChange(value) {
         setAttributes({
           titleTag: value
@@ -9119,82 +9230,244 @@ function Inspector(props) {
           showMeta: !showMeta
         });
       }
-    }), showMeta && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SelectControl, {
-      label: __("Meta Position"),
-      value: metaPosition,
-      options: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["META_POSITION"],
-      onChange: function onChange(value) {
-        setAttributes({
-          metaPosition: value
+    }), showMeta && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(PanelRow, null, "Header Meta"), /*#__PURE__*/React.createElement(react_select__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      name: "select-header-meta",
+      value: headerMeta.length > 0 ? JSON.parse(headerMeta) : '',
+      onChange: function onChange(selected) {
+        return setAttributes({
+          headerMeta: JSON.stringify(selected)
         });
-      }
-    }), /*#__PURE__*/React.createElement(ToggleControl, {
-      label: __("Show Avatar?"),
-      checked: showAvatar,
-      onChange: function onChange() {
-        setAttributes({
-          showAvatar: !showAvatar
+      },
+      options: metaOptions,
+      isMulti: "true"
+    }), /*#__PURE__*/React.createElement(PanelRow, null, "Footer Meta"), /*#__PURE__*/React.createElement(react_select__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      name: "select-footer-meta",
+      value: footerMeta.length > 0 ? JSON.parse(footerMeta) : '',
+      onChange: function onChange(selected) {
+        return setAttributes({
+          footerMeta: JSON.stringify(selected)
         });
-      }
-    }), /*#__PURE__*/React.createElement(ToggleControl, {
-      label: __("Show Author?"),
-      checked: showAuthor,
-      onChange: function onChange() {
-        setAttributes({
-          showAuthor: !showAuthor
-        });
-      }
-    }), /*#__PURE__*/React.createElement(ToggleControl, {
-      label: __("Show Date?"),
-      checked: showDate,
-      onChange: function onChange() {
-        setAttributes({
-          showDate: !showDate
-        });
-      }
-    }), /*#__PURE__*/React.createElement(ToggleControl, {
-      label: __("Show Categories?"),
-      checked: showCategories,
-      onChange: function onChange() {
-        setAttributes({
-          showCategories: !showCategories
-        });
-      }
-    })))), tab.name === "styles" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(PanelBody, {
+      },
+      options: metaOptions,
+      isMulti: "true"
+    })))), tab.name === "styles" && /*#__PURE__*/React.createElement(React.Fragment, null, showThumbnail && /*#__PURE__*/React.createElement(PanelBody, {
+      title: __("Thumbnail"),
+      initialOpen: false
+    }, /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      resRequiredProps: resRequiredProps,
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["THUMBNAIL_BORDER_RADIUS"],
+      baseLabel: "Border Radius"
+    }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      resRequiredProps: resRequiredProps,
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["THUMBNAIL_MARGIN"],
+      baseLabel: "Margin"
+    })), showTitle && /*#__PURE__*/React.createElement(PanelBody, {
       title: __("Title"),
       initialOpen: false
-    }, /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }, /*#__PURE__*/React.createElement(ButtonGroup, {
+      className: "eb-inspector-btn-group"
+    }, _constants_constants__WEBPACK_IMPORTED_MODULE_1__["NORMAL_HOVER"].map(function (item) {
+      return /*#__PURE__*/React.createElement(Button, {
+        isLarge: true,
+        isPrimary: titleColorStyle === item.value,
+        isSecondary: titleColorStyle !== item.value,
+        onClick: function onClick() {
+          return setAttributes({
+            titleColorStyle: item.value
+          });
+        }
+      }, item.label);
+    })), titleColorStyle === "normal" && /*#__PURE__*/React.createElement(PanelColorSettings, {
+      className: "eb-subpanel",
+      title: __("Normal Color"),
+      initialOpen: true,
+      colorSettings: [{
+        value: titleColor,
+        onChange: function onChange(newColor) {
+          return setAttributes({
+            titleColor: newColor
+          });
+        },
+        label: __("Color")
+      }]
+    }), titleColorStyle === "hover" && /*#__PURE__*/React.createElement(PanelColorSettings, {
+      className: "eb-subpanel",
+      title: __("Hover Color"),
+      initialOpen: true,
+      colorSettings: [{
+        value: titleHoverColor,
+        onChange: function onChange(newColor) {
+          return setAttributes({
+            titleHoverColor: newColor
+          });
+        },
+        label: __("Hover Color")
+      }]
+    }), /*#__PURE__*/React.createElement(BaseControl, {
+      label: __("Alignment"),
+      id: "eb-post-grid"
+    }, /*#__PURE__*/React.createElement(ButtonGroup, {
+      id: "eb-post-grid"
+    }, _constants_constants__WEBPACK_IMPORTED_MODULE_1__["TEXT_ALIGN"].map(function (item) {
+      return /*#__PURE__*/React.createElement(Button, {
+        isLarge: true,
+        isPrimary: titleTextAlign === item.value,
+        isSecondary: titleTextAlign !== item.value,
+        onClick: function onClick() {
+          return setAttributes({
+            titleTextAlign: item.value
+          });
+        }
+      }, item.label);
+    }))), /*#__PURE__*/React.createElement(_util_typography_control_v2__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      baseLabel: __("Typography", "eb-post-grid"),
+      typographyPrefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_2__["EBPG_TITLE_TYPOGRAPHY"],
+      resRequiredProps: resRequiredProps
+    }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      resRequiredProps: resRequiredProps,
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["TITLE_MARGIN"],
+      baseLabel: "Margin"
+    })), showContent && /*#__PURE__*/React.createElement(PanelBody, {
+      title: __("Excerpt"),
+      initialOpen: false
+    }, /*#__PURE__*/React.createElement(_util_color_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
       label: __("Color"),
-      color: titleColor,
+      color: contentColor,
       onChange: function onChange(color) {
         return setAttributes({
-          titleColor: color
+          contentColor: color
         });
       }
-    }), /*#__PURE__*/React.createElement(_util_typography_control_v2__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    }), /*#__PURE__*/React.createElement(BaseControl, {
+      label: __("Alignment"),
+      id: "eb-post-grid"
+    }, /*#__PURE__*/React.createElement(ButtonGroup, {
+      id: "eb-post-grid"
+    }, _constants_constants__WEBPACK_IMPORTED_MODULE_1__["TEXT_ALIGN"].map(function (item) {
+      return /*#__PURE__*/React.createElement(Button, {
+        isLarge: true,
+        isPrimary: contentTextAlign === item.value,
+        isSecondary: contentTextAlign !== item.value,
+        onClick: function onClick() {
+          return setAttributes({
+            contentTextAlign: item.value
+          });
+        }
+      }, item.label);
+    }))), /*#__PURE__*/React.createElement(_util_typography_control_v2__WEBPACK_IMPORTED_MODULE_6__["default"], {
       baseLabel: __("Typography", "eb-post-grid"),
-      typographyPrefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_1__["EBPG_TITLE_TYPOGRAPHY"],
+      typographyPrefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_2__["EBPG_CONTENT_TYPOGRAPHY"],
       resRequiredProps: resRequiredProps
-    }))), tab.name === "advance" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(PanelBody, null, /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_5__["default"], {
       resRequiredProps: resRequiredProps,
-      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["WRAPPER_MARGIN"],
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["CONTENT_MARGIN"],
       baseLabel: "Margin"
-    }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    })), showReadMore && /*#__PURE__*/React.createElement(PanelBody, {
+      title: __("Read More Button"),
+      initialOpen: false
+    }, /*#__PURE__*/React.createElement(ButtonGroup, {
+      className: "eb-inspector-btn-group"
+    }, _constants_constants__WEBPACK_IMPORTED_MODULE_1__["NORMAL_HOVER"].map(function (item) {
+      return /*#__PURE__*/React.createElement(Button, {
+        isLarge: true,
+        isPrimary: readmoreColorType === item.value,
+        isSecondary: readmoreColorType !== item.value,
+        onClick: function onClick() {
+          return setAttributes({
+            readmoreColorType: item.value
+          });
+        }
+      }, item.label);
+    })), readmoreColorType === "normal" && /*#__PURE__*/React.createElement(PanelColorSettings, {
+      className: "eb-subpanel",
+      title: __("Normal Color"),
+      initialOpen: true,
+      colorSettings: [{
+        value: readmoreColor,
+        onChange: function onChange(newColor) {
+          return setAttributes({
+            readmoreColor: newColor
+          });
+        },
+        label: __("Color")
+      }, {
+        value: readmoreBGColor,
+        onChange: function onChange(newColor) {
+          return setAttributes({
+            readmoreBGColor: newColor
+          });
+        },
+        label: __("Background Color")
+      }]
+    }), readmoreColorType === "hover" && /*#__PURE__*/React.createElement(PanelColorSettings, {
+      className: "eb-subpanel",
+      title: __("Hover Color"),
+      initialOpen: true,
+      colorSettings: [{
+        value: readmoreHoverColor,
+        onChange: function onChange(newColor) {
+          return setAttributes({
+            readmoreHoverColor: newColor
+          });
+        },
+        label: __("Hover Color")
+      }, {
+        value: readmoreBGHoverColor,
+        onChange: function onChange(newColor) {
+          return setAttributes({
+            readmoreBGHoverColor: newColor
+          });
+        },
+        label: __("Hover Background Color")
+      }]
+    }), /*#__PURE__*/React.createElement(BaseControl, {
+      label: __("Alignment"),
+      id: "eb-post-grid"
+    }, /*#__PURE__*/React.createElement(ButtonGroup, {
+      id: "eb-post-grid"
+    }, _constants_constants__WEBPACK_IMPORTED_MODULE_1__["TEXT_ALIGN"].map(function (item) {
+      return /*#__PURE__*/React.createElement(Button, {
+        isLarge: true,
+        isPrimary: readmoreTextAlign === item.value,
+        isSecondary: readmoreTextAlign !== item.value,
+        onClick: function onClick() {
+          return setAttributes({
+            readmoreTextAlign: item.value
+          });
+        }
+      }, item.label);
+    }))), /*#__PURE__*/React.createElement(_util_typography_control_v2__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      baseLabel: __("Typography", "eb-post-grid"),
+      typographyPrefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_2__["EBPG_READMORE_TYPOGRAPHY"],
+      resRequiredProps: resRequiredProps
+    }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_5__["default"], {
       resRequiredProps: resRequiredProps,
-      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["WRAPPER_PADDING"],
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["READMORE_MARGIN"],
+      baseLabel: "Margin"
+    }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      resRequiredProps: resRequiredProps,
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["READMORE_PADDING"],
+      baseLabel: "Padding"
+    }))), tab.name === "advance" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(PanelBody, null, /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      resRequiredProps: resRequiredProps,
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["WRAPPER_MARGIN"],
+      baseLabel: "Margin"
+    }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      resRequiredProps: resRequiredProps,
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["WRAPPER_PADDING"],
       baseLabel: "Padding"
     })), /*#__PURE__*/React.createElement(PanelBody, {
       title: __("Background"),
       initialOpen: false
-    }, /*#__PURE__*/React.createElement(_util_background_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
-      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["WRAPPER_BG"],
+    }, /*#__PURE__*/React.createElement(_util_background_control__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["WRAPPER_BG"],
       resRequiredProps: resRequiredProps,
       noOverlay: true
     })), /*#__PURE__*/React.createElement(PanelBody, {
       title: __("Border & Shadow"),
       initialOpen: false
-    }, /*#__PURE__*/React.createElement(_util_border_shadow_control__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_0__["WRAPPER_BORDER_SHADOW"],
+    }, /*#__PURE__*/React.createElement(_util_border_shadow_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["WRAPPER_BORDER_SHADOW"],
       resRequiredProps: resRequiredProps // noShadow
       // noBorder
 
@@ -13092,7 +13365,7 @@ var _wp$element = wp.element,
     useEffect = _wp$element.useEffect,
     useState = _wp$element.useState;
 /**
- * React Library Dependencies
+ * External Dependencies
 */
 
 
@@ -19522,28 +19795,6 @@ function WithResButtons(_ref) {
     "class": "typoResButton dashicons dashicons-smartphone ".concat(resOption === "Mobile" ? "active" : " ")
   })), children);
 }
-
-/***/ }),
-
-/***/ "@wordpress/escape-html":
-/*!************************************!*\
-  !*** external ["wp","escapeHtml"] ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-(function() { module.exports = window["wp"]["escapeHtml"]; }());
-
-/***/ }),
-
-/***/ "lodash":
-/*!*************************!*\
-  !*** external "lodash" ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-(function() { module.exports = window["lodash"]; }());
 
 /***/ }),
 

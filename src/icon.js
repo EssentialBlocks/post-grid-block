@@ -1,66 +1,117 @@
 export default function () {
 	return (
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 70">
-			<linearGradient
-				id="prefix__a"
-				gradientUnits="userSpaceOnUse"
-				x1={0.952}
-				y1={36.707}
-				x2={70.364}
-				y2={26.707}
-			>
-				<stop offset={0} stopColor="#1a6dff" />
-				<stop offset={1} stopColor="#c822ff" />
-			</linearGradient>
-			<path
-				d="M33.3 22.4H4.7C2.1 22.4 0 24.6 0 27v14.3c0 2.6 2.2 4.6 4.6 4.6H33c2.6 0 4.6-2.2 4.6-4.6V27c.3-2.6-1.9-4.6-4.3-4.6zm1.8 18.9c0 1.2-1 2-2 2H4.7c-1.2 0-2-1-2-2V27c0-1.2 1-2 2-2h28.4c1.2 0 2 1 2 2v14.3z"
-				fill="url(#prefix__a)"
-			/>
-			<linearGradient
-				id="prefix__b"
-				gradientUnits="userSpaceOnUse"
-				x1={-3.791}
-				y1={41.962}
-				x2={71.357}
-				y2={31.136}
-			>
-				<stop offset={0} stopColor="#1a6dff" />
-				<stop offset={1} stopColor="#c822ff" />
-			</linearGradient>
-			<path
-				d="M61.7 22.4H39.8c-2.6 0-4.7 2.2-4.7 4.6v14.3c0 2.6 2.2 4.6 4.6 4.6h21.7c2.6 0 4.6-2.2 4.6-4.6V27c.3-2.6-1.9-4.6-4.3-4.6zm1.8 18.9c0 1.2-1 2-2 2H39.8c-1.2 0-2-1-2-2V27c0-1.2 1-2 2-2h21.7c1.2 0 2 1 2 2v14.3z"
-				fill="url(#prefix__b)"
-			/>
-			<linearGradient
-				id="prefix__c"
-				gradientUnits="userSpaceOnUse"
-				x1={0.989}
-				y1={36.964}
-				x2={70.401}
-				y2={26.964}
-			>
-				<stop offset={0} stopColor="#1a6dff" />
-				<stop offset={1} stopColor="#c822ff" />
-			</linearGradient>
-			<path
-				d="M25.6 35.8H11.8c-.7 0-1.4-.6-1.4-1.4 0-.7.6-1.4 1.4-1.4h13.8c.7 0 1.4.6 1.4 1.4-.1.8-.7 1.4-1.4 1.4z"
-				fill="url(#prefix__c)"
-			/>
-			<linearGradient
-				id="prefix__d"
-				gradientUnits="userSpaceOnUse"
-				x1={-0.903}
-				y1={41.371}
-				x2={68.508}
-				y2={31.371}
-			>
-				<stop offset={0} stopColor="#1a6dff" />
-				<stop offset={1} stopColor="#c822ff" />
-			</linearGradient>
-			<path
-				d="M54.5 35.5H44.3c-.7 0-1.4-.6-1.4-1.4 0-.7.6-1.4 1.4-1.4h10.2c.7 0 1.4.6 1.4 1.4-.1.8-.7 1.4-1.4 1.4z"
-				fill="url(#prefix__d)"
-			/>
-		</svg>
-	);
+	  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90">
+		<linearGradient
+		  id="prefix__a"
+		  gradientUnits="userSpaceOnUse"
+		  x1={1.489}
+		  y1={45.6}
+		  x2={86.128}
+		  y2={45.6}
+		>
+		  <stop offset={0} stopColor="#1a6dff" />
+		  <stop offset={1} stopColor="#c822ff" />
+		</linearGradient>
+		<path
+		  d="M86.8 7.5H3.2C1.4 7.5 0 8.9 0 10.7v69.8c0 1.8 1.4 3.2 3.2 3.2h83.6c1.8 0 3.2-1.4 3.2-3.2V10.9c.2-2-1.5-3.4-3.2-3.4zm.8 73c0 .4-.4.8-.8.8H3.2c-.4 0-.8-.4-.8-.8V10.9c0-.4.4-.8.8-.8h83.6c.4 0 .8.4.8.8v69.6z"
+		  fill="url(#prefix__a)"
+		/>
+		<linearGradient
+		  id="prefix__b"
+		  gradientUnits="userSpaceOnUse"
+		  x1={1.489}
+		  y1={34.726}
+		  x2={86.128}
+		  y2={34.726}
+		>
+		  <stop offset={0} stopColor="#1a6dff" />
+		  <stop offset={1} stopColor="#c822ff" />
+		</linearGradient>
+		<path
+		  d="M28.5 45.1h-15c-1.6 0-2.8-1.3-2.8-2.8v-15c0-1.6 1.3-2.8 2.8-2.8h15c1.6 0 2.8 1.3 2.8 2.8v15c0 1.5-1.3 2.8-2.8 2.8zM13.4 26.7c-.3 0-.5.2-.5.5v15c0 .3.2.5.5.5h15c.3 0 .5-.2.5-.5v-15c0-.3-.2-.5-.5-.5h-15z"
+		  fill="url(#prefix__b)"
+		/>
+		<linearGradient
+		  id="prefix__c"
+		  gradientUnits="userSpaceOnUse"
+		  x1={1.489}
+		  y1={34.726}
+		  x2={86.128}
+		  y2={34.726}
+		>
+		  <stop offset={0} stopColor="#1a6dff" />
+		  <stop offset={1} stopColor="#c822ff" />
+		</linearGradient>
+		<path
+		  d="M52.7 45.1h-15c-1.6 0-2.8-1.3-2.8-2.8v-15c0-1.6 1.3-2.8 2.8-2.8h15c1.6 0 2.8 1.3 2.8 2.8v15c.1 1.5-1.2 2.8-2.8 2.8zm-15-18.4c-.3 0-.5.2-.5.5v15c0 .3.2.5.5.5h15c.3 0 .5-.2.5-.5v-15c0-.3-.2-.5-.5-.5h-15z"
+		  fill="url(#prefix__c)"
+		/>
+		<linearGradient
+		  id="prefix__d"
+		  gradientUnits="userSpaceOnUse"
+		  x1={1.489}
+		  y1={34.726}
+		  x2={86.128}
+		  y2={34.726}
+		>
+		  <stop offset={0} stopColor="#1a6dff" />
+		  <stop offset={1} stopColor="#c822ff" />
+		</linearGradient>
+		<path
+		  d="M77 45.1H62c-1.6 0-2.8-1.3-2.8-2.8v-15c0-1.6 1.3-2.8 2.8-2.8h15c1.6 0 2.8 1.3 2.8 2.8v15c0 1.5-1.3 2.8-2.8 2.8zM61.9 26.7c-.3 0-.5.2-.5.5v15c0 .3.2.5.5.5h15c.3 0 .5-.2.5-.5v-15c0-.3-.2-.5-.5-.5h-15z"
+		  fill="url(#prefix__d)"
+		/>
+		<g>
+		  <linearGradient
+			id="prefix__e"
+			gradientUnits="userSpaceOnUse"
+			x1={1.489}
+			y1={60.774}
+			x2={86.128}
+			y2={60.774}
+		  >
+			<stop offset={0} stopColor="#1a6dff" />
+			<stop offset={1} stopColor="#c822ff" />
+		  </linearGradient>
+		  <path
+			d="M28.5 71.1h-15c-1.6 0-2.8-1.3-2.8-2.8v-15c0-1.6 1.3-2.8 2.8-2.8h15c1.6 0 2.8 1.3 2.8 2.8v15c0 1.6-1.3 2.8-2.8 2.8zM13.4 52.7c-.3 0-.5.2-.5.5v15c0 .3.2.5.5.5h15c.3 0 .5-.2.5-.5v-15c0-.3-.2-.5-.5-.5h-15z"
+			fill="url(#prefix__e)"
+		  />
+		</g>
+		<g>
+		  <linearGradient
+			id="prefix__f"
+			gradientUnits="userSpaceOnUse"
+			x1={1.489}
+			y1={60.774}
+			x2={86.128}
+			y2={60.774}
+		  >
+			<stop offset={0} stopColor="#1a6dff" />
+			<stop offset={1} stopColor="#c822ff" />
+		  </linearGradient>
+		  <path
+			d="M52.7 71.1h-15c-1.6 0-2.8-1.3-2.8-2.8v-15c0-1.6 1.3-2.8 2.8-2.8h15c1.6 0 2.8 1.3 2.8 2.8v15c.1 1.6-1.2 2.8-2.8 2.8zm-15-18.4c-.3 0-.5.2-.5.5v15c0 .3.2.5.5.5h15c.3 0 .5-.2.5-.5v-15c0-.3-.2-.5-.5-.5h-15z"
+			fill="url(#prefix__f)"
+		  />
+		</g>
+		<g>
+		  <linearGradient
+			id="prefix__g"
+			gradientUnits="userSpaceOnUse"
+			x1={1.489}
+			y1={60.774}
+			x2={86.128}
+			y2={60.774}
+		  >
+			<stop offset={0} stopColor="#1a6dff" />
+			<stop offset={1} stopColor="#c822ff" />
+		  </linearGradient>
+		  <path
+			d="M77 71.1H62c-1.6 0-2.8-1.3-2.8-2.8v-15c0-1.6 1.3-2.8 2.8-2.8h15c1.6 0 2.8 1.3 2.8 2.8v15c0 1.6-1.3 2.8-2.8 2.8zM61.9 52.7c-.3 0-.5.2-.5.5v15c0 .3.2.5.5.5h15c.3 0 .5-.2.5-.5v-15c0-.3-.2-.5-.5-.5h-15z"
+			fill="url(#prefix__g)"
+		  />
+		</g>
+	  </svg>
+	)
 }
