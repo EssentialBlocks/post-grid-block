@@ -35,7 +35,10 @@ import {
 	CONTENT_MARGIN,
 	READMORE_MARGIN,
 	READMORE_PADDING,
-	META_MARGIN,
+	HEADER_META_MARGIN,
+	FOOTER_META_MARGIN,
+	HEADER_META_SPACE,
+	FOOTER_META_SPACE,
 	AVATAR_BORDER_RADIUS
 } from "./constants/constants";
 import { 
@@ -69,7 +72,6 @@ export default function Edit(props) {
 		showTitle,
 		titleColor,
 		titleHoverColor,
-		titleColorStyle,
 		titleLength,
 		titleTextAlign,
 		titleTag,
@@ -85,14 +87,22 @@ export default function Edit(props) {
 		readmoreTextAlign,
 		readmoreHoverColor,
 		readmoreBGHoverColor,
-		readmoreColorType,
 		showMeta,
 		headerMeta,
 		footerMeta,
-		metaColor,
-		metaTextAlign,
-		metaHoverColor,
-		metaColorType,
+		headerMetaTextAlign,
+		footerMetaTextAlign,
+		authorMetaColor,
+		authorMetaHoverColor,
+		categoryMetaColor,
+		categoryMetaHoverColor,
+		categoryMetaBgColor,
+		categoryMetaBgHoverColor,
+		tagMetaColor,
+		tagMetaHoverColor,
+		tagMetaBgColor,
+		tagMetaBgHoverColor,
+		dateMetaColor,
 	} = attributes;
 
 	const dateFormat = __experimentalGetSettings().formats.date;
@@ -141,7 +151,7 @@ export default function Edit(props) {
 	} = generateTypographyStyles({
 		attributes,
 		prefixConstant: EBPG_TITLE_TYPOGRAPHY,
-		defaultFontSize: 20,
+		defaultFontSize: 18,
 	});
 
 	const {
@@ -151,7 +161,7 @@ export default function Edit(props) {
 	} = generateTypographyStyles({
 		attributes,
 		prefixConstant: EBPG_CONTENT_TYPOGRAPHY,
-		defaultFontSize: 16,
+		defaultFontSize: 15,
 	});
 
 	const {
@@ -161,7 +171,7 @@ export default function Edit(props) {
 	} = generateTypographyStyles({
 		attributes,
 		prefixConstant: EBPG_READMORE_TYPOGRAPHY,
-		defaultFontSize: 16,
+		defaultFontSize: 13,
 	});
 
 	const {
@@ -171,7 +181,7 @@ export default function Edit(props) {
 	} = generateTypographyStyles({
 		attributes,
 		prefixConstant: EBPG_META_TYPOGRAPHY,
-		defaultFontSize: 14,
+		defaultFontSize: 13,
 	});
 
 	const {
@@ -245,11 +255,21 @@ export default function Edit(props) {
 	});
 
 	const {
-		dimensionStylesDesktop: metaMarginStylesDesktop,
-		dimensionStylesTab: metaMarginStylesTab,
-		dimensionStylesMobile: metaMarginStylesMobile,
+		dimensionStylesDesktop: headerMetaMarginStylesDesktop,
+		dimensionStylesTab: headerMetaMarginStylesTab,
+		dimensionStylesMobile: headerMetaMarginStylesMobile,
 	} = generateDimensionsControlStyles({
-		controlName: META_MARGIN,
+		controlName: HEADER_META_MARGIN,
+		styleFor: "margin",
+		attributes,
+	});
+
+	const {
+		dimensionStylesDesktop: footerMetaMarginStylesDesktop,
+		dimensionStylesTab: footerMetaMarginStylesTab,
+		dimensionStylesMobile: footerMetaMarginStylesMobile,
+	} = generateDimensionsControlStyles({
+		controlName: FOOTER_META_MARGIN,
 		styleFor: "margin",
 		attributes,
 	});
@@ -340,6 +360,26 @@ export default function Edit(props) {
 		attributes,
 	});
 
+	const {
+		rangeStylesDesktop: headerMetaSpaceDesktop,
+		rangeStylesTab: headerMetaSpaceTab,
+		rangeStylesMobile: headerMetaSpaceMobile,
+	} = generateResponsiveRangeStyles({
+		controlName: HEADER_META_SPACE,
+		property: "gap",
+		attributes,
+	});
+
+	const {
+		rangeStylesDesktop: footerMetaSpaceDesktop,
+		rangeStylesTab: footerMetaSpaceTab,
+		rangeStylesMobile: footerMetaSpaceMobile,
+	} = generateResponsiveRangeStyles({
+		controlName: FOOTER_META_SPACE,
+		property: "gap",
+		attributes,
+	});
+
 	//Generate Background
 	const {
 		backgroundStylesDesktop: wrapperBackgroundStylesDesktop,
@@ -426,6 +466,7 @@ export default function Edit(props) {
 		}
 		.eb-post-grid-wrapper.${blockId} .ebpg-post-grid-column:hover {
 			${columnHoverBackgroundStylesDesktop}
+			${columnBDShadowHoverDesktop}
 		}
 	`;
 
@@ -434,10 +475,10 @@ export default function Edit(props) {
 			${columnPaddingStylesTab}
 			${columnBDShadowTab}
 			${columnBackgroundStylesTab}
-			${columnBgTransitionStyle}
 		}
 		.eb-post-grid-wrapper.${blockId} .ebpg-post-grid-column:hover {
 			${columnHoverBackgroundStylesTab}
+			${columnBDShadowHoverTab}
 		}
 	`;
 
@@ -446,10 +487,10 @@ export default function Edit(props) {
 			${columnPaddingStylesMobile}
 			${columnBDShadowMobile}
 			${columnBackgroundStylesMobile}
-			${columnBgTransitionStyle}
 		}
 		.eb-post-grid-wrapper.${blockId} .ebpg-post-grid-column:hover {
 			${columnHoverBackgroundStylesMobile}
+			${columnBDShadowHoverMobile}
 		}
 	`;
 
@@ -458,6 +499,22 @@ export default function Edit(props) {
 			${thumbnailImageHeightDesktop};
 			${thumbnailBdrSdwStylesDesktop}
 			${thumbnailMarginStylesDesktop}
+		}
+	`;
+
+	const thumbnailStyleTab = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-entry-thumbnail img {
+			${thumbnailImageHeightTab};
+			${thumbnailBdrSdwStylesTab}
+			${thumbnailMarginStylesTab}
+		}
+	`;
+
+	const thumbnailStyleMobile = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-entry-thumbnail img {
+			${thumbnailImageHeightMobile};
+			${thumbnailBdrSdwStylesMobile}
+			${thumbnailMarginStylesMobile}
 		}
 	`;
 
@@ -475,13 +532,40 @@ export default function Edit(props) {
 		}
 	`;
 
+	const titleStyleTab = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-entry-title {
+			${titleTypoStylesTab}
+			${titleMarginStylesTab}
+		}
+	`;
+
+	const titleStyleMobile = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-entry-title {
+			${titleTypoStylesMobile}
+			${titleMarginStylesMobile}
+		}
+	`;
+
 	const contentStyleDesktop = `
 		.eb-post-grid-wrapper.${blockId} .ebpg-grid-post-excerpt {
 			color: ${contentColor};
 			text-align: ${contentTextAlign};
 			${contentTypoStylesDesktop}
 			${contentMarginStylesDesktop}
+		}
+	`;
 
+	const contentStyleTab = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-grid-post-excerpt {
+			${contentTypoStylesTab}
+			${contentMarginStylesTab}
+		}
+	`;
+
+	const contentStyleMobile = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-grid-post-excerpt {
+			${contentTypoStylesMobile}
+			${contentMarginStylesMobile}
 		}
 	`;
 
@@ -490,6 +574,7 @@ export default function Edit(props) {
 			text-align: ${readmoreTextAlign};
 			${readmoreTypoStylesDesktop}
 			${readmoreMarginStylesDesktop}
+			${readmorePaddingStylesDesktop}
 		}
 		.eb-post-grid-wrapper.${blockId} .ebpg-readmore-btn a {
 			color: ${readmoreColor};
@@ -501,33 +586,176 @@ export default function Edit(props) {
 		}
 	`;
 
-	const avatarStyleDesktop = `
-		.eb-post-grid-wrapper.${blockId} .ebpg-entry-title {
+	const readmoreStyleTab = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-readmore-btn {
+			${readmoreTypoStylesTab}
+			${readmoreMarginStylesTab}
+			${readmorePaddingStylesTab}
+		}
+	`;
 
+	const readmoreStyleMobile = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-readmore-btn {
+			${readmoreTypoStylesMobile}
+			${readmoreMarginStylesMobile}
+			${readmorePaddingStylesMobile}
+		}
+	`;
+
+	const avatarStyleDesktop = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-author-avatar img {
+			${avatarBdrSdwStylesDesktop}
+		}
+	`;
+
+	const avatarStyleTab = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-author-avatar img {
+			${avatarBdrSdwStylesTab}
+		}
+	`;
+
+	const avatarStyleMobile = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-author-avatar img {
+			${avatarBdrSdwStylesMobile}
 		}
 	`;
 
 	const dateStyleDesktop = `
-		.eb-post-grid-wrapper.${blockId} .ebpg-entry-title {
+		.eb-post-grid-wrapper.${blockId} .ebpg-posted-on {
+			color: ${dateMetaColor};
+			${metaTypoStylesDesktop}
+		}
+	`;
 
+	const dateStyleTab = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-posted-on {
+			${metaTypoStylesTab}
+		}
+	`;
+
+	const dateStyleMobile = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-posted-on {
+			${metaTypoStylesMobile}
 		}
 	`;
 
 	const authorStyleDesktop = `
-		.eb-post-grid-wrapper.${blockId} .ebpg-entry-title {
+		.eb-post-grid-wrapper.${blockId} .ebpg-posted-by {
+			color: ${authorMetaColor};
+			${metaTypoStylesDesktop}
+		}
+		.eb-post-grid-wrapper.${blockId} .ebpg-posted-by:hover {
+			color: ${authorMetaHoverColor};
+		}
+	`;
 
+	const authorStyleTab = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-posted-by {
+			${metaTypoStylesTab}
+		}
+	`;
+
+	const authorStyleMobile = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-posted-by {
+			${metaTypoStylesMobile}
 		}
 	`;
 
 	const categoriesStyleDesktop = `
-		.eb-post-grid-wrapper.${blockId} .ebpg-entry-title {
+		.eb-post-grid-wrapper.${blockId} .ebpg-categories-meta a {
+			color: ${categoryMetaColor};
+			background-color: ${categoryMetaBgColor};
+			${metaTypoStylesDesktop}
+		}
+		.eb-post-grid-wrapper.${blockId} .ebpg-categories-meta a:hover {
+			color: ${categoryMetaHoverColor};
+			background-color: ${categoryMetaBgHoverColor};
+		}
+	`;
 
+	const categoriesStyleTab = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-categories-meta a {
+			${metaTypoStylesTab}
+		}
+	`;
+
+	const categoriesStyleMobile = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-categories-meta a {
+			${metaTypoStylesMobile}
 		}
 	`;
 
 	const tagsStyleDesktop = `
-		.eb-post-grid-wrapper.${blockId} .ebpg-entry-title {
+		.eb-post-grid-wrapper.${blockId} .ebpg-tags-meta a {
+			color: ${tagMetaColor};
+			background-color: ${tagMetaBgColor};
+			${metaTypoStylesDesktop}
+		}
+		.eb-post-grid-wrapper.${blockId} .ebpg-tags-meta a:hover {
+			color: ${tagMetaHoverColor};
+			background-color: ${tagMetaBgHoverColor};
+		}
+	`;
 
+	const tagsStyleTab = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-tags-meta a {
+			${metaTypoStylesTab}
+		}
+	`;
+
+	const tagsStyleMobile = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-tags-meta a {
+			${metaTypoStylesMobile}
+		}
+	`;
+
+	const headerMetaDesktop = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-header-meta {
+			justify-content: ${headerMetaTextAlign};
+			${headerMetaMarginStylesDesktop}
+			${headerMetaSpaceDesktop}
+		}
+		.eb-post-grid-wrapper.${blockId} .ebpg-header-meta .ebpg-entry-meta-items {
+			justify-content: ${headerMetaTextAlign};
+		}
+	`;
+
+	const headerMetaTab = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-header-meta {
+			${headerMetaMarginStylesTab}
+			${headerMetaSpaceTab}
+		}
+	`;
+
+	const headerMetaMobile = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-header-meta {
+			${headerMetaMarginStylesMobile}
+			${headerMetaSpaceMobile}
+		}
+	`;
+
+	const footerMetaDesktop = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-footer-meta {
+			justify-content: ${footerMetaTextAlign};
+			${footerMetaMarginStylesDesktop}
+			${footerMetaSpaceDesktop}
+		}
+		.eb-post-grid-wrapper.${blockId} .ebpg-footer-meta .ebpg-entry-meta-items {
+			justify-content: ${footerMetaTextAlign};
+		}
+	`;
+
+	const footerMetaTab = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-footer-meta {
+			${footerMetaMarginStylesTab}
+			${footerMetaSpaceTab}
+		}
+	`;
+
+	const footerMetaMobile = `
+		.eb-post-grid-wrapper.${blockId} .ebpg-footer-meta {
+			${footerMetaMarginStylesMobile}
+			${footerMetaSpaceMobile}
 		}
 	`;
 
@@ -544,16 +772,42 @@ export default function Edit(props) {
 		${isCssExists(authorStyleDesktop) ? authorStyleDesktop : " "}
 		${isCssExists(categoriesStyleDesktop) ? categoriesStyleDesktop : " "}
 		${isCssExists(tagsStyleDesktop) ? tagsStyleDesktop : " "}
+		${isCssExists(headerMetaDesktop) ? headerMetaDesktop : " "}
+		${isCssExists(footerMetaDesktop) ? footerMetaDesktop : " "}
 	`);
 
 	// all css styles for Tab in strings ⬇
 	const tabAllStyles = softMinifyCssStrings(`
 		${isCssExists(wrapperStylesTab) ? wrapperStylesTab : " "}
+		${isCssExists(gridColumnStylesTab) ? gridColumnStylesTab : " "}
+		${isCssExists(thumbnailStyleTab) ? thumbnailStyleTab : " "}
+		${isCssExists(titleStyleTab) ? titleStyleTab : " "}
+		${isCssExists(contentStyleTab) ? contentStyleTab : " "}
+		${isCssExists(readmoreStyleTab) ? readmoreStyleTab : " "}
+		${isCssExists(avatarStyleTab) ? avatarStyleTab : " "}
+		${isCssExists(dateStyleTab) ? dateStyleTab : " "}
+		${isCssExists(authorStyleTab) ? authorStyleTab : " "}
+		${isCssExists(categoriesStyleTab) ? categoriesStyleTab : " "}
+		${isCssExists(tagsStyleTab) ? tagsStyleTab : " "}
+		${isCssExists(headerMetaTab) ? headerMetaTab : " "}
+		${isCssExists(footerMetaTab) ? footerMetaTab : " "}
 	`);
 
 	// all css styles for Mobile in strings ⬇
 	const mobileAllStyles = softMinifyCssStrings(`
 		${isCssExists(wrapperStylesMobile) ? wrapperStylesMobile : " "}
+		${isCssExists(gridColumnStylesMobile) ? gridColumnStylesMobile : " "}
+		${isCssExists(thumbnailStyleMobile) ? thumbnailStyleMobile : " "}
+		${isCssExists(titleStyleMobile) ? titleStyleMobile : " "}
+		${isCssExists(contentStyleMobile) ? contentStyleMobile : " "}
+		${isCssExists(readmoreStyleMobile) ? readmoreStyleMobile : " "}
+		${isCssExists(avatarStyleMobile) ? avatarStyleMobile : " "}
+		${isCssExists(dateStyleMobile) ? dateStyleMobile : " "}
+		${isCssExists(authorStyleMobile) ? authorStyleMobile : " "}
+		${isCssExists(categoriesStyleMobile) ? categoriesStyleMobile : " "}
+		${isCssExists(tagsStyleMobile) ? tagsStyleMobile : " "}
+		${isCssExists(headerMetaMobile) ? headerMetaMobile : " "}
+		${isCssExists(footerMetaMobile) ? footerMetaMobile : " "}
 	`);
 
 	// Set All Style in "blockMeta" Attribute
@@ -664,28 +918,79 @@ export default function Edit(props) {
 							</a>
 						</span>
 					;
-					const metaObject = {avatar, date, author}
+
+					const postTerms = {};
+					const terms = post._embedded['wp:term'] 
+					&& post._embedded['wp:term'].length > 0 
+					&& post._embedded['wp:term'].map(item => {
+						let termObj = {};
+						let termName = "";
+						item.length > 0 && item.map(term => {
+							termName = term.taxonomy
+							termObj[term.slug] = {
+								name: term.name,
+								id: term.id,
+								link: term.link,
+								slug: term.slug,
+							}
+						})
+						postTerms[termName] = termObj
+					})
+
+					const categories = postTerms.category ? (
+						<div class="ebpg-categories-meta">
+							{Object.keys(postTerms.category).map(item => (
+								<a 
+									href={postTerms.category[item].link} 
+									title={postTerms.category[item].name}
+								>
+									{postTerms.category[item].name}
+								</a>
+							))}
+						</div>
+					) : "";
+
+					const tags = postTerms.post_tag ? (
+						<div class="ebpg-tags-meta">
+							{Object.keys(postTerms.post_tag).map(item => (
+								<a 
+									href={postTerms.post_tag[item].link} 
+									title={postTerms.post_tag[item].name}
+								>
+									{postTerms.post_tag[item].name}
+								</a>
+							))}
+						</div>
+					) : "";
+						
+					const metaObject = { date, author, categories, tags}
 
 					const headerMetaItems = JSON.parse(headerMeta).map(item => item.value);
 					const headerMetaHtml = showMeta ? (
-						<>
-							<div class="ebpg-entry-meta">
+						<div class="ebpg-entry-meta ebpg-header-meta">
+							{headerMetaItems.includes('avatar') && (
+								avatar
+							)}
+							<div class="ebpg-entry-meta-items">
 								{headerMetaItems.map(item=>{
 									return metaObject[item]
 								})}
 							</div>
-						</>
+						</div>
 					) : "";
 
 					const footerMetaItems = JSON.parse(footerMeta).map(item => item.value);
 					const footerMetaHtml = showMeta ? (
-						<>
-							<div class="ebpg-entry-meta">
+						<div class="ebpg-entry-meta ebpg-footer-meta">
+							{footerMetaItems.includes('avatar') && (
+								avatar
+							)}
+							<div class="ebpg-entry-meta-items">
 								{footerMetaItems.map(item=>{
 									return metaObject[item]
 								})}
 							</div>
-						</>
+						</div>
 					) : "";
 					
 					return (
@@ -698,6 +1003,12 @@ export default function Edit(props) {
 												<img
 													src={post._embedded['wp:featuredmedia'][0].source_url}
 													alt={post.title.alt_text}
+												/>
+											)}
+											{!post._embedded['wp:featuredmedia'] && (
+												<img
+													src="https://via.placeholder.com/250x250.png"
+													alt="No Thumbnail Available"
 												/>
 											)}
 										</div>
@@ -723,9 +1034,11 @@ export default function Edit(props) {
 											<div class="ebpg-grid-post-excerpt">
 												<p>{ excerptWithLimitWords }{__( expansionIndicator )}</p>
 											</div>
-											<div class="ebpg-readmore-btn">
-												<a href={post.link}>{ __( readmoreText ) }</a>
-											</div>
+											{showReadMore && (
+												<div class="ebpg-readmore-btn">
+													<a href={post.link}>{ __( readmoreText ) }</a>
+												</div>
+											)}
 										</div>
 									)}
 									
@@ -739,7 +1052,7 @@ export default function Edit(props) {
 						</article>
 					)
 				})}
-				{!isSelected && queryResults.length < 1 && (
+				{ queryResults.length < 1 && (
 					<p>No Posts Found</p>
 				)}
 			</div>

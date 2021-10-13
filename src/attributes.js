@@ -15,7 +15,10 @@ import {
 	CONTENT_MARGIN,
 	READMORE_MARGIN,
 	READMORE_PADDING,
-	META_MARGIN,
+	HEADER_META_MARGIN,
+	FOOTER_META_MARGIN,
+	HEADER_META_SPACE,
+	FOOTER_META_SPACE,
 	AVATAR_BORDER_RADIUS
 } from "./constants/constants";
 import {
@@ -109,7 +112,7 @@ const attributes = {
 	},
 	showReadMore: {
 		type: "boolean",
-		default: true
+		default: false
 	},
 	readmoreText: {
 		type: "string",
@@ -117,7 +120,7 @@ const attributes = {
 	},
 	readmoreColor: {
 		type: "string",
-		default: "#333333"
+		default: "#3d8fd4"
 	},
 	readmoreBGColor: {
 		type: "string",
@@ -145,27 +148,67 @@ const attributes = {
 	},
 	headerMeta: {
 		type: "string",
-		default: '[{"value":"date","label":"Published Date"}]'
+		default: '[{"value":"categories","label":"Categories"}]'
 	},
 	footerMeta: {
 		type: "string",
-		default: '[{"value":"avatar","label":"Author Avatar"},{"value":"author","label":"Author Name"}]'
+		default: '[{"value":"avatar","label":"Author Avatar"},{"value":"author","label":"Author Name"},{"value":"date","label":"Published Date"}]'
 	},
-	metaColor: {
-		type: "string",
-		default: "#333333"
-	},
-	metaTextAlign: {
+	headerMetaTextAlign: {
 		type: "string",
 		default: "left"
 	},
-	metaHoverColor: {
+	footerMetaTextAlign: {
 		type: "string",
-		default: "#333333"
+		default: "left"
+	},
+	authorMetaColor: {
+		type: "string",
+		default: "#3d8fd4"
+	},
+	authorMetaHoverColor: {
+		type: "string",
+		default: "#549edc"
 	},
 	metaColorType: {
 		type: "string",
 		default: "normal"
+	},
+	categoryMetaColor: {
+		type: "string",
+		default: "#ffffff"
+	},
+	categoryMetaHoverColor: {
+		type: "string",
+		default: "#ffffff"
+	},
+	categoryMetaBgColor: {
+		type: "string",
+		default: "#d18df1"
+	},
+	categoryMetaBgHoverColor: {
+		type: "string",
+		default: "#ac61d0"
+	},
+	tagMetaColor: {
+		type: "string",
+		default: "#ffffff"
+	},
+	tagMetaHoverColor: {
+		type: "string",
+		default: "#ffffff"
+	},
+	tagMetaBgColor: {
+		type: "string",
+		default: "#3f6ddc"
+	},
+	tagMetaBgHoverColor: {
+		type: "string",
+		default: "#2d59c3"
+	},
+	dateMetaColor: {
+		type: "string",
+		default: "#9e9e9e"
 	},
 
 	// typography attributes ⬇
@@ -177,42 +220,49 @@ const attributes = {
 	...generateDimensionsAttributes(COLUMN_PADDING),
 	...generateDimensionsAttributes(TITLE_MARGIN, {
 		top: 0,
-		bottom: 15,
+		bottom: 10,
 		right: 0,
 		left: 0,
 		isLinked: false,
 	}),
 	...generateDimensionsAttributes(CONTENT_MARGIN, {
 		top: 0,
-		bottom: 15,
+		bottom: 10,
 		right: 0,
 		left: 0,
 		isLinked: false,
 	}),
 	...generateDimensionsAttributes(READMORE_MARGIN, {
 		top: 0,
-		bottom: 15,
+		bottom: 10,
 		right: 0,
 		left: 0,
 		isLinked: false,
 	}),
 	...generateDimensionsAttributes(READMORE_PADDING, {
-		top: 10,
-		bottom: 10,
-		right: 15,
-		left: 15,
+		top: 0,
+		bottom: 0,
+		right: 0,
+		left: 0,
 		isLinked: false,
 	}),
-	...generateDimensionsAttributes(META_MARGIN, {
+	...generateDimensionsAttributes(HEADER_META_MARGIN, {
 		top: 0,
-		bottom: 15,
+		bottom: 10,
+		right: 0,
+		left: 0,
+		isLinked: false,
+	}),
+	...generateDimensionsAttributes(FOOTER_META_MARGIN, {
+		top: 0,
+		bottom: 10,
 		right: 0,
 		left: 0,
 		isLinked: false,
 	}),
 	...generateDimensionsAttributes(THUMBNAIL_MARGIN, {
 		top: 0,
-		bottom: 15,
+		bottom: 10,
 		right: 0,
 		left: 0,
 		isLinked: false,
@@ -233,7 +283,7 @@ const attributes = {
 	}),
 	// border shadow attributes ⬇
 	...generateBorderShadowAttributes(COLUMN_BORDER_SHADOW,{
-		noShadow: true,
+		// noShadow: true,
 		// noBorder: true,
 	}),
 
@@ -248,7 +298,15 @@ const attributes = {
 	...generateResponsiveRangeAttributes(COLUMN_GAP, {
 		defaultRange: 10,
 	}),
-	...generateResponsiveRangeAttributes(THUMBNAIL_IMAGE_SIZE),
+	...generateResponsiveRangeAttributes(HEADER_META_SPACE, {
+		defaultRange: 10,
+	}),
+	...generateResponsiveRangeAttributes(FOOTER_META_SPACE, {
+		defaultRange: 10,
+	}),
+	...generateResponsiveRangeAttributes(THUMBNAIL_IMAGE_SIZE, {
+		defaultRange: 250
+	}),
 };
 
 export default attributes;

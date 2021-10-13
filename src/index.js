@@ -3,7 +3,6 @@ const { __ } = wp.i18n;
 
 import "./style.scss";
 import Edit from "./edit";
-import save from "./save";
 import icon from "./icon";
 import attributes from "./attributes";
 import Example from "./example";
@@ -19,6 +18,6 @@ registerBlockType("post-grid-block/post-grid", {
 	attributes,
 	category: "widgets",
 	edit: Edit,
-	save,
+	save: () => null,
 	example: Example,
 });

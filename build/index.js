@@ -7854,7 +7854,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({
+var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({
   resOption: {
     type: "string",
     "default": "desktop"
@@ -7933,7 +7933,7 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
   },
   showReadMore: {
     type: "boolean",
-    "default": true
+    "default": false
   },
   readmoreText: {
     type: "string",
@@ -7941,7 +7941,7 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
   },
   readmoreColor: {
     type: "string",
-    "default": "#333333"
+    "default": "#3d8fd4"
   },
   readmoreBGColor: {
     type: "string",
@@ -7969,61 +7969,107 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
   },
   headerMeta: {
     type: "string",
-    "default": '[{"value":"date","label":"Published Date"}]'
+    "default": '[{"value":"categories","label":"Categories"}]'
   },
   footerMeta: {
     type: "string",
-    "default": '[{"value":"avatar","label":"Author Avatar"},{"value":"author","label":"Author Name"}]'
+    "default": '[{"value":"avatar","label":"Author Avatar"},{"value":"author","label":"Author Name"},{"value":"date","label":"Published Date"}]'
   },
-  metaColor: {
-    type: "string",
-    "default": "#333333"
-  },
-  metaTextAlign: {
+  headerMetaTextAlign: {
     type: "string",
     "default": "left"
   },
-  metaHoverColor: {
+  footerMetaTextAlign: {
     type: "string",
-    "default": "#333333"
+    "default": "left"
+  },
+  authorMetaColor: {
+    type: "string",
+    "default": "#3d8fd4"
+  },
+  authorMetaHoverColor: {
+    type: "string",
+    "default": "#549edc"
   },
   metaColorType: {
     type: "string",
     "default": "normal"
+  },
+  categoryMetaColor: {
+    type: "string",
+    "default": "#ffffff"
+  },
+  categoryMetaHoverColor: {
+    type: "string",
+    "default": "#ffffff"
+  },
+  categoryMetaBgColor: {
+    type: "string",
+    "default": "#d18df1"
+  },
+  categoryMetaBgHoverColor: {
+    type: "string",
+    "default": "#ac61d0"
+  },
+  tagMetaColor: {
+    type: "string",
+    "default": "#ffffff"
+  },
+  tagMetaHoverColor: {
+    type: "string",
+    "default": "#ffffff"
+  },
+  tagMetaBgColor: {
+    type: "string",
+    "default": "#3f6ddc"
+  },
+  tagMetaBgHoverColor: {
+    type: "string",
+    "default": "#2d59c3"
+  },
+  dateMetaColor: {
+    type: "string",
+    "default": "#9e9e9e"
   }
 }, Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateTypographyAttributes"])(Object.values(_constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_2__))), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["WRAPPER_MARGIN"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["WRAPPER_PADDING"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["COLUMN_PADDING"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["TITLE_MARGIN"], {
   top: 0,
-  bottom: 15,
+  bottom: 10,
   right: 0,
   left: 0,
   isLinked: false
 })), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["CONTENT_MARGIN"], {
   top: 0,
-  bottom: 15,
+  bottom: 10,
   right: 0,
   left: 0,
   isLinked: false
 })), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["READMORE_MARGIN"], {
   top: 0,
-  bottom: 15,
+  bottom: 10,
   right: 0,
   left: 0,
   isLinked: false
 })), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["READMORE_PADDING"], {
-  top: 10,
-  bottom: 10,
-  right: 15,
-  left: 15,
-  isLinked: false
-})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["META_MARGIN"], {
   top: 0,
-  bottom: 15,
+  bottom: 0,
+  right: 0,
+  left: 0,
+  isLinked: false
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["HEADER_META_MARGIN"], {
+  top: 0,
+  bottom: 10,
+  right: 0,
+  left: 0,
+  isLinked: false
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["FOOTER_META_MARGIN"], {
+  top: 0,
+  bottom: 10,
   right: 0,
   left: 0,
   isLinked: false
 })), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateDimensionsAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["THUMBNAIL_MARGIN"], {
   top: 0,
-  bottom: 15,
+  bottom: 10,
   right: 0,
   left: 0,
   isLinked: false
@@ -8036,14 +8082,19 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
 })), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBorderShadowAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["WRAPPER_BORDER_SHADOW"], {
   noShadow: true // noBorder: true,
 
-})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBorderShadowAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["COLUMN_BORDER_SHADOW"], {
-  noShadow: true // noBorder: true,
-
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBorderShadowAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["COLUMN_BORDER_SHADOW"], {// noShadow: true,
+  // noBorder: true,
 })), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBackgroundAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["WRAPPER_BG"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateBackgroundAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["COLUMN_BG"])), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["COLUMNS"], {
   defaultRange: 3
 })), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["COLUMN_GAP"], {
   defaultRange: 10
-})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["THUMBNAIL_IMAGE_SIZE"]));
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["HEADER_META_SPACE"], {
+  defaultRange: 10
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["FOOTER_META_SPACE"], {
+  defaultRange: 10
+})), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__["generateResponsiveRangeAttributes"])(_constants_constants__WEBPACK_IMPORTED_MODULE_0__["THUMBNAIL_IMAGE_SIZE"], {
+  defaultRange: 250
+}));
 
 /* harmony default export */ __webpack_exports__["default"] = (attributes);
 
@@ -8053,7 +8104,7 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
 /*!************************************!*\
   !*** ./src/constants/constants.js ***!
   \************************************/
-/*! exports provided: WRAPPER_MARGIN, WRAPPER_PADDING, WRAPPER_BORDER_SHADOW, WRAPPER_BG, COLUMNS, COLUMN_GAP, COLUMN_PADDING, COLUMN_BG, COLUMN_BORDER_SHADOW, THUMBNAIL_IMAGE_SIZE, THUMBNAIL_BORDER_RADIUS, THUMBNAIL_MARGIN, TITLE_MARGIN, CONTENT_MARGIN, READMORE_MARGIN, READMORE_PADDING, META_MARGIN, AVATAR_BORDER_RADIUS, UNIT_TYPES, HEIGHT_UNIT_TYPES, NORMAL_HOVER, META_POSITION, TITLE_TAGS, PRESETS, TEXT_ALIGN, CONTENT_POSITION */
+/*! exports provided: WRAPPER_MARGIN, WRAPPER_PADDING, WRAPPER_BORDER_SHADOW, WRAPPER_BG, COLUMNS, COLUMN_GAP, COLUMN_PADDING, COLUMN_BG, COLUMN_BORDER_SHADOW, THUMBNAIL_IMAGE_SIZE, THUMBNAIL_BORDER_RADIUS, THUMBNAIL_MARGIN, TITLE_MARGIN, CONTENT_MARGIN, READMORE_MARGIN, READMORE_PADDING, HEADER_META_MARGIN, FOOTER_META_MARGIN, HEADER_META_SPACE, FOOTER_META_SPACE, AVATAR_BORDER_RADIUS, UNIT_TYPES, HEIGHT_UNIT_TYPES, NORMAL_HOVER, META_POSITION, TITLE_TAGS, PRESETS, TEXT_ALIGN, CONTENT_POSITION */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8074,7 +8125,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CONTENT_MARGIN", function() { return CONTENT_MARGIN; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "READMORE_MARGIN", function() { return READMORE_MARGIN; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "READMORE_PADDING", function() { return READMORE_PADDING; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "META_MARGIN", function() { return META_MARGIN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HEADER_META_MARGIN", function() { return HEADER_META_MARGIN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FOOTER_META_MARGIN", function() { return FOOTER_META_MARGIN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HEADER_META_SPACE", function() { return HEADER_META_SPACE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FOOTER_META_SPACE", function() { return FOOTER_META_SPACE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AVATAR_BORDER_RADIUS", function() { return AVATAR_BORDER_RADIUS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UNIT_TYPES", function() { return UNIT_TYPES; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HEIGHT_UNIT_TYPES", function() { return HEIGHT_UNIT_TYPES; });
@@ -8103,7 +8157,10 @@ var TITLE_MARGIN = "titleMargin";
 var CONTENT_MARGIN = "contentMargin";
 var READMORE_MARGIN = "readmoreMargin";
 var READMORE_PADDING = "readmorePadding";
-var META_MARGIN = "metaMargin";
+var HEADER_META_MARGIN = "headerMetaMargin";
+var FOOTER_META_MARGIN = "footerMetaMargin";
+var HEADER_META_SPACE = "headerMetaSpace";
+var FOOTER_META_SPACE = "footerMetaSpace";
 var AVATAR_BORDER_RADIUS = "avatarBDR";
 var UNIT_TYPES = [{
   label: "px",
@@ -8296,7 +8353,6 @@ function Edit(props) {
       showTitle = attributes.showTitle,
       titleColor = attributes.titleColor,
       titleHoverColor = attributes.titleHoverColor,
-      titleColorStyle = attributes.titleColorStyle,
       titleLength = attributes.titleLength,
       titleTextAlign = attributes.titleTextAlign,
       titleTag = attributes.titleTag,
@@ -8312,14 +8368,22 @@ function Edit(props) {
       readmoreTextAlign = attributes.readmoreTextAlign,
       readmoreHoverColor = attributes.readmoreHoverColor,
       readmoreBGHoverColor = attributes.readmoreBGHoverColor,
-      readmoreColorType = attributes.readmoreColorType,
       showMeta = attributes.showMeta,
       headerMeta = attributes.headerMeta,
       footerMeta = attributes.footerMeta,
-      metaColor = attributes.metaColor,
-      metaTextAlign = attributes.metaTextAlign,
-      metaHoverColor = attributes.metaHoverColor,
-      metaColorType = attributes.metaColorType;
+      headerMetaTextAlign = attributes.headerMetaTextAlign,
+      footerMetaTextAlign = attributes.footerMetaTextAlign,
+      authorMetaColor = attributes.authorMetaColor,
+      authorMetaHoverColor = attributes.authorMetaHoverColor,
+      categoryMetaColor = attributes.categoryMetaColor,
+      categoryMetaHoverColor = attributes.categoryMetaHoverColor,
+      categoryMetaBgColor = attributes.categoryMetaBgColor,
+      categoryMetaBgHoverColor = attributes.categoryMetaBgHoverColor,
+      tagMetaColor = attributes.tagMetaColor,
+      tagMetaHoverColor = attributes.tagMetaHoverColor,
+      tagMetaBgColor = attributes.tagMetaBgColor,
+      tagMetaBgHoverColor = attributes.tagMetaBgHoverColor,
+      dateMetaColor = attributes.dateMetaColor;
 
   var dateFormat = __experimentalGetSettings().formats.date; // this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class
 
@@ -8356,7 +8420,7 @@ function Edit(props) {
   var _generateTypographySt = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateTypographyStyles"])({
     attributes: attributes,
     prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_3__["EBPG_TITLE_TYPOGRAPHY"],
-    defaultFontSize: 20
+    defaultFontSize: 18
   }),
       titleTypoStylesDesktop = _generateTypographySt.typoStylesDesktop,
       titleTypoStylesTab = _generateTypographySt.typoStylesTab,
@@ -8365,7 +8429,7 @@ function Edit(props) {
   var _generateTypographySt2 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateTypographyStyles"])({
     attributes: attributes,
     prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_3__["EBPG_CONTENT_TYPOGRAPHY"],
-    defaultFontSize: 16
+    defaultFontSize: 15
   }),
       contentTypoStylesDesktop = _generateTypographySt2.typoStylesDesktop,
       contentTypoStylesTab = _generateTypographySt2.typoStylesTab,
@@ -8374,7 +8438,7 @@ function Edit(props) {
   var _generateTypographySt3 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateTypographyStyles"])({
     attributes: attributes,
     prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_3__["EBPG_READMORE_TYPOGRAPHY"],
-    defaultFontSize: 16
+    defaultFontSize: 13
   }),
       readmoreTypoStylesDesktop = _generateTypographySt3.typoStylesDesktop,
       readmoreTypoStylesTab = _generateTypographySt3.typoStylesTab,
@@ -8383,7 +8447,7 @@ function Edit(props) {
   var _generateTypographySt4 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateTypographyStyles"])({
     attributes: attributes,
     prefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_3__["EBPG_META_TYPOGRAPHY"],
-    defaultFontSize: 14
+    defaultFontSize: 13
   }),
       metaTypoStylesDesktop = _generateTypographySt4.typoStylesDesktop,
       metaTypoStylesTab = _generateTypographySt4.typoStylesTab,
@@ -8453,40 +8517,49 @@ function Edit(props) {
       readmorePaddingStylesMobile = _generateDimensionsCo7.dimensionStylesMobile;
 
   var _generateDimensionsCo8 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
-    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["META_MARGIN"],
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["HEADER_META_MARGIN"],
     styleFor: "margin",
     attributes: attributes
   }),
-      metaMarginStylesDesktop = _generateDimensionsCo8.dimensionStylesDesktop,
-      metaMarginStylesTab = _generateDimensionsCo8.dimensionStylesTab,
-      metaMarginStylesMobile = _generateDimensionsCo8.dimensionStylesMobile;
+      headerMetaMarginStylesDesktop = _generateDimensionsCo8.dimensionStylesDesktop,
+      headerMetaMarginStylesTab = _generateDimensionsCo8.dimensionStylesTab,
+      headerMetaMarginStylesMobile = _generateDimensionsCo8.dimensionStylesMobile;
 
   var _generateDimensionsCo9 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["FOOTER_META_MARGIN"],
+    styleFor: "margin",
+    attributes: attributes
+  }),
+      footerMetaMarginStylesDesktop = _generateDimensionsCo9.dimensionStylesDesktop,
+      footerMetaMarginStylesTab = _generateDimensionsCo9.dimensionStylesTab,
+      footerMetaMarginStylesMobile = _generateDimensionsCo9.dimensionStylesMobile;
+
+  var _generateDimensionsCo10 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
     controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["THUMBNAIL_MARGIN"],
     styleFor: "margin",
     attributes: attributes
   }),
-      thumbnailMarginStylesDesktop = _generateDimensionsCo9.dimensionStylesDesktop,
-      thumbnailMarginStylesTab = _generateDimensionsCo9.dimensionStylesTab,
-      thumbnailMarginStylesMobile = _generateDimensionsCo9.dimensionStylesMobile;
+      thumbnailMarginStylesDesktop = _generateDimensionsCo10.dimensionStylesDesktop,
+      thumbnailMarginStylesTab = _generateDimensionsCo10.dimensionStylesTab,
+      thumbnailMarginStylesMobile = _generateDimensionsCo10.dimensionStylesMobile;
 
-  var _generateDimensionsCo10 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
+  var _generateDimensionsCo11 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
     controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["THUMBNAIL_BORDER_RADIUS"],
     styleFor: "border-radius",
     attributes: attributes
   }),
-      thumbnailBdrSdwStylesDesktop = _generateDimensionsCo10.dimensionStylesDesktop,
-      thumbnailBdrSdwStylesTab = _generateDimensionsCo10.dimensionStylesTab,
-      thumbnailBdrSdwStylesMobile = _generateDimensionsCo10.dimensionStylesMobile;
+      thumbnailBdrSdwStylesDesktop = _generateDimensionsCo11.dimensionStylesDesktop,
+      thumbnailBdrSdwStylesTab = _generateDimensionsCo11.dimensionStylesTab,
+      thumbnailBdrSdwStylesMobile = _generateDimensionsCo11.dimensionStylesMobile;
 
-  var _generateDimensionsCo11 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
+  var _generateDimensionsCo12 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateDimensionsControlStyles"])({
     controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["AVATAR_BORDER_RADIUS"],
     styleFor: "border-radius",
     attributes: attributes
   }),
-      avatarBdrSdwStylesDesktop = _generateDimensionsCo11.dimensionStylesDesktop,
-      avatarBdrSdwStylesTab = _generateDimensionsCo11.dimensionStylesTab,
-      avatarBdrSdwStylesMobile = _generateDimensionsCo11.dimensionStylesMobile;
+      avatarBdrSdwStylesDesktop = _generateDimensionsCo12.dimensionStylesDesktop,
+      avatarBdrSdwStylesTab = _generateDimensionsCo12.dimensionStylesTab,
+      avatarBdrSdwStylesMobile = _generateDimensionsCo12.dimensionStylesMobile;
 
   var _generateBorderShadow = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateBorderShadowStyles"])({
     controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["WRAPPER_BORDER_SHADOW"],
@@ -8537,7 +8610,25 @@ function Edit(props) {
   }),
       thumbnailImageHeightDesktop = _generateResponsiveRa3.rangeStylesDesktop,
       thumbnailImageHeightTab = _generateResponsiveRa3.rangeStylesTab,
-      thumbnailImageHeightMobile = _generateResponsiveRa3.rangeStylesMobile; //Generate Background
+      thumbnailImageHeightMobile = _generateResponsiveRa3.rangeStylesMobile;
+
+  var _generateResponsiveRa4 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateResponsiveRangeStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["HEADER_META_SPACE"],
+    property: "gap",
+    attributes: attributes
+  }),
+      headerMetaSpaceDesktop = _generateResponsiveRa4.rangeStylesDesktop,
+      headerMetaSpaceTab = _generateResponsiveRa4.rangeStylesTab,
+      headerMetaSpaceMobile = _generateResponsiveRa4.rangeStylesMobile;
+
+  var _generateResponsiveRa5 = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateResponsiveRangeStyles"])({
+    controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_2__["FOOTER_META_SPACE"],
+    property: "gap",
+    attributes: attributes
+  }),
+      footerMetaSpaceDesktop = _generateResponsiveRa5.rangeStylesDesktop,
+      footerMetaSpaceTab = _generateResponsiveRa5.rangeStylesTab,
+      footerMetaSpaceMobile = _generateResponsiveRa5.rangeStylesMobile; //Generate Background
 
 
   var _generateBackgroundCo = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["generateBackgroundControlStyles"])({
@@ -8571,24 +8662,48 @@ function Edit(props) {
   var wrapperStylesDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, "{\n\t\t\tdisplay: grid;\n\t\t\tposition: relative;\n\t\t\tgrid-template-columns: repeat(").concat(columnNumberDesktop.replace(/\D/g, ''), ", minmax(0, 1fr));\n\t\t\t").concat(columnGapDesktop, "\n\t\t\t").concat(wrapperMarginStylesDesktop, "\n\t\t\t").concat(wrapperPaddingStylesDesktop, "\n\t\t\t").concat(wrapperBackgroundStylesDesktop, "\n\t\t\t").concat(wrapperBgTransitionStyle, "\n\t\t\t").concat(wrapperBDShadowDesktop, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, ":hover {\n\t\t\t").concat(wrapperHoverBackgroundStylesDesktop, "\n\t\t\t").concat(wrapperBDShadowHoverDesktop, "\n\t\t}\n\t");
   var wrapperStylesTab = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, "{\n\t\t\tgrid-template-columns: repeat(").concat(columnNumberTab.replace(/\D/g, ''), ", minmax(0, 1fr));\n\t\t\t").concat(columnGapTab, "\n\t\t\t").concat(wrapperMarginStylesTab, "\n\t\t\t").concat(wrapperPaddingStylesTab, "\n\t\t\t").concat(wrapperBackgroundStylesTab, "\n\t\t\t").concat(wrapperBDShadowTab, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, ":hover {\n\t\t\t").concat(wrapperHoverBackgroundStylesTab, "\n\t\t\t").concat(wrapperBDShadowHoverTab, "\n\t\t}\n\t");
   var wrapperStylesMobile = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, "{\n\t\t\tgrid-template-columns: repeat(").concat(columnNumberMobile.replace(/\D/g, ''), ", minmax(0, 1fr));\n\t\t\t").concat(columnGapMobile, "\n\t\t\t").concat(wrapperMarginStylesMobile, "\n\t\t\t").concat(wrapperPaddingStylesMobile, "\n\t\t\t").concat(wrapperBackgroundStylesMobile, "\n\t\t\t").concat(wrapperBDShadowMobile, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, ":hover {\n\t\t\t").concat(wrapperHoverBackgroundStylesMobile, "\n\t\t\t").concat(wrapperBDShadowHoverMobile, "\n\t\t}\n\t");
-  var gridColumnStylesDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-post-grid-column {\n\t\t\t").concat(columnPaddingStylesDesktop, "\n\t\t\t").concat(columnBDShadowDesktop, "\n\t\t\t").concat(columnBackgroundStylesDesktop, "\n\t\t\t").concat(columnBgTransitionStyle, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-post-grid-column:hover {\n\t\t\t").concat(columnHoverBackgroundStylesDesktop, "\n\t\t}\n\t");
-  var gridColumnStylesTab = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-post-grid-column {\n\t\t\t").concat(columnPaddingStylesTab, "\n\t\t\t").concat(columnBDShadowTab, "\n\t\t\t").concat(columnBackgroundStylesTab, "\n\t\t\t").concat(columnBgTransitionStyle, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-post-grid-column:hover {\n\t\t\t").concat(columnHoverBackgroundStylesTab, "\n\t\t}\n\t");
-  var gridColumnStylesMobile = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-post-grid-column {\n\t\t\t").concat(columnPaddingStylesMobile, "\n\t\t\t").concat(columnBDShadowMobile, "\n\t\t\t").concat(columnBackgroundStylesMobile, "\n\t\t\t").concat(columnBgTransitionStyle, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-post-grid-column:hover {\n\t\t\t").concat(columnHoverBackgroundStylesMobile, "\n\t\t}\n\t");
+  var gridColumnStylesDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-post-grid-column {\n\t\t\t").concat(columnPaddingStylesDesktop, "\n\t\t\t").concat(columnBDShadowDesktop, "\n\t\t\t").concat(columnBackgroundStylesDesktop, "\n\t\t\t").concat(columnBgTransitionStyle, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-post-grid-column:hover {\n\t\t\t").concat(columnHoverBackgroundStylesDesktop, "\n\t\t\t").concat(columnBDShadowHoverDesktop, "\n\t\t}\n\t");
+  var gridColumnStylesTab = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-post-grid-column {\n\t\t\t").concat(columnPaddingStylesTab, "\n\t\t\t").concat(columnBDShadowTab, "\n\t\t\t").concat(columnBackgroundStylesTab, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-post-grid-column:hover {\n\t\t\t").concat(columnHoverBackgroundStylesTab, "\n\t\t\t").concat(columnBDShadowHoverTab, "\n\t\t}\n\t");
+  var gridColumnStylesMobile = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-post-grid-column {\n\t\t\t").concat(columnPaddingStylesMobile, "\n\t\t\t").concat(columnBDShadowMobile, "\n\t\t\t").concat(columnBackgroundStylesMobile, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-post-grid-column:hover {\n\t\t\t").concat(columnHoverBackgroundStylesMobile, "\n\t\t\t").concat(columnBDShadowHoverMobile, "\n\t\t}\n\t");
   var thumbnailStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-entry-thumbnail img {\n\t\t\t").concat(thumbnailImageHeightDesktop, ";\n\t\t\t").concat(thumbnailBdrSdwStylesDesktop, "\n\t\t\t").concat(thumbnailMarginStylesDesktop, "\n\t\t}\n\t");
+  var thumbnailStyleTab = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-entry-thumbnail img {\n\t\t\t").concat(thumbnailImageHeightTab, ";\n\t\t\t").concat(thumbnailBdrSdwStylesTab, "\n\t\t\t").concat(thumbnailMarginStylesTab, "\n\t\t}\n\t");
+  var thumbnailStyleMobile = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-entry-thumbnail img {\n\t\t\t").concat(thumbnailImageHeightMobile, ";\n\t\t\t").concat(thumbnailBdrSdwStylesMobile, "\n\t\t\t").concat(thumbnailMarginStylesMobile, "\n\t\t}\n\t");
   var titleStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-entry-title {\n\t\t\ttext-align: ").concat(titleTextAlign, ";\n\t\t\t").concat(titleTypoStylesDesktop, "\n\t\t\t").concat(titleMarginStylesDesktop, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-entry-title a {\n\t\t\tcolor: ").concat(titleColor, ";\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-entry-title a:hover {\n\t\t\tcolor: ").concat(titleHoverColor, ";\n\t\t}\n\t");
-  var contentStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-grid-post-excerpt {\n\t\t\tcolor: ").concat(contentColor, ";\n\t\t\ttext-align: ").concat(contentTextAlign, ";\n\t\t\t").concat(contentTypoStylesDesktop, "\n\t\t\t").concat(contentMarginStylesDesktop, "\n\n\t\t}\n\t");
-  var readmoreStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-readmore-btn {\n\t\t\ttext-align: ").concat(readmoreTextAlign, ";\n\t\t\t").concat(readmoreTypoStylesDesktop, "\n\t\t\t").concat(readmoreMarginStylesDesktop, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-readmore-btn a {\n\t\t\tcolor: ").concat(readmoreColor, ";\n\t\t\tbackground-color: ").concat(readmoreBGColor, ";\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-entry-title a:hover {\n\t\t\tcolor: ").concat(readmoreHoverColor, ";\n\t\t\tcolor: ").concat(readmoreBGHoverColor, ";\n\t\t}\n\t");
-  var avatarStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-entry-title {\n\n\t\t}\n\t");
-  var dateStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-entry-title {\n\n\t\t}\n\t");
-  var authorStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-entry-title {\n\n\t\t}\n\t");
-  var categoriesStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-entry-title {\n\n\t\t}\n\t");
-  var tagsStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-entry-title {\n\n\t\t}\n\t"); // all css styles for large screen width (desktop/laptop) in strings ⬇
+  var titleStyleTab = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-entry-title {\n\t\t\t").concat(titleTypoStylesTab, "\n\t\t\t").concat(titleMarginStylesTab, "\n\t\t}\n\t");
+  var titleStyleMobile = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-entry-title {\n\t\t\t").concat(titleTypoStylesMobile, "\n\t\t\t").concat(titleMarginStylesMobile, "\n\t\t}\n\t");
+  var contentStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-grid-post-excerpt {\n\t\t\tcolor: ").concat(contentColor, ";\n\t\t\ttext-align: ").concat(contentTextAlign, ";\n\t\t\t").concat(contentTypoStylesDesktop, "\n\t\t\t").concat(contentMarginStylesDesktop, "\n\t\t}\n\t");
+  var contentStyleTab = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-grid-post-excerpt {\n\t\t\t").concat(contentTypoStylesTab, "\n\t\t\t").concat(contentMarginStylesTab, "\n\t\t}\n\t");
+  var contentStyleMobile = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-grid-post-excerpt {\n\t\t\t").concat(contentTypoStylesMobile, "\n\t\t\t").concat(contentMarginStylesMobile, "\n\t\t}\n\t");
+  var readmoreStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-readmore-btn {\n\t\t\ttext-align: ").concat(readmoreTextAlign, ";\n\t\t\t").concat(readmoreTypoStylesDesktop, "\n\t\t\t").concat(readmoreMarginStylesDesktop, "\n\t\t\t").concat(readmorePaddingStylesDesktop, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-readmore-btn a {\n\t\t\tcolor: ").concat(readmoreColor, ";\n\t\t\tbackground-color: ").concat(readmoreBGColor, ";\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-entry-title a:hover {\n\t\t\tcolor: ").concat(readmoreHoverColor, ";\n\t\t\tcolor: ").concat(readmoreBGHoverColor, ";\n\t\t}\n\t");
+  var readmoreStyleTab = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-readmore-btn {\n\t\t\t").concat(readmoreTypoStylesTab, "\n\t\t\t").concat(readmoreMarginStylesTab, "\n\t\t\t").concat(readmorePaddingStylesTab, "\n\t\t}\n\t");
+  var readmoreStyleMobile = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-readmore-btn {\n\t\t\t").concat(readmoreTypoStylesMobile, "\n\t\t\t").concat(readmoreMarginStylesMobile, "\n\t\t\t").concat(readmorePaddingStylesMobile, "\n\t\t}\n\t");
+  var avatarStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-author-avatar img {\n\t\t\t").concat(avatarBdrSdwStylesDesktop, "\n\t\t}\n\t");
+  var avatarStyleTab = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-author-avatar img {\n\t\t\t").concat(avatarBdrSdwStylesTab, "\n\t\t}\n\t");
+  var avatarStyleMobile = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-author-avatar img {\n\t\t\t").concat(avatarBdrSdwStylesMobile, "\n\t\t}\n\t");
+  var dateStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-posted-on {\n\t\t\tcolor: ").concat(dateMetaColor, ";\n\t\t\t").concat(metaTypoStylesDesktop, "\n\t\t}\n\t");
+  var dateStyleTab = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-posted-on {\n\t\t\t").concat(metaTypoStylesTab, "\n\t\t}\n\t");
+  var dateStyleMobile = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-posted-on {\n\t\t\t").concat(metaTypoStylesMobile, "\n\t\t}\n\t");
+  var authorStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-posted-by {\n\t\t\tcolor: ").concat(authorMetaColor, ";\n\t\t\t").concat(metaTypoStylesDesktop, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-posted-by:hover {\n\t\t\tcolor: ").concat(authorMetaHoverColor, ";\n\t\t}\n\t");
+  var authorStyleTab = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-posted-by {\n\t\t\t").concat(metaTypoStylesTab, "\n\t\t}\n\t");
+  var authorStyleMobile = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-posted-by {\n\t\t\t").concat(metaTypoStylesMobile, "\n\t\t}\n\t");
+  var categoriesStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-categories-meta a {\n\t\t\tcolor: ").concat(categoryMetaColor, ";\n\t\t\tbackground-color: ").concat(categoryMetaBgColor, ";\n\t\t\t").concat(metaTypoStylesDesktop, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-categories-meta a:hover {\n\t\t\tcolor: ").concat(categoryMetaHoverColor, ";\n\t\t\tbackground-color: ").concat(categoryMetaBgHoverColor, ";\n\t\t}\n\t");
+  var categoriesStyleTab = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-categories-meta a {\n\t\t\t").concat(metaTypoStylesTab, "\n\t\t}\n\t");
+  var categoriesStyleMobile = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-categories-meta a {\n\t\t\t").concat(metaTypoStylesMobile, "\n\t\t}\n\t");
+  var tagsStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-tags-meta a {\n\t\t\tcolor: ").concat(tagMetaColor, ";\n\t\t\tbackground-color: ").concat(tagMetaBgColor, ";\n\t\t\t").concat(metaTypoStylesDesktop, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-tags-meta a:hover {\n\t\t\tcolor: ").concat(tagMetaHoverColor, ";\n\t\t\tbackground-color: ").concat(tagMetaBgHoverColor, ";\n\t\t}\n\t");
+  var tagsStyleTab = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-tags-meta a {\n\t\t\t").concat(metaTypoStylesTab, "\n\t\t}\n\t");
+  var tagsStyleMobile = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-tags-meta a {\n\t\t\t").concat(metaTypoStylesMobile, "\n\t\t}\n\t");
+  var headerMetaDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-header-meta {\n\t\t\tjustify-content: ").concat(headerMetaTextAlign, ";\n\t\t\t").concat(headerMetaMarginStylesDesktop, "\n\t\t\t").concat(headerMetaSpaceDesktop, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-header-meta .ebpg-entry-meta-items {\n\t\t\tjustify-content: ").concat(headerMetaTextAlign, ";\n\t\t}\n\t");
+  var headerMetaTab = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-header-meta {\n\t\t\t").concat(headerMetaMarginStylesTab, "\n\t\t\t").concat(headerMetaSpaceTab, "\n\t\t}\n\t");
+  var headerMetaMobile = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-header-meta {\n\t\t\t").concat(headerMetaMarginStylesMobile, "\n\t\t\t").concat(headerMetaSpaceMobile, "\n\t\t}\n\t");
+  var footerMetaDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-footer-meta {\n\t\t\tjustify-content: ").concat(footerMetaTextAlign, ";\n\t\t\t").concat(footerMetaMarginStylesDesktop, "\n\t\t\t").concat(footerMetaSpaceDesktop, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-footer-meta .ebpg-entry-meta-items {\n\t\t\tjustify-content: ").concat(footerMetaTextAlign, ";\n\t\t}\n\t");
+  var footerMetaTab = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-footer-meta {\n\t\t\t").concat(footerMetaMarginStylesTab, "\n\t\t\t").concat(footerMetaSpaceTab, "\n\t\t}\n\t");
+  var footerMetaMobile = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-footer-meta {\n\t\t\t").concat(footerMetaMarginStylesMobile, "\n\t\t\t").concat(footerMetaSpaceMobile, "\n\t\t}\n\t"); // all css styles for large screen width (desktop/laptop) in strings ⬇
 
-  var desktopAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])("\n\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(wrapperStylesDesktop) ? wrapperStylesDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(gridColumnStylesDesktop) ? gridColumnStylesDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(thumbnailStyleDesktop) ? thumbnailStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(titleStyleDesktop) ? titleStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(contentStyleDesktop) ? contentStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(readmoreStyleDesktop) ? readmoreStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(avatarStyleDesktop) ? avatarStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(dateStyleDesktop) ? dateStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(authorStyleDesktop) ? authorStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(categoriesStyleDesktop) ? categoriesStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(tagsStyleDesktop) ? tagsStyleDesktop : " ", "\n\t")); // all css styles for Tab in strings ⬇
+  var desktopAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])("\n\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(wrapperStylesDesktop) ? wrapperStylesDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(gridColumnStylesDesktop) ? gridColumnStylesDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(thumbnailStyleDesktop) ? thumbnailStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(titleStyleDesktop) ? titleStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(contentStyleDesktop) ? contentStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(readmoreStyleDesktop) ? readmoreStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(avatarStyleDesktop) ? avatarStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(dateStyleDesktop) ? dateStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(authorStyleDesktop) ? authorStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(categoriesStyleDesktop) ? categoriesStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(tagsStyleDesktop) ? tagsStyleDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(headerMetaDesktop) ? headerMetaDesktop : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(footerMetaDesktop) ? footerMetaDesktop : " ", "\n\t")); // all css styles for Tab in strings ⬇
 
-  var tabAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])("\n\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(wrapperStylesTab) ? wrapperStylesTab : " ", "\n\t")); // all css styles for Mobile in strings ⬇
+  var tabAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])("\n\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(wrapperStylesTab) ? wrapperStylesTab : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(gridColumnStylesTab) ? gridColumnStylesTab : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(thumbnailStyleTab) ? thumbnailStyleTab : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(titleStyleTab) ? titleStyleTab : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(contentStyleTab) ? contentStyleTab : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(readmoreStyleTab) ? readmoreStyleTab : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(avatarStyleTab) ? avatarStyleTab : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(dateStyleTab) ? dateStyleTab : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(authorStyleTab) ? authorStyleTab : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(categoriesStyleTab) ? categoriesStyleTab : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(tagsStyleTab) ? tagsStyleTab : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(headerMetaTab) ? headerMetaTab : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(footerMetaTab) ? footerMetaTab : " ", "\n\t")); // all css styles for Mobile in strings ⬇
 
-  var mobileAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])("\n\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(wrapperStylesMobile) ? wrapperStylesMobile : " ", "\n\t")); // Set All Style in "blockMeta" Attribute
+  var mobileAllStyles = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["softMinifyCssStrings"])("\n\t\t".concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(wrapperStylesMobile) ? wrapperStylesMobile : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(gridColumnStylesMobile) ? gridColumnStylesMobile : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(thumbnailStyleMobile) ? thumbnailStyleMobile : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(titleStyleMobile) ? titleStyleMobile : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(contentStyleMobile) ? contentStyleMobile : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(readmoreStyleMobile) ? readmoreStyleMobile : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(avatarStyleMobile) ? avatarStyleMobile : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(dateStyleMobile) ? dateStyleMobile : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(authorStyleMobile) ? authorStyleMobile : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(categoriesStyleMobile) ? categoriesStyleMobile : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(tagsStyleMobile) ? tagsStyleMobile : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(headerMetaMobile) ? headerMetaMobile : " ", "\n\t\t").concat(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["isCssExists"])(footerMetaMobile) ? footerMetaMobile : " ", "\n\t")); // Set All Style in "blockMeta" Attribute
 
   useEffect(function () {
     var styleObject = {
@@ -8649,24 +8764,62 @@ function Edit(props) {
       title: post._embedded.author[0].name ? post._embedded.author[0].name : post._embedded.author[0].slug,
       rel: "author"
     }, post._embedded.author[0].name ? post._embedded.author[0].name : post._embedded.author[0].slug));
+    var postTerms = {};
+
+    var terms = post._embedded['wp:term'] && post._embedded['wp:term'].length > 0 && post._embedded['wp:term'].map(function (item) {
+      var termObj = {};
+      var termName = "";
+      item.length > 0 && item.map(function (term) {
+        termName = term.taxonomy;
+        termObj[term.slug] = {
+          name: term.name,
+          id: term.id,
+          link: term.link,
+          slug: term.slug
+        };
+      });
+      postTerms[termName] = termObj;
+    });
+
+    var categories = postTerms.category ? /*#__PURE__*/React.createElement("div", {
+      "class": "ebpg-categories-meta"
+    }, Object.keys(postTerms.category).map(function (item) {
+      return /*#__PURE__*/React.createElement("a", {
+        href: postTerms.category[item].link,
+        title: postTerms.category[item].name
+      }, postTerms.category[item].name);
+    })) : "";
+    var tags = postTerms.post_tag ? /*#__PURE__*/React.createElement("div", {
+      "class": "ebpg-tags-meta"
+    }, Object.keys(postTerms.post_tag).map(function (item) {
+      return /*#__PURE__*/React.createElement("a", {
+        href: postTerms.post_tag[item].link,
+        title: postTerms.post_tag[item].name
+      }, postTerms.post_tag[item].name);
+    })) : "";
     var metaObject = {
-      avatar: avatar,
       date: date,
-      author: author
+      author: author,
+      categories: categories,
+      tags: tags
     };
     var headerMetaItems = JSON.parse(headerMeta).map(function (item) {
       return item.value;
     });
-    var headerMetaHtml = showMeta ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-      "class": "ebpg-entry-meta"
+    var headerMetaHtml = showMeta ? /*#__PURE__*/React.createElement("div", {
+      "class": "ebpg-entry-meta ebpg-header-meta"
+    }, headerMetaItems.includes('avatar') && avatar, /*#__PURE__*/React.createElement("div", {
+      "class": "ebpg-entry-meta-items"
     }, headerMetaItems.map(function (item) {
       return metaObject[item];
     }))) : "";
     var footerMetaItems = JSON.parse(footerMeta).map(function (item) {
       return item.value;
     });
-    var footerMetaHtml = showMeta ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-      "class": "ebpg-entry-meta"
+    var footerMetaHtml = showMeta ? /*#__PURE__*/React.createElement("div", {
+      "class": "ebpg-entry-meta ebpg-footer-meta"
+    }, footerMetaItems.includes('avatar') && avatar, /*#__PURE__*/React.createElement("div", {
+      "class": "ebpg-entry-meta-items"
     }, footerMetaItems.map(function (item) {
       return metaObject[item];
     }))) : "";
@@ -8682,6 +8835,9 @@ function Edit(props) {
     }, post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'].length > 0 && /*#__PURE__*/React.createElement("img", {
       src: post._embedded['wp:featuredmedia'][0].source_url,
       alt: post.title.alt_text
+    }), !post._embedded['wp:featuredmedia'] && /*#__PURE__*/React.createElement("img", {
+      src: "https://via.placeholder.com/250x250.png",
+      alt: "No Thumbnail Available"
     }))), /*#__PURE__*/React.createElement("div", {
       "class": "ebpg-entry-wrapper"
     }, showTitle && /*#__PURE__*/React.createElement("header", {
@@ -8693,12 +8849,12 @@ function Edit(props) {
       "class": "ebpg-entry-content"
     }, /*#__PURE__*/React.createElement("div", {
       "class": "ebpg-grid-post-excerpt"
-    }, /*#__PURE__*/React.createElement("p", null, excerptWithLimitWords, __(expansionIndicator))), /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React.createElement("p", null, excerptWithLimitWords, __(expansionIndicator))), showReadMore && /*#__PURE__*/React.createElement("div", {
       "class": "ebpg-readmore-btn"
     }, /*#__PURE__*/React.createElement("a", {
       href: post.link
     }, __(readmoreText)))), showMeta && footerMetaHtml)));
-  }), !isSelected && queryResults.length < 1 && /*#__PURE__*/React.createElement("p", null, "No Posts Found")))];
+  }), queryResults.length < 1 && /*#__PURE__*/React.createElement("p", null, "No Posts Found")))];
 }
 ;
 
@@ -8884,13 +9040,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./edit */ "./src/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./save */ "./src/save.js");
-/* harmony import */ var _icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./icon */ "./src/icon.js");
-/* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./attributes */ "./src/attributes.js");
-/* harmony import */ var _example__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./example */ "./src/example.js");
+/* harmony import */ var _icon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./icon */ "./src/icon.js");
+/* harmony import */ var _attributes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./attributes */ "./src/attributes.js");
+/* harmony import */ var _example__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./example */ "./src/example.js");
 var registerBlockType = wp.blocks.registerBlockType;
 var __ = wp.i18n.__;
-
 
 
 
@@ -8900,12 +9054,14 @@ registerBlockType("post-grid-block/post-grid", {
   title: __("Post Grid Block", "post-grid-block"),
   description: __("Display Posts or Pages by filtering with custom queries", "post-grid-block"),
   keywords: [__("posts", "post grid", "posts block")],
-  icon: _icon__WEBPACK_IMPORTED_MODULE_3__["default"],
-  attributes: _attributes__WEBPACK_IMPORTED_MODULE_4__["default"],
+  icon: _icon__WEBPACK_IMPORTED_MODULE_2__["default"],
+  attributes: _attributes__WEBPACK_IMPORTED_MODULE_3__["default"],
   category: "widgets",
   edit: _edit__WEBPACK_IMPORTED_MODULE_1__["default"],
-  save: _save__WEBPACK_IMPORTED_MODULE_2__["default"],
-  example: _example__WEBPACK_IMPORTED_MODULE_5__["default"]
+  save: function save() {
+    return null;
+  },
+  example: _example__WEBPACK_IMPORTED_MODULE_4__["default"]
 });
 
 /***/ }),
@@ -9003,10 +9159,20 @@ function Inspector(props) {
       showMeta = attributes.showMeta,
       headerMeta = attributes.headerMeta,
       footerMeta = attributes.footerMeta,
-      metaColor = attributes.metaColor,
-      metaTextAlign = attributes.metaTextAlign,
-      metaHoverColor = attributes.metaHoverColor,
-      metaColorType = attributes.metaColorType;
+      headerMetaTextAlign = attributes.headerMetaTextAlign,
+      footerMetaTextAlign = attributes.footerMetaTextAlign,
+      metaColorType = attributes.metaColorType,
+      authorMetaColor = attributes.authorMetaColor,
+      authorMetaHoverColor = attributes.authorMetaHoverColor,
+      categoryMetaColor = attributes.categoryMetaColor,
+      categoryMetaHoverColor = attributes.categoryMetaHoverColor,
+      categoryMetaBgColor = attributes.categoryMetaBgColor,
+      categoryMetaBgHoverColor = attributes.categoryMetaBgHoverColor,
+      tagMetaColor = attributes.tagMetaColor,
+      tagMetaHoverColor = attributes.tagMetaHoverColor,
+      tagMetaBgColor = attributes.tagMetaBgColor,
+      tagMetaBgHoverColor = attributes.tagMetaBgHoverColor,
+      dateMetaColor = attributes.dateMetaColor;
   var metaOptions = [{
     value: 'date',
     label: 'Published Date'
@@ -9022,8 +9188,7 @@ function Inspector(props) {
   }, {
     value: 'avatar',
     label: 'Author Avatar'
-  }]; // console.log("Inspector", queryData, queryResults)
-  // this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
+  }]; // this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
 
   useEffect(function () {
     setAttributes({
@@ -9111,7 +9276,7 @@ function Inspector(props) {
       setAttributes: setAttributes
     }), /*#__PURE__*/React.createElement(PanelBody, {
       title: __("Layout Style"),
-      initialOpen: true
+      initialOpen: false
     }, /*#__PURE__*/React.createElement(SelectControl, {
       label: __("Template"),
       value: preset,
@@ -9205,7 +9370,7 @@ function Inspector(props) {
           expansionIndicator: text
         });
       }
-    })), /*#__PURE__*/React.createElement(ToggleControl, {
+    }), /*#__PURE__*/React.createElement(ToggleControl, {
       label: __("Show Read More Button?"),
       checked: showReadMore,
       onChange: function onChange() {
@@ -9222,7 +9387,7 @@ function Inspector(props) {
           readmoreText: text
         });
       }
-    })), /*#__PURE__*/React.createElement(ToggleControl, {
+    }))), /*#__PURE__*/React.createElement(ToggleControl, {
       label: __("Show Meta?"),
       checked: showMeta,
       onChange: function onChange() {
@@ -9250,7 +9415,29 @@ function Inspector(props) {
       },
       options: metaOptions,
       isMulti: "true"
-    })))), tab.name === "styles" && /*#__PURE__*/React.createElement(React.Fragment, null, showThumbnail && /*#__PURE__*/React.createElement(PanelBody, {
+    })))), tab.name === "styles" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(PanelBody, {
+      title: __("Columns"),
+      initialOpen: false
+    }, /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      resRequiredProps: resRequiredProps,
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["COLUMN_PADDING"],
+      baseLabel: "Padding"
+    }), /*#__PURE__*/React.createElement(PanelBody, {
+      title: __("Background"),
+      initialOpen: false
+    }, /*#__PURE__*/React.createElement(_util_background_control__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["COLUMN_BG"],
+      resRequiredProps: resRequiredProps,
+      noOverlay: true
+    })), /*#__PURE__*/React.createElement(PanelBody, {
+      title: __("Border & Shadow"),
+      initialOpen: false
+    }, /*#__PURE__*/React.createElement(_util_border_shadow_control__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["COLUMN_BORDER_SHADOW"],
+      resRequiredProps: resRequiredProps // noShadow
+      // noBorder
+
+    }))), showThumbnail && /*#__PURE__*/React.createElement(PanelBody, {
       title: __("Thumbnail"),
       initialOpen: false
     }, /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -9448,6 +9635,184 @@ function Inspector(props) {
       resRequiredProps: resRequiredProps,
       controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["READMORE_PADDING"],
       baseLabel: "Padding"
+    })), showMeta && /*#__PURE__*/React.createElement(PanelBody, {
+      title: __("Meta Styles"),
+      initialOpen: false
+    }, /*#__PURE__*/React.createElement(BaseControl, {
+      label: __("Header Meta Alignment"),
+      id: "eb-post-grid"
+    }, /*#__PURE__*/React.createElement(ButtonGroup, {
+      id: "eb-post-grid"
+    }, _constants_constants__WEBPACK_IMPORTED_MODULE_1__["CONTENT_POSITION"].map(function (item) {
+      return /*#__PURE__*/React.createElement(Button, {
+        isLarge: true,
+        isPrimary: headerMetaTextAlign === item.value,
+        isSecondary: headerMetaTextAlign !== item.value,
+        onClick: function onClick() {
+          return setAttributes({
+            headerMetaTextAlign: item.value
+          });
+        }
+      }, item.label);
+    }))), /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      baseLabel: __("Header Meta Gap", "eb-post-grid"),
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["HEADER_META_SPACE"],
+      resRequiredProps: resRequiredProps,
+      units: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["UNIT_TYPES"],
+      min: 1,
+      max: 100,
+      step: 1
+    }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      resRequiredProps: resRequiredProps,
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["HEADER_META_MARGIN"],
+      baseLabel: "Header Meta Margin"
+    }), /*#__PURE__*/React.createElement(BaseControl, {
+      label: __("Footer Meta Alignment"),
+      id: "eb-post-grid"
+    }, /*#__PURE__*/React.createElement(ButtonGroup, {
+      id: "eb-post-grid"
+    }, _constants_constants__WEBPACK_IMPORTED_MODULE_1__["CONTENT_POSITION"].map(function (item) {
+      return /*#__PURE__*/React.createElement(Button, {
+        isLarge: true,
+        isPrimary: footerMetaTextAlign === item.value,
+        isSecondary: footerMetaTextAlign !== item.value,
+        onClick: function onClick() {
+          return setAttributes({
+            footerMetaTextAlign: item.value
+          });
+        }
+      }, item.label);
+    }))), /*#__PURE__*/React.createElement(_util_responsive_range_control__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      baseLabel: __("Footer Meta Gap", "eb-post-grid"),
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["FOOTER_META_SPACE"],
+      resRequiredProps: resRequiredProps,
+      units: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["UNIT_TYPES"],
+      min: 1,
+      max: 100,
+      step: 1
+    }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      resRequiredProps: resRequiredProps,
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["FOOTER_META_MARGIN"],
+      baseLabel: "Footer Meta Margin"
+    }), /*#__PURE__*/React.createElement(ButtonGroup, {
+      className: "eb-inspector-btn-group"
+    }, _constants_constants__WEBPACK_IMPORTED_MODULE_1__["NORMAL_HOVER"].map(function (item) {
+      return /*#__PURE__*/React.createElement(Button, {
+        isLarge: true,
+        isPrimary: metaColorType === item.value,
+        isSecondary: metaColorType !== item.value,
+        onClick: function onClick() {
+          return setAttributes({
+            metaColorType: item.value
+          });
+        }
+      }, item.label);
+    })), metaColorType === "normal" && /*#__PURE__*/React.createElement(PanelColorSettings, {
+      className: "eb-subpanel",
+      title: __("Normal Color"),
+      initialOpen: true,
+      colorSettings: [{
+        value: authorMetaColor,
+        onChange: function onChange(newColor) {
+          return setAttributes({
+            authorMetaColor: newColor
+          });
+        },
+        label: __("Author Color")
+      }, {
+        value: dateMetaColor,
+        onChange: function onChange(newColor) {
+          return setAttributes({
+            dateMetaColor: newColor
+          });
+        },
+        label: __("Date Color")
+      }, {
+        value: categoryMetaColor,
+        onChange: function onChange(newColor) {
+          return setAttributes({
+            categoryMetaColor: newColor
+          });
+        },
+        label: __("Category Color")
+      }, {
+        value: categoryMetaBgColor,
+        onChange: function onChange(newColor) {
+          return setAttributes({
+            categoryMetaBgColor: newColor
+          });
+        },
+        label: __("Category BG Color")
+      }, {
+        value: tagMetaColor,
+        onChange: function onChange(newColor) {
+          return setAttributes({
+            tagMetaColor: newColor
+          });
+        },
+        label: __("Tag Color")
+      }, {
+        value: tagMetaBgColor,
+        onChange: function onChange(newColor) {
+          return setAttributes({
+            tagMetaBgColor: newColor
+          });
+        },
+        label: __("Tag BG Color")
+      }]
+    }), metaColorType === "hover" && /*#__PURE__*/React.createElement(PanelColorSettings, {
+      className: "eb-subpanel",
+      title: __("Hover Color"),
+      initialOpen: true,
+      colorSettings: [{
+        value: authorMetaHoverColor,
+        onChange: function onChange(newColor) {
+          return setAttributes({
+            authorMetaHoverColor: newColor
+          });
+        },
+        label: __("Author Hover Color")
+      }, {
+        value: categoryMetaHoverColor,
+        onChange: function onChange(newColor) {
+          return setAttributes({
+            categoryMetaHoverColor: newColor
+          });
+        },
+        label: __("Category Hover Color")
+      }, {
+        value: categoryMetaBgHoverColor,
+        onChange: function onChange(newColor) {
+          return setAttributes({
+            categoryMetaBgHoverColor: newColor
+          });
+        },
+        label: __("Category BG Hover Color")
+      }, {
+        value: tagMetaHoverColor,
+        onChange: function onChange(newColor) {
+          return setAttributes({
+            tagMetaHoverColor: newColor
+          });
+        },
+        label: __("Tag Hover Color")
+      }, {
+        value: tagMetaBgHoverColor,
+        onChange: function onChange(newColor) {
+          return setAttributes({
+            tagMetaBgHoverColor: newColor
+          });
+        },
+        label: __("Tag BG Hover Color")
+      }]
+    }), /*#__PURE__*/React.createElement(_util_typography_control_v2__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      baseLabel: __("Meta Typography", "eb-post-grid"),
+      typographyPrefixConstant: _constants_typographyPrefixConstants__WEBPACK_IMPORTED_MODULE_2__["EBPG_META_TYPOGRAPHY"],
+      resRequiredProps: resRequiredProps
+    }), /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      resRequiredProps: resRequiredProps,
+      controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["AVATAR_BORDER_RADIUS"],
+      baseLabel: "Avatar Border Radius"
     }))), tab.name === "advance" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(PanelBody, null, /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_5__["default"], {
       resRequiredProps: resRequiredProps,
       controlName: _constants_constants__WEBPACK_IMPORTED_MODULE_1__["WRAPPER_MARGIN"],
@@ -9476,55 +9841,6 @@ function Inspector(props) {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Inspector);
-
-/***/ }),
-
-/***/ "./src/save.js":
-/*!*********************!*\
-  !*** ./src/save.js ***!
-  \*********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-var _wp$blockEditor = wp.blockEditor,
-    RichText = _wp$blockEditor.RichText,
-    useBlockProps = _wp$blockEditor.useBlockProps;
-
-var Save = function Save(_ref) {
-  var attributes = _ref.attributes;
-  var blockId = attributes.blockId,
-      preset = attributes.preset,
-      buttonTextOne = attributes.buttonTextOne,
-      buttonTextTwo = attributes.buttonTextTwo,
-      buttonURLOne = attributes.buttonURLOne,
-      buttonURLTwo = attributes.buttonURLTwo,
-      innerButtonText = attributes.innerButtonText,
-      innerButtonIcon = attributes.innerButtonIcon,
-      showConnector = attributes.showConnector,
-      connectorType = attributes.connectorType;
-  return /*#__PURE__*/React.createElement("div", useBlockProps.save(), /*#__PURE__*/React.createElement("div", {
-    className: "eb-button-group-wrapper ".concat(blockId, " ").concat(preset),
-    "data-id": blockId
-  }, /*#__PURE__*/React.createElement("a", {
-    className: "eb-button-parent eb-button-one",
-    href: buttonURLOne
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "eb-button-text eb-button-one-text"
-  }, buttonTextOne)), showConnector && /*#__PURE__*/React.createElement("div", {
-    className: "eb-button-group__midldeInner"
-  }, connectorType === 'icon' && /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("i", {
-    className: "".concat(innerButtonIcon ? innerButtonIcon : "fas fa-arrows-alt-h")
-  })), connectorType === 'text' && /*#__PURE__*/React.createElement("span", null, innerButtonText)), /*#__PURE__*/React.createElement("a", {
-    className: "eb-button-parent eb-button-two",
-    href: buttonURLTwo
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "eb-button-text eb-button-two-text"
-  }, buttonTextTwo))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Save);
 
 /***/ }),
 
@@ -13134,7 +13450,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 var apiFetch = wp.apiFetch; //Get Posts
 
 var getPosts = function getPosts(query) {
-  console.log("Query", query);
   var queryStringObj = {};
 
   if (query.source === 'posts') {
@@ -13186,7 +13501,6 @@ var getPosts = function getPosts(query) {
   return apiFetch({
     path: "/wp/v2/".concat(query.source, "?").concat(queryString, "&_embed")
   }).then(function (result) {
-    // console.log("Posts", result)
     result != null && result.length > 0 && result.forEach(function (item) {
       var filterPostData = {};
       Object.keys(item).forEach(function (key) {
@@ -13196,8 +13510,7 @@ var getPosts = function getPosts(query) {
     });
     return postData;
   }, function (error) {
-    console.log("error", error); // setIsLoaded( true );
-    // setError( error );
+    console.log("error", error);
   });
 }; //Get Author Data
 
@@ -13206,7 +13519,6 @@ var getAuthor = function getAuthor() {
   return apiFetch({
     path: "/wp/v2/users/"
   }).then(function (result) {
-    // console.log("Authors", result)
     result != null && result.length > 0 && result.forEach(function (item) {
       var filterauthorData = {};
       var includesVal = ['id', 'link', 'name', 'slug'];
@@ -13219,8 +13531,7 @@ var getAuthor = function getAuthor() {
     });
     return authorData;
   }, function (error) {
-    console.log("error", error); // setIsLoaded( true );
-    // setError( error );
+    console.log("error", error);
   });
 }; //Get Categories
 
@@ -13229,7 +13540,6 @@ var getCategory = function getCategory() {
   return apiFetch({
     path: "/wp/v2/categories/"
   }).then(function (result) {
-    // console.log("Categories", result)
     result != null && result.length > 0 && result.forEach(function (item) {
       var filterCategoryData = {};
       var includesVal = ['id', 'link', 'name', 'slug', 'parent'];
@@ -13242,8 +13552,7 @@ var getCategory = function getCategory() {
     });
     return categoryData;
   }, function (error) {
-    console.log("error", error); // setIsLoaded( true );
-    // setError( error );
+    console.log("error", error);
   });
 }; //Get Tags
 
@@ -13252,7 +13561,6 @@ var getTag = function getTag() {
   return apiFetch({
     path: "/wp/v2/tags/"
   }).then(function (result) {
-    // console.log("Tags", result)
     result != null && result.length > 0 && result.forEach(function (item) {
       var filterTagsData = {};
       var includesVal = ['id', 'link', 'name', 'slug'];
@@ -13265,8 +13573,7 @@ var getTag = function getTag() {
     });
     return tagsData;
   }, function (error) {
-    console.log("error", error); // setIsLoaded( true );
-    // setError( error );
+    console.log("error", error);
   });
 };
 
@@ -13378,7 +13685,8 @@ var _wp$element = wp.element,
 function Inspector(props) {
   var queryData = props.queryData,
       queryResults = props.queryResults,
-      setAttributes = props.setAttributes;
+      setAttributes = props.setAttributes,
+      initialOpen = props.initialOpen;
 
   var _useState = useState([]),
       _useState2 = _slicedToArray(_useState, 2),
@@ -13550,7 +13858,7 @@ function Inspector(props) {
 
   return /*#__PURE__*/React.createElement(PanelBody, {
     title: __("Query"),
-    initialOpen: false
+    initialOpen: initialOpen
   }, /*#__PURE__*/React.createElement(SelectControl, {
     label: __("Source"),
     value: query.source,

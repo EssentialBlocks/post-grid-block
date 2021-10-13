@@ -20,7 +20,10 @@ export const TITLE_MARGIN = "titleMargin";
 export const CONTENT_MARGIN = "contentMargin";
 export const READMORE_MARGIN = "readmoreMargin";
 export const READMORE_PADDING = "readmorePadding";
-export const META_MARGIN = "metaMargin";
+export const HEADER_META_MARGIN = "headerMetaMargin";
+export const FOOTER_META_MARGIN = "footerMetaMargin";
+export const HEADER_META_SPACE = "headerMetaSpace";
+export const FOOTER_META_SPACE = "footerMetaSpace";
 export const AVATAR_BORDER_RADIUS = "avatarBDR";
 
 export const UNIT_TYPES = [

@@ -3,8 +3,41 @@
   transition: all 0.3s ease-in-out;
 }
 .eb-post-grid-wrapper .ebpg-entry-thumbnail img {
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.eb-post-grid-wrapper .ebpg-entry-meta {
+  display: flex;
+  align-items: center;
+}
+.eb-post-grid-wrapper .ebpg-entry-meta .ebpg-entry-meta-items {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.eb-post-grid-wrapper .ebpg-author-avatar a {
+  display: block;
+}
+.eb-post-grid-wrapper .ebpg-author-avatar a img {
+  height: 50px;
+  width: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.eb-post-grid-wrapper .ebpg-categories-meta a {
+  padding: 2px 5px;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+.eb-post-grid-wrapper .ebpg-tags-meta a {
+  padding: 2px 5px;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+.eb-post-grid-wrapper .ebpg-post-grid-column {
+  overflow: hidden;
+  z-index: 99;
 }
 
 /*# sourceMappingURL=style-index.css.map*/

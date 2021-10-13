@@ -4,6 +4,39 @@
 		transition: all 0.3s ease-in-out;
 	}
 	.ebpg-entry-thumbnail img {
+		width: 100%;
 		object-fit: cover;
+	}
+	.ebpg-entry-meta {
+		display: flex;
+		align-items: center;
+
+		.ebpg-entry-meta-items {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+	}
+	.ebpg-author-avatar a {
+		display: block;
+		img {
+			height: 50px;
+			width: 50px;
+			object-fit: cover;
+		}
+	}
+	.ebpg-categories-meta a {
+		padding: 2px 5px;
+		border-radius: 3px;
+		margin-right: 5px;
+	}
+	.ebpg-tags-meta a {
+		padding: 2px 5px;
+		border-radius: 3px;
+		margin-right: 5px;
+	}
+	.ebpg-post-grid-column {
+		overflow: hidden;
+		z-index: 99;
 	}
 }

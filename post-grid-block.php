@@ -70,8 +70,13 @@ function create_block_post_grid_block_init() {
 				'editor_script' => 'post-grid-block-editor',
 				'editor_style'  => 'post-grid-block-editor-css',
 				'style'  		=> 'post-grid-block-frontend-css',
+				'render_callback' => 'render_block_eb_post_grid_block',
 			)
 		);
 	}
 }
 add_action( 'init', 'create_block_post_grid_block_init' );
+
+function render_block_eb_post_grid_block($attributes) {
+	// echo "Hello";
+}
