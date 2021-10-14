@@ -1052,7 +1052,7 @@ export default function Edit(props) {
 						</article>
 					)
 				})}
-				{ queryResults.length < 1 && (
+				{ typeof(queryResults) != 'undefined' && queryResults.length < 1 && (
 					<p>No Posts Found</p>
 				)}
 			</div>

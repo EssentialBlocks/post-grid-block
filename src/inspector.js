@@ -130,6 +130,9 @@ function Inspector(props) {
 		{ value: 'avatar', label: 'Author Avatar' }
 	  ];
 
+	// console.log("Query", queryData)
+	console.log("Query Result", queryResults)
+
 	// this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
 	useEffect(() => {
 		setAttributes({

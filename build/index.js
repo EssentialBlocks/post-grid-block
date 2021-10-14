@@ -7878,7 +7878,7 @@ var attributes = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_object
   },
   preset: {
     type: "string",
-    "default": "button-1"
+    "default": "style-1"
   },
   showThumbnail: {
     type: "boolean",
@@ -8854,7 +8854,7 @@ function Edit(props) {
     }, /*#__PURE__*/React.createElement("a", {
       href: post.link
     }, __(readmoreText)))), showMeta && footerMetaHtml)));
-  }), queryResults.length < 1 && /*#__PURE__*/React.createElement("p", null, "No Posts Found")))];
+  }), typeof queryResults != 'undefined' && queryResults.length < 1 && /*#__PURE__*/React.createElement("p", null, "No Posts Found")))];
 }
 ;
 
@@ -9188,7 +9188,9 @@ function Inspector(props) {
   }, {
     value: 'avatar',
     label: 'Author Avatar'
-  }]; // this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
+  }]; // console.log("Query", queryData)
+
+  console.log("Query Result", queryResults); // this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
 
   useEffect(function () {
     setAttributes({
@@ -13722,7 +13724,7 @@ function Inspector(props) {
 
   useEffect(function () {
     //If Exixsting query data exists in Attributes, set existing data to current query data
-    if (typeof queryData != 'undefined' && queryData.length > 0) {
+    if (typeof queryData != 'undefined' && Object.keys(queryData).length > 0) {
       setQuery(_objectSpread({}, queryData));
     } //Get Author data and Set Author Options Data
 
@@ -13859,7 +13861,7 @@ function Inspector(props) {
   return /*#__PURE__*/React.createElement(PanelBody, {
     title: __("Query"),
     initialOpen: initialOpen
-  }, /*#__PURE__*/React.createElement(SelectControl, {
+  }, typeof queryData != 'undefined' && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SelectControl, {
     label: __("Source"),
     value: query.source,
     options: _constants__WEBPACK_IMPORTED_MODULE_1__["SOURCES"],
@@ -13918,7 +13920,7 @@ function Inspector(props) {
     onChange: function onChange(selected) {
       return setOrder(selected);
     }
-  }));
+  })));
 }
 
 /***/ }),

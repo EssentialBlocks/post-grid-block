@@ -57,7 +57,7 @@ const attributes = {
 
 	preset: {
 		type: "string",
-		default: "button-1"
+		default: "style-1"
 	},
 	showThumbnail: {
 		type: "boolean",
