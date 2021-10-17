@@ -119,9 +119,8 @@ function render_block_eb_post_grid_block($attributes) {
 			$args['author__in'] = $authorArray;
 		}
 
-		// var_dump($attributes);
-		// $query = new WP_Query( $args );
 		$query = get_posts( $args );
+
 		$attributes = wp_parse_args(
 			$attributes,
 			[
