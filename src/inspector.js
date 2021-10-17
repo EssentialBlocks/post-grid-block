@@ -15,7 +15,7 @@ const {
 	TabPanel,
 	RangeControl,
 } = wp.components;
-const { useEffect, useState } = wp.element;
+const { useEffect } = wp.element;
 const { select } = wp.data;
 
 /**
@@ -130,9 +130,6 @@ function Inspector(props) {
 		{ value: 'avatar', label: 'Author Avatar' }
 	  ];
 
-	// console.log("Query", queryData)
-	console.log("Query Result", queryResults)
-
 	// this useEffect is for setting the resOption attribute to desktop/tab/mobile depending on the added 'eb-res-option-' class only the first time once
 	useEffect(() => {
 		setAttributes({
@@ -169,23 +166,97 @@ function Inspector(props) {
 	const changePreset = (selected) => {
 		setAttributes({ preset: selected });
 		switch(selected) {
-			case 'preset-1':
+			case 'style-1':
 				setAttributes({
-					
+					thumbnailBDRBottom: "0",
+					thumbnailBDRLeft: "0",
+					thumbnailBDRRight: "0",
+					thumbnailBDRTop: "0",
+					thumbnailBDRUnit: "px",
+					columnBorderShadowRds_Bottom: "0",
+					columnBorderShadowRds_Top: "0",
+					columnBorderShadowRds_Left: "0",
+					columnBorderShadowRds_Right: "0",
+					columnBorderShadowRds_Unit: "px",
+					columnBorderShadowhOffset: 0,
+					columnBorderShadowvOffset: 0,
+					columnBorderShadowblur: 0,
+					columnBorderShadowspread: 0,
+					columnBorderShadowshadowColor: "rgba(197,197,197,1)",
+					thumbnailImageSizeRange: 250,
+					columnGapRange: 10,
+					columnGapUnit: "px",
+					thumbnailImageSizeUnit: "px",
+					columnPaddingBottom: "0",
+					columnPaddingTop: "0",
+					columnPaddingRight: "0",
+					columnPaddingLeft: "0",
+					columnPaddingUnit: "px",
+					footerMetaTextAlign: "left",
+					headerMeta: '[{"value":"categories","label":"Categories"}]',
+					footerMeta: '[{"value":"avatar","label":"Author Avatar"},{"value":"author","label":"Author Name"},{"value":"date","label":"Published Date"}]',
 				});
 				break;
-			case 'preset-2':
+			case 'style-2':
 				setAttributes({
-					
+					thumbnailBDRBottom: "5",
+					thumbnailBDRLeft: "5",
+					thumbnailBDRRight: "5",
+					thumbnailBDRTop: "5",
+					thumbnailBDRUnit: "px",
+					columnBorderShadowRds_Bottom: "0",
+					columnBorderShadowRds_Top: "0",
+					columnBorderShadowRds_Left: "0",
+					columnBorderShadowRds_Right: "0",
+					columnBorderShadowRds_Unit: "px",
+					columnBorderShadowhOffset: 0,
+					columnBorderShadowvOffset: 0,
+					columnBorderShadowblur: 0,
+					columnBorderShadowspread: 0,
+					columnBorderShadowshadowColor: "rgba(197,197,197,1)",
+					thumbnailImageSizeRange: 200,
+					columnGapRange: 10,
+					columnGapUnit: "px",
+					thumbnailImageSizeUnit: "px",
+					columnPaddingBottom: "0",
+					columnPaddingTop: "0",
+					columnPaddingRight: "0",
+					columnPaddingLeft: "0",
+					columnPaddingUnit: "px",
+					footerMetaTextAlign: "left",
+					headerMeta: '[{"value":"date","label":"Published Date"}]',
+					footerMeta: '[{"value":"avatar","label":"Author Avatar"},{"value":"author","label":"Author Name"}]',
 				});
 				break;
-			case 'preset-3':
+			case 'style-3':
 				setAttributes({
-					
-				});
-				break;
-			case 'preset-4':
-				setAttributes({
+					thumbnailBDRBottom: "5",
+					thumbnailBDRLeft: "5",
+					thumbnailBDRRight: "5",
+					thumbnailBDRTop: "5",
+					thumbnailBDRUnit: "px",
+					columnBorderShadowRds_Bottom: "5",
+					columnBorderShadowRds_Top: "5",
+					columnBorderShadowRds_Left: "5",
+					columnBorderShadowRds_Right: "5",
+					columnBorderShadowRds_Unit: "px",
+					columnBorderShadowhOffset: 0,
+					columnBorderShadowvOffset: 0,
+					columnBorderShadowblur: 10,
+					columnBorderShadowspread: 0,
+					columnBorderShadowshadowColor: "rgba(197,197,197,1)",
+					thumbnailImageSizeRange: 250,
+					columnGapRange: 15,
+					columnGapUnit: "px",
+					thumbnailImageSizeUnit: "px",
+					columnPaddingBottom: "10",
+					columnPaddingTop: "10",
+					columnPaddingRight: "10",
+					columnPaddingLeft: "10",
+					columnPaddingUnit: "px",
+					footerMetaTextAlign: "center",
+					headerMeta: '[{"value":"date","label":"Published Date"}]',
+					footerMeta: '[{"value":"avatar","label":"Author Avatar"}]',
 					
 				});
 				break;
@@ -858,8 +929,6 @@ function Inspector(props) {
 							
 						</div>
 					}
-
-
 				</TabPanel>
 			</div>
 		</InspectorControls>

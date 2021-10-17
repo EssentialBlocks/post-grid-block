@@ -85,7 +85,7 @@ function render_block_eb_post_grid_block($attributes) {
 			'posts_per_page'	=> (int)$queryData['per_page'],
 			'order'				=> $queryData['order'],
 			'orderby'			=> $queryData['orderby'],
-			// 'suppress_filters' => false,
+			'offset' 			=> $queryData['offset'],
 		);
 
 		if ($queryData['orderby'] == "id") {

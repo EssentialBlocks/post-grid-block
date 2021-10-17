@@ -2,16 +2,10 @@
  * WordPress dependencies 
 */
 const { __ } = wp.i18n;
-const { RichText, useBlockProps } = wp.blockEditor;
-const { useEffect, renderToString, RawHTML } = wp.element;
+const { useBlockProps } = wp.blockEditor;
+const { useEffect } = wp.element;
 const { select } = wp.data;
 const { dateI18n, format, __experimentalGetSettings } = wp.date;
-
-/**
- * External dependencies
- */
-// import { get, includes, invoke, isUndefined, pickBy } from 'lodash';
-// import {escapeAmpersand, escapeAttribute, escapeEditableHTML, escapeHTML} from "@wordpress/escape-html"
 
 /**
   * Internal depencencies
@@ -327,7 +321,6 @@ export default function Edit(props) {
 	} = generateBorderShadowStyles({
 		controlName: COLUMN_BORDER_SHADOW,
 		attributes,
-		noShadow: true,
 	});
 
 	const {
@@ -644,7 +637,11 @@ export default function Edit(props) {
 			color: ${authorMetaColor};
 			${metaTypoStylesDesktop}
 		}
-		.eb-post-grid-wrapper.${blockId} .ebpg-posted-by:hover {
+		.eb-post-grid-wrapper.${blockId} .ebpg-posted-by a {
+			color: ${authorMetaColor};
+			${metaTypoStylesDesktop}
+		}
+		.eb-post-grid-wrapper.${blockId} .ebpg-posted-by a:hover {
 			color: ${authorMetaHoverColor};
 		}
 	`;
@@ -713,10 +710,12 @@ export default function Edit(props) {
 		.eb-post-grid-wrapper.${blockId} .ebpg-header-meta {
 			justify-content: ${headerMetaTextAlign};
 			${headerMetaMarginStylesDesktop}
-			${headerMetaSpaceDesktop}
 		}
 		.eb-post-grid-wrapper.${blockId} .ebpg-header-meta .ebpg-entry-meta-items {
 			justify-content: ${headerMetaTextAlign};
+		}
+		.eb-post-grid-wrapper.${blockId} .ebpg-header-meta .ebpg-author-avatar,
+		.eb-post-grid-wrapper.${blockId} .ebpg-header-meta .ebpg-entry-meta-items > * {
 			${headerMetaSpaceDesktop}
 		}
 	`;
@@ -724,9 +723,9 @@ export default function Edit(props) {
 	const headerMetaTab = `
 		.eb-post-grid-wrapper.${blockId} .ebpg-header-meta {
 			${headerMetaMarginStylesTab}
-			${headerMetaSpaceTab}
 		}
-		.eb-post-grid-wrapper.${blockId} .ebpg-header-meta .ebpg-entry-meta-items {
+		.eb-post-grid-wrapper.${blockId} .ebpg-header-meta .ebpg-author-avatar,
+		.eb-post-grid-wrapper.${blockId} .ebpg-header-meta .ebpg-entry-meta-items > * {
 			${headerMetaSpaceTab}
 		}
 	`;
@@ -734,9 +733,9 @@ export default function Edit(props) {
 	const headerMetaMobile = `
 		.eb-post-grid-wrapper.${blockId} .ebpg-header-meta {
 			${headerMetaMarginStylesMobile}
-			${headerMetaSpaceMobile}
 		}
-		.eb-post-grid-wrapper.${blockId} .ebpg-header-meta .ebpg-entry-meta-items {
+		.eb-post-grid-wrapper.${blockId} .ebpg-header-meta .ebpg-author-avatar,
+		.eb-post-grid-wrapper.${blockId} .ebpg-header-meta .ebpg-entry-meta-items > * {
 			${headerMetaSpaceMobile}
 		}
 	`;
@@ -745,10 +744,12 @@ export default function Edit(props) {
 		.eb-post-grid-wrapper.${blockId} .ebpg-footer-meta {
 			justify-content: ${footerMetaTextAlign};
 			${footerMetaMarginStylesDesktop}
-			${footerMetaSpaceDesktop}
 		}
 		.eb-post-grid-wrapper.${blockId} .ebpg-footer-meta .ebpg-entry-meta-items {
 			justify-content: ${footerMetaTextAlign};
+		}
+		.eb-post-grid-wrapper.${blockId} .ebpg-footer-meta .ebpg-author-avatar,
+		.eb-post-grid-wrapper.${blockId} .ebpg-footer-meta .ebpg-entry-meta-items > * {
 			${footerMetaSpaceDesktop}
 		}
 	`;
@@ -756,9 +757,9 @@ export default function Edit(props) {
 	const footerMetaTab = `
 		.eb-post-grid-wrapper.${blockId} .ebpg-footer-meta {
 			${footerMetaMarginStylesTab}
-			${footerMetaSpaceTab}
 		}
-		.eb-post-grid-wrapper.${blockId} .ebpg-footer-meta .ebpg-entry-meta-items {
+		.eb-post-grid-wrapper.${blockId} .ebpg-footer-meta .ebpg-author-avatar,
+		.eb-post-grid-wrapper.${blockId} .ebpg-footer-meta .ebpg-entry-meta-items > * {
 			${footerMetaSpaceTab}
 		}
 	`;
@@ -766,9 +767,9 @@ export default function Edit(props) {
 	const footerMetaMobile = `
 		.eb-post-grid-wrapper.${blockId} .ebpg-footer-meta {
 			${footerMetaMarginStylesMobile}
-			${footerMetaSpaceMobile}
 		}
-		.eb-post-grid-wrapper.${blockId} .ebpg-footer-meta .ebpg-entry-meta-items {
+		.eb-post-grid-wrapper.${blockId} .ebpg-footer-meta .ebpg-author-avatar,
+		.eb-post-grid-wrapper.${blockId} .ebpg-footer-meta .ebpg-entry-meta-items > * {
 			${footerMetaSpaceMobile}
 		}
 	`;

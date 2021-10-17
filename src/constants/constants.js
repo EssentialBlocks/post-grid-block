@@ -60,10 +60,9 @@ export const TITLE_TAGS = [
 ];
 
 export const PRESETS = [
-	{ label: __("Preset 1"), value: "preset-1" },
-	{ label: __("Preset 2"), value: "preset-2" },
-	{ label: __("Preset 3"), value: "preset-3" },
-	{ label: __("Preset 4"), value: "preset-4" },
+	{ label: __("Style 1"), value: "style-1" },
+	{ label: __("Style 2"), value: "style-2" },
+	{ label: __("Style 3"), value: "style-3" },
 ];
 
 export const TEXT_ALIGN = [
