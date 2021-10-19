@@ -934,5 +934,4 @@ function Inspector(props) {
 		</InspectorControls>
 	);
 }
-
 export default Inspector;
