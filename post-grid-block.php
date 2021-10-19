@@ -21,7 +21,7 @@
 
 require_once __DIR__ . '/includes/font-loader.php';
 require_once __DIR__ . '/includes/post-meta.php';
-require_once __DIR__ . '/lib/style-handler/style-handler.php';
+require_once __DIR__ . '/lib/style-handler-inline/style-handler.php';
 
 function create_block_post_grid_block_init() {
 	$dir = dirname( __FILE__ );
@@ -141,7 +141,7 @@ function render_block_eb_post_grid_block($attributes) {
 
 		//HTML
 		$html = '<div class="eb-post-grid-wrapper ' . $attributes["blockId"] . ' ' . $attributes["preset"] . ' data-id="' . $attributes["blockId"] . '">';
-			
+
 		foreach($query as $result) {
 			// var_dump($result);
 
@@ -161,7 +161,7 @@ function render_block_eb_post_grid_block($attributes) {
 				}
 			}
 			$allMeta = array_merge($headerMeta, $footerMeta);
-			
+
 			//Author HTML
 			$authorId = $result->post_author;
 			$author = "";
@@ -186,7 +186,7 @@ function render_block_eb_post_grid_block($attributes) {
 				$avatar .= sprintf(
 					'<div class="ebpg-author-avatar">
 						<a href="%1$s">
-							<img 
+							<img
 								alt="%2$s"
 								src="%3$s"
 							/>
@@ -313,13 +313,13 @@ function render_block_eb_post_grid_block($attributes) {
 			}
 			$html .= '';
 			$html .= '';
-			
+
 			$html .= '</h2>';
 			$html .= '</header>';
 
 			//Header Meta
 			$html .= sprintf(
-				'<div class="ebpg-entry-meta ebpg-header-meta">%1$s</div>', 
+				'<div class="ebpg-entry-meta ebpg-header-meta">%1$s</div>',
 				$headerMetaHtml
 			);
 
@@ -344,10 +344,10 @@ function render_block_eb_post_grid_block($attributes) {
 
 			//Footer Meta
 			$html .= sprintf(
-				'<div class="ebpg-entry-meta ebpg-footer-meta">%1$s</div>', 
+				'<div class="ebpg-entry-meta ebpg-footer-meta">%1$s</div>',
 				$footerMetaHtml
 			);
-			
+
 			$html .= '</div>'; //End of class "ebpg-entry-wrapper"
 			$html .= '</div>'; //End of class "ebpg-grid-post-holder"
 			$html .= '</article>';
@@ -355,7 +355,7 @@ function render_block_eb_post_grid_block($attributes) {
 		$html .= '</div>';
 
 		return $html;
-		 
+
 		// Reset the `$post` data to the current post in main query.
 		wp_reset_postdata();
 	}
