@@ -12,6 +12,17 @@
  * The following styles get applied inside the editor only.
  */
 /* Common styles for all blocks */
+.components-accessible-toolbar,
+.block-editor-block-contextual-toolbar,
+.components-accessible-toolbar.block-editor-block-contextual-toolbar {
+  z-index: 999999;
+}
+
+.eb-row-wrapper > .eb-row-inner > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
 .eb-panel-control .components-button-group.eb-unit-control-btn-group .components-button .eb-category-icon {
   margin-left: 8px;
 }
@@ -1163,6 +1174,79 @@ summary::-webkit-details-marker {
 
 .eb-margin-bottom-30 {
   margin-bottom: 30px;
+}
+
+.eb-row-wrapper .eb-guten-block-main-parent-wrapper.eb-column-editor-wrap.wp-block,
+.eb-row-wrapper .eb-guten-block-main-parent-wrapper.eb-column-editor-wrap.wp-block .wp-block {
+  max-width: none;
+}
+
+.eb-row-wrapper > .eb-row-inner > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  margin: auto;
+}
+
+.eb-guten-block-main-parent-wrapper.eb-column-editor-wrap {
+  position: relative;
+}
+
+.eb-row-editor-wrap.eb-guten-block-main-parent-wrapper,
+.eb-guten-block-main-parent-wrapper.eb-column-editor-wrap {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.eb-guten-block-main-parent-wrapper.eb-column-editor-wrap {
+  position: relative !important;
+}
+.eb-guten-block-main-parent-wrapper.eb-column-editor-wrap .eb-column-inner .block-list-appender {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.eb-guten-block-main-parent-wrapper.eb-column-editor-wrap .width-dragger-change {
+  display: none;
+  position: absolute;
+  z-index: 888;
+  right: -5px;
+  top: 0;
+  bottom: 0;
+  width: 12px;
+  cursor: col-resize;
+}
+.eb-guten-block-main-parent-wrapper.eb-column-editor-wrap .width-dragger-change > .dragger-inner {
+  margin: 0 5px;
+  height: 100%;
+}
+.eb-guten-block-main-parent-wrapper.eb-column-editor-wrap .width-dragger-change > .dragger-inner .circle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  top: 50%;
+  left: 2px;
+  transform: translateY(-50%);
+}
+.eb-guten-block-main-parent-wrapper.eb-column-editor-wrap .width-dragger-change:hover > .dragger-inner {
+  background-color: #000;
+}
+.eb-guten-block-main-parent-wrapper.eb-column-editor-wrap .cols-width-tooltip {
+  position: absolute;
+  top: 36px;
+  background: #444;
+  color: #fff;
+  padding: 0 10px;
+}
+
+body.eb-responsive-preview-option-Desktop .eb-guten-block-main-parent-wrapper.eb-column-editor-wrap .width-dragger-change {
+  display: block;
+}
+
+@media all and (max-width: 1024px) {
+  .eb-row-wrapper > .eb-row-inner > .block-editor-inner-blocks > .block-editor-block-list__layout {
+    flex-wrap: wrap;
+  }
 }
 
 /*# sourceMappingURL=index.css.map*/

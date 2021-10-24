@@ -375,7 +375,7 @@ function Inspector(props) {
 													label="Title Words"
 													value={ titleLength }
 													onChange={ ( value ) => setAttributes({ titleLength: value }) }
-													min={ 0 }
+													min={ -1 }
 													max={ 100 }
 												/>
 											</>
@@ -395,7 +395,7 @@ function Inspector(props) {
 													label="Excerpt Words"
 													value={ contentLength }
 													onChange={ ( value ) => setAttributes({ contentLength: value }) }
-													min={ 0 }
+													min={ -1 }
 													max={ 100 }
 												/>
 		
@@ -405,25 +405,25 @@ function Inspector(props) {
 													value={ expansionIndicator }
 													onChange={ (text) => setAttributes({expansionIndicator: text}) }
 												/>
+											</>
+										)}
 		
-												<ToggleControl
-													label={__("Show Read More Button?")}
-													checked={showReadMore}
-													onChange={() => {
-														setAttributes({ showReadMore: !showReadMore });
-													}}
+										<ToggleControl
+											label={__("Show Read More Button?")}
+											checked={showReadMore}
+											onChange={() => {
+												setAttributes({ showReadMore: !showReadMore });
+											}}
+										/>
+
+										{showReadMore && (
+											<>
+												<TextControl
+													label="Button Text"
+													type={"text"}
+													value={ readmoreText }
+													onChange={ (text) => setAttributes({readmoreText: text}) }
 												/>
-		
-												{showReadMore && (
-													<>
-														<TextControl
-															label="Button Text"
-															type={"text"}
-															value={ readmoreText }
-															onChange={ (text) => setAttributes({readmoreText: text}) }
-														/>
-													</>
-												)}
 											</>
 										)}
 		
@@ -437,23 +437,27 @@ function Inspector(props) {
 
 										{showMeta && (
 											<>
-												<PanelRow>Header Meta</PanelRow>
-												<Select2
-													name='select-header-meta'
-													value={ headerMeta.length > 0 ? JSON.parse( headerMeta ) : '' }
-													onChange={ (selected) => setAttributes({headerMeta: JSON.stringify(selected)})}
-													options={ metaOptions }
-													isMulti='true'
-												/>
-
-												<PanelRow>Footer Meta</PanelRow>
-												<Select2
-													name='select-footer-meta'
-													value={ footerMeta.length > 0 ? JSON.parse( footerMeta ) : '' }
-													onChange={ (selected) => setAttributes({footerMeta: JSON.stringify(selected)})}
-													options={ metaOptions }
-													isMulti='true'
-												/>
+												<div className="eb-control-item-wrapper">
+													<PanelRow>Header Meta</PanelRow>
+													<Select2
+														name='select-header-meta'
+														value={ headerMeta.length > 0 ? JSON.parse( headerMeta ) : '' }
+														onChange={ (selected) => setAttributes({headerMeta: JSON.stringify(selected)})}
+														options={ metaOptions }
+														isMulti='true'
+													/>
+												</div>
+												
+												<div className="eb-control-item-wrapper">
+													<PanelRow>Footer Meta</PanelRow>
+													<Select2
+														name='select-footer-meta'
+														value={ footerMeta.length > 0 ? JSON.parse( footerMeta ) : '' }
+														onChange={ (selected) => setAttributes({footerMeta: JSON.stringify(selected)})}
+														options={ metaOptions }
+														isMulti='true'
+													/>
+												</div>
 											</>
 										)}
 

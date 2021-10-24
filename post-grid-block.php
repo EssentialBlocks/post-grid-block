@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:     Post Grid Block
- * Description:     Display Posts or Pages by filtering with custom queries
+ * Description:     Create a stunning and interactive visualization for your blogs in a grid layout
  * Version:         1.0.0
  * Author:          WPDeveloper
  * Author URI:      https://wpdeveloper.net
@@ -119,6 +119,24 @@ function render_block_eb_post_grid_block($attributes) {
 			$args['author__in'] = $authorArray;
 		}
 
+		if (isset($queryData['include']) && strlen($queryData['include']) > 0 ) {
+			$includeJsonDecode = json_decode($queryData['include']);
+			$includeArray = array();
+			foreach($includeJsonDecode as $item) {
+				array_push($includeArray, $item->value);
+			}
+			$args['post__in'] = $includeArray;
+		}
+
+		if (isset($queryData['exclude']) && strlen($queryData['exclude']) > 0 ) {
+			$excludeJsonDecode = json_decode($queryData['exclude']);
+			$excludeArray = array();
+			foreach($excludeJsonDecode as $item) {
+				array_push($excludeArray, $item->value);
+			}
+			$args['exclude'] = $excludeArray;
+		}
+
 		$query = get_posts( $args );
 
 		$attributes = wp_parse_args(
@@ -143,7 +161,6 @@ function render_block_eb_post_grid_block($attributes) {
 		$html = '<div class="eb-post-grid-wrapper ' . $attributes["blockId"] . ' ' . $attributes["preset"] . ' data-id="' . $attributes["blockId"] . '">';
 			
 		foreach($query as $result) {
-			// var_dump($result);
 
 			//Get Header and Footer Meta
 			$headerMetaString = strlen($attributes["headerMeta"]) > 0 ? json_decode($attributes["headerMeta"]) : "";
@@ -300,7 +317,7 @@ function render_block_eb_post_grid_block($attributes) {
 			if ($attributes["showTitle"]) {
 				$ebpg_title = $result->post_title;
 				if (!empty($attributes["titleLength"]) ) {
-					$ebpg_title = eb_trunc($result->post_title, $title_length);
+					$ebpg_title = eb_trunc($result->post_title, $attributes["titleLength"]);
 				}
 				$html .= sprintf(
 					'<header class="ebpg-entry-header">
@@ -323,6 +340,7 @@ function render_block_eb_post_grid_block($attributes) {
 				$headerMetaHtml
 			);
 
+			$html .= '<div class="ebpg-entry-content">';
 			//Post Excerpt
 			if ($attributes["showContent"]) {
 				if (!empty($result->post_excerpt)) {
@@ -332,15 +350,25 @@ function render_block_eb_post_grid_block($attributes) {
 					$post_content = wp_kses_post(strip_tags($result->post_content));
 				}
 				$content = eb_trunc($post_content, $attributes["contentLength"]);
+
 				$html .= sprintf(
-					'<div class="ebpg-entry-content">
-						<div class="ebpg-grid-post-excerpt">
-							<p>%1$s</p>
-						</div>
+					'<div class="ebpg-grid-post-excerpt">
+						<p>%1$s%2$s</p>
 					</div>',
-					$content
+					$content, $attributes["expansionIndicator"]
 				);
 			}
+
+			if ($attributes["showReadMore"]) {
+				$html .= sprintf(
+					'<div class="ebpg-readmore-btn">
+						<a href="%1$s">%2$s</a>
+					</div>',
+					$result->guid, $attributes["readmoreText"]
+				);
+			}
+
+			$html .= '</div>';
 
 			//Footer Meta
 			$html .= sprintf(
@@ -363,8 +391,8 @@ function render_block_eb_post_grid_block($attributes) {
 
 //Limit Word Function
 function eb_trunc($phrase, $max_words) {
-	$phrase_array = explode(' ',$phrase);
-	if(count($phrase_array) > $max_words && $max_words > 0)
-	   $phrase = implode(' ',array_slice($phrase_array, 0, $max_words)).'...';
+	$phrase_array = explode(' ', $phrase);
+	if(count($phrase_array) > $max_words && $max_words >= 0)
+	   $phrase = implode(' ',array_slice($phrase_array, 0, $max_words));
 	return $phrase;
 }

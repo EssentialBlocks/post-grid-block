@@ -1,7 +1,7 @@
 {
 	"name": "post-grid-block",
 	"version": "1.0.0",
-	"description": "Display Posts or Pages by filtering with custom queries",
+	"description": "Create a stunning and interactive visualization for your blogs in a grid layout",
 	"author": "The WordPress Contributors",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",

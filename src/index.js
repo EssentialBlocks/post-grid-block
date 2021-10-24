@@ -10,14 +10,17 @@ import Example from "./example";
 registerBlockType("post-grid-block/post-grid", {
 	title: __("Post Grid Block", "post-grid-block"),
 	description: __(
-		"Display Posts or Pages by filtering with custom queries",
+		"Create a stunning and interactive visualization for your blogs in a grid layout",
 		"post-grid-block"
 	),
 	keywords: [__("posts", "post grid", "posts block")],
 	icon,
 	attributes,
+	supports: {
+		align: true,
+	},
 	category: "widgets",
 	edit: Edit,
 	save: () => null,
-	example: Example,
+	example: {},
 });

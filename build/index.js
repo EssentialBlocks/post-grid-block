@@ -226,6 +226,52 @@ module.exports["default"] = module.exports, module.exports.__esModule = true;
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/classCallCheck.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/classCallCheck.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+module.exports = _classCallCheck;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/createClass.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/createClass.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+module.exports = _createClass;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/defineProperty.js":
 /*!***************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/defineProperty.js ***!
@@ -766,6 +812,35 @@ module.exports["default"] = module.exports, module.exports.__esModule = true;
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/inherits.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/inherits.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var setPrototypeOf = __webpack_require__(/*! ./setPrototypeOf.js */ "./node_modules/@babel/runtime/helpers/setPrototypeOf.js");
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) setPrototypeOf(subClass, superClass);
+}
+
+module.exports = _inherits;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/iterableToArray.js":
 /*!****************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/iterableToArray.js ***!
@@ -912,6 +987,28 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 }
 
 module.exports = _objectWithoutPropertiesLoose;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/setPrototypeOf.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/setPrototypeOf.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _setPrototypeOf(o, p) {
+  module.exports = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  module.exports["default"] = module.exports, module.exports.__esModule = true;
+  return _setPrototypeOf(o, p);
+}
+
+module.exports = _setPrototypeOf;
 module.exports["default"] = module.exports, module.exports.__esModule = true;
 
 /***/ }),
@@ -3114,6 +3211,76 @@ exports.typeOf = typeOf;
 if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/react-is.development.js */ "./node_modules/react-is/cjs/react-is.development.js");
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/react-select/async/dist/react-select.esm.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/react-select/async/dist/react-select.esm.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _dist_Select_de8d601b_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../dist/Select-de8d601b.esm.js */ "./node_modules/react-select/dist/Select-de8d601b.esm.js");
+/* harmony import */ var _dist_useStateManager_6f19ca20_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../dist/useStateManager-6f19ca20.esm.js */ "./node_modules/react-select/dist/useStateManager-6f19ca20.esm.js");
+/* harmony import */ var _dist_useAsync_2d499613_esm_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../dist/useAsync-2d499613.esm.js */ "./node_modules/react-select/dist/useAsync-2d499613.esm.js");
+/* harmony import */ var _dist_index_fd4f5d85_esm_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../dist/index-fd4f5d85.esm.js */ "./node_modules/react-select/dist/index-fd4f5d85.esm.js");
+/* harmony import */ var _emotion_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @emotion/react */ "./node_modules/@emotion/react/dist/emotion-react.browser.esm.js");
+/* harmony import */ var _babel_runtime_helpers_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime/helpers/taggedTemplateLiteral */ "./node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js");
+/* harmony import */ var _babel_runtime_helpers_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/objectWithoutProperties.js");
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "./node_modules/@babel/runtime/helpers/typeof.js");
+/* harmony import */ var _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-dom */ "react-dom");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var memoize_one__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! memoize-one */ "./node_modules/memoize-one/dist/memoize-one.esm.js");
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js");
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_17__);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var AsyncSelect = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.forwardRef(function (props, ref) {
+  var stateManagedProps = Object(_dist_useAsync_2d499613_esm_js__WEBPACK_IMPORTED_MODULE_4__["u"])(props);
+  var selectProps = Object(_dist_useStateManager_6f19ca20_esm_js__WEBPACK_IMPORTED_MODULE_3__["u"])(stateManagedProps);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_dist_Select_de8d601b_esm_js__WEBPACK_IMPORTED_MODULE_2__["S"], Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    ref: ref
+  }, selectProps));
+});
+
+/* harmony default export */ __webpack_exports__["default"] = (AsyncSelect);
 
 
 /***/ }),
@@ -7617,6 +7784,180 @@ var NonceProvider = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
+/***/ "./node_modules/react-select/dist/useAsync-2d499613.esm.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/react-select/dist/useAsync-2d499613.esm.js ***!
+  \*****************************************************************/
+/*! exports provided: u */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return useAsync; });
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var _index_fd4f5d85_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index-fd4f5d85.esm.js */ "./node_modules/react-select/dist/index-fd4f5d85.esm.js");
+/* harmony import */ var _babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+
+var _excluded = ["defaultOptions", "cacheOptions", "loadOptions", "options", "isLoading", "onInputChange", "filterOption"];
+function useAsync(_ref) {
+  var _ref$defaultOptions = _ref.defaultOptions,
+      propsDefaultOptions = _ref$defaultOptions === void 0 ? false : _ref$defaultOptions,
+      _ref$cacheOptions = _ref.cacheOptions,
+      cacheOptions = _ref$cacheOptions === void 0 ? false : _ref$cacheOptions,
+      propsLoadOptions = _ref.loadOptions;
+      _ref.options;
+      var _ref$isLoading = _ref.isLoading,
+      propsIsLoading = _ref$isLoading === void 0 ? false : _ref$isLoading,
+      propsOnInputChange = _ref.onInputChange,
+      _ref$filterOption = _ref.filterOption,
+      filterOption = _ref$filterOption === void 0 ? null : _ref$filterOption,
+      restSelectProps = Object(_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_3__["default"])(_ref, _excluded);
+
+  var propsInputValue = restSelectProps.inputValue;
+  var lastRequest = Object(react__WEBPACK_IMPORTED_MODULE_4__["useRef"])(undefined);
+  var mounted = Object(react__WEBPACK_IMPORTED_MODULE_4__["useRef"])(false);
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(Array.isArray(propsDefaultOptions) ? propsDefaultOptions : undefined),
+      _useState2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(_useState, 2),
+      defaultOptions = _useState2[0],
+      setDefaultOptions = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(typeof propsInputValue !== 'undefined' ? propsInputValue : ''),
+      _useState4 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(_useState3, 2),
+      stateInputValue = _useState4[0],
+      setStateInputValue = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(propsDefaultOptions === true),
+      _useState6 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(_useState5, 2),
+      isLoading = _useState6[0],
+      setIsLoading = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(undefined),
+      _useState8 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(_useState7, 2),
+      loadedInputValue = _useState8[0],
+      setLoadedInputValue = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])([]),
+      _useState10 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(_useState9, 2),
+      loadedOptions = _useState10[0],
+      setLoadedOptions = _useState10[1];
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(false),
+      _useState12 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(_useState11, 2),
+      passEmptyOptions = _useState12[0],
+      setPassEmptyOptions = _useState12[1];
+
+  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])({}),
+      _useState14 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(_useState13, 2),
+      optionsCache = _useState14[0],
+      setOptionsCache = _useState14[1];
+
+  var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(undefined),
+      _useState16 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(_useState15, 2),
+      prevDefaultOptions = _useState16[0],
+      setPrevDefaultOptions = _useState16[1];
+
+  var _useState17 = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(undefined),
+      _useState18 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(_useState17, 2),
+      prevCacheOptions = _useState18[0],
+      setPrevCacheOptions = _useState18[1];
+
+  if (cacheOptions !== prevCacheOptions) {
+    setOptionsCache({});
+    setPrevCacheOptions(cacheOptions);
+  }
+
+  if (propsDefaultOptions !== prevDefaultOptions) {
+    setDefaultOptions(Array.isArray(propsDefaultOptions) ? propsDefaultOptions : undefined);
+    setPrevDefaultOptions(propsDefaultOptions);
+  }
+
+  Object(react__WEBPACK_IMPORTED_MODULE_4__["useEffect"])(function () {
+    mounted.current = true;
+    return function () {
+      mounted.current = false;
+    };
+  }, []);
+  var loadOptions = Object(react__WEBPACK_IMPORTED_MODULE_4__["useCallback"])(function (inputValue, callback) {
+    if (!propsLoadOptions) return callback();
+    var loader = propsLoadOptions(inputValue, callback);
+
+    if (loader && typeof loader.then === 'function') {
+      loader.then(callback, function () {
+        return callback();
+      });
+    }
+  }, [propsLoadOptions]);
+  Object(react__WEBPACK_IMPORTED_MODULE_4__["useEffect"])(function () {
+    if (propsDefaultOptions === true) {
+      loadOptions(stateInputValue, function (options) {
+        if (!mounted.current) return;
+        setDefaultOptions(options || []);
+        setIsLoading(!!lastRequest.current);
+      });
+    } // NOTE: this effect is designed to only run when the component mounts,
+    // so we don't want to include any hook dependencies
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+  }, []);
+  var onInputChange = Object(react__WEBPACK_IMPORTED_MODULE_4__["useCallback"])(function (newValue, actionMeta) {
+    var inputValue = Object(_index_fd4f5d85_esm_js__WEBPACK_IMPORTED_MODULE_1__["L"])(newValue, actionMeta, propsOnInputChange);
+
+    if (!inputValue) {
+      lastRequest.current = undefined;
+      setStateInputValue('');
+      setLoadedInputValue('');
+      setLoadedOptions([]);
+      setIsLoading(false);
+      setPassEmptyOptions(false);
+      return;
+    }
+
+    if (cacheOptions && optionsCache[inputValue]) {
+      setStateInputValue(inputValue);
+      setLoadedInputValue(inputValue);
+      setLoadedOptions(optionsCache[inputValue]);
+      setIsLoading(false);
+      setPassEmptyOptions(false);
+    } else {
+      var request = lastRequest.current = {};
+      setStateInputValue(inputValue);
+      setIsLoading(true);
+      setPassEmptyOptions(!loadedInputValue);
+      loadOptions(inputValue, function (options) {
+        if (!mounted) return;
+        if (request !== lastRequest.current) return;
+        lastRequest.current = undefined;
+        setIsLoading(false);
+        setLoadedInputValue(inputValue);
+        setLoadedOptions(options || []);
+        setPassEmptyOptions(false);
+        setOptionsCache(options ? Object(_index_fd4f5d85_esm_js__WEBPACK_IMPORTED_MODULE_1__["a"])(Object(_index_fd4f5d85_esm_js__WEBPACK_IMPORTED_MODULE_1__["a"])({}, optionsCache), {}, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({}, inputValue, options)) : optionsCache);
+      });
+    }
+  }, [cacheOptions, loadOptions, loadedInputValue, optionsCache, propsOnInputChange]);
+  var options = passEmptyOptions ? [] : stateInputValue && loadedInputValue ? loadedOptions : defaultOptions || [];
+  return Object(_index_fd4f5d85_esm_js__WEBPACK_IMPORTED_MODULE_1__["a"])(Object(_index_fd4f5d85_esm_js__WEBPACK_IMPORTED_MODULE_1__["a"])({}, restSelectProps), {}, {
+    options: options,
+    isLoading: isLoading || propsIsLoading,
+    onInputChange: onInputChange,
+    filterOption: filterOption
+  });
+}
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/react-select/dist/useStateManager-6f19ca20.esm.js":
 /*!************************************************************************!*\
   !*** ./node_modules/react-select/dist/useStateManager-6f19ca20.esm.js ***!
@@ -8656,10 +8997,10 @@ function Edit(props) {
   var titleStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-entry-title {\n\t\t\ttext-align: ").concat(titleTextAlign, ";\n\t\t\t").concat(titleTypoStylesDesktop, "\n\t\t\t").concat(titleMarginStylesDesktop, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-entry-title a {\n\t\t\tcolor: ").concat(titleColor, ";\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-entry-title a:hover {\n\t\t\tcolor: ").concat(titleHoverColor, ";\n\t\t}\n\t");
   var titleStyleTab = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-entry-title {\n\t\t\t").concat(titleTypoStylesTab, "\n\t\t\t").concat(titleMarginStylesTab, "\n\t\t}\n\t");
   var titleStyleMobile = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-entry-title {\n\t\t\t").concat(titleTypoStylesMobile, "\n\t\t\t").concat(titleMarginStylesMobile, "\n\t\t}\n\t");
-  var contentStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-grid-post-excerpt {\n\t\t\tcolor: ").concat(contentColor, ";\n\t\t\ttext-align: ").concat(contentTextAlign, ";\n\t\t\t").concat(contentTypoStylesDesktop, "\n\t\t\t").concat(contentMarginStylesDesktop, "\n\t\t}\n\t");
-  var contentStyleTab = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-grid-post-excerpt {\n\t\t\t").concat(contentTypoStylesTab, "\n\t\t\t").concat(contentMarginStylesTab, "\n\t\t}\n\t");
-  var contentStyleMobile = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-grid-post-excerpt {\n\t\t\t").concat(contentTypoStylesMobile, "\n\t\t\t").concat(contentMarginStylesMobile, "\n\t\t}\n\t");
-  var readmoreStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-readmore-btn {\n\t\t\ttext-align: ").concat(readmoreTextAlign, ";\n\t\t\t").concat(readmoreTypoStylesDesktop, "\n\t\t\t").concat(readmoreMarginStylesDesktop, "\n\t\t\t").concat(readmorePaddingStylesDesktop, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-readmore-btn a {\n\t\t\tcolor: ").concat(readmoreColor, ";\n\t\t\tbackground-color: ").concat(readmoreBGColor, ";\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-entry-title a:hover {\n\t\t\tcolor: ").concat(readmoreHoverColor, ";\n\t\t\tcolor: ").concat(readmoreBGHoverColor, ";\n\t\t}\n\t");
+  var contentStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-grid-post-excerpt p {\n\t\t\tcolor: ").concat(contentColor, ";\n\t\t\ttext-align: ").concat(contentTextAlign, ";\n\t\t\t").concat(contentTypoStylesDesktop, "\n\t\t\t").concat(contentMarginStylesDesktop, "\n\t\t}\n\t");
+  var contentStyleTab = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-grid-post-excerpt p {\n\t\t\t").concat(contentTypoStylesTab, "\n\t\t\t").concat(contentMarginStylesTab, "\n\t\t}\n\t");
+  var contentStyleMobile = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-grid-post-excerpt p {\n\t\t\t").concat(contentTypoStylesMobile, "\n\t\t\t").concat(contentMarginStylesMobile, "\n\t\t}\n\t");
+  var readmoreStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-readmore-btn {\n\t\t\ttext-align: ").concat(readmoreTextAlign, ";\n\t\t\t").concat(readmoreTypoStylesDesktop, "\n\t\t\t").concat(readmoreMarginStylesDesktop, "\n\t\t\t").concat(readmorePaddingStylesDesktop, "\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-readmore-btn a {\n\t\t\tcolor: ").concat(readmoreColor, ";\n\t\t\tbackground-color: ").concat(readmoreBGColor, ";\n\t\t}\n\t\t.eb-post-grid-wrapper.").concat(blockId, " .ebpg-readmore-btn a:hover {\n\t\t\tcolor: ").concat(readmoreHoverColor, ";\n\t\t\tcolor: ").concat(readmoreBGHoverColor, ";\n\t\t}\n\t");
   var readmoreStyleTab = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-readmore-btn {\n\t\t\t").concat(readmoreTypoStylesTab, "\n\t\t\t").concat(readmoreMarginStylesTab, "\n\t\t\t").concat(readmorePaddingStylesTab, "\n\t\t}\n\t");
   var readmoreStyleMobile = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-readmore-btn {\n\t\t\t").concat(readmoreTypoStylesMobile, "\n\t\t\t").concat(readmoreMarginStylesMobile, "\n\t\t\t").concat(readmorePaddingStylesMobile, "\n\t\t}\n\t");
   var avatarStyleDesktop = "\n\t\t.eb-post-grid-wrapper.".concat(blockId, " .ebpg-author-avatar img {\n\t\t\t").concat(avatarBdrSdwStylesDesktop, "\n\t\t}\n\t");
@@ -8721,14 +9062,14 @@ function Edit(props) {
     }); //Generate Title
 
     var title = post.title.rendered;
-    var titleWithLimitWords = titleLength > 0 ? title.trim().split(' ', titleLength).join(' ') : title;
+    var titleWithLimitWords = titleLength >= 0 ? title.trim().split(' ', titleLength).join(' ') : title;
     var titleHTML = "\n\t\t\t\t\t\t<".concat(titleTag, " class=\"ebpg-entry-title\">\n\t\t\t\t\t\t\t<a class=\"ebpg-grid-post-link\" href=\"").concat(post.link, "\" title=\"").concat(titleWithLimitWords, "\">\n\t\t\t\t\t\t\t\t").concat(titleWithLimitWords, "\n\t\t\t\t\t\t\t</a> \n\t\t\t\t\t\t</").concat(titleTag, ">\n\t\t\t\t\t"); //Generate Excerpt & Read More
 
     var excerpt = post.excerpt.rendered;
     var excerptElement = document.createElement('div');
     excerptElement.innerHTML = excerpt;
     excerpt = excerptElement.textContent || excerptElement.innerText || '';
-    var excerptWithLimitWords = contentLength > 0 ? excerpt.trim().split(' ', contentLength).join(' ') : excerpt;
+    var excerptWithLimitWords = contentLength >= 0 ? excerpt.trim().split(' ', contentLength).join(' ') : excerpt;
     var avatar = /*#__PURE__*/React.createElement("div", {
       "class": "ebpg-author-avatar"
     }, /*#__PURE__*/React.createElement("a", {
@@ -8830,9 +9171,9 @@ function Edit(props) {
       dangerouslySetInnerHTML: {
         __html: titleHTML
       }
-    }), showMeta && headerMetaHtml, showContent && /*#__PURE__*/React.createElement("div", {
+    }), showMeta && headerMetaHtml, /*#__PURE__*/React.createElement("div", {
       "class": "ebpg-entry-content"
-    }, /*#__PURE__*/React.createElement("div", {
+    }, showContent && /*#__PURE__*/React.createElement("div", {
       "class": "ebpg-grid-post-excerpt"
     }, /*#__PURE__*/React.createElement("p", null, excerptWithLimitWords, __(expansionIndicator))), showReadMore && /*#__PURE__*/React.createElement("div", {
       "class": "ebpg-readmore-btn"
@@ -8865,18 +9206,45 @@ function Edit(props) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+var examplePosts = [{
+  "id": 1911,
+  "date": "2021-10-03T06:19:04",
+  "date_gmt": "2021-10-03T06:19:04",
+  "link": "https://essential-blocks.com/",
+  "title": {
+    "rendered": "Maxime veritatis iusto voluptatem ut"
+  },
+  "excerpt": {
+    "rendered": "<p>Et itaque quam reiciendis autem qui voluptates nobis voluptas reprehenderit dolor incidunt debitis corrupti hic rem consectetur quis sed porro dolorem sed veniam quas dolorem fugiat ea repudiandae.</p>\n",
+    "protected": false
+  },
+  "_embedded": {
+    "author": [{
+      "id": 2,
+      "name": "Shaikat Islam",
+      "link": "https://essential-blocks.com/",
+      "slug": "shaikat",
+      "avatar_urls": {
+        "96": "http://0.gravatar.com/avatar/6b6b13eb7d4f528d1a8c081797830a37?s=96&d=mm&r=g"
+      }
+    }],
+    "wp:featuredmedia": [{
+      "id": 1912,
+      "link": "https://essential-blocks.com/",
+      "alt_text": "",
+      "source_url": "https://essential-blocks.com/"
+    }],
+    "wp:term": [[{
+      "link": "https://essential-blocks.com/",
+      "name": "Fashion",
+      "slug": "fashion",
+      "taxonomy": "category"
+    }]]
+  }
+}];
 var Example = {
   attributes: {
-    showConnector: "true",
-    buttonOneBorderShadowRds_Top: 20,
-    buttonOneBorderShadowRds_Bottom: 0,
-    buttonOneBorderShadowRds_Left: 20,
-    buttonOneBorderShadowRds_Right: 0,
-    buttonTwoBorderShadowRds_Top: 0,
-    buttonTwoBorderShadowRds_Bottom: 20,
-    buttonTwoBorderShadowRds_Left: 0,
-    buttonTwoBorderShadowRds_Right: 20,
-    buttonsGapRange: 0
+    queryResults: examplePosts
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (Example);
@@ -9037,16 +9405,19 @@ var __ = wp.i18n.__;
 
 registerBlockType("post-grid-block/post-grid", {
   title: __("Post Grid Block", "post-grid-block"),
-  description: __("Display Posts or Pages by filtering with custom queries", "post-grid-block"),
+  description: __("Create a stunning and interactive visualization for your blogs in a grid layout", "post-grid-block"),
   keywords: [__("posts", "post grid", "posts block")],
   icon: _icon__WEBPACK_IMPORTED_MODULE_2__["default"],
   attributes: _attributes__WEBPACK_IMPORTED_MODULE_3__["default"],
+  supports: {
+    align: true
+  },
   category: "widgets",
   edit: _edit__WEBPACK_IMPORTED_MODULE_1__["default"],
   save: function save() {
     return null;
   },
-  example: _example__WEBPACK_IMPORTED_MODULE_4__["default"]
+  example: {}
 });
 
 /***/ }),
@@ -9404,7 +9775,7 @@ function Inspector(props) {
           titleLength: value
         });
       },
-      min: 0,
+      min: -1,
       max: 100
     })), /*#__PURE__*/React.createElement(ToggleControl, {
       label: __("Show Excerpt?"),
@@ -9422,7 +9793,7 @@ function Inspector(props) {
           contentLength: value
         });
       },
-      min: 0,
+      min: -1,
       max: 100
     }), /*#__PURE__*/React.createElement(TextControl, {
       label: "Expansion Indicator",
@@ -9433,7 +9804,7 @@ function Inspector(props) {
           expansionIndicator: text
         });
       }
-    }), /*#__PURE__*/React.createElement(ToggleControl, {
+    })), /*#__PURE__*/React.createElement(ToggleControl, {
       label: __("Show Read More Button?"),
       checked: showReadMore,
       onChange: function onChange() {
@@ -9450,7 +9821,7 @@ function Inspector(props) {
           readmoreText: text
         });
       }
-    }))), /*#__PURE__*/React.createElement(ToggleControl, {
+    })), /*#__PURE__*/React.createElement(ToggleControl, {
       label: __("Show Meta?"),
       checked: showMeta,
       onChange: function onChange() {
@@ -9458,7 +9829,9 @@ function Inspector(props) {
           showMeta: !showMeta
         });
       }
-    }), showMeta && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(PanelRow, null, "Header Meta"), /*#__PURE__*/React.createElement(react_select__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    }), showMeta && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+      className: "eb-control-item-wrapper"
+    }, /*#__PURE__*/React.createElement(PanelRow, null, "Header Meta"), /*#__PURE__*/React.createElement(react_select__WEBPACK_IMPORTED_MODULE_0__["default"], {
       name: "select-header-meta",
       value: headerMeta.length > 0 ? JSON.parse(headerMeta) : '',
       onChange: function onChange(selected) {
@@ -9468,7 +9841,9 @@ function Inspector(props) {
       },
       options: metaOptions,
       isMulti: "true"
-    }), /*#__PURE__*/React.createElement(PanelRow, null, "Footer Meta"), /*#__PURE__*/React.createElement(react_select__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    })), /*#__PURE__*/React.createElement("div", {
+      className: "eb-control-item-wrapper"
+    }, /*#__PURE__*/React.createElement(PanelRow, null, "Footer Meta"), /*#__PURE__*/React.createElement(react_select__WEBPACK_IMPORTED_MODULE_0__["default"], {
       name: "select-footer-meta",
       value: footerMeta.length > 0 ? JSON.parse(footerMeta) : '',
       onChange: function onChange(selected) {
@@ -9478,7 +9853,7 @@ function Inspector(props) {
       },
       options: metaOptions,
       isMulti: "true"
-    })))), tab.name === "styles" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(PanelBody, {
+    }))))), tab.name === "styles" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(PanelBody, {
       title: __("Columns"),
       initialOpen: false
     }, /*#__PURE__*/React.createElement(_util_dimensions_control_v2__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -13489,7 +13864,7 @@ var ColorControl = function ColorControl(_ref) {
 /*!**************************************!*\
   !*** ./util/custom-query/apiData.js ***!
   \**************************************/
-/*! exports provided: getPosts, getAuthor, getCategory, getTag */
+/*! exports provided: getPosts, getAuthor, getCategory, getTag, getLatest5Posts, getPostsBySearchString */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13498,6 +13873,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAuthor", function() { return getAuthor; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCategory", function() { return getCategory; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTag", function() { return getTag; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getLatest5Posts", function() { return getLatest5Posts; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPostsBySearchString", function() { return getPostsBySearchString; });
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -13518,7 +13895,7 @@ var getPosts = function getPosts(query) {
   var queryStringObj = {};
 
   if (query.source === 'posts') {
-    var includesObjStr = ['author', 'categories', 'tags'];
+    var includesObjStr = ['author', 'categories', 'tags', 'include', 'exclude'];
     var includesDirectVal = ['per_page', 'offset', 'orderby', 'order'];
     Object.keys(query).forEach(function (key) {
       if (includesObjStr.includes(key) && query[key].length > 0) {
@@ -13640,6 +14017,48 @@ var getTag = function getTag() {
   }, function (error) {
     console.log("error", error);
   });
+}; //Get Posts for Include or Exclude
+
+var getLatest5Posts = function getLatest5Posts() {
+  var tagsData = [];
+  return apiFetch({
+    path: "/wp/v2/posts/?per_page=5"
+  }).then(function (result) {
+    result != null && result.length > 0 && result.forEach(function (item) {
+      var filterTagsData = {};
+      var includesVal = ['id', 'title'];
+      Object.keys(item).forEach(function (key) {
+        if (includesVal.includes(key)) {
+          filterTagsData[key] = item[key];
+        }
+      });
+      tagsData = [].concat(_toConsumableArray(tagsData), [filterTagsData]);
+    });
+    return tagsData;
+  }, function (error) {
+    console.log("error", error);
+  });
+}; //Get Posts for Include or Exclude
+
+var getPostsBySearchString = function getPostsBySearchString(search) {
+  var postsData = [];
+  return apiFetch({
+    path: "/wp/v2/search/?search=".concat(search, "&type=post")
+  }).then(function (result) {
+    result != null && result.length > 0 && result.forEach(function (item) {
+      var filterPostsData = {};
+      var includesVal = ['id', 'title'];
+      Object.keys(item).forEach(function (key) {
+        if (includesVal.includes(key)) {
+          filterPostsData[key] = item[key];
+        }
+      });
+      postsData = [].concat(_toConsumableArray(postsData), [filterPostsData]);
+    });
+    return postsData;
+  }, function (error) {
+    console.log("error", error);
+  });
 };
 
 /***/ }),
@@ -13666,7 +14085,7 @@ var ORDER_BY = [{
   label: __("Date"),
   value: "date"
 }, {
-  label: __("modified Date"),
+  label: __("Modified Date"),
   value: "modified"
 }, {
   label: __("Relevance"),
@@ -13675,7 +14094,7 @@ var ORDER_BY = [{
   label: __("Title"),
   value: "title"
 }, {
-  label: __("Id"),
+  label: __("ID"),
   value: "id"
 }, {
   label: __("Parent"),
@@ -13702,8 +14121,9 @@ var ORDER = [{
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Inspector; });
 /* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.esm.js");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constants */ "./util/custom-query/constants.js");
-/* harmony import */ var _apiData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./apiData */ "./util/custom-query/apiData.js");
+/* harmony import */ var react_select_async__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-select/async */ "./node_modules/react-select/async/dist/react-select.esm.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./constants */ "./util/custom-query/constants.js");
+/* harmony import */ var _apiData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./apiData */ "./util/custom-query/apiData.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -13739,6 +14159,7 @@ var _wp$element = wp.element,
 */
 
 
+
 /**
  * Internal Dependencies
 */
@@ -13769,15 +14190,21 @@ function Inspector(props) {
       setTagOptions = _useState6[1]; //Tags Data for Select2 Format
 
 
-  var _useState7 = useState({}),
+  var _useState7 = useState([]),
       _useState8 = _slicedToArray(_useState7, 2),
-      query = _useState8[0],
-      setQuery = _useState8[1];
+      postOptions = _useState8[0],
+      setPostOptions = _useState8[1]; //Include/Exclude post Data for Select2 Format
 
-  var _useState9 = useState(false),
+
+  var _useState9 = useState({}),
       _useState10 = _slicedToArray(_useState9, 2),
-      didMount = _useState10[0],
-      setDidMount = _useState10[1];
+      query = _useState10[0],
+      setQuery = _useState10[1];
+
+  var _useState11 = useState(false),
+      _useState12 = _slicedToArray(_useState11, 2),
+      didMount = _useState12[0],
+      setDidMount = _useState12[1];
 
   useEffect(function () {
     setDidMount(true); //If Exixsting query data exists in Attributes, set existing data to current query data
@@ -13793,12 +14220,14 @@ function Inspector(props) {
         per_page: '6',
         offset: '0',
         orderby: 'date',
-        order: 'desc'
+        order: 'desc',
+        include: '',
+        exclude: ''
       });
     } //Get Author data and Set Author Options Data
 
 
-    Object(_apiData__WEBPACK_IMPORTED_MODULE_2__["getAuthor"])().then(function (authorData) {
+    Object(_apiData__WEBPACK_IMPORTED_MODULE_3__["getAuthor"])().then(function (authorData) {
       var authorDataForOptions = [];
       authorData.length > 0 && authorData.forEach(function (item) {
         var filterAuthorData = {};
@@ -13816,7 +14245,7 @@ function Inspector(props) {
       setAuthorOptions(authorDataForOptions);
     }); //Get Categories data and Set Categories Options Data
 
-    Object(_apiData__WEBPACK_IMPORTED_MODULE_2__["getCategory"])().then(function (categoryData) {
+    Object(_apiData__WEBPACK_IMPORTED_MODULE_3__["getCategory"])().then(function (categoryData) {
       var categoryDataForOptions = [];
       categoryData.length > 0 && categoryData.forEach(function (item) {
         var filterCategoryData = {};
@@ -13834,7 +14263,7 @@ function Inspector(props) {
       setCategoryOptions(categoryDataForOptions);
     }); //Get Tags data and Set Tags Options Data
 
-    Object(_apiData__WEBPACK_IMPORTED_MODULE_2__["getTag"])().then(function (tagData) {
+    Object(_apiData__WEBPACK_IMPORTED_MODULE_3__["getTag"])().then(function (tagData) {
       var tagDataForOptions = [];
       tagData.length > 0 && tagData.forEach(function (item) {
         var filterTagData = {};
@@ -13850,6 +14279,24 @@ function Inspector(props) {
         tagDataForOptions.push(filterTagData);
       });
       setTagOptions(tagDataForOptions);
+    }); //Get Posts data and Set Tags Options Data
+
+    Object(_apiData__WEBPACK_IMPORTED_MODULE_3__["getLatest5Posts"])().then(function (postData) {
+      var postDataForOptions = [];
+      postData.length > 0 && postData.forEach(function (item) {
+        var filterPostData = {};
+        Object.keys(item).forEach(function (key) {
+          if (key === 'title') {
+            filterPostData.label = item[key].rendered;
+          }
+
+          if (key === 'id') {
+            filterPostData.value = item[key];
+          }
+        });
+        postDataForOptions.push(filterPostData);
+      });
+      setPostOptions(postDataForOptions);
     });
     return function () {
       setDidMount(false);
@@ -13858,7 +14305,7 @@ function Inspector(props) {
   useEffect(function () {
     //Get Post data on query change and set to Attributes
     if (didMount) {
-      Object(_apiData__WEBPACK_IMPORTED_MODULE_2__["getPosts"])(query).then(function (posts) {
+      Object(_apiData__WEBPACK_IMPORTED_MODULE_3__["getPosts"])(query).then(function (posts) {
         setAttributes({
           queryData: query
         });
@@ -13898,6 +14345,22 @@ function Inspector(props) {
 
     updatedQueryData.tags = JSON.stringify(tags);
     setQuery(updatedQueryData);
+  }; //Function for update query data on Tag Select
+
+
+  var setIncludedPost = function setIncludedPost(posts) {
+    var updatedQueryData = _objectSpread({}, query);
+
+    updatedQueryData.include = JSON.stringify(posts);
+    setQuery(updatedQueryData);
+  }; //Function for update query data on Tag Select
+
+
+  var setExcludePost = function setExcludePost(posts) {
+    var updatedQueryData = _objectSpread({}, query);
+
+    updatedQueryData.exclude = JSON.stringify(posts);
+    setQuery(updatedQueryData);
   }; //Function for update query data on Post Per Page Select
 
 
@@ -13930,6 +14393,27 @@ function Inspector(props) {
 
     updatedQueryData.order = value;
     setQuery(updatedQueryData);
+  }; //Function for update query data on Order Select
+
+
+  var LoadIncludePosts = function LoadIncludePosts(value) {
+    return Object(_apiData__WEBPACK_IMPORTED_MODULE_3__["getPostsBySearchString"])(value).then(function (postData) {
+      var postDataForOptions = [];
+      postData.length > 0 && postData.forEach(function (item) {
+        var filterPostData = {};
+        Object.keys(item).forEach(function (key) {
+          if (key === 'title') {
+            filterPostData.label = item[key];
+          }
+
+          if (key === 'id') {
+            filterPostData.value = item[key];
+          }
+        });
+        postDataForOptions.push(filterPostData);
+      });
+      return postDataForOptions;
+    });
   };
 
   return /*#__PURE__*/React.createElement(PanelBody, {
@@ -13938,7 +14422,7 @@ function Inspector(props) {
   }, typeof query != 'undefined' && didMount && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(SelectControl, {
     label: __("Source"),
     value: query.source,
-    options: _constants__WEBPACK_IMPORTED_MODULE_1__["SOURCES"],
+    options: _constants__WEBPACK_IMPORTED_MODULE_2__["SOURCES"],
     onChange: function onChange(selected) {
       return setSource(selected);
     }
@@ -13972,7 +14456,29 @@ function Inspector(props) {
     },
     options: tagOptions,
     isMulti: "true"
-  }))), /*#__PURE__*/React.createElement(TextControl, {
+  }))), /*#__PURE__*/React.createElement("div", {
+    className: "eb-control-item-wrapper"
+  }, /*#__PURE__*/React.createElement(PanelRow, null, "Posts Include"), /*#__PURE__*/React.createElement(react_select_async__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    cacheOptions: true,
+    value: query.include.length > 0 ? JSON.parse(query.include) : '',
+    defaultOptions: postOptions,
+    loadOptions: LoadIncludePosts,
+    onChange: function onChange(selected) {
+      return setIncludedPost(selected);
+    },
+    isMulti: "true"
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "eb-control-item-wrapper"
+  }, /*#__PURE__*/React.createElement(PanelRow, null, "Posts Exclude"), /*#__PURE__*/React.createElement(react_select_async__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    cacheOptions: true,
+    value: query.exclude.length > 0 ? JSON.parse(query.exclude) : '',
+    defaultOptions: postOptions,
+    loadOptions: LoadIncludePosts,
+    onChange: function onChange(selected) {
+      return setExcludePost(selected);
+    },
+    isMulti: "true"
+  })), /*#__PURE__*/React.createElement(TextControl, {
     label: "Posts Per Page",
     type: "number",
     value: query.per_page,
@@ -13989,14 +14495,14 @@ function Inspector(props) {
   }), /*#__PURE__*/React.createElement(SelectControl, {
     label: __("Order By"),
     value: query.orderby,
-    options: _constants__WEBPACK_IMPORTED_MODULE_1__["ORDER_BY"],
+    options: _constants__WEBPACK_IMPORTED_MODULE_2__["ORDER_BY"],
     onChange: function onChange(selected) {
       return setOrderBy(selected);
     }
   }), /*#__PURE__*/React.createElement(SelectControl, {
     label: __("Order"),
     value: query.order,
-    options: _constants__WEBPACK_IMPORTED_MODULE_1__["ORDER"],
+    options: _constants__WEBPACK_IMPORTED_MODULE_2__["ORDER"],
     onChange: function onChange(selected) {
       return setOrder(selected);
     }

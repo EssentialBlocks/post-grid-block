@@ -540,7 +540,7 @@ export default function Edit(props) {
 	`;
 
 	const contentStyleDesktop = `
-		.eb-post-grid-wrapper.${blockId} .ebpg-grid-post-excerpt {
+		.eb-post-grid-wrapper.${blockId} .ebpg-grid-post-excerpt p {
 			color: ${contentColor};
 			text-align: ${contentTextAlign};
 			${contentTypoStylesDesktop}
@@ -549,14 +549,14 @@ export default function Edit(props) {
 	`;
 
 	const contentStyleTab = `
-		.eb-post-grid-wrapper.${blockId} .ebpg-grid-post-excerpt {
+		.eb-post-grid-wrapper.${blockId} .ebpg-grid-post-excerpt p {
 			${contentTypoStylesTab}
 			${contentMarginStylesTab}
 		}
 	`;
 
 	const contentStyleMobile = `
-		.eb-post-grid-wrapper.${blockId} .ebpg-grid-post-excerpt {
+		.eb-post-grid-wrapper.${blockId} .ebpg-grid-post-excerpt p {
 			${contentTypoStylesMobile}
 			${contentMarginStylesMobile}
 		}
@@ -573,7 +573,7 @@ export default function Edit(props) {
 			color: ${readmoreColor};
 			background-color: ${readmoreBGColor};
 		}
-		.eb-post-grid-wrapper.${blockId} .ebpg-entry-title a:hover {
+		.eb-post-grid-wrapper.${blockId} .ebpg-readmore-btn a:hover {
 			color: ${readmoreHoverColor};
 			color: ${readmoreBGHoverColor};
 		}
@@ -889,7 +889,7 @@ export default function Edit(props) {
 
 					//Generate Title
 					const title = post.title.rendered;
-					const titleWithLimitWords = titleLength > 0 ? title.trim().split( ' ', titleLength ).join( ' ' ) : title;
+					const titleWithLimitWords = titleLength >= 0 ? title.trim().split( ' ', titleLength ).join( ' ' ) : title;
 					const titleHTML = `
 						<${titleTag} class="ebpg-entry-title">
 							<a class="ebpg-grid-post-link" href="${post.link}" title="${titleWithLimitWords}">
@@ -903,7 +903,7 @@ export default function Edit(props) {
 					const excerptElement = document.createElement( 'div' );
 					excerptElement.innerHTML = excerpt;
 					excerpt = excerptElement.textContent || excerptElement.innerText || '';
-					const excerptWithLimitWords = contentLength > 0 ? excerpt.trim().split( ' ', contentLength ).join( ' ' ) : excerpt;
+					const excerptWithLimitWords = contentLength >= 0 ? excerpt.trim().split( ' ', contentLength ).join( ' ' ) : excerpt;
 
 					const avatar =
 						<div class="ebpg-author-avatar">
@@ -1044,18 +1044,18 @@ export default function Edit(props) {
 										headerMetaHtml
 									)}
 
-									{showContent && (
-										<div class="ebpg-entry-content">
+									<div class="ebpg-entry-content">
+										{showContent && (
 											<div class="ebpg-grid-post-excerpt">
 												<p>{ excerptWithLimitWords }{__( expansionIndicator )}</p>
 											</div>
-											{showReadMore && (
-												<div class="ebpg-readmore-btn">
-													<a href={post.link}>{ __( readmoreText ) }</a>
-												</div>
-											)}
-										</div>
-									)}
+										)}
+										{showReadMore && (
+											<div class="ebpg-readmore-btn">
+												<a href={post.link}>{ __( readmoreText ) }</a>
+											</div>
+										)}
+									</div>
 									
 									{/* Footer Meta */}
 									{showMeta && (
